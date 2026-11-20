@@ -1,10 +1,10 @@
 {
   "schema": "lean-goose.stored-native-controls.v1",
   "status": "passed",
-  "started_at_utc": "2026-11-20T12:23:21+00:00",
+  "started_at_utc": "2026-11-20T13:27:32+00:00",
   "acceptance_authority": false,
   "binary": {
-    "path": "/tmp/lean-goose-formal-4mh2v9iv/checker",
+    "path": "/tmp/lean-goose-formal-7ty9_0da/checker",
     "sha256": "8b40f4951779ea16339d83332fd0c1786689cb762087f2af374b413edb8f85d2"
   },
   "generator_sha256": "4613cc8c55bfd77bb0d09f807f31ba8999969fa753cd02d19df7287108007e46",
@@ -31,7 +31,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/good_alias.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/good_alias.dag",
         "bytes": 116,
         "sha256": "1c4cc572fd70490561f8210e1bf40ce6d2d12018a67df76f799bdf8a43ec6747"
       },
@@ -39,12 +39,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/good_alias.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/good_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -61,18 +61,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.0026535720098763704
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0021755219931947067
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/good_alias.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/good_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -89,8 +89,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.002205236000008881
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.002237794004031457
         }
       ],
       "observed": {
@@ -113,7 +113,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/duplicate_preempts_scope.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/duplicate_preempts_scope.dag",
         "bytes": 116,
         "sha256": "d8f8f99d3b8a683bb8eb305a53588285e9ab11731cbc88aa6c13e62befa4389b"
       },
@@ -121,12 +121,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/duplicate_preempts_scope.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/duplicate_preempts_scope.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -143,18 +143,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.0025442540063522756
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0043626830010907724
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/duplicate_preempts_scope.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/duplicate_preempts_scope.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -171,8 +171,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.002068685003905557
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.001997021012357436
         }
       ],
       "observed": {
@@ -195,7 +195,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/mismatch_then_retry.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/mismatch_then_retry.dag",
         "bytes": 116,
         "sha256": "59fded290a64258ec761f926b49c0dce46ae342b5aeaa7d2c0028aa6d42db1d5"
       },
@@ -203,12 +203,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/mismatch_then_retry.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/mismatch_then_retry.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -225,18 +225,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.0020239559962647036
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.001978972999495454
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/mismatch_then_retry.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/mismatch_then_retry.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -253,8 +253,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.003759561004699208
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0029293889965629205
         }
       ],
       "observed": {
@@ -278,7 +278,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/unknown_then_good_then_alias.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/unknown_then_good_then_alias.dag",
         "bytes": 130,
         "sha256": "d62943432465bec2b3670b54adb9389f0f6469c5747587d8f9b8fdeb93f45798"
       },
@@ -286,12 +286,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/unknown_then_good_then_alias.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/unknown_then_good_then_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -308,18 +308,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.00716002999979537
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.00553143399883993
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/unknown_then_good_then_alias.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/unknown_then_good_then_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -336,8 +336,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.002287406998220831
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0024327690043719485
         }
       ],
       "observed": {
@@ -360,7 +360,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/wrong_level_alias.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/wrong_level_alias.dag",
         "bytes": 116,
         "sha256": "3bec757c7f09f8a9d3881c05cc9ae3320fa4420b01d656aeb16670b786057e3f"
       },
@@ -368,12 +368,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/wrong_level_alias.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/wrong_level_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -390,18 +390,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.00239293699269183
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0018636049935594201
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/wrong_level_alias.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/wrong_level_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -418,8 +418,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.005279561999486759
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.001781686005415395
         }
       ],
       "observed": {
@@ -442,7 +442,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/typed_alias.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/typed_alias.dag",
         "bytes": 116,
         "sha256": "8a7f7c508f1eb8ad480806bc439f1064aae19f054954eed888217d48d35ad87f"
       },
@@ -450,12 +450,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/typed_alias.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/typed_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -472,18 +472,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.001886134996311739
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0017290919931838289
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/typed_alias.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/typed_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -500,8 +500,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.0018767150031635538
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0018890649953391403
         }
       ],
       "observed": {
@@ -523,7 +523,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/all_tags.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/all_tags.dag",
         "bytes": 144,
         "sha256": "61abb7688a852943f2261fdf59dc9f218191decdba34633a3c79d8b06edfa1ee"
       },
@@ -531,12 +531,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/all_tags.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/all_tags.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -553,18 +553,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.00497407499642577
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0016737839905545115
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/all_tags.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/all_tags.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -581,8 +581,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.00265934198978357
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0019425600039539859
         }
       ],
       "observed": {
@@ -604,7 +604,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/expected_sort.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/expected_sort.dag",
         "bytes": 144,
         "sha256": "8c6a84f45075fedd1f1771c8db6cf21a382748d4ad4d63a53f21bd570d84c456"
       },
@@ -612,12 +612,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/expected_sort.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/expected_sort.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -634,18 +634,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.0022067770041758195
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0025184940022882074
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/expected_sort.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/expected_sort.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -662,8 +662,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.003096505010034889
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0027664179942803457
         }
       ],
       "observed": {
@@ -685,7 +685,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/expected_function.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/expected_function.dag",
         "bytes": 144,
         "sha256": "c611ed41671c5dcf026f75991763d2bdcebd060826b2a24e874cc372d7f7bb4f"
       },
@@ -693,12 +693,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/expected_function.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/expected_function.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -715,18 +715,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.003907371996319853
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0021094059920869768
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/expected_function.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/expected_function.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -743,8 +743,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.0025194879999617115
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0018927880009869114
         }
       ],
       "observed": {
@@ -767,7 +767,7 @@
         "check_exit": 2
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/scope_halts.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/scope_halts.dag",
         "bytes": 128,
         "sha256": "454de7469d79bb2715ec1b05cf69db3ac66d6c2f7ff45d75157795edf410a04b"
       },
@@ -775,12 +775,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/scope_halts.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/scope_halts.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -797,18 +797,18 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Invalid_scope\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.0031767369946464896
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0021146250073798
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/scope_halts.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/scope_halts.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -825,8 +825,8 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Invalid_scope\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.003511550006805919
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0017158029950223863
         }
       ],
       "observed": {
@@ -848,7 +848,7 @@
         "check_exit": 2
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/derived_height_halts.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/derived_height_halts.dag",
         "bytes": 1851,
         "sha256": "054285bc500bab7252d8a6af8e67d4eda1fdce814b8bf4f38b05090e9d953244"
       },
@@ -856,12 +856,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/derived_height_halts.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/derived_height_halts.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -878,18 +878,18 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Height_limit\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.00237202100106515
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0021975679992465302
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/derived_height_halts.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/derived_height_halts.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -906,8 +906,8 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Height_limit\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:21+00:00",
-          "elapsed_seconds": 0.013812413002597168
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0018571079999674112
         }
       ],
       "observed": {
@@ -930,7 +930,7 @@
         "check_exit": 2
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/fuel_halts.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/fuel_halts.dag",
         "bytes": 1054,
         "sha256": "ae3fba54cb494d43fbbc9c7217b75154c7e9c54f1b2c7459f18ff9ac99a52846"
       },
@@ -938,12 +938,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/fuel_halts.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/fuel_halts.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:21+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -960,18 +960,18 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Limit_exceeded\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.04027826098899823
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.03563900399603881
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/fuel_halts.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/fuel_halts.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -988,8 +988,8 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Limit_exceeded\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.04805271099030506
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.03754350000235718
         }
       ],
       "observed": {
@@ -1009,7 +1009,7 @@
         "check_exit": 2
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/import_height_failure.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/import_height_failure.dag",
         "bytes": 1635,
         "sha256": "a601c67a6e49138a93a332b30f68f04c67128213c13efd33df0e9717aa8b5e2a"
       },
@@ -1017,12 +1017,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/import_height_failure.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/import_height_failure.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1039,18 +1039,18 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Height_limit\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.003092846993240528
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.00195801499648951
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/import_height_failure.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/import_height_failure.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1067,8 +1067,8 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Height_limit\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.0024335690104635432
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0016005920042516664
         }
       ]
     },
@@ -1082,7 +1082,7 @@
         "check_exit": 3
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/parser_failure.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/parser_failure.dag",
         "bytes": 50,
         "sha256": "2c679b9389b2cffa8f30358ee469dff64f87c43d0bc628d3da9dd03e526d6dfe"
       },
@@ -1090,12 +1090,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/parser_failure.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/parser_failure.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1112,18 +1112,18 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: missing final LF\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.001534694994916208
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0018084619950968772
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/parser_failure.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/parser_failure.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1140,8 +1140,8 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: missing final LF\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.0016518070042366162
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0026219689898425713
         }
       ]
     },
@@ -1155,7 +1155,7 @@
         "check_exit": 3
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/invalid_name_parser_failure.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/invalid_name_parser_failure.dag",
         "bytes": 69,
         "sha256": "a21ad68717cb4e435fb8a1a900e980abda48b420be4d5aad43a06b5e90c998bd"
       },
@@ -1163,12 +1163,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/invalid_name_parser_failure.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/invalid_name_parser_failure.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1185,18 +1185,18 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: invalid constant name\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.001975614999537356
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0017783770017558709
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/invalid_name_parser_failure.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/invalid_name_parser_failure.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1213,8 +1213,8 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: invalid constant name\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.0019381430029170588
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0017757299938239157
         }
       ]
     },
@@ -1228,7 +1228,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/input_nodes_limit.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/input_nodes_limit.dag",
         "bytes": 43999,
         "sha256": "827793b6176fec64f7eb80415eec70180eb43b68d3ef0c3eb064d52620fb97f6"
       },
@@ -1236,12 +1236,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/input_nodes_limit.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/input_nodes_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1258,18 +1258,18 @@
             "encoding": "utf-8",
             "text": "goose binding trace: input nodes exceed trace bound\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.00917252100771293
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0028862600011052564
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/input_nodes_limit.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/input_nodes_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1286,8 +1286,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.005218113990849815
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.002822946000378579
         }
       ]
     },
@@ -1301,7 +1301,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/definition_limit.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/definition_limit.dag",
         "bytes": 759,
         "sha256": "0a05fc2de01adc8de710bafe0b08f3cc04ffec375173fbd330a831528749aa84"
       },
@@ -1309,12 +1309,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/definition_limit.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/definition_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1331,18 +1331,18 @@
             "encoding": "utf-8",
             "text": "goose binding trace: definitions exceed trace bound\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.0022838290024083108
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0023629099887330085
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/definition_limit.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/definition_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1359,8 +1359,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.005680900998413563
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.001792618990293704
         }
       ]
     },
@@ -1374,7 +1374,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/derived_nodes_limit.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/derived_nodes_limit.dag",
         "bytes": 43988,
         "sha256": "5578aa1d33c960add5675828ad27cf1742a48977ed4613dba7e0b70e74d87545"
       },
@@ -1382,12 +1382,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/derived_nodes_limit.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/derived_nodes_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1404,18 +1404,18 @@
             "encoding": "utf-8",
             "text": "goose binding trace: derived nodes exceed trace bound\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.012984882007003762
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.003382504000910558
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/derived_nodes_limit.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/derived_nodes_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1432,8 +1432,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.007353576991590671
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0024898970004869625
         }
       ]
     },
@@ -1447,7 +1447,7 @@
         "check_exit": 3
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/input_byte_limit.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/input_byte_limit.dag",
         "bytes": 4194305,
         "sha256": "8d3d3c04baadfd31cbebf771836900097b5f36cc142b74e40747c7b372beab8b"
       },
@@ -1455,12 +1455,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/input_byte_limit.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/input_byte_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1477,18 +1477,18 @@
             "encoding": "utf-8",
             "text": "goose binding trace: input bytes exceed trace bound\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.013985355995828286
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.006874110011267476
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/input_byte_limit.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/input_byte_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1505,8 +1505,8 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: missing final LF\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.0107911770028295
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.017222002992639318
         }
       ]
     },
@@ -1520,7 +1520,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/output_limit.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/output_limit.dag",
         "bytes": 43836,
         "sha256": "0df2a32407b20d271348210c563ae4f08f2e3920e7ae538f27f4a351b7064951"
       },
@@ -1528,12 +1528,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/output_limit.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/output_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1550,18 +1550,18 @@
             "encoding": "utf-8",
             "text": "goose binding trace: serialized output exceeds trace bound\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.014835192007012665
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.027937664999626577
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/output_limit.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/output_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1578,8 +1578,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.003814637995674275
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0040536159940529615
         }
       ]
     },
@@ -1596,7 +1596,7 @@
         "final_node_count": 4096
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/node_boundary.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/node_boundary.dag",
         "bytes": 43966,
         "sha256": "1baf8199f626d2b918f5b3c3eded27c169d2f2874b1e2f68d162aa8d597320c6"
       },
@@ -1604,12 +1604,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/node_boundary.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/node_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1628,18 +1628,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.008716142998309806
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.005258925011730753
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/node_boundary.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/node_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1656,8 +1656,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.0038258179993135855
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.003275487993960269
         }
       ],
       "observed": {
@@ -1742,7 +1742,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/definition_boundary.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/definition_boundary.dag",
         "bytes": 748,
         "sha256": "82b81d8ac27da1b4e9262afd30786e186cb2b6e57608decb44f6e5a0e3525176"
       },
@@ -1750,12 +1750,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/definition_boundary.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/definition_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1772,18 +1772,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.002195463006501086
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0022903850040165707
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/definition_boundary.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/definition_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1800,8 +1800,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.0025202020042343065
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.001987062001717277
         }
       ],
       "observed": {
@@ -1821,7 +1821,7 @@
         "check_exit": 3
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/input_byte_boundary.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/input_byte_boundary.dag",
         "bytes": 4194304,
         "sha256": "baa7a6d36ffa957552df230235c2d51d735f28d49c58a5f3438a3a973a25a37d"
       },
@@ -1829,12 +1829,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/input_byte_boundary.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/input_byte_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1851,18 +1851,18 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: missing final LF\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.010454146002302878
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.005413867998868227
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/input_byte_boundary.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/input_byte_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1879,8 +1879,8 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: missing final LF\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.04468172599445097
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.008139818004565313
         }
       ]
     },
@@ -1897,7 +1897,7 @@
         "trace_stdout_bytes": 4194304
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/output_byte_boundary.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/output_byte_boundary.dag",
         "bytes": 3145334,
         "sha256": "0901c16ee6ce9869615edf3a7f5d66a7c8527abce27de9de44b73a19d078e7fc"
       },
@@ -1905,12 +1905,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/output_byte_boundary.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/output_byte_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1929,18 +1929,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.067539534997195
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.07716483999683987
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/output_byte_boundary.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/output_byte_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1959,8 +1959,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.02725987600570079
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.018661207999684848
         }
       ],
       "observed": {
@@ -1980,7 +1980,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/output_byte_over_boundary.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/output_byte_over_boundary.dag",
         "bytes": 3145335,
         "sha256": "c56a9e2ea222a99af0df686adff2f3b068febfb63ef4100c5295e150b77a32b3"
       },
@@ -1988,12 +1988,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--trace",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/output_byte_over_boundary.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/output_byte_over_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -2010,18 +2010,18 @@
             "encoding": "utf-8",
             "text": "goose binding trace: serialized output exceeds trace bound\n"
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.03027580099296756
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.01264754100702703
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
             "--check",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/output_byte_over_boundary.dag"
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/output_byte_over_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -2040,8 +2040,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.04599176999181509
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.02145993300655391
         }
       ]
     },
@@ -2054,7 +2054,7 @@
         "iterations": 2
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/benchmark_mode.dag",
+        "path": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/benchmark_mode.dag",
         "bytes": 116,
         "sha256": "1c4cc572fd70490561f8210e1bf40ce6d2d12018a67df76f799bdf8a43ec6747"
       },
@@ -2062,21 +2062,21 @@
         {
           "mode": "benchmark",
           "command": [
-            "/tmp/lean-goose-formal-4mh2v9iv/checker",
-            "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls/benchmark_mode.dag",
+            "/tmp/lean-goose-formal-7ty9_0da/checker",
+            "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls/benchmark_mode.dag",
             "1",
             "2"
           ],
-          "cwd": "/tmp/lean-goose-formal-4mh2v9iv/stored-native-controls",
-          "started_at_utc": "2026-11-20T12:23:22+00:00",
+          "cwd": "/tmp/lean-goose-formal-7ty9_0da/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:27:32+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
             "bytes": 241,
-            "sha256": "c9c0c9dae5eda05a43717fdff21b4f9d73138d6ca5c68a49e97070b168dc7854",
+            "sha256": "d04b36ec36cdabcf89f32bd333cc5ac0df014f92cfac9177b36fcc077f0a9e6d",
             "retention": "complete",
             "encoding": "utf-8",
-            "text": "{\"schema\":\"lean-goose.benchmark-observation.v1\",\"engine\":\"goose-aot\",\"status\":\"passed\",\"workers\":1,\"iterations\":2,\"definitions\":2,\"elapsed_ns\":511,\"per_batch_ns\":255.5,\"validated_batches\":2,\"refusal_controls\":1,\"acceptance_authority\":false}\n"
+            "text": "{\"schema\":\"lean-goose.benchmark-observation.v1\",\"engine\":\"goose-aot\",\"status\":\"passed\",\"workers\":1,\"iterations\":2,\"definitions\":2,\"elapsed_ns\":512,\"per_batch_ns\":256.0,\"validated_batches\":2,\"refusal_controls\":1,\"acceptance_authority\":false}\n"
           },
           "stderr": {
             "bytes": 0,
@@ -2085,12 +2085,12 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-20T12:23:22+00:00",
-          "elapsed_seconds": 0.002448808998451568
+          "finished_at_utc": "2026-11-20T13:27:32+00:00",
+          "elapsed_seconds": 0.0020915749919367954
         }
       ]
     }
   ],
-  "finished_at_utc": "2026-11-20T12:23:22+00:00",
-  "elapsed_seconds": 0.8750980810000328
+  "finished_at_utc": "2026-11-20T13:27:32+00:00",
+  "elapsed_seconds": 0.7168121080030687
 }

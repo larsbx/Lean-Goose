@@ -1,5 +1,29 @@
-Formal verification failed: /tmp/tmppv3_r299/results.json
-Formal verification failed: /tmp/tmp3l8pv9wc/results.json
+Formal verification failed: /tmp/tmpxhkmggy5/results.json
+Formal verification failed: /tmp/tmp9lp5yqyy/results.json
+test_bad_binder_witness_requires_real_designated_violation (test_expression_dag.CounterexampleTests.test_bad_binder_witness_requires_real_designated_violation) ... ok
+test_witness_cannot_substitute_another_state_or_boolean_payload (test_expression_dag.CounterexampleTests.test_witness_cannot_substitute_another_state_or_boolean_payload) ... ok
+test_all_malformed_child_slots_are_rejected_atomically (test_expression_dag.InventoryTests.test_all_malformed_child_slots_are_rejected_atomically) ... ok
+test_complete_finite_depth_and_control_inventory (test_expression_dag.InventoryTests.test_complete_finite_depth_and_control_inventory) ... ok
+test_empty_dag_is_model_only (test_expression_dag.InventoryTests.test_empty_dag_is_model_only) ... ok
+test_native_root_and_depth_are_not_boolean_ids (test_expression_dag.InventoryTests.test_native_root_and_depth_are_not_boolean_ids) ... ok
+test_bool_numeric_flags_and_wire_mutations_fail (test_expression_dag.ModelFramingTests.test_bool_numeric_flags_and_wire_mutations_fail) ... ok
+test_fixed_all_tag_payloads_are_lossless (test_expression_dag.ModelFramingTests.test_fixed_all_tag_payloads_are_lossless) ... ok
+test_malformed_raw_fields_are_not_coerced (test_expression_dag.ModelFramingTests.test_malformed_raw_fields_are_not_coerced) ... ok
+test_model_frame_rejects_extra_missing_duplicate_and_nonfinite_fields (test_expression_dag.ModelFramingTests.test_model_frame_rejects_extra_missing_duplicate_and_nonfinite_fields) ... ok
+test_shared_wire_expansion_is_bounded_before_replay (test_expression_dag.ModelFramingTests.test_shared_wire_expansion_is_bounded_before_replay) ... ok
+test_arena_dedup_uses_complete_canonical_request_equality (test_expression_dag.NativeCorrespondenceTests.test_arena_dedup_uses_complete_canonical_request_equality) ... ok
+test_comparison_rejects_mutated_capture_or_missing_arena (test_expression_dag.NativeCorrespondenceTests.test_comparison_rejects_mutated_capture_or_missing_arena) ... ok
+test_completed_check_contract_is_tied_to_trace (test_expression_dag.NativeCorrespondenceTests.test_completed_check_contract_is_tied_to_trace) ... ok
+test_model_append_prefix_includes_prior_derived_nodes (test_expression_dag.NativeCorrespondenceTests.test_model_append_prefix_includes_prior_derived_nodes) ... ok
+test_native_framing_and_model_scope_are_required (test_expression_dag.NativeCorrespondenceTests.test_native_framing_and_model_scope_are_required) ... ok
+test_native_node_shapes_metadata_and_numeric_ids_are_strict (test_expression_dag.NativeCorrespondenceTests.test_native_node_shapes_metadata_and_numeric_ids_are_strict) ... ok
+test_raw_binding_ids_cannot_be_replaced_by_equivalent_payload_ids (test_expression_dag.NativeCorrespondenceTests.test_raw_binding_ids_cannot_be_replaced_by_equivalent_payload_ids) ... ok
+test_raw_fixture_preserves_ids_and_unused_node (test_expression_dag.NativeCorrespondenceTests.test_raw_fixture_preserves_ids_and_unused_node) ... ok
+test_unused_original_and_previous_derived_nodes_are_preserved (test_expression_dag.NativeCorrespondenceTests.test_unused_original_and_previous_derived_nodes_are_preserved) ... ok
+test_adapter_batch_identity_rejects_reordering_duplication_and_trailing_batches (test_expression_dag.QuintAdapterTests.test_adapter_batch_identity_rejects_reordering_duplication_and_trailing_batches) ... ok
+test_adapter_rejects_noncanonical_or_coerced_request_fields (test_expression_dag.QuintAdapterTests.test_adapter_rejects_noncanonical_or_coerced_request_fields) ... ok
+test_adapter_request_preserves_invalid_topology_for_model_refusal (test_expression_dag.QuintAdapterTests.test_adapter_request_preserves_invalid_topology_for_model_refusal) ... ok
+test_adapter_requires_complete_exact_integer_result_framing (test_expression_dag.QuintAdapterTests.test_adapter_requires_complete_exact_integer_result_framing) ... ok
 test_complete_declared_inventory (test_formal.ProfileControls.test_complete_declared_inventory) ... ok
 test_failed_process_cannot_supply_successful_observation (test_formal.ProfileControls.test_failed_process_cannot_supply_successful_observation) ... ok
 test_fatal_requires_designated_exit_diagnostic_and_no_receipt (test_formal.ProfileControls.test_fatal_requires_designated_exit_diagnostic_and_no_receipt) ... ok
@@ -47,6 +71,6 @@ test_profile_rejects_out_of_scope_and_noninteger_actions (test_stored_bindings.S
 test_raw_identity_changes_refused_even_when_payload_is_equal (test_stored_bindings.StoredProfileControls.test_raw_identity_changes_refused_even_when_payload_is_equal) ... ok
 
 ----------------------------------------------------------------------
-Ran 43 tests in 0.058s
+Ran 67 tests in 0.373s
 
 OK

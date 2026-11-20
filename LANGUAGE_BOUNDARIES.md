@@ -7,9 +7,9 @@ and boundary level in `ESTATE.toml`.
 | Language | Location | Current role |
 | --- | --- | --- |
 | Goose | `reference/checker.goose` | Locally owned bounded reference, checking observations, and opt-in binding diagnostics |
-| Lean | `formal/lean/` | Ordered transaction and complete binding models, proofs, axiom audits, and executable replays |
+| Lean | `formal/lean/` | Transaction, complete binding, and structural DAG/scope models, proofs, axiom audits, and executable replays |
 | Lean | Pinned external comparison checkout | Native checked declaration insertion used for finite comparison |
-| Quint | `formal/quint/` | Executable transaction and stored-binding models, invariant checks, tests, and counterexample controls |
+| Quint | `formal/quint/` | Independent transaction, stored-binding, and DAG models, invariant checks, tests, and counterexample controls |
 | OCaml | Pinned external comparison checkout | Bytecode reference used for independent finite comparisons |
 | Python | `tools/`, `tests/` | Dependency checks, fixture orchestration, formal gates, and unsigned receipts |
 | Shell | `tools/*.sh`, CI | Compiler builds and pinned auditor execution |

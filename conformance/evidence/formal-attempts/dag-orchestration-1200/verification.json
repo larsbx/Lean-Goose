@@ -1,0 +1,70 @@
+{
+  "schema": "lean-goose.local-verification.v1",
+  "status": "running",
+  "started_at_utc": "2026-11-20T13:12:16.489412+00:00",
+  "acceptance_authority": false,
+  "authority": "unsigned_local_test_observations_only",
+  "hosted_results_included": false,
+  "source_manifest": "conformance/evidence/source-manifest.json",
+  "evidence_directory_excluded_from_source_digest": "conformance/evidence/",
+  "source_digest_encoding": "SHA-256 of sorted path/bytes/sha256 objects; compact JSON with sorted keys",
+  "excluded_build_directories": [
+    ".cache",
+    ".git",
+    ".lake",
+    ".venv",
+    "__pycache__",
+    "_build",
+    "build",
+    "coverage",
+    "dist",
+    "node_modules"
+  ],
+  "excluded_build_suffixes": [
+    ".cmi",
+    ".cmo",
+    ".cmx",
+    ".ilean",
+    ".o",
+    ".olean",
+    ".pyc"
+  ],
+  "checks": [
+    {
+      "name": "estate-audit",
+      "command": [
+        "sh",
+        "tools/estate-audit.sh",
+        "/workspace/scratch/a402432e12bc/estate-governance/kernel/audit_estate_layout.py"
+      ],
+      "timeout_seconds": 600,
+      "started_at_utc": "2026-11-20T13:12:16.509923+00:00",
+      "status": "passed",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T13:12:16.744746+00:00",
+      "log": "conformance/evidence/estate-audit.log",
+      "log_sha256": "1af31108109f0f770e8d8e9a808e2ab083fb036058b414c185282b48297e84b8"
+    },
+    {
+      "name": "formal-tests",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "timeout_seconds": 600,
+      "started_at_utc": "2026-11-20T13:12:16.745608+00:00",
+      "status": "passed",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T13:12:17.744979+00:00",
+      "log": "conformance/evidence/formal-tests.log",
+      "log_sha256": "b7f4bb82fdc90a9d2b1e09680284ae50c3848c4849c8953fe8651e7e9450b756"
+    }
+  ],
+  "base_revision": "be9eccdd537d8f20c0fd15ebb6dc83d6ce9783d4",
+  "source_tree_sha256": "4faccfabad84abbed2f6a1b953032fe683d15859417b5e7b312232d375d455b5"
+}

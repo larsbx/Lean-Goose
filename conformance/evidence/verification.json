@@ -1,7 +1,7 @@
 {
   "schema": "lean-goose.local-verification.v1",
   "status": "passed",
-  "started_at_utc": "2026-11-20T12:22:12.087817+00:00",
+  "started_at_utc": "2026-11-20T13:26:11.895672+00:00",
   "acceptance_authority": false,
   "authority": "unsigned_local_test_observations_only",
   "hosted_results_included": false,
@@ -37,12 +37,13 @@
         "tools/estate-audit.sh",
         "/workspace/scratch/a402432e12bc/estate-governance/kernel/audit_estate_layout.py"
       ],
-      "started_at_utc": "2026-11-20T12:22:12.106963+00:00",
+      "timeout_seconds": 600,
+      "started_at_utc": "2026-11-20T13:26:11.920169+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:12.436550+00:00",
+      "finished_at_utc": "2026-11-20T13:26:12.175420+00:00",
       "log": "conformance/evidence/estate-audit.log",
-      "log_sha256": "7feb9808f62cd187267043758844ed16af62250f1f1bf63c60d8d088bdfebc5b"
+      "log_sha256": "82b2edb285c040a6f16aee452eb80d3d49209c79a39cef28f677baf3424508ea"
     },
     {
       "name": "formal-tests",
@@ -55,12 +56,13 @@
         "tests",
         "-v"
       ],
-      "started_at_utc": "2026-11-20T12:22:12.436907+00:00",
+      "timeout_seconds": 600,
+      "started_at_utc": "2026-11-20T13:26:12.176077+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:12.864351+00:00",
+      "finished_at_utc": "2026-11-20T13:26:13.193473+00:00",
       "log": "conformance/evidence/formal-tests.log",
-      "log_sha256": "6a190172d4c704ef337387c0e50ab7b02b263a92b92d2bb107eabcbaca31093d"
+      "log_sha256": "88a673c3599a0d51745936694a05112144ecce5f5f607e26dd4dea937857e61d"
     },
     {
       "name": "formal",
@@ -68,12 +70,13 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "tools/check_formal.py"
       ],
-      "started_at_utc": "2026-11-20T12:22:12.864764+00:00",
+      "timeout_seconds": 1800,
+      "started_at_utc": "2026-11-20T13:26:13.194120+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:23:23.725149+00:00",
+      "finished_at_utc": "2026-11-20T13:45:16.042027+00:00",
       "log": "conformance/evidence/formal.log",
-      "log_sha256": "1c3ebbfab0d56cd2410b3408b271630322968ff9bf59ab06744a58512cb0bfe8"
+      "log_sha256": "59d33766b53bb05b458f70556c5ef52632e948ef6880c690bfe732a27ba28c15"
     },
     {
       "name": "conformance",
@@ -86,10 +89,11 @@
         "--output",
         "conformance/evidence/check"
       ],
-      "started_at_utc": "2026-11-20T12:23:23.739218+00:00",
+      "timeout_seconds": 600,
+      "started_at_utc": "2026-11-20T13:45:16.046954+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:28:16.211901+00:00",
+      "finished_at_utc": "2026-11-20T13:47:30.302121+00:00",
       "log": "conformance/evidence/conformance.log",
       "log_sha256": "3bf9e00239dfe3df48c4f506a2efe610cb8f6f1c9dbd4c9352cedfd99bd2492e"
     },
@@ -110,16 +114,17 @@
         "--output",
         "conformance/evidence/smoke"
       ],
-      "started_at_utc": "2026-11-20T12:28:16.236760+00:00",
+      "timeout_seconds": 600,
+      "started_at_utc": "2026-11-20T13:47:30.304430+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:30:30.769528+00:00",
+      "finished_at_utc": "2026-11-20T13:49:47.748765+00:00",
       "log": "conformance/evidence/benchmark-smoke.log",
-      "log_sha256": "6852ddba788af566731138d73825c58944705c024dee2783922385aee42d0130"
+      "log_sha256": "f5e69dcc9d822f172c55422854fa56ed3e66a3b1c3bc09681958bc76394025c9"
     }
   ],
-  "base_revision": "d14aa4fde522cd2a74c9df2e87dd8a7d4a38759b",
-  "source_tree_sha256": "50bd7fd5dea34a908cf768dc459075da83dccac76b40e8a0b8b3c1fb6648d984",
+  "base_revision": "be9eccdd537d8f20c0fd15ebb6dc83d6ce9783d4",
+  "source_tree_sha256": "927063bc181e02db0c4bf50175e26b387531e65f0b85909a9a0c1b20b7c7af56",
   "source_unchanged_during_verification": true,
-  "finished_at_utc": "2026-11-20T12:30:30.793512+00:00"
+  "finished_at_utc": "2026-11-20T13:49:47.771651+00:00"
 }

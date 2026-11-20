@@ -44,7 +44,7 @@ in the local Goose source.
 | `make pins` | External checkout and local source-provenance verification |
 | `make test` | Full finite observation comparison against native Lean and OCaml |
 | `make formal-tests` | Formal-runner acceptance and rejection controls |
-| `make formal` | Both Lean proof inventories and axiom audits, both Quint models, finite transaction and full stored-binding comparisons, and native trace controls |
+| `make formal` | All three Lean proof inventories and axiom audits, independent Quint models, finite transaction/binding/DAG comparisons, and native controls |
 | `make smoke` | Small fresh three-engine benchmark execution |
 | `make audit` | Pinned external estate v3 manifest audit |
 | `make acceptance` | All required gates, logs, source manifest, and verification receipt |
@@ -132,6 +132,40 @@ model theorems and Quint's seeded bounded exploration. Missing tool output,
 unrecognized outcomes, or an arbitrary command failure cannot stand in for a
 successful gate or a designated negative control.
 
+### Expression-DAG and scope comparison
+
+The [DAG lane](expression-dag-scope.md) requires 30 additional Lean theorems,
+21 Quint tests, seeded exploration with an eight-node arena cap, and a strict
+two-state negative witness for an incorrect binder decrement. Its common
+[JSONL replay contract](../schemas/expression-dag-replay-v1.md) preserves all raw
+node payloads, actual constant-name bytes, structural expression wires, heights,
+minimum binder requirements, and scope answers.
+
+Both actual models evaluate 2,208 initial requests: 2,163 valid graphs, one empty
+graph, 27 malformed graphs, and 17 named controls. The valid graphs each produce
+four native scope probes. Malformed and named controls also run `--check`, for
+8,740 native commands in this lane. Each distinct native arena request is then
+replayed through Lean and Quint, with every observed snapshot linked back to its
+request. Comparison checks original decoded prefixes, raw binding identities,
+immutable node prefixes, and scope completion/refusal. The native trace omits
+internal `free` and height metadata; equality of those fields is between the
+models, while native scope is observed through checker behavior.
+
+The receipt records the actual number of unique arenas and snapshots, complete
+compressed model and native logs, and source identities. A parser rejection is
+separate from a semantic scope halt. Shared-DAG expansion has explicit
+serialization bounds; hitting one fails the gate rather than dropping cases.
+Quint replay uses sequential fresh invocations of at most 256 requests, bounding
+REPL source/history growth. Exact chunk offsets, counts, and input hashes link
+every command to the complete ordered inventory. Lean evaluates the same entire
+inventory, and each Quint chunk is compared with the corresponding Lean slice.
+The repository runner allows 1,800 seconds for the expanded formal gate and
+records that timeout in its receipt. Individual formal commands retain their
+300-second limit and native probes retain their 15-second limit. This changes
+the orchestration budget, not the checker resource bounds or required cases.
+The hosted workflow allows 50 minutes for toolchain setup and the complete
+acceptance sequence.
+
 ### Timing smoke
 
 The smoke run uses all seven families with eight definitions, one sample, and
@@ -144,8 +178,8 @@ own source identity, and no speed threshold determines smoke success.
 The top-level receipt is `conformance/evidence/verification.json`. The formal
 gate writes `conformance/evidence/formal/results.json`. Their source inventories,
 logs, toolchain identities, outcomes, and before/after checks identify the
-execution being reported. The v2 formal receipt records both scopes, including
-its `stored_bindings` section, and the stated finite runtime comparisons; it
+execution being reported. The v3 formal receipt records all three scopes,
+including its `stored_bindings` and `expression_dag` sections, and the stated finite runtime comparisons; it
 does not certify full implementation
 refinement or estate-wide adoption.
 

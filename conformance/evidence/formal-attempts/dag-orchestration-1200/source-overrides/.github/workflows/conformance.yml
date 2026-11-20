@@ -1,0 +1,81 @@
+name: Goose reference conformance
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  conformance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Invalidate historical receipts before toolchain setup
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          for name, schema in (("verification.json", "lean-goose.local-verification.v1"),
+                               ("formal/results.json", "lean-goose.formal-evidence.v3")):
+              path = Path("conformance/evidence") / name
+              path.parent.mkdir(parents=True, exist_ok=True)
+              path.write_text(json.dumps({"schema": schema, "status": "running",
+                  "phase": "toolchain_setup", "acceptance_authority": False,
+                  "hosted_results_included": False}, indent=2) + "\n")
+          PY
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24.22.3
+      - name: Install pinned Quint dependency graph
+        run: npm --prefix formal/quint ci --ignore-scripts --no-audit --no-fund
+      - name: Audit authority-first estate layout
+        # Fetches the pinned public kernel/audit_estate_layout.py and verifies its digest.
+        run: sh tools/estate-audit.sh
+      - name: Build pinned OCaml bytecode comparison compiler
+        run: |
+          set -eu
+          sh tools/build_ocaml.sh "$RUNNER_TEMP/ocaml-source" "$RUNNER_TEMP/ocaml-install"
+          echo "$RUNNER_TEMP/ocaml-install/bin" >> "$GITHUB_PATH"
+      - name: Install pinned Lean oracle
+        run: |
+          set -eu
+          curl --fail --silent --show-error --location --proto '=https' --tlsv1.2 \
+            -o "$RUNNER_TEMP/elan.tar.gz" https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz
+          tar xzf "$RUNNER_TEMP/elan.tar.gz" -C "$RUNNER_TEMP" elan-init
+          "$RUNNER_TEMP/elan-init" -y --no-modify-path --default-toolchain none
+          lean_toolchain=$(python3 -c 'import json; print(json.load(open("conformance/dependencies.json"))["lean"]["toolchain"])')
+          "$HOME/.elan/bin/elan" toolchain install "$lean_toolchain"
+          "$HOME/.elan/bin/elan" default "$lean_toolchain"
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build pinned Goose compiler
+        run: |
+          set -eu
+          # Ubuntu 24.04 supplies CMake >= 3.27, which Goose checks before building.
+          cmake --version
+          sh tools/build_goose.sh "$RUNNER_TEMP/goose"
+      - name: Obtain pinned external comparison checkout
+        run: |
+          set -eu
+          baseline_repository=$(python3 -c 'import json; print(json.load(open("conformance/dependencies.json"))["lean_ocaml"]["repository"])')
+          baseline_revision=$(python3 -c 'import json; print(json.load(open("conformance/dependencies.json"))["lean_ocaml"]["revision"])')
+          git clone --no-checkout "$baseline_repository" "$RUNNER_TEMP/lean-ocaml"
+          git -C "$RUNNER_TEMP/lean-ocaml" checkout --detach "$baseline_revision"
+          # run.py verifies the complete source-archive pin and consumed file digests.
+      - name: Verify formalization, reference conformance and benchmark smoke
+        env:
+          GOOSE_SOURCE: ${{ runner.temp }}/goose
+          LEAN_OCAML_SOURCE: ${{ runner.temp }}/lean-ocaml
+        # Timings exercise the runner; CI has no performance threshold or admission verdict.
+        run: python3 tools/acceptance.py
+      - name: Preserve verification receipts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: lean-goose-verification
+          path: conformance/evidence/
+          if-no-files-found: ignore
+          retention-days: 30

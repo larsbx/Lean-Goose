@@ -66,7 +66,7 @@ def git_revision() -> str | None:
 
 def run(name: str, command: list[str], timeout: int = 600) -> dict[str, object]:
     logfile = EVIDENCE / f"{name}.log"
-    record: dict[str, object] = {"name": name, "command": command, "started_at_utc": now()}
+    record: dict[str, object] = {"name": name, "command": command, "timeout_seconds": timeout, "started_at_utc": now()}
     print(f"Verifying {name}.", flush=True)
     try:
         result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, timeout=timeout)
@@ -118,7 +118,10 @@ def main() -> int:
                                  "--output", "conformance/evidence/smoke"]),
         ]
         for name, command in commands:
-            record = run(name, command)
+            # Three required formal scopes include replay of every observed
+            # native arena. Keep individual model/native command limits intact;
+            # allow the expanded sequential orchestration thirty minutes.
+            record = run(name, command, timeout=1800 if name == "formal" else 600)
             receipt["checks"].append(record)
             write_json(RECEIPT, receipt)
             if record["status"] != "passed":
