@@ -1,0 +1,302 @@
+[
+  {
+    "path": ".gitattributes",
+    "bytes": 48,
+    "sha256": "2df22fbb92e6350bddc00f3f977619734fd11359a9ae0fc6e16d0aed7e784fa5"
+  },
+  {
+    "path": ".github/PULL_REQUEST_TEMPLATE.md",
+    "bytes": 852,
+    "sha256": "998e7275119904f7054f94177b01e84172585a055e2a86d0984c21335b427ba9"
+  },
+  {
+    "path": ".github/workflows/conformance.yml",
+    "bytes": 3997,
+    "sha256": "69d876552a358f17fec9350c1e2de06f9b7f400726113482653cd2d8a4bbb286"
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 99,
+    "sha256": "f9e5a932b63ff042cc1f4250e451adcc4eb7ef2ab4ec8f0de53a0333175e5319"
+  },
+  {
+    "path": "AGENTS.md",
+    "bytes": 2027,
+    "sha256": "c8608f56ab8ecad8866d9da777791321c818f262d36007c89971bfd85361996d"
+  },
+  {
+    "path": "ARCHITECTURE.md",
+    "bytes": 8758,
+    "sha256": "ebcac41a9ec6dd13e14aa8d38426c7f1cd2963fe880be139f91d40d3701888a5"
+  },
+  {
+    "path": "ESTATE.toml",
+    "bytes": 9472,
+    "sha256": "f20b7088ee834c0d8445f91ef11ccabdf965c55d575339d2587f596ad0fd5c64"
+  },
+  {
+    "path": "LANGUAGE_BOUNDARIES.md",
+    "bytes": 1959,
+    "sha256": "d5640a6d6844c1c387da568e3bec8ee7ba5cd5744860f7f8cddce270380bb55c"
+  },
+  {
+    "path": "Makefile",
+    "bytes": 696,
+    "sha256": "8497ec8ac6a8b7b756c74606bb665022ff9170fe9ee29f29c2232b6f9aa52cfa"
+  },
+  {
+    "path": "README.md",
+    "bytes": 8121,
+    "sha256": "c39d5109408cf27da4dd7c7c9960c66b9237e3c244494224d3fa44f62630f0b3"
+  },
+  {
+    "path": "conformance/dependencies.json",
+    "bytes": 4967,
+    "sha256": "617b4254c20cfb0c78f83c7f758612162b30d328609a64318c22692e180c16ee"
+  },
+  {
+    "path": "conformance/source-provenance.json",
+    "bytes": 2403,
+    "sha256": "2d2c62d01807995d42025e835f76cb18eabf4d818dbd5cf5a36dbd50661d28a6"
+  },
+  {
+    "path": "docs/benchmark-baseline.md",
+    "bytes": 2703,
+    "sha256": "027bf01f2d92becbccac61f115a309af033ebc113a56a4723590cc5da54834e4"
+  },
+  {
+    "path": "docs/expression-dag-scope.md",
+    "bytes": 14615,
+    "sha256": "980d1465579c6d877f1f813093117e8ded143b01c43aca1089b0beeff03326f8"
+  },
+  {
+    "path": "docs/formalization.md",
+    "bytes": 28498,
+    "sha256": "18422cb339c4265e68c66c61f392be4a40289b0374eca2888cf4e89cf123411f"
+  },
+  {
+    "path": "docs/roadmap.md",
+    "bytes": 3679,
+    "sha256": "28ce36be04a79bd04cf952a90a326fd403a2cec6405c50b7cd600292645e9709"
+  },
+  {
+    "path": "docs/scaffold-sop.md",
+    "bytes": 2473,
+    "sha256": "aa7851a597b84a27095394a0f06c40e3aabeb3123e01edb6af3f8a019b3ad8a4"
+  },
+  {
+    "path": "docs/validation.md",
+    "bytes": 10985,
+    "sha256": "e712d6b70e60af72f9887bc938fd623861f980de76b38c8139c678939f141419"
+  },
+  {
+    "path": "formal/lean/Audit.lean",
+    "bytes": 2767,
+    "sha256": "2a81b1d209863671c2b68a94dec23d3e832057f9fd0b15b35570af93990f2c17"
+  },
+  {
+    "path": "formal/lean/DefinitionTransactions.lean",
+    "bytes": 14529,
+    "sha256": "2fb3907bb8016c541ed7c2d7cfdd86bc075f357cc3bcdef598150ba63add452b"
+  },
+  {
+    "path": "formal/lean/ExpressionDag.lean",
+    "bytes": 32715,
+    "sha256": "ea7d2a5e1756f1c5dbc6f0162179eb5021f9ff70922bffe81c509c773a1c3d42"
+  },
+  {
+    "path": "formal/lean/ExpressionDagAudit.lean",
+    "bytes": 3194,
+    "sha256": "68b4f5d5f76cd007f02ce031d78fd3f54217e66790297f505c56a1cd78c03a1e"
+  },
+  {
+    "path": "formal/lean/ExpressionDagReplay.lean",
+    "bytes": 5524,
+    "sha256": "aae1e1c648e68c8b4d76655c313c4ca136f697e4b3674e1f91b0d6fccaae6381"
+  },
+  {
+    "path": "formal/lean/Replay.lean",
+    "bytes": 2712,
+    "sha256": "30c6efdf863baf002c5cd0d5faf9293ed9b0289c682660ac7cfbe8927f6f66f7"
+  },
+  {
+    "path": "formal/lean/StoredBindings.lean",
+    "bytes": 21555,
+    "sha256": "7c1bc7aa2e783ba183a5c20512ce03012aa9f0e1f4bce21b5312b15909e95e6d"
+  },
+  {
+    "path": "formal/lean/StoredBindingsAudit.lean",
+    "bytes": 3309,
+    "sha256": "852367d91584c35c114ef24de39ce35f8ae90a32cab61f0fa11cad5ef90d1a7c"
+  },
+  {
+    "path": "formal/lean/StoredBindingsReplay.lean",
+    "bytes": 3534,
+    "sha256": "4cd1d1732e5f3f77022966b5d12aadc65b12e284844121aa1f7f6434e5c001b0"
+  },
+  {
+    "path": "formal/lean/lean-toolchain",
+    "bytes": 25,
+    "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b"
+  },
+  {
+    "path": "formal/quint/DefinitionTransactions.qnt",
+    "bytes": 7348,
+    "sha256": "4a7dcd3075fb9ea9560a6883e7c527fa623be78e4220349eef671b3177cde408"
+  },
+  {
+    "path": "formal/quint/ExpressionDag.qnt",
+    "bytes": 13149,
+    "sha256": "1bdbdc1dc475eecdcdb2995469e3e506444c89e4ee51f0b2347d283043a86707"
+  },
+  {
+    "path": "formal/quint/StoredBindings.qnt",
+    "bytes": 11634,
+    "sha256": "2bc13a5d30c7011a753e0bd42aaf7a6593f8071c811bcc210e823fe1f3e1ac1f"
+  },
+  {
+    "path": "formal/quint/dag_replay.py",
+    "bytes": 8919,
+    "sha256": "b574b8bd84aac435269d5fc8fa4b337068543b28906a23e93f5b764319c0adc6"
+  },
+  {
+    "path": "formal/quint/package-lock.json",
+    "bytes": 31042,
+    "sha256": "30b0fc049c56f050817d1546a5eb10faba35af166774f3a28bd23760f3927993"
+  },
+  {
+    "path": "formal/quint/package.json",
+    "bytes": 238,
+    "sha256": "ba65b1813e0d1611c5eaeb1b40747d18665263d1b0094458fae46b266bb5668c"
+  },
+  {
+    "path": "formal/quint/replay.py",
+    "bytes": 4786,
+    "sha256": "960124d95806fe5061902f0c5c9164e0c07fc024c0c3ea7c3a2d38e8356ac4c4"
+  },
+  {
+    "path": "formal/quint/stored_replay.py",
+    "bytes": 6929,
+    "sha256": "8657201817f86c8c122e236820c96fff56ce3bf778eb21323545cf60c2df2589"
+  },
+  {
+    "path": "oracles/README.md",
+    "bytes": 1236,
+    "sha256": "8227d5b9e3786146767146532762cb120e6acc29781f5fbfc5cf066ddd2e4d4e"
+  },
+  {
+    "path": "policy/README.md",
+    "bytes": 1583,
+    "sha256": "a27b3626a9e9f0d453bd919f045d23da8e9cf4fe027b578413edca3247238587"
+  },
+  {
+    "path": "reference/binding-trace.patch",
+    "bytes": 5070,
+    "sha256": "736c8e3c0cba1271123c12c33d1c45bcc3592f4ff3ba70e9053ed79b6d858d13"
+  },
+  {
+    "path": "reference/checker.goose",
+    "bytes": 23818,
+    "sha256": "0de9dfe21a2e95fd0468fd9365ff8e73a18a22e91f457dd4e16209bf740f0e0a"
+  },
+  {
+    "path": "schemas/binding-trace-v1.md",
+    "bytes": 8747,
+    "sha256": "686fcb151434707692fcf9d733f8bfdcff251d29542cc4e51be4a5467384e451"
+  },
+  {
+    "path": "schemas/definition-observations-v1.md",
+    "bytes": 3448,
+    "sha256": "5bfb8970ce78ea84f8a0f2c90522a13de2e66e76de55b9b3d93e811f214a28ad"
+  },
+  {
+    "path": "schemas/expression-dag-replay-v1.md",
+    "bytes": 8849,
+    "sha256": "4bfc4823239ee9f475bdbaa02a3196f389017dbb627d526f565a0b7a4b6af546"
+  },
+  {
+    "path": "tests/test_expression_dag.py",
+    "bytes": 21820,
+    "sha256": "c14465193ae80552d3d1e46565e80a0dc06d3f72ffa3d6e06ab4ade47c02614c"
+  },
+  {
+    "path": "tests/test_formal.py",
+    "bytes": 9060,
+    "sha256": "c80f912baf16257d72bd6a0d8c2a8f8188402d14d6702810bbd4a8806e788abb"
+  },
+  {
+    "path": "tests/test_stored_bindings.py",
+    "bytes": 25244,
+    "sha256": "db785473bd037ce6adc6b5d10db2cf7ac133725206bbbc72631bf657f4df22e1"
+  },
+  {
+    "path": "tools/acceptance.py",
+    "bytes": 7181,
+    "sha256": "8c1da843914f776244bc504284c84abb37b5ec8978df41ef79f8f2240a0f356b"
+  },
+  {
+    "path": "tools/binding_trace_controls.py",
+    "bytes": 27622,
+    "sha256": "4613cc8c55bfd77bb0d09f807f31ba8999969fa753cd02d19df7287108007e46"
+  },
+  {
+    "path": "tools/build_goose.sh",
+    "bytes": 1938,
+    "sha256": "4a6fdfc54922cf902f35249c1b1b1d7a6b6af289761a4e3662903f5da003cba9"
+  },
+  {
+    "path": "tools/build_ocaml.sh",
+    "bytes": 2070,
+    "sha256": "229f15de957372f8eeb82dbc4fe7eeed474bc95ad379bcee0b84f12a5d989d93"
+  },
+  {
+    "path": "tools/check_expression_dag.py",
+    "bytes": 15926,
+    "sha256": "3fce6f5be9ff3700359e9b983aeb91ba2cedb16561d8bae35df4a7285c1e2822"
+  },
+  {
+    "path": "tools/check_formal.py",
+    "bytes": 20682,
+    "sha256": "a4b44182bfb2a6b518b427491a8710c8809b2d1bcd6b324fe90834717d08e568"
+  },
+  {
+    "path": "tools/check_stored_bindings.py",
+    "bytes": 11821,
+    "sha256": "870a8f0229d9f09857fc8203ef9d8eaa772097791fb90cf6e1a7a6c1c8ec1d05"
+  },
+  {
+    "path": "tools/estate-audit.sh",
+    "bytes": 1197,
+    "sha256": "ddf0175a81059635f422f52e430c8b787a52bf16cc097c3bbe2aed7fd380c6e4"
+  },
+  {
+    "path": "tools/expression_dag_profile.py",
+    "bytes": 27234,
+    "sha256": "68056cdad17d480665a654596e2856b32ff819fa650700970410a89788ad5a41"
+  },
+  {
+    "path": "tools/run.py",
+    "bytes": 20063,
+    "sha256": "55a2681c7cb2bf147da8bda284f51da895d76393522bc58ab4e4eab6267605b7"
+  },
+  {
+    "path": "tools/runtime.py",
+    "bytes": 13056,
+    "sha256": "24ca100d5dcc58912660608b24f4f9a33b2b89a1edb437caed552f4df659427c"
+  },
+  {
+    "path": "tools/source_derivation.py",
+    "bytes": 4022,
+    "sha256": "b0806fa0c1880de9f783773a6717defb5c20e80e11f91a8dab09f6152efc5c5f"
+  },
+  {
+    "path": "tools/stored_binding_profile.py",
+    "bytes": 12286,
+    "sha256": "0302b53027d461009f0b8d99b7687f759cde78ca57c3747a2e45e8273dabd9d1"
+  },
+  {
+    "path": "tools/transaction_profile.py",
+    "bytes": 4998,
+    "sha256": "8cfe4ca660a43f2e6fff9fb264dacdc2bbfd7a1cb08cb1c4a408f838fbdeaf1b"
+  }
+]

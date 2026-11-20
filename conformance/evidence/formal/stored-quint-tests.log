@@ -17,4 +17,4 @@
     ok orderedSnapshotCountTest passed 1 test(s)
     ok storedAuthorityPreservedTest passed 1 test(s)
 
-  16 passing (86ms)
+  16 passing (91ms)

@@ -8,8 +8,9 @@ theorem, deployment or other admission authority.
 
 The repository adopts **estate-repository-v3** with unrestricted implementation
 languages and required **Lean and Quint formalization**. The required formal
-scopes cover ordered definition transactions and preservation of complete stored
-bindings: names, declared types, original values, and inferred types. The
+scopes cover ordered definition transactions, preservation of complete stored
+bindings, and structural expression DAGs with binder scope. Stored records retain
+names, declared types, original values, and inferred types. The
 [formalization document](docs/formalization.md) identifies the claims,
 implementation mapping, required checks, and remaining correspondence work.
 Execution status belongs to the source-bound receipts for the revision tested.
@@ -75,18 +76,30 @@ original transaction lane retains its 21 Lean obligations and 1,110 finite
 cases. The stored-binding lane requires 29 additional Lean obligations,
 16 Quint tests, and 2,954 finite cases spanning two names and sort levels zero
 and one. Its gate compares complete model states and every processed snapshot,
-then checks both native `--trace` and `--check` behavior. Both Quint models also
-run seeded, bounded invariant simulations and designated negative controls.
+then checks both native `--trace` and `--check` behavior.
+
+The [expression-DAG lane](docs/expression-dag-scope.md) adds 30 required Lean
+theorems and 21 Quint tests for all seven node kinds, topology refusal, immutable
+decoded prefixes, structural height, and de Bruijn scope. Its finite profile
+contains every topology-valid graph of one to three nodes over seven selected
+leaves: 2,163 graphs, each probed natively at four binder depths. It also requires
+an empty graph, 27 malformed-topology controls, and 17 named context and typing
+controls. Every distinct native snapshot arena is replayed through both models.
+All three Quint models run seeded, bounded invariant simulations and designated
+negative controls; the DAG simulation has an explicit eight-node arena cap.
 
 The opt-in [`--trace` contract](schemas/binding-trace-v1.md) exposes raw stored
 type/value/inferred node IDs and the immutable node DAG after each processed
 definition. The finite stored-binding profile decodes Sort/Const payloads and
-checks preservation of the raw records and existing node payloads. Full
-correctness of Goose inference, substitution, normalization, caches, and
-arbitrary expression graphs remains unproved.
+checks preservation of the raw records and existing node payloads. The added DAG
+lane covers structural payloads for applications, lambdas, Pis, typed lets, and
+variables. Native scope is checked through observable completion or scope
+refusal; the trace does not expose internal `free` or height metadata. General
+correctness of Goose inference, substitution, normalization, caches, and the
+implementation's refinement of these models remains unproved.
 
 `make acceptance` retains the broader 964 ordered outcomes per engine, six
-structural/resource controls, and seven-family benchmark smoke alongside both
+structural/resource controls, and seven-family benchmark smoke alongside all three
 formal scopes. Large replay and native-comparison logs are preserved as gzip
 files; [the reproduction notes](docs/formalization.md#reproduction-and-receipts)
 explain how to inspect them. Required inventories describe what a successful run
@@ -101,6 +114,8 @@ must establish; they do not relabel an earlier receipt as a pass for new code.
 | [Formalization scope](docs/formalization.md) | Lean claims, Quint checks, runtime mapping, and limits |
 | [Observation contract](schemas/definition-observations-v1.md) | Input DAG and evidence-only output schemas |
 | [Stored-binding trace](schemas/binding-trace-v1.md) | Bounded snapshots of stored records and immutable node payloads |
+| [Expression-DAG scope](docs/expression-dag-scope.md) | Structural representation, binder scope, finite native probes, and limits |
+| [DAG replay contract](schemas/expression-dag-replay-v1.md) | Canonical raw nodes, structural expression wires, and strict model observations |
 | [Dependency pins](conformance/dependencies.json) | Exact compiler/comparison revisions and archive hashes |
 | [Source provenance](conformance/source-provenance.json) | Original and locally adapted Goose bytes |
 | [Validation guide](docs/validation.md) | Gates, reproducibility, and evidence interpretation |

@@ -1,0 +1,2096 @@
+{
+  "schema": "lean-goose.stored-native-controls.v1",
+  "status": "passed",
+  "started_at_utc": "2026-11-20T13:13:36+00:00",
+  "acceptance_authority": false,
+  "binary": {
+    "path": "/tmp/lean-goose-formal-p9_s7tyv/checker",
+    "sha256": "8b40f4951779ea16339d83332fd0c1786689cb762087f2af374b413edb8f85d2"
+  },
+  "generator_sha256": "4613cc8c55bfd77bb0d09f807f31ba8999969fa753cd02d19df7287108007e46",
+  "registered_control_count": 26,
+  "timeout_seconds_per_command": 30,
+  "limits": {
+    "input_bytes": 4194304,
+    "output_bytes_including_lf": 4194304,
+    "input_and_derived_nodes": 4096,
+    "definitions": 64
+  },
+  "fixture_storage": "temporary build directory; deterministic generator and hashes retained",
+  "controls": [
+    {
+      "name": "good_alias",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 0,
+        "trace_status": "traced",
+        "outcomes": [
+          "observed_success",
+          "observed_success"
+        ],
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/good_alias.dag",
+        "bytes": 116,
+        "sha256": "1c4cc572fd70490561f8210e1bf40ce6d2d12018a67df76f799bdf8a43ec6747"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/good_alias.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 1107,
+            "sha256": "c5766807ce883a10cdf6b365dd8cfe76c8d99777552e24f4fac4a015ea6a181d",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"formal0\",\"type\":1,\"value\":0,\"inferred\":7}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"formal1\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"formal0\",\"type\":1,\"value\":0,\"inferred\":7},{\"name\":\"formal1\",\"type\":1,\"value\":4,\"inferred\":1}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]}],\"status\":\"traced\",\"success_observations\":2,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0016833210102049634
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/good_alias.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 254,
+            "sha256": "2e0ccfc6c3e00db54f8d5a2c4a1bcb726c987d709887698c7e241a89ad8ea00a",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\"},{\"name\":\"formal1\",\"outcome\":\"observed_success\"}],\"success_observations\":2,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0018012340005952865
+        }
+      ],
+      "observed": {
+        "steps": 2,
+        "final_nodes": 8,
+        "success_observations": 2,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "duplicate_preempts_scope",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 0,
+        "trace_status": "traced",
+        "outcomes": [
+          "observed_success",
+          "Duplicate_definition"
+        ],
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/duplicate_preempts_scope.dag",
+        "bytes": 116,
+        "sha256": "d8f8f99d3b8a683bb8eb305a53588285e9ab11731cbc88aa6c13e62befa4389b"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/duplicate_preempts_scope.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 1060,
+            "sha256": "438a171c9d92d894e4a4aa548ea974a1b3421c279195b2e070fbcd2e5cb8a780",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"formal0\",\"type\":1,\"value\":0,\"inferred\":7}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"formal0\",\"type\":1,\"value\":0,\"inferred\":7}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]}],\"status\":\"traced\",\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0017154340021079406
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/duplicate_preempts_scope.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 258,
+            "sha256": "aa02a962e6dc0be3f9be30a8a91db8125716d61581b48f9a54fffd596a06aa84",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"}],\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0018229679990326986
+        }
+      ],
+      "observed": {
+        "steps": 2,
+        "final_nodes": 8,
+        "success_observations": 1,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "mismatch_then_retry",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 0,
+        "trace_status": "traced",
+        "outcomes": [
+          "Type_mismatch",
+          "observed_success"
+        ],
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/mismatch_then_retry.dag",
+        "bytes": 116,
+        "sha256": "59fded290a64258ec761f926b49c0dce46ae342b5aeaa7d2c0028aa6d42db1d5"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/mismatch_then_retry.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 963,
+            "sha256": "33c37854507cda1533fa93a5f6207bcca670e53c597c01a3e05de4d837857afb",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"formal0\",\"outcome\":\"Type_mismatch\",\"bindings\":[],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"formal0\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"formal0\",\"type\":1,\"value\":0,\"inferred\":7}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]}],\"status\":\"traced\",\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0016452690033474937
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/mismatch_then_retry.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 251,
+            "sha256": "20cc7edb17054b3cb6d7985af14c778bfd4581e9f4eea8ef2b810b7dccae963b",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"Type_mismatch\"},{\"name\":\"formal0\",\"outcome\":\"observed_success\"}],\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0017473109910497442
+        }
+      ],
+      "observed": {
+        "steps": 2,
+        "final_nodes": 8,
+        "success_observations": 1,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "unknown_then_good_then_alias",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 0,
+        "trace_status": "traced",
+        "outcomes": [
+          "Unknown_constant",
+          "observed_success",
+          "observed_success"
+        ],
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/unknown_then_good_then_alias.dag",
+        "bytes": 130,
+        "sha256": "d62943432465bec2b3670b54adb9389f0f6469c5747587d8f9b8fdeb93f45798"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/unknown_then_good_then_alias.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 1433,
+            "sha256": "c06690ede42de6cac49d2f7101ec069b1f32e5e37d84571cf39d14f09516df72",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"formal0\",\"outcome\":\"Unknown_constant\",\"bindings\":[],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"}]},{\"name\":\"formal1\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"formal1\",\"type\":1,\"value\":0,\"inferred\":7}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"formal0\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"formal1\",\"type\":1,\"value\":0,\"inferred\":7},{\"name\":\"formal0\",\"type\":1,\"value\":5,\"inferred\":1}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]}],\"status\":\"traced\",\"success_observations\":2,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0017297459999099374
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/unknown_then_good_then_alias.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 302,
+            "sha256": "5b95522ac133f22e496e938ef2fc34ffebcf2a6398dcf5fdfecb968b00c1776d",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"Unknown_constant\"},{\"name\":\"formal1\",\"outcome\":\"observed_success\"},{\"name\":\"formal0\",\"outcome\":\"observed_success\"}],\"success_observations\":2,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0020010320004075766
+        }
+      ],
+      "observed": {
+        "steps": 3,
+        "final_nodes": 8,
+        "success_observations": 2,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "wrong_level_alias",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 0,
+        "trace_status": "traced",
+        "outcomes": [
+          "observed_success",
+          "Type_mismatch"
+        ],
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/wrong_level_alias.dag",
+        "bytes": 116,
+        "sha256": "3bec757c7f09f8a9d3881c05cc9ae3320fa4420b01d656aeb16670b786057e3f"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/wrong_level_alias.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 1053,
+            "sha256": "5d68522fde9ec00b2046a35986467482c50408235f5289c522c36b06f8765a8f",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"formal0\",\"type\":2,\"value\":1,\"inferred\":7}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":3,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"formal1\",\"outcome\":\"Type_mismatch\",\"bindings\":[{\"name\":\"formal0\",\"type\":2,\"value\":1,\"inferred\":7}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":3,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"}]}],\"status\":\"traced\",\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0018564189958851784
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/wrong_level_alias.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 251,
+            "sha256": "74dbc7381c6af1e2033735ec1f7724236ae15f3526de6962551c9080a8b73667",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\"},{\"name\":\"formal1\",\"outcome\":\"Type_mismatch\"}],\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.003427653995458968
+        }
+      ],
+      "observed": {
+        "steps": 2,
+        "final_nodes": 8,
+        "success_observations": 1,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "typed_alias",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 0,
+        "trace_status": "traced",
+        "outcomes": [
+          "observed_success",
+          "observed_success"
+        ],
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/typed_alias.dag",
+        "bytes": 116,
+        "sha256": "8a7f7c508f1eb8ad480806bc439f1064aae19f054954eed888217d48d35ad87f"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/typed_alias.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 1107,
+            "sha256": "0d834bfcbf9042ff6e1121e29e2f902b3d31a7ba30712fcf97404374e20bb8e7",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"formal0\",\"type\":2,\"value\":1,\"inferred\":7}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":3,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"formal1\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"formal0\",\"type\":2,\"value\":1,\"inferred\":7},{\"name\":\"formal1\",\"type\":2,\"value\":4,\"inferred\":2}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":3,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"}]}],\"status\":\"traced\",\"success_observations\":2,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.005356876004952937
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/typed_alias.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 254,
+            "sha256": "2e0ccfc6c3e00db54f8d5a2c4a1bcb726c987d709887698c7e241a89ad8ea00a",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\"},{\"name\":\"formal1\",\"outcome\":\"observed_success\"}],\"success_observations\":2,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0020406670082593337
+        }
+      ],
+      "observed": {
+        "steps": 2,
+        "final_nodes": 8,
+        "success_observations": 2,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "all_tags",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 0,
+        "trace_status": "traced",
+        "outcomes": [
+          "observed_success"
+        ],
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/all_tags.dag",
+        "bytes": 144,
+        "sha256": "61abb7688a852943f2261fdf59dc9f218191decdba34633a3c79d8b06edfa1ee"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/all_tags.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 761,
+            "sha256": "19a7e21825066bf48b71dab641a73f022aa411f83df2f13d413033c90899e86e",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"formal0\",\"type\":1,\"value\":0,\"inferred\":11}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"a\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":0,\"b\":3,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"t\",\"a\":1,\"b\":0,\"c\":3,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]}],\"status\":\"traced\",\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0020817330077989027
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/all_tags.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 206,
+            "sha256": "18ab19c414173f9875a6528919cb7514594353f156064621f91b878fbc1999e1",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\"}],\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.001964486000360921
+        }
+      ],
+      "observed": {
+        "steps": 1,
+        "final_nodes": 12,
+        "success_observations": 1,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "expected_sort",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 0,
+        "trace_status": "traced",
+        "outcomes": [
+          "Expected_sort"
+        ],
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/expected_sort.dag",
+        "bytes": 144,
+        "sha256": "8c6a84f45075fedd1f1771c8db6cf21a382748d4ad4d63a53f21bd570d84c456"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/expected_sort.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 707,
+            "sha256": "5dde72188a0b856b63d9b260bca6815a2200f9abaa10eb4eac49ecea6266a6f9",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"formal0\",\"outcome\":\"Expected_sort\",\"bindings\":[],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"a\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":0,\"b\":3,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"t\",\"a\":1,\"b\":0,\"c\":3,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"}]}],\"status\":\"traced\",\"success_observations\":0,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.003035500005353242
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/expected_sort.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 203,
+            "sha256": "a725ced1b87b73284854c726c8842a8da3d183baa6334fb6c0d91ebe01b4b8d7",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"Expected_sort\"}],\"success_observations\":0,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.003607292994274758
+        }
+      ],
+      "observed": {
+        "steps": 1,
+        "final_nodes": 12,
+        "success_observations": 0,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "expected_function",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 0,
+        "trace_status": "traced",
+        "outcomes": [
+          "Expected_function"
+        ],
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/expected_function.dag",
+        "bytes": 144,
+        "sha256": "c611ed41671c5dcf026f75991763d2bdcebd060826b2a24e874cc372d7f7bb4f"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/expected_function.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 711,
+            "sha256": "a6d9f93206e059a6325611c171742c83a610f05fb6e6496c9e117b924022d1cc",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"formal0\",\"outcome\":\"Expected_function\",\"bindings\":[],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"a\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":0,\"b\":3,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"t\",\"a\":1,\"b\":0,\"c\":3,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]}],\"status\":\"traced\",\"success_observations\":0,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.006479088988271542
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/expected_function.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 207,
+            "sha256": "6fd3e3edd9351a094384bc10134411d19222765fcbf03fa867c04c513a418c2b",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"Expected_function\"}],\"success_observations\":0,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0017112490022554994
+        }
+      ],
+      "observed": {
+        "steps": 1,
+        "final_nodes": 12,
+        "success_observations": 0,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "scope_halts",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 2,
+        "trace_status": "halted",
+        "outcomes": [
+          "observed_success",
+          "Invalid_scope"
+        ],
+        "check_exit": 2
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/scope_halts.dag",
+        "bytes": 128,
+        "sha256": "454de7469d79bb2715ec1b05cf69db3ac66d6c2f7ff45d75157795edf410a04b"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/scope_halts.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 1053,
+            "sha256": "adb7e4c5082d6ccd75bea2bbaf33595296f90b60255a7b219dcceb861a5af504",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"formal0\",\"type\":1,\"value\":0,\"inferred\":7}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"formal1\",\"outcome\":\"Invalid_scope\",\"bindings\":[{\"name\":\"formal0\",\"type\":1,\"value\":0,\"inferred\":7}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal0\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"formal1\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]}],\"status\":\"halted\",\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 37,
+            "sha256": "0350b4f677a2c3d4a9f89c4f03cb9f050d0823d23d7a5d8c39d715f9d801b807",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose bounded checker: Invalid_scope\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0019792259990936145
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/scope_halts.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 37,
+            "sha256": "0350b4f677a2c3d4a9f89c4f03cb9f050d0823d23d7a5d8c39d715f9d801b807",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose bounded checker: Invalid_scope\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0024543280014768243
+        }
+      ],
+      "observed": {
+        "steps": 2,
+        "final_nodes": 8,
+        "success_observations": 1,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "derived_height_halts",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 2,
+        "trace_status": "halted",
+        "outcomes": [
+          "Height_limit"
+        ],
+        "check_exit": 2
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/derived_height_halts.dag",
+        "bytes": 1851,
+        "sha256": "054285bc500bab7252d8a6af8e67d4eda1fdce814b8bf4f38b05090e9d953244"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/derived_height_halts.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 11426,
+            "sha256": "09316399ce768867fef0f5ffd412241d712071619d42251f249ed8d0bf360bc1",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"height_case\",\"outcome\":\"Height_limit\",\"bindings\":[],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":2,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":3,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":4,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":5,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":6,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":7,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":8,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":9,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":10,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":11,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":12,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":13,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":14,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":15,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":16,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":17,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":18,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":19,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":20,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":21,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":22,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":23,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":24,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":25,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":26,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":27,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":28,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":29,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":30,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":31,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":32,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":33,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":34,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":35,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":36,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":37,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":38,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":39,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":40,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":41,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":42,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":43,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":44,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":45,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":46,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":47,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":48,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":49,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":50,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":51,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":52,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":53,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":54,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":55,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":56,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":57,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":58,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":59,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":60,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":61,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":62,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":63,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":64,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":65,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":66,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":67,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":68,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":69,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":70,\"c\":0,\"name\":\"\"},{\"tag\":\"v\",\"a\":70,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":72,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":73,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":74,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":75,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":76,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":77,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":78,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":79,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":80,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":81,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":82,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":83,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":84,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":85,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":86,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":87,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":88,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":89,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":90,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":91,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":92,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":93,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":94,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":95,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":96,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":97,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":98,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":99,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":100,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":101,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":102,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":103,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":104,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":105,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":106,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":107,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":108,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":109,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":110,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":111,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":112,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":113,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":114,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":115,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":116,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":117,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":118,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":119,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":120,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":121,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":122,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":123,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":124,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":125,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":126,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":127,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":128,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":129,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":130,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":131,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":132,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":133,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":134,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":135,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":136,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":137,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":138,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":139,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":140,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":141,\"c\":0,\"name\":\"\"},{\"tag\":\"t\",\"a\":1,\"b\":71,\"c\":142,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":71,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":216,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":217,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":218,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":219,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":220,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":221,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":222,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":223,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":224,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":225,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":226,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":227,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":228,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":229,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":230,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":231,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":232,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":233,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":234,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":235,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":236,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":237,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":238,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":239,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":240,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":241,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":242,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":243,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":244,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":245,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":246,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":247,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":248,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":249,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":250,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":251,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":252,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":253,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":254,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":255,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":256,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":257,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":258,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":259,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":260,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":261,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":262,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":263,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":264,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":265,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":266,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":267,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":268,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":269,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":270,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":0,\"b\":271,\"c\":0,\"name\":\"\"}]}],\"status\":\"halted\",\"success_observations\":0,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 36,
+            "sha256": "d538c8280bef0fcfcb84ae8687b66cb04cb8553950e4d0f58f4aff1e15228d75",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose bounded checker: Height_limit\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.004351821989985183
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/derived_height_halts.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 36,
+            "sha256": "d538c8280bef0fcfcb84ae8687b66cb04cb8553950e4d0f58f4aff1e15228d75",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose bounded checker: Height_limit\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.0046906079951440915
+        }
+      ],
+      "observed": {
+        "steps": 1,
+        "final_nodes": 273,
+        "success_observations": 0,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "fuel_halts",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 2,
+        "trace_status": "halted",
+        "outcomes": [
+          "observed_success",
+          "Limit_exceeded"
+        ],
+        "check_exit": 2
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/fuel_halts.dag",
+        "bytes": 1054,
+        "sha256": "ae3fba54cb494d43fbbc9c7217b75154c7e9c54f1b2c7459f18ff9ac99a52846"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/fuel_halts.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 12216,
+            "sha256": "5c0e58e4eafc6636d7cf3beac6e7efdbe21415f15a092258bf0a2ab26960541e",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"fuel_base\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"fuel_base\",\"type\":51,\"value\":50,\"inferred\":129}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":1,\"b\":1,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":3,\"b\":2,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":3,\"b\":3,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":5,\"b\":4,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":5,\"b\":5,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":7,\"b\":6,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":7,\"b\":7,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":9,\"b\":8,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":9,\"b\":9,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":11,\"b\":10,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":11,\"b\":11,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":13,\"b\":12,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":13,\"b\":13,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":15,\"b\":14,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":15,\"b\":15,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":17,\"b\":16,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":17,\"b\":17,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":19,\"b\":18,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":19,\"b\":19,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":21,\"b\":20,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":21,\"b\":21,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":23,\"b\":22,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":23,\"b\":23,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":25,\"b\":24,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":25,\"b\":25,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":27,\"b\":26,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":27,\"b\":27,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":29,\"b\":28,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":29,\"b\":29,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":31,\"b\":30,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":31,\"b\":31,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":33,\"b\":32,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":33,\"b\":33,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":35,\"b\":34,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":35,\"b\":35,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":37,\"b\":36,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":37,\"b\":37,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":39,\"b\":38,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":39,\"b\":39,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":41,\"b\":40,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":41,\"b\":41,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":43,\"b\":42,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":43,\"b\":43,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":45,\"b\":44,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":45,\"b\":45,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":47,\"b\":46,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":47,\"b\":47,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":49,\"b\":48,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":49,\"b\":49,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":1,\"b\":1,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":52,\"b\":52,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":53,\"b\":53,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":54,\"b\":54,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":55,\"b\":55,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":56,\"b\":56,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":57,\"b\":57,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":58,\"b\":58,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":59,\"b\":59,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":60,\"b\":60,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":61,\"b\":61,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":62,\"b\":62,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":63,\"b\":63,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":64,\"b\":64,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":65,\"b\":65,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":66,\"b\":66,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":67,\"b\":67,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":68,\"b\":68,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":69,\"b\":69,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":70,\"b\":70,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":71,\"b\":71,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":72,\"b\":72,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":73,\"b\":73,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":74,\"b\":74,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":75,\"b\":75,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"fuel_base\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":1,\"b\":104,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":3,\"b\":105,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":5,\"b\":106,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":7,\"b\":107,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":9,\"b\":108,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":11,\"b\":109,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":13,\"b\":110,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":15,\"b\":111,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":17,\"b\":112,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":19,\"b\":113,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":21,\"b\":114,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":23,\"b\":115,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":25,\"b\":116,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":27,\"b\":117,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":29,\"b\":118,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":31,\"b\":119,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":33,\"b\":120,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":35,\"b\":121,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":37,\"b\":122,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":39,\"b\":123,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":41,\"b\":124,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":43,\"b\":125,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":45,\"b\":126,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":47,\"b\":127,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":49,\"b\":128,\"c\":0,\"name\":\"\"}]},{\"name\":\"fuel_case\",\"outcome\":\"Limit_exceeded\",\"bindings\":[{\"name\":\"fuel_base\",\"type\":51,\"value\":50,\"inferred\":129}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":1,\"b\":1,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":3,\"b\":2,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":3,\"b\":3,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":5,\"b\":4,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":5,\"b\":5,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":7,\"b\":6,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":7,\"b\":7,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":9,\"b\":8,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":9,\"b\":9,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":11,\"b\":10,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":11,\"b\":11,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":13,\"b\":12,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":13,\"b\":13,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":15,\"b\":14,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":15,\"b\":15,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":17,\"b\":16,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":17,\"b\":17,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":19,\"b\":18,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":19,\"b\":19,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":21,\"b\":20,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":21,\"b\":21,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":23,\"b\":22,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":23,\"b\":23,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":25,\"b\":24,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":25,\"b\":25,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":27,\"b\":26,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":27,\"b\":27,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":29,\"b\":28,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":29,\"b\":29,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":31,\"b\":30,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":31,\"b\":31,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":33,\"b\":32,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":33,\"b\":33,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":35,\"b\":34,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":35,\"b\":35,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":37,\"b\":36,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":37,\"b\":37,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":39,\"b\":38,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":39,\"b\":39,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":41,\"b\":40,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":41,\"b\":41,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":43,\"b\":42,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":43,\"b\":43,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":45,\"b\":44,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":45,\"b\":45,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":47,\"b\":46,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":47,\"b\":47,\"c\":0,\"name\":\"\"},{\"tag\":\"l\",\"a\":49,\"b\":48,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":49,\"b\":49,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":1,\"b\":1,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":52,\"b\":52,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":53,\"b\":53,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":54,\"b\":54,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":55,\"b\":55,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":56,\"b\":56,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":57,\"b\":57,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":58,\"b\":58,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":59,\"b\":59,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":60,\"b\":60,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":61,\"b\":61,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":62,\"b\":62,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":63,\"b\":63,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":64,\"b\":64,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":65,\"b\":65,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":66,\"b\":66,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":67,\"b\":67,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":68,\"b\":68,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":69,\"b\":69,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":70,\"b\":70,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":71,\"b\":71,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":72,\"b\":72,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":73,\"b\":73,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":74,\"b\":74,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":75,\"b\":75,\"c\":0,\"name\":\"\"},{\"tag\":\"c\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"fuel_base\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":1,\"b\":104,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":3,\"b\":105,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":5,\"b\":106,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":7,\"b\":107,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":9,\"b\":108,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":11,\"b\":109,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":13,\"b\":110,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":15,\"b\":111,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":17,\"b\":112,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":19,\"b\":113,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":21,\"b\":114,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":23,\"b\":115,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":25,\"b\":116,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":27,\"b\":117,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":29,\"b\":118,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":31,\"b\":119,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":33,\"b\":120,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":35,\"b\":121,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":37,\"b\":122,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":39,\"b\":123,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":41,\"b\":124,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":43,\"b\":125,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":45,\"b\":126,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":47,\"b\":127,\"c\":0,\"name\":\"\"},{\"tag\":\"p\",\"a\":49,\"b\":128,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"}]}],\"status\":\"halted\",\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 38,
+            "sha256": "52d27ac5a26684423b0622887fbe1d48c4e5c7d34166ba7a2241079213356090",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose bounded checker: Limit_exceeded\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:36+00:00",
+          "elapsed_seconds": 0.09054173500044271
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/fuel_halts.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:36+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 38,
+            "sha256": "52d27ac5a26684423b0622887fbe1d48c4e5c7d34166ba7a2241079213356090",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose bounded checker: Limit_exceeded\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.09190830099396408
+        }
+      ],
+      "observed": {
+        "steps": 2,
+        "final_nodes": 155,
+        "success_observations": 1,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "import_height_failure",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 2,
+        "trace_stdout_bytes": 0,
+        "trace_stderr": "goose bounded checker: Height_limit\n",
+        "check_exit": 2
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/import_height_failure.dag",
+        "bytes": 1635,
+        "sha256": "a601c67a6e49138a93a332b30f68f04c67128213c13efd33df0e9717aa8b5e2a"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/import_height_failure.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 36,
+            "sha256": "d538c8280bef0fcfcb84ae8687b66cb04cb8553950e4d0f58f4aff1e15228d75",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose bounded checker: Height_limit\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.0023901149979792535
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/import_height_failure.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 36,
+            "sha256": "d538c8280bef0fcfcb84ae8687b66cb04cb8553950e4d0f58f4aff1e15228d75",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose bounded checker: Height_limit\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.002366470987908542
+        }
+      ]
+    },
+    {
+      "name": "parser_failure",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 3,
+        "trace_stdout_bytes": 0,
+        "trace_stderr": "goose benchmark parser: missing final LF\n",
+        "check_exit": 3
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/parser_failure.dag",
+        "bytes": 50,
+        "sha256": "2c679b9389b2cffa8f30358ee469dff64f87c43d0bc628d3da9dd03e526d6dfe"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/parser_failure.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 3,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 41,
+            "sha256": "47c507897b81852262bf90612d482f96ffc6c32210678e0cab47e28e3575d03d",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose benchmark parser: missing final LF\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.0021432159992400557
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/parser_failure.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 3,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 41,
+            "sha256": "47c507897b81852262bf90612d482f96ffc6c32210678e0cab47e28e3575d03d",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose benchmark parser: missing final LF\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.0062933040026109666
+        }
+      ]
+    },
+    {
+      "name": "invalid_name_parser_failure",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 3,
+        "trace_stdout_bytes": 0,
+        "trace_stderr": "goose benchmark parser: invalid constant name\n",
+        "check_exit": 3
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/invalid_name_parser_failure.dag",
+        "bytes": 69,
+        "sha256": "a21ad68717cb4e435fb8a1a900e980abda48b420be4d5aad43a06b5e90c998bd"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/invalid_name_parser_failure.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 3,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 46,
+            "sha256": "ab47b58b28b8cc2de7760a40773e2885e3872d85aa18b48cf992beb59155f3b3",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose benchmark parser: invalid constant name\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.0017132539942394942
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/invalid_name_parser_failure.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 3,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 46,
+            "sha256": "ab47b58b28b8cc2de7760a40773e2885e3872d85aa18b48cf992beb59155f3b3",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose benchmark parser: invalid constant name\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.005707908989279531
+        }
+      ]
+    },
+    {
+      "name": "input_nodes_limit",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 2,
+        "trace_stdout_bytes": 0,
+        "trace_stderr": "goose binding trace: input nodes exceed trace bound\n",
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/input_nodes_limit.dag",
+        "bytes": 43999,
+        "sha256": "827793b6176fec64f7eb80415eec70180eb43b68d3ef0c3eb064d52620fb97f6"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/input_nodes_limit.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 52,
+            "sha256": "7a7a0cd009af921f84f2f53af49c515432a25c6e5fccb2b5a82b31ee8602f458",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose binding trace: input nodes exceed trace bound\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.0027210109983570874
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/input_nodes_limit.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 206,
+            "sha256": "18ab19c414173f9875a6528919cb7514594353f156064621f91b878fbc1999e1",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\"}],\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.009625124002923258
+        }
+      ]
+    },
+    {
+      "name": "definition_limit",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 2,
+        "trace_stdout_bytes": 0,
+        "trace_stderr": "goose binding trace: definitions exceed trace bound\n",
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/definition_limit.dag",
+        "bytes": 759,
+        "sha256": "0a05fc2de01adc8de710bafe0b08f3cc04ffec375173fbd330a831528749aa84"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/definition_limit.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 52,
+            "sha256": "7ee85fc1ae2612b4ec8d6bca3698d29543ddcb7015c73afda0614ab942eb6fc9",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose binding trace: definitions exceed trace bound\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.0039225189975695685
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/definition_limit.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 3339,
+            "sha256": "4725a774a6383da3f3266e885af3ffa853fc726007d921438e351a468a31bfcf",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"same\",\"outcome\":\"observed_success\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"}],\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.001746983005432412
+        }
+      ]
+    },
+    {
+      "name": "derived_nodes_limit",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 2,
+        "trace_stdout_bytes": 0,
+        "trace_stderr": "goose binding trace: derived nodes exceed trace bound\n",
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/derived_nodes_limit.dag",
+        "bytes": 43988,
+        "sha256": "5578aa1d33c960add5675828ad27cf1742a48977ed4613dba7e0b70e74d87545"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/derived_nodes_limit.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 54,
+            "sha256": "1846e858929f86084897ecd8368b6ebb0c4552283dcf8519f45e2f2fafd791dc",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose binding trace: derived nodes exceed trace bound\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.002906133988290094
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/derived_nodes_limit.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 206,
+            "sha256": "18ab19c414173f9875a6528919cb7514594353f156064621f91b878fbc1999e1",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\"}],\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.0026981030096067116
+        }
+      ]
+    },
+    {
+      "name": "input_byte_limit",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 2,
+        "trace_stdout_bytes": 0,
+        "trace_stderr": "goose binding trace: input bytes exceed trace bound\n",
+        "check_exit": 3
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/input_byte_limit.dag",
+        "bytes": 4194305,
+        "sha256": "8d3d3c04baadfd31cbebf771836900097b5f36cc142b74e40747c7b372beab8b"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/input_byte_limit.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 52,
+            "sha256": "3ae6c0e61fb3f96e4d5f6b3f90579bed9580f994b0f09393c07fa0d43f444847",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose binding trace: input bytes exceed trace bound\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.006288151009357534
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/input_byte_limit.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 3,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 41,
+            "sha256": "47c507897b81852262bf90612d482f96ffc6c32210678e0cab47e28e3575d03d",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose benchmark parser: missing final LF\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.006278536005993374
+        }
+      ]
+    },
+    {
+      "name": "output_limit",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 2,
+        "trace_stdout_bytes": 0,
+        "trace_stderr": "goose binding trace: serialized output exceeds trace bound\n",
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/output_limit.dag",
+        "bytes": 43836,
+        "sha256": "0df2a32407b20d271348210c563ae4f08f2e3920e7ae538f27f4a351b7064951"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/output_limit.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 59,
+            "sha256": "940833dbb3a4647126e8ac484208e66bf4f36ddf59b46185cf29f5afde1e7295",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose binding trace: serialized output exceeds trace bound\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.011597841992625035
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/output_limit.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 3482,
+            "sha256": "b9d0c40ab0cb06ddd2f127e20948b89c13869e33401de5fb12bd5783aa995df3",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"formal0\",\"outcome\":\"Duplicate_definition\"}],\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.007477134000509977
+        }
+      ]
+    },
+    {
+      "name": "node_boundary",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 0,
+        "trace_status": "traced",
+        "outcomes": [
+          "observed_success"
+        ],
+        "check_exit": 0,
+        "final_node_count": 4096
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/node_boundary.dag",
+        "bytes": 43966,
+        "sha256": "1baf8199f626d2b918f5b3c3eded27c169d2f2874b1e2f68d162aa8d597320c6"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/node_boundary.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 164109,
+            "sha256": "b110de1c33b55e319dde2cb31d9eec71b89e4cf5ff64d5cef53ef76cc46a39d6",
+            "retention": "complete",
+            "encoding": "gzip",
+            "path": "stored-native-control-streams/node_boundary-trace-stdout.gz",
+            "compressed_bytes": 740,
+            "compressed_sha256": "24a9b53a42bab801e1292f468df8ca0b6b48fa55685bf51dc30f89ead591e263"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.009273143994505517
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/node_boundary.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 206,
+            "sha256": "18ab19c414173f9875a6528919cb7514594353f156064621f91b878fbc1999e1",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"formal0\",\"outcome\":\"observed_success\"}],\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.007125270989490673
+        }
+      ],
+      "observed": {
+        "steps": 1,
+        "final_nodes": 4096,
+        "success_observations": 1,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "definition_boundary",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 0,
+        "trace_status": "traced",
+        "outcomes": [
+          "observed_success",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition",
+          "Duplicate_definition"
+        ],
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/definition_boundary.dag",
+        "bytes": 748,
+        "sha256": "82b81d8ac27da1b4e9262afd30786e186cb2b6e57608decb44f6e5a0e3525176"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/definition_boundary.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 18060,
+            "sha256": "9615cb9302e616d1272a374fdc8d876e6a6c74ef1578d4d6a83b5c3e3bae24d2",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[{\"name\":\"same\",\"outcome\":\"observed_success\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\",\"bindings\":[{\"name\":\"same\",\"type\":1,\"value\":0,\"inferred\":3}],\"nodes\":[{\"tag\":\"s\",\"a\":0,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":2,\"b\":0,\"c\":0,\"name\":\"\"},{\"tag\":\"s\",\"a\":1,\"b\":0,\"c\":0,\"name\":\"\"}]}],\"status\":\"traced\",\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.0063660510058980435
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/definition_boundary.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 3290,
+            "sha256": "1f6bd884171fd9d00502b3e1e05acdad9e01b74a655e71e4325731bf585e92ee",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"same\",\"outcome\":\"observed_success\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"same\",\"outcome\":\"Duplicate_definition\"}],\"success_observations\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.0017554869991727173
+        }
+      ],
+      "observed": {
+        "steps": 64,
+        "final_nodes": 4,
+        "success_observations": 1,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "input_byte_boundary",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 3,
+        "trace_stdout_bytes": 0,
+        "trace_stderr": "goose benchmark parser: missing final LF\n",
+        "check_exit": 3
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/input_byte_boundary.dag",
+        "bytes": 4194304,
+        "sha256": "baa7a6d36ffa957552df230235c2d51d735f28d49c58a5f3438a3a973a25a37d"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/input_byte_boundary.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 3,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 41,
+            "sha256": "47c507897b81852262bf90612d482f96ffc6c32210678e0cab47e28e3575d03d",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose benchmark parser: missing final LF\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.006063624998205341
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/input_byte_boundary.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 3,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 41,
+            "sha256": "47c507897b81852262bf90612d482f96ffc6c32210678e0cab47e28e3575d03d",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose benchmark parser: missing final LF\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.005655296001350507
+        }
+      ]
+    },
+    {
+      "name": "output_byte_boundary",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 0,
+        "trace_status": "traced",
+        "outcomes": [
+          "observed_success"
+        ],
+        "check_exit": 0,
+        "trace_stdout_bytes": 4194304
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/output_byte_boundary.dag",
+        "bytes": 3145334,
+        "sha256": "0901c16ee6ce9869615edf3a7f5d66a7c8527abce27de9de44b73a19d078e7fc"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/output_byte_boundary.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 4194304,
+            "sha256": "91a0f7e9969ca0c70ea79144e595870ce359b32c52adb9f76c0ac4469ebc1dbd",
+            "retention": "complete",
+            "encoding": "gzip",
+            "path": "stored-native-control-streams/output_byte_boundary-trace-stdout.gz",
+            "compressed_bytes": 4407,
+            "compressed_sha256": "ea3491b613bcc1fdd9c1af2475d27840b6091a627f35ef7a4c9eb9a2b6cde16c"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.04807761999836657
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/output_byte_boundary.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 1048775,
+            "sha256": "1ca9b578a34ad945decac9caf0cc17de911f2dc0cb21bcc6d8d1d4ed27f7edc7",
+            "retention": "complete",
+            "encoding": "gzip",
+            "path": "stored-native-control-streams/output_byte_boundary-check-stdout.gz",
+            "compressed_bytes": 1209,
+            "compressed_sha256": "379782de37ef9c516ee9956f5933afeb98cc8434a7e90db0214ddf71beaa381b"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.059816945999045856
+        }
+      ],
+      "observed": {
+        "steps": 1,
+        "final_nodes": 5,
+        "success_observations": 1,
+        "raw_binding_and_node_prefixes_preserved": true
+      }
+    },
+    {
+      "name": "output_byte_over_boundary",
+      "status": "passed",
+      "expected": {
+        "trace_exit": 2,
+        "trace_stdout_bytes": 0,
+        "trace_stderr": "goose binding trace: serialized output exceeds trace bound\n",
+        "check_exit": 0
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/output_byte_over_boundary.dag",
+        "bytes": 3145335,
+        "sha256": "c56a9e2ea222a99af0df686adff2f3b068febfb63ef4100c5295e150b77a32b3"
+      },
+      "commands": [
+        {
+          "mode": "--trace",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--trace",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/output_byte_over_boundary.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 2,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "stderr": {
+            "bytes": 59,
+            "sha256": "940833dbb3a4647126e8ac484208e66bf4f36ddf59b46185cf29f5afde1e7295",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "goose binding trace: serialized output exceeds trace bound\n"
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.013407809005002491
+        },
+        {
+          "mode": "--check",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "--check",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/output_byte_over_boundary.dag"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 1048775,
+            "sha256": "1ca9b578a34ad945decac9caf0cc17de911f2dc0cb21bcc6d8d1d4ed27f7edc7",
+            "retention": "complete",
+            "encoding": "gzip",
+            "path": "stored-native-control-streams/output_byte_over_boundary-check-stdout.gz",
+            "compressed_bytes": 1209,
+            "compressed_sha256": "379782de37ef9c516ee9956f5933afeb98cc8434a7e90db0214ddf71beaa381b"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.017092291003791615
+        }
+      ]
+    },
+    {
+      "name": "benchmark_mode",
+      "status": "passed",
+      "expected": {
+        "exit_code": 0,
+        "schema": "lean-goose.benchmark-observation.v1",
+        "iterations": 2
+      },
+      "fixture": {
+        "path": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/benchmark_mode.dag",
+        "bytes": 116,
+        "sha256": "1c4cc572fd70490561f8210e1bf40ce6d2d12018a67df76f799bdf8a43ec6747"
+      },
+      "commands": [
+        {
+          "mode": "benchmark",
+          "command": [
+            "/tmp/lean-goose-formal-p9_s7tyv/checker",
+            "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls/benchmark_mode.dag",
+            "1",
+            "2"
+          ],
+          "cwd": "/tmp/lean-goose-formal-p9_s7tyv/stored-native-controls",
+          "started_at_utc": "2026-11-20T13:13:37+00:00",
+          "exit_code": 0,
+          "capture_complete": true,
+          "stdout": {
+            "bytes": 241,
+            "sha256": "078e4a0f21c5abb5c3d5da3f2f04030b12df496ebfd6e4bbf3ffeadb3e167fce",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": "{\"schema\":\"lean-goose.benchmark-observation.v1\",\"engine\":\"goose-aot\",\"status\":\"passed\",\"workers\":1,\"iterations\":2,\"definitions\":2,\"elapsed_ns\":526,\"per_batch_ns\":263.0,\"validated_batches\":2,\"refusal_controls\":1,\"acceptance_authority\":false}\n"
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "retention": "complete",
+            "encoding": "utf-8",
+            "text": ""
+          },
+          "finished_at_utc": "2026-11-20T13:13:37+00:00",
+          "elapsed_seconds": 0.0018966429925058037
+        }
+      ]
+    }
+  ],
+  "finished_at_utc": "2026-11-20T13:13:37+00:00",
+  "elapsed_seconds": 0.8794420659978641
+}

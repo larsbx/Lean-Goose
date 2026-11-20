@@ -40,6 +40,6 @@ An example execution:
     }
 }
 
-[violation] Found an issue (19ms at 53 traces/second).
+[violation] Found an issue (30ms at 33 traces/second).
 Use --verbosity=3 to show executions.
 error: Invariant violated

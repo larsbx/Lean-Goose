@@ -1,0 +1,44 @@
+{
+  "schema": "lean-goose.orchestration-attempt.v1",
+  "status": "interrupted",
+  "recorded_at_utc": "2026-11-20T13:26:11.183421+00:00",
+  "runner_exit_code": 130,
+  "interruption": "Operator sent interrupt to the owned acceptance session after measured replay pace projected an overrun of the 1200-second formal orchestration allowance.",
+  "formal_timeout_seconds": 1200,
+  "completed_arena_chunks": 19,
+  "required_arena_chunks": 47,
+  "last_recorded_command": "dag-arenas-quint-replay-019",
+  "source_tree_sha256": "4faccfabad84abbed2f6a1b953032fe683d15859417b5e7b312232d375d455b5",
+  "original_receipt_statuses": {
+    "repository": "running",
+    "formal": "running"
+  },
+  "receipt_status_note": "Original receipts are retained byte-for-byte in their unfinished state; they are not successful completion receipts.",
+  "validation_changes": "Only the subsequent orchestration allowance is increased to 1800 seconds and the hosted workflow to 50 minutes. Required inventories, model/native comparisons, and individual 300-second model and 15-second native timeouts are unchanged.",
+  "subsequent_acceptance_required": true,
+  "acceptance_authority": false,
+  "receipt_sha256": {
+    "verification.json": "a6046743716c5cca8f505699ef856749944891f73edac072bf8c099d62cd1e61",
+    "formal/results.json": "35f104b700399608a52c5a88f40d9083c46400e518fc2b3ad74465c155147aaa"
+  },
+  "source_reproduction": {
+    "description": "These three prior source files were reconstructed by reversing only the recorded budget edits and verified byte-for-byte against the archived source manifest. Every other source file is unchanged between this interrupted attempt and the fresh run. Original receipts and logs remain unedited.",
+    "overrides": [
+      {
+        "path": "tools/acceptance.py",
+        "archived_copy": "source-overrides/tools/acceptance.py",
+        "sha256": "8c1da843914f776244bc504284c84abb37b5ec8978df41ef79f8f2240a0f356b"
+      },
+      {
+        "path": "docs/validation.md",
+        "archived_copy": "source-overrides/docs/validation.md",
+        "sha256": "e712d6b70e60af72f9887bc938fd623861f980de76b38c8139c678939f141419"
+      },
+      {
+        "path": ".github/workflows/conformance.yml",
+        "archived_copy": "source-overrides/.github/workflows/conformance.yml",
+        "sha256": "69d876552a358f17fec9350c1e2de06f9b7f400726113482653cd2d8a4bbb286"
+      }
+    ]
+  }
+}

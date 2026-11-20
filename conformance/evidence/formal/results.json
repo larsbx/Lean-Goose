@@ -1,12 +1,12 @@
 {
-  "schema": "lean-goose.formal-evidence.v2",
+  "schema": "lean-goose.formal-evidence.v3",
   "status": "passed",
-  "started_at_utc": "2026-11-20T12:22:12.948200+00:00",
+  "started_at_utc": "2026-11-20T13:26:13.324583+00:00",
   "evidence_only": true,
   "acceptance_authority": false,
   "hosted_results_included": false,
   "implementation_correspondence": "finite_profile_only",
-  "scope": "ordered transactions and complete stored bindings over abstract action classes; no full kernel refinement",
+  "scope": "ordered transactions, complete stored bindings, immutable expression DAGs and binder scope; no full kernel refinement",
   "commands": [
     {
       "name": "lean-version",
@@ -15,9 +15,9 @@
         "--version"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
-      "started_at_utc": "2026-11-20T12:22:12.974107+00:00",
+      "started_at_utc": "2026-11-20T13:26:13.357236+00:00",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:13.090383+00:00",
+      "finished_at_utc": "2026-11-20T13:26:13.565768+00:00",
       "log": "lean-version.log",
       "log_sha256": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680"
     },
@@ -28,9 +28,9 @@
         "--version"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
-      "started_at_utc": "2026-11-20T12:22:13.090863+00:00",
+      "started_at_utc": "2026-11-20T13:26:13.566342+00:00",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:13.838104+00:00",
+      "finished_at_utc": "2026-11-20T13:26:14.610651+00:00",
       "log": "quint-version.log",
       "log_sha256": "88dc89b23d1eb296b577d2cd6b8fd2a8013d9d499299cdb24578106eb5b4f59c"
     },
@@ -41,9 +41,9 @@
         "--version"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
-      "started_at_utc": "2026-11-20T12:22:13.838591+00:00",
+      "started_at_utc": "2026-11-20T13:26:14.611150+00:00",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:13.845575+00:00",
+      "finished_at_utc": "2026-11-20T13:26:14.632528+00:00",
       "log": "node-version.log",
       "log_sha256": "4409d3bfa08b82f385bd424eeda65fc63b756129f0e89e82df77f1fecafccc14"
     },
@@ -54,9 +54,9 @@
         "--version"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
-      "started_at_utc": "2026-11-20T12:22:13.845965+00:00",
+      "started_at_utc": "2026-11-20T13:26:14.633433+00:00",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:13.849965+00:00",
+      "finished_at_utc": "2026-11-20T13:26:14.643734+00:00",
       "log": "gcc-version.log",
       "log_sha256": "4dc9a4e32fd9e06d42fb307688c59d6d889f0ff90ce034cbefed21b0d451fd81"
     },
@@ -66,17 +66,17 @@
         "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
         "--threads=1",
         "-o",
-        "/tmp/lean-goose-formal-4mh2v9iv/lean/DefinitionTransactions.olean",
+        "/tmp/lean-goose-formal-7ty9_0da/lean/DefinitionTransactions.olean",
         "DefinitionTransactions.lean"
       ],
-      "cwd": "/tmp/lean-goose-formal-4mh2v9iv/lean",
-      "started_at_utc": "2026-11-20T12:22:14.557054+00:00",
+      "cwd": "/tmp/lean-goose-formal-7ty9_0da/lean",
+      "started_at_utc": "2026-11-20T13:26:16.294470+00:00",
       "environment_overrides": {
-        "LEAN_PATH": "/tmp/lean-goose-formal-4mh2v9iv/lean",
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
         "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
       },
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:16.139962+00:00",
+      "finished_at_utc": "2026-11-20T13:26:19.024988+00:00",
       "log": "lean-build.log",
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -87,14 +87,14 @@
         "--threads=1",
         "Audit.lean"
       ],
-      "cwd": "/tmp/lean-goose-formal-4mh2v9iv/lean",
-      "started_at_utc": "2026-11-20T12:22:16.141319+00:00",
+      "cwd": "/tmp/lean-goose-formal-7ty9_0da/lean",
+      "started_at_utc": "2026-11-20T13:26:19.025723+00:00",
       "environment_overrides": {
-        "LEAN_PATH": "/tmp/lean-goose-formal-4mh2v9iv/lean",
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
         "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
       },
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:17.322760+00:00",
+      "finished_at_utc": "2026-11-20T13:26:20.779733+00:00",
       "log": "lean-axiom-audit.log",
       "log_sha256": "3d3e698dbddf0ddecccd48a78b2359891da63820d90d3d73975b9a11894d216e"
     },
@@ -106,15 +106,15 @@
         "--run",
         "Replay.lean"
       ],
-      "cwd": "/tmp/lean-goose-formal-4mh2v9iv/lean",
-      "started_at_utc": "2026-11-20T12:22:17.324661+00:00",
+      "cwd": "/tmp/lean-goose-formal-7ty9_0da/lean",
+      "started_at_utc": "2026-11-20T13:26:20.781417+00:00",
       "stdin_sha256": "775f942a486a05113c3671bcc1edf39383095740df39d1f64d6327cbc55493c9",
       "environment_overrides": {
-        "LEAN_PATH": "/tmp/lean-goose-formal-4mh2v9iv/lean",
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
         "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
       },
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:17.937385+00:00",
+      "finished_at_utc": "2026-11-20T13:26:21.360131+00:00",
       "log": "lean-replay.log",
       "log_sha256": "56cf0cc9ba6909cf35b826ae6d78e39098d55732ec0dbeb8373e7c7a8b0b5c22"
     },
@@ -126,9 +126,9 @@
         "DefinitionTransactions.qnt"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
-      "started_at_utc": "2026-11-20T12:22:17.949851+00:00",
+      "started_at_utc": "2026-11-20T13:26:21.371125+00:00",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:19.440737+00:00",
+      "finished_at_utc": "2026-11-20T13:26:22.831021+00:00",
       "log": "quint-typecheck.log",
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -143,11 +143,11 @@
         "--seed=20261120"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
-      "started_at_utc": "2026-11-20T12:22:19.442230+00:00",
+      "started_at_utc": "2026-11-20T13:26:22.831765+00:00",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:21.728618+00:00",
+      "finished_at_utc": "2026-11-20T13:26:24.183962+00:00",
       "log": "quint-tests.log",
-      "log_sha256": "1b73cfc355fc45af823704440ab07dabc2a87ec7036f99fddb589d0081e7229c"
+      "log_sha256": "6c8e4e4c51d712002a8777ea1eb24bff47af763f2d0caf07513112490c456d27"
     },
     {
       "name": "quint-bounded-run",
@@ -163,11 +163,11 @@
         "--verbosity=1"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
-      "started_at_utc": "2026-11-20T12:22:21.729365+00:00",
+      "started_at_utc": "2026-11-20T13:26:24.184750+00:00",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:26.246753+00:00",
+      "finished_at_utc": "2026-11-20T13:26:30.109669+00:00",
       "log": "quint-bounded-run.log",
-      "log_sha256": "8dcf2b9ed3003ff6318bfef235b9b226c4e81616a79755cd85fd785ada45a51b"
+      "log_sha256": "057fec692da06c2954645fb133ead263337c061cc9f78214c76b24e9ed05d952"
     },
     {
       "name": "quint-negative-control",
@@ -186,11 +186,11 @@
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/formal/quint-negative.itf.json"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
-      "started_at_utc": "2026-11-20T12:22:26.247550+00:00",
+      "started_at_utc": "2026-11-20T13:26:30.110794+00:00",
       "exit_code": 1,
-      "finished_at_utc": "2026-11-20T12:22:27.510973+00:00",
+      "finished_at_utc": "2026-11-20T13:26:32.574854+00:00",
       "log": "quint-negative-control.log",
-      "log_sha256": "3fb9308abb7793f300d647c0d5618ac5f26a067dd504c1cf3afd5b3b5b8f5ad8"
+      "log_sha256": "ed557430cc78423a4c3bfdf8d49401124e79b2c4bd1e0920b6d1d8abd1c9f097"
     },
     {
       "name": "quint-replay",
@@ -199,14 +199,14 @@
         "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/replay.py"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
-      "started_at_utc": "2026-11-20T12:22:27.512091+00:00",
+      "started_at_utc": "2026-11-20T13:26:32.576542+00:00",
       "stdin_sha256": "775f942a486a05113c3671bcc1edf39383095740df39d1f64d6327cbc55493c9",
       "environment_overrides": {
-        "LEAN_PATH": "/tmp/lean-goose-formal-4mh2v9iv/lean",
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
         "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
       },
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:29.590367+00:00",
+      "finished_at_utc": "2026-11-20T13:26:35.139840+00:00",
       "log": "quint-replay.log",
       "log_sha256": "56cf0cc9ba6909cf35b826ae6d78e39098d55732ec0dbeb8373e7c7a8b0b5c22"
     },
@@ -218,13 +218,13 @@
         "-DGS_DEBUG=1",
         "--standalone",
         "-o",
-        "/tmp/lean-goose-formal-4mh2v9iv/checker.c",
+        "/tmp/lean-goose-formal-7ty9_0da/checker.c",
         "/workspace/scratch/a402432e12bc/Lean-Goose/reference/checker.goose"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
-      "started_at_utc": "2026-11-20T12:22:29.618536+00:00",
+      "started_at_utc": "2026-11-20T13:26:35.158450+00:00",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:29.690063+00:00",
+      "finished_at_utc": "2026-11-20T13:26:35.241195+00:00",
       "log": "goose-emit.log",
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -233,16 +233,16 @@
       "command": [
         "/usr/bin/gcc",
         "-O2",
-        "/tmp/lean-goose-formal-4mh2v9iv/checker.c",
+        "/tmp/lean-goose-formal-7ty9_0da/checker.c",
         "-o",
-        "/tmp/lean-goose-formal-4mh2v9iv/checker",
+        "/tmp/lean-goose-formal-7ty9_0da/checker",
         "-lm",
         "-pthread"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
-      "started_at_utc": "2026-11-20T12:22:29.691777+00:00",
+      "started_at_utc": "2026-11-20T13:26:35.243076+00:00",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:31.052443+00:00",
+      "finished_at_utc": "2026-11-20T13:26:37.417875+00:00",
       "log": "goose-build.log",
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -252,17 +252,17 @@
         "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
         "--threads=1",
         "-o",
-        "/tmp/lean-goose-formal-4mh2v9iv/lean/StoredBindings.olean",
+        "/tmp/lean-goose-formal-7ty9_0da/lean/StoredBindings.olean",
         "StoredBindings.lean"
       ],
-      "cwd": "/tmp/lean-goose-formal-4mh2v9iv/lean",
-      "started_at_utc": "2026-11-20T12:22:33.968488+00:00",
+      "cwd": "/tmp/lean-goose-formal-7ty9_0da/lean",
+      "started_at_utc": "2026-11-20T13:26:41.182974+00:00",
       "environment_overrides": {
-        "LEAN_PATH": "/tmp/lean-goose-formal-4mh2v9iv/lean",
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
         "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
       },
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:35.223524+00:00",
+      "finished_at_utc": "2026-11-20T13:26:42.736870+00:00",
       "log": "stored-lean-build.log",
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -273,14 +273,14 @@
         "--threads=1",
         "StoredBindingsAudit.lean"
       ],
-      "cwd": "/tmp/lean-goose-formal-4mh2v9iv/lean",
-      "started_at_utc": "2026-11-20T12:22:35.224521+00:00",
+      "cwd": "/tmp/lean-goose-formal-7ty9_0da/lean",
+      "started_at_utc": "2026-11-20T13:26:42.740562+00:00",
       "environment_overrides": {
-        "LEAN_PATH": "/tmp/lean-goose-formal-4mh2v9iv/lean",
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
         "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
       },
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:36.238302+00:00",
+      "finished_at_utc": "2026-11-20T13:26:44.044076+00:00",
       "log": "stored-lean-axiom-audit.log",
       "log_sha256": "27ed877ac444261c9a7792fec3e8da9ec7d3a5e3e39a2fda50be23baf035b5e3"
     },
@@ -292,18 +292,18 @@
         "--run",
         "StoredBindingsReplay.lean"
       ],
-      "cwd": "/tmp/lean-goose-formal-4mh2v9iv/lean",
-      "started_at_utc": "2026-11-20T12:22:36.240954+00:00",
+      "cwd": "/tmp/lean-goose-formal-7ty9_0da/lean",
+      "started_at_utc": "2026-11-20T13:26:44.048076+00:00",
       "stdin_sha256": "d033e3f785fba0df54fd94709dd3ad3ad17d3a9d4b4572035545a26ea173249c",
       "environment_overrides": {
-        "LEAN_PATH": "/tmp/lean-goose-formal-4mh2v9iv/lean",
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
         "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
       },
       "exit_code": 0,
       "log_encoding": "gzip",
       "uncompressed_bytes": 1050702,
       "uncompressed_sha256": "afc44c73fe134a490532ee59af34d9ea94654eb7eec5a6b5c52eb66e292b382f",
-      "finished_at_utc": "2026-11-20T12:22:37.112070+00:00",
+      "finished_at_utc": "2026-11-20T13:26:44.836976+00:00",
       "log": "stored-lean-replay.log.gz",
       "log_sha256": "5b7fdfb255b2d19b88dba625d6ec9b5c846d3bb0cb8cf0314a16749d317cabdf"
     },
@@ -315,9 +315,9 @@
         "StoredBindings.qnt"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
-      "started_at_utc": "2026-11-20T12:22:37.209516+00:00",
+      "started_at_utc": "2026-11-20T13:26:44.975406+00:00",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:38.841168+00:00",
+      "finished_at_utc": "2026-11-20T13:26:47.871009+00:00",
       "log": "stored-quint-typecheck.log",
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -332,11 +332,11 @@
         "--seed=20261120"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
-      "started_at_utc": "2026-11-20T12:22:38.842968+00:00",
+      "started_at_utc": "2026-11-20T13:26:47.874210+00:00",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:40.562518+00:00",
+      "finished_at_utc": "2026-11-20T13:26:50.293890+00:00",
       "log": "stored-quint-tests.log",
-      "log_sha256": "b708d3f284617cf7a3999b231997a5acc4abdbc52d91b97657a2a58dca7497ab"
+      "log_sha256": "35d24a90c01dd233baae3c7f94c52bd8115f0f6bd24eba9de52ef10496e8fad0"
     },
     {
       "name": "stored-quint-bounded-run",
@@ -352,11 +352,11 @@
         "--verbosity=1"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
-      "started_at_utc": "2026-11-20T12:22:40.563676+00:00",
+      "started_at_utc": "2026-11-20T13:26:50.296045+00:00",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T12:22:55.717664+00:00",
+      "finished_at_utc": "2026-11-20T13:27:08.811677+00:00",
       "log": "stored-quint-bounded-run.log",
-      "log_sha256": "69e71ac7330afc02638b4c798f37f58d03c8baddd3ea5441f725ec7cb8b726f7"
+      "log_sha256": "eaaf3c3460675a7c4607772ec469f51cacb3ed8f70c38ba3d24561556d2cd7be"
     },
     {
       "name": "stored-quint-negative-control",
@@ -376,11 +376,11 @@
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/formal/stored-quint-negative.itf.json"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
-      "started_at_utc": "2026-11-20T12:22:55.718702+00:00",
+      "started_at_utc": "2026-11-20T13:27:08.815122+00:00",
       "exit_code": 1,
-      "finished_at_utc": "2026-11-20T12:22:57.464867+00:00",
+      "finished_at_utc": "2026-11-20T13:27:10.764066+00:00",
       "log": "stored-quint-negative-control.log",
-      "log_sha256": "9f122cafc7271aed0ecac9d412d2e204ae289fa45f560befdb3602ae0a872167"
+      "log_sha256": "2f12ea2b9a03e8249b74fc54cfafdd3e7e5da6d464bf9f0ffb1cddea304487fe"
     },
     {
       "name": "stored-quint-replay",
@@ -389,19 +389,1354 @@
         "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/stored_replay.py"
       ],
       "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
-      "started_at_utc": "2026-11-20T12:22:57.467719+00:00",
+      "started_at_utc": "2026-11-20T13:27:10.766299+00:00",
       "stdin_sha256": "d033e3f785fba0df54fd94709dd3ad3ad17d3a9d4b4572035545a26ea173249c",
       "environment_overrides": {
-        "LEAN_PATH": "/tmp/lean-goose-formal-4mh2v9iv/lean",
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
         "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
       },
       "exit_code": 0,
       "log_encoding": "gzip",
       "uncompressed_bytes": 1050702,
       "uncompressed_sha256": "afc44c73fe134a490532ee59af34d9ea94654eb7eec5a6b5c52eb66e292b382f",
-      "finished_at_utc": "2026-11-20T12:23:01.782921+00:00",
+      "finished_at_utc": "2026-11-20T13:27:14.601014+00:00",
       "log": "stored-quint-replay.log.gz",
       "log_sha256": "5b7fdfb255b2d19b88dba625d6ec9b5c846d3bb0cb8cf0314a16749d317cabdf"
+    },
+    {
+      "name": "dag-lean-build",
+      "command": [
+        "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "--threads=1",
+        "-o",
+        "/tmp/lean-goose-formal-7ty9_0da/lean/ExpressionDag.olean",
+        "ExpressionDag.lean"
+      ],
+      "cwd": "/tmp/lean-goose-formal-7ty9_0da/lean",
+      "started_at_utc": "2026-11-20T13:27:32.977344+00:00",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T13:27:36.251318+00:00",
+      "log": "dag-lean-build.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "dag-lean-axiom-audit",
+      "command": [
+        "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "--threads=1",
+        "ExpressionDagAudit.lean"
+      ],
+      "cwd": "/tmp/lean-goose-formal-7ty9_0da/lean",
+      "started_at_utc": "2026-11-20T13:27:36.253127+00:00",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T13:27:37.046918+00:00",
+      "log": "dag-lean-axiom-audit.log",
+      "log_sha256": "2a03102671f58bbfd85c06d7f2e5a6e8cee9a5e04ff6125849b826bdf6579e99"
+    },
+    {
+      "name": "dag-quint-typecheck",
+      "command": [
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint",
+        "typecheck",
+        "ExpressionDag.qnt"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
+      "started_at_utc": "2026-11-20T13:27:37.057393+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T13:27:39.603226+00:00",
+      "log": "dag-quint-typecheck.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "dag-quint-tests",
+      "command": [
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint",
+        "test",
+        "ExpressionDag.qnt",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261120"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
+      "started_at_utc": "2026-11-20T13:27:39.604804+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T13:27:42.009063+00:00",
+      "log": "dag-quint-tests.log",
+      "log_sha256": "ce390bf191dbf406d64eddfe8136d714003c04ffefa5a0adb336dd959aa2fab6"
+    },
+    {
+      "name": "dag-quint-bounded-run",
+      "command": [
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint",
+        "run",
+        "ExpressionDag.qnt",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=20261120",
+        "--verbosity=1"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
+      "started_at_utc": "2026-11-20T13:27:42.011216+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T13:28:00.092848+00:00",
+      "log": "dag-quint-bounded-run.log",
+      "log_sha256": "3273e0e0f2f904c080a3ea511bd0f407f77e8baff07bff4c2da88f3f3d506526"
+    },
+    {
+      "name": "dag-quint-negative-control",
+      "command": [
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint",
+        "run",
+        "ExpressionDag.qnt",
+        "--backend=typescript",
+        "--init=unsafeInit",
+        "--step=unsafeStep",
+        "--invariant=safety",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--seed=20261120",
+        "--verbosity=2",
+        "--out-itf",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/formal/dag-quint-negative.itf.json"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
+      "started_at_utc": "2026-11-20T13:28:00.099939+00:00",
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-20T13:28:03.157079+00:00",
+      "log": "dag-quint-negative-control.log",
+      "log_sha256": "cc420444992691dfabb8e0dc031b640ac77995691ff7020156b4371c6225cfde"
+    },
+    {
+      "name": "dag-profile-lean-replay",
+      "command": [
+        "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "--threads=1",
+        "--run",
+        "ExpressionDagReplay.lean"
+      ],
+      "cwd": "/tmp/lean-goose-formal-7ty9_0da/lean",
+      "started_at_utc": "2026-11-20T13:28:03.220385+00:00",
+      "stdin_sha256": "070a775c997f88c5d9d3c368c1f804a0317837d7ba8b99f19e3389a36d574960",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 490870,
+      "uncompressed_sha256": "5dd3ec122fc32122cffb57f08597232d155a80dbbf932a4766b484a9977b54a8",
+      "finished_at_utc": "2026-11-20T13:28:05.190129+00:00",
+      "log": "dag-profile-lean-replay.log.gz",
+      "log_sha256": "8d0d445284bd58c6b72fd3c710386c08f8516fd0a0cf302be87b6e53c3464ede"
+    },
+    {
+      "name": "dag-profile-quint-replay-000",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:28:05.277328+00:00",
+      "stdin_sha256": "419c9544c1875dac970412277b29ac70d4f5460ea63e8cdb92ee29430e2bcfc6",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 49144,
+      "uncompressed_sha256": "9afd663d206a5cd133419404a15c34d4e040e311d4600bc7c0649e648f6b3481",
+      "finished_at_utc": "2026-11-20T13:28:14.740039+00:00",
+      "log": "dag-profile-quint-replay-000.log.gz",
+      "log_sha256": "999a6471264b74749cc6927e759457d43311c3958f25ba495b3bbcea9b2874cf"
+    },
+    {
+      "name": "dag-profile-quint-replay-001",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:28:14.753385+00:00",
+      "stdin_sha256": "1e6f04e7143a27fba60c776ba3c6f781dbadb316998f39fd9cb546430df81ceb",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 53445,
+      "uncompressed_sha256": "c8671d0b1509ddb371d6045e6c3f722648a73b58461479af1c9a44935d8da45a",
+      "finished_at_utc": "2026-11-20T13:28:21.417806+00:00",
+      "log": "dag-profile-quint-replay-001.log.gz",
+      "log_sha256": "30bb87fc3bed06e69176ea04a7827446cc7c36142b1cd23dcc142c1b64506279"
+    },
+    {
+      "name": "dag-profile-quint-replay-002",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:28:21.435130+00:00",
+      "stdin_sha256": "806f9c64c56d862c6f2f6483f55941fb0d5e471f51854d45b442283fadcf167a",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 53929,
+      "uncompressed_sha256": "fed8cd6a1a53b094c7be3d1e9a8c83d415d1a258c9f728fe11e5ecf80997e172",
+      "finished_at_utc": "2026-11-20T13:28:31.317973+00:00",
+      "log": "dag-profile-quint-replay-002.log.gz",
+      "log_sha256": "141f1745fb8953fc5041efa34826473c081c90077cf8f4be17d7caf462e69758"
+    },
+    {
+      "name": "dag-profile-quint-replay-003",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:28:31.333286+00:00",
+      "stdin_sha256": "90115d546eb4b9221beb454054e7065a36e0fa6ea14f71423613ec5c8aaba277",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 54478,
+      "uncompressed_sha256": "0293ae3296a2c11498f999f559371259e4a544494a488bcfecef9fdf35f0b7f5",
+      "finished_at_utc": "2026-11-20T13:28:40.432074+00:00",
+      "log": "dag-profile-quint-replay-003.log.gz",
+      "log_sha256": "8a596064f649b5954d28aba5ab1cfc5cbd9b4becd7ecf808f91a1f3c9690a6c3"
+    },
+    {
+      "name": "dag-profile-quint-replay-004",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:28:40.446956+00:00",
+      "stdin_sha256": "192239fa98986f368d21289c4c137e5dfc2dcf3a2056cc5662e76abff95ee6cf",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 54956,
+      "uncompressed_sha256": "54e9bbc7f5c600af0c77c92b47d87f9de179e1eeb140f27faa4690c7bfa6a2b9",
+      "finished_at_utc": "2026-11-20T13:28:50.231832+00:00",
+      "log": "dag-profile-quint-replay-004.log.gz",
+      "log_sha256": "4d95fc5f32f75db4f6031312847ad12609797cda7b71101269593517c0aa8765"
+    },
+    {
+      "name": "dag-profile-quint-replay-005",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:28:50.248924+00:00",
+      "stdin_sha256": "a2eef2cf3389f8f0369c862352cd1464490762d8e5377061051d70a8513b2f69",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 54728,
+      "uncompressed_sha256": "2bce2c219609bda880b99132e2355ed267ab4916f78cbf9820c4116301c7acf0",
+      "finished_at_utc": "2026-11-20T13:28:59.008434+00:00",
+      "log": "dag-profile-quint-replay-005.log.gz",
+      "log_sha256": "0074704ad72b29d1f818c83b0fd5d1b9162119515a9e91ca84bd53de08935728"
+    },
+    {
+      "name": "dag-profile-quint-replay-006",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:28:59.024323+00:00",
+      "stdin_sha256": "5bab2f237229f31b9aee47a04ac6ff32da149b0645f36e368dc7f0cb1342f8e7",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 55216,
+      "uncompressed_sha256": "f546c1960a555be5e0008bf931a8746134cea7faefb60d621567cbc1176500bb",
+      "finished_at_utc": "2026-11-20T13:29:08.019708+00:00",
+      "log": "dag-profile-quint-replay-006.log.gz",
+      "log_sha256": "6b371aa1f7a971171f0f92caeed792595529ae82bc52c5cdb6572a83087e1cfd"
+    },
+    {
+      "name": "dag-profile-quint-replay-007",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:29:08.039746+00:00",
+      "stdin_sha256": "85a5e83f86a133d001f53f9cc113cfa317ec8fb02be56fa854564e5ff63f36d7",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 63462,
+      "uncompressed_sha256": "bba13f502efd1074a57680eff101fbc00abfe2d55b937c7729665438ef4d274e",
+      "finished_at_utc": "2026-11-20T13:29:18.394457+00:00",
+      "log": "dag-profile-quint-replay-007.log.gz",
+      "log_sha256": "5dd3f20633473796fe7580b7df5b6dc080ecfb3fa0970b68258f4c50c518a17d"
+    },
+    {
+      "name": "dag-profile-quint-replay-008",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:29:18.409542+00:00",
+      "stdin_sha256": "c47f2b2c6c5ef9721bf62858b7fbdbd76dd8236e528bc1d3dfa87d172e1deea9",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 51512,
+      "uncompressed_sha256": "7c89a126c9ec6771eb5246dcf11343ec1217718f76094598caeaf3b1dd1fdbe4",
+      "finished_at_utc": "2026-11-20T13:29:23.933274+00:00",
+      "log": "dag-profile-quint-replay-008.log.gz",
+      "log_sha256": "a8138c0d49a8e138ea65a9c4f04640a1b0fe130fd39e0d803b84ec20347da3a5"
+    },
+    {
+      "name": "dag-arenas-lean-replay",
+      "command": [
+        "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "--threads=1",
+        "--run",
+        "ExpressionDagReplay.lean"
+      ],
+      "cwd": "/tmp/lean-goose-formal-7ty9_0da/lean",
+      "started_at_utc": "2026-11-20T13:29:58.201504+00:00",
+      "stdin_sha256": "5cc9c95b64a6696bc999ecb4f03e212b84e4cc38e0cba71beb5c889a9db0d186",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 5505060,
+      "uncompressed_sha256": "d5d56f5398280ce3b0f653b0dac6630672f60762e6b1022ee63a18d494a60ed3",
+      "finished_at_utc": "2026-11-20T13:30:03.069758+00:00",
+      "log": "dag-arenas-lean-replay.log.gz",
+      "log_sha256": "361113c1a279c662d132a23032fb97ed14b47e389bdb13a89f9584d5f954a985"
+    },
+    {
+      "name": "dag-arenas-quint-replay-000",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:30:04.258197+00:00",
+      "stdin_sha256": "b043199939a55a23e07774b8a67f3392373023d17e144e1866dcaf037d2de84c",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 100911,
+      "uncompressed_sha256": "b9b9d756fffe957e27ca8c1ba3dddc0f95b3550fb4255d8f9ba7f255aeb9ae82",
+      "finished_at_utc": "2026-11-20T13:30:22.005828+00:00",
+      "log": "dag-arenas-quint-replay-000.log.gz",
+      "log_sha256": "2104caae44540b42975906c2ca8255d2e481e715a38a66a417b1911edbe59534"
+    },
+    {
+      "name": "dag-arenas-quint-replay-001",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:30:22.045458+00:00",
+      "stdin_sha256": "64013a6242ea7cc6d5e33715e35ff6ab4ff50d3eedfa9b8cf49873fa55e70f1d",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 106266,
+      "uncompressed_sha256": "c3f95426772a8a8f378282e5da86803572b03726e077affb4eeb76b0dc210dc1",
+      "finished_at_utc": "2026-11-20T13:30:41.113587+00:00",
+      "log": "dag-arenas-quint-replay-001.log.gz",
+      "log_sha256": "2f88c73b09c3ddc2857f4513173d3b45539833dac9a10026c2b16dab44a1ffca"
+    },
+    {
+      "name": "dag-arenas-quint-replay-002",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:30:41.138911+00:00",
+      "stdin_sha256": "c2d1d3a1cdd418c9106aa39a17bdc39d12c33254585110add6898a315cc94247",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 111856,
+      "uncompressed_sha256": "41b11c01bbbc961067ab3d20f8f5d9d4d976b33a416caae7f516e484a3a65242",
+      "finished_at_utc": "2026-11-20T13:30:58.192606+00:00",
+      "log": "dag-arenas-quint-replay-002.log.gz",
+      "log_sha256": "bb7e787b5a40c5ef8574ca6da647639743265f0795b8319ec845775605af9ae6"
+    },
+    {
+      "name": "dag-arenas-quint-replay-003",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:30:58.238708+00:00",
+      "stdin_sha256": "f3d5e1d7c95b644b8c1fcb22494628379617a83d2d92e1baecfbd86a03e3455e",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 114773,
+      "uncompressed_sha256": "5a5a63cbdaa0b2d865234465d1835b5aca93310ab20e37c1f5a1797b35c7cad7",
+      "finished_at_utc": "2026-11-20T13:31:16.055627+00:00",
+      "log": "dag-arenas-quint-replay-003.log.gz",
+      "log_sha256": "7c2266e4ef6cf83a31bf575488c1e23c82b0c43c0397af05c377697e25c8fa5b"
+    },
+    {
+      "name": "dag-arenas-quint-replay-004",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:31:16.086565+00:00",
+      "stdin_sha256": "cfe720a04b781d0766af8e0ee3ac6a068767beac8b1bc73467f9d0a68108e933",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 113251,
+      "uncompressed_sha256": "cf7e08be105518c34ec62e70f4c5dbd091c248e21197aff821ec45f34c15f285",
+      "finished_at_utc": "2026-11-20T13:31:36.138919+00:00",
+      "log": "dag-arenas-quint-replay-004.log.gz",
+      "log_sha256": "a708ed4d5fe28b94c9c7bb02e9125453a387e72624ad2591dedee7e2e529b5e2"
+    },
+    {
+      "name": "dag-arenas-quint-replay-005",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:31:36.203893+00:00",
+      "stdin_sha256": "5d10051ef047062cc783141f522a1ff9329fc08a3d1c1b93a48b8d5e6f3cf8b8",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 111852,
+      "uncompressed_sha256": "74c6c7b01e8d2e4aa63495ba5975fcc66248b301bc063dd781c169aa6800db03",
+      "finished_at_utc": "2026-11-20T13:31:58.488351+00:00",
+      "log": "dag-arenas-quint-replay-005.log.gz",
+      "log_sha256": "1a75073a759f7692a11e41b1128fa521834001cdbe3bb06ddfea2b66a192591f"
+    },
+    {
+      "name": "dag-arenas-quint-replay-006",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:31:58.522143+00:00",
+      "stdin_sha256": "2582297e0ade30e16479bce9470a5e4abe064a1dd1fad711e9e6958143250233",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 120458,
+      "uncompressed_sha256": "cfa7ce43f0801409c68b24b45cf89d295219dc0675b1e7ac876da96300311d8b",
+      "finished_at_utc": "2026-11-20T13:32:18.498291+00:00",
+      "log": "dag-arenas-quint-replay-006.log.gz",
+      "log_sha256": "38c751ee541c04b5c1780f6ee2db93058dab663d1c09c71a0dbfb157ae991294"
+    },
+    {
+      "name": "dag-arenas-quint-replay-007",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:32:18.548553+00:00",
+      "stdin_sha256": "d5a1c3c3445e8c3df0da03d7052a7f74506831a60274a81b400867201067ef0d",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 115498,
+      "uncompressed_sha256": "ffa2741814004cb6a34c13e49c0f334337415de2bec51ec05de994815bf08c87",
+      "finished_at_utc": "2026-11-20T13:32:36.148919+00:00",
+      "log": "dag-arenas-quint-replay-007.log.gz",
+      "log_sha256": "295d02ab6d82c00a6b2e4329b151b15f55fa04e01dab8c18e4292278cd52944d"
+    },
+    {
+      "name": "dag-arenas-quint-replay-008",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:32:36.188791+00:00",
+      "stdin_sha256": "fda33ab946b3f2e7942d3f9eb644eb7e47d0cec24da5be2e88ca918d99df4558",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 118863,
+      "uncompressed_sha256": "f32074adaa16977462649a770406166b305e6e48cae7d5c3368c0573ab4df983",
+      "finished_at_utc": "2026-11-20T13:32:55.222384+00:00",
+      "log": "dag-arenas-quint-replay-008.log.gz",
+      "log_sha256": "b9b8b902b32f639cac402594a7881b9c4a3ceb81c029f55e20d53adc12fa1447"
+    },
+    {
+      "name": "dag-arenas-quint-replay-009",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:32:55.255707+00:00",
+      "stdin_sha256": "ab9532226da82c0e66fcf8bed48fc8aba87b7988a576621e206d9246a9d65246",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 115111,
+      "uncompressed_sha256": "74ee55c1f2ef3ce33822a848b37d5fa873a77964157b312131768e56217220ee",
+      "finished_at_utc": "2026-11-20T13:33:13.445827+00:00",
+      "log": "dag-arenas-quint-replay-009.log.gz",
+      "log_sha256": "8accc1c0ab977c8a88572bae50345a800a0694a878a10bd2d791cc2ac992f078"
+    },
+    {
+      "name": "dag-arenas-quint-replay-010",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:33:13.478407+00:00",
+      "stdin_sha256": "45b70b76f4f14100de9e6a22e2b8d8e45fe827e59ce85a8a4312c045e531e9cc",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 114844,
+      "uncompressed_sha256": "b4651db3be1232e92708172c9d67c7ec8626ef2190a3fe60a0fea19506ea795b",
+      "finished_at_utc": "2026-11-20T13:33:30.605713+00:00",
+      "log": "dag-arenas-quint-replay-010.log.gz",
+      "log_sha256": "f6510709666a407cac1ffd9774eb4331d34717801d505650c1e57bc8b1df564c"
+    },
+    {
+      "name": "dag-arenas-quint-replay-011",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:33:30.639228+00:00",
+      "stdin_sha256": "89aa4be43696883734cf02f88d3c7f965c5d39630d87b9b30871263aec01aefc",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 111642,
+      "uncompressed_sha256": "31eab82cd6189ccf796a188de336c9e1a94113d6c5549343fa933533024b58b7",
+      "finished_at_utc": "2026-11-20T13:33:48.741046+00:00",
+      "log": "dag-arenas-quint-replay-011.log.gz",
+      "log_sha256": "fb648db220d6a70b7152764005d42b57b650ddc25271782fb33b7ec0304ef472"
+    },
+    {
+      "name": "dag-arenas-quint-replay-012",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:33:48.797617+00:00",
+      "stdin_sha256": "dba468b92bc0316f99f9b181c79399acf5b8ede51553332a3177a0f8bdfede4a",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 113506,
+      "uncompressed_sha256": "5c5180338185b6ecb344e8ac7942f58eacf0928d3e51b672de0f602897457a92",
+      "finished_at_utc": "2026-11-20T13:34:07.193483+00:00",
+      "log": "dag-arenas-quint-replay-012.log.gz",
+      "log_sha256": "2ca1f275f285938859b5acbf49031a6905f478d382a678429e7ffca2c8866ba8"
+    },
+    {
+      "name": "dag-arenas-quint-replay-013",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:34:07.225514+00:00",
+      "stdin_sha256": "1999d3b63446906ab3fd525c615db49ae1863a6c615a1b6d67e4cfa33609a9c2",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 112874,
+      "uncompressed_sha256": "40263301dd33e8f504e142000955df791cdbe408b170dbcda4192bf421d81252",
+      "finished_at_utc": "2026-11-20T13:34:30.945501+00:00",
+      "log": "dag-arenas-quint-replay-013.log.gz",
+      "log_sha256": "ff0b8e4d45a7442b56c4d47853b4826860888dcb590cadce77f7261b8afb8392"
+    },
+    {
+      "name": "dag-arenas-quint-replay-014",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:34:30.978324+00:00",
+      "stdin_sha256": "9643bf5af8cf5780eeba5db58542fea9eab23741e6cd7cf555479ca18140ebe1",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 118808,
+      "uncompressed_sha256": "aac126f49eed1b29832cadb6fae8a1f34c7d5aee787a80be118915a85e3b76bd",
+      "finished_at_utc": "2026-11-20T13:34:47.677732+00:00",
+      "log": "dag-arenas-quint-replay-014.log.gz",
+      "log_sha256": "7171b51b822238a58b2e8e0394185de1df1a0906ca73a96c43b6b89f7f5f06fd"
+    },
+    {
+      "name": "dag-arenas-quint-replay-015",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:34:47.712140+00:00",
+      "stdin_sha256": "12c49b703c7719ea4e705f7f6c502dfe945e9741c8d8002abcb890e896e5a42a",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 116347,
+      "uncompressed_sha256": "f61143525931f37551249eef70c0285be8eb3ee73b36767ca71d32893f427bb7",
+      "finished_at_utc": "2026-11-20T13:35:13.122402+00:00",
+      "log": "dag-arenas-quint-replay-015.log.gz",
+      "log_sha256": "2e82a36e4e87feca0b8ce270625b23bd1256ac92e0b6a5de8742a8207c72c683"
+    },
+    {
+      "name": "dag-arenas-quint-replay-016",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:35:13.179433+00:00",
+      "stdin_sha256": "5ddd53b4301feccc8323aa1eadc8e471e75ffab8be5d05c3ed4b531875632432",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 118613,
+      "uncompressed_sha256": "cf1c3abc48b2cb9b1caa88e376c9f267c0b050ef79c48986c2363ab1aa29030b",
+      "finished_at_utc": "2026-11-20T13:35:31.279567+00:00",
+      "log": "dag-arenas-quint-replay-016.log.gz",
+      "log_sha256": "2ef8ffd27c53ff4cac90bda758201020f621828a5a4f276a8d5d8a2f63bfbb2c"
+    },
+    {
+      "name": "dag-arenas-quint-replay-017",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:35:31.316904+00:00",
+      "stdin_sha256": "2c18dbfd15a92dc635902f297ddd9eba626ef7f87b3da2ebbcff67b193bfab03",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 115450,
+      "uncompressed_sha256": "0e925fa2d76d9599245d69d360f5c1e3617e29992c6f8f41830f937c9506b094",
+      "finished_at_utc": "2026-11-20T13:35:49.175872+00:00",
+      "log": "dag-arenas-quint-replay-017.log.gz",
+      "log_sha256": "0034138720151be956569c4cc25c35d721286b5a59a9a127a9cb4ebc14f76757"
+    },
+    {
+      "name": "dag-arenas-quint-replay-018",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:35:49.216347+00:00",
+      "stdin_sha256": "ff653fbf8394c99bf0c6894ab7d2eb7da998f962e788d772d031f67c18e3e1c7",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 112106,
+      "uncompressed_sha256": "2e35187426270978bff56b3b5f9c9810e67e0f75a64256cdb07045945e92ffa9",
+      "finished_at_utc": "2026-11-20T13:36:06.536860+00:00",
+      "log": "dag-arenas-quint-replay-018.log.gz",
+      "log_sha256": "2fe1f3946fe09e5292f6251335734ef87da72226bd50831ef7fd0d47f17f1251"
+    },
+    {
+      "name": "dag-arenas-quint-replay-019",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:36:06.573829+00:00",
+      "stdin_sha256": "05e34d89ca09c6f8adce5eb347dd103714a890abdf0bc7a78b68ef8f3cc85d93",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 110949,
+      "uncompressed_sha256": "1291475d76273ef291b992cf26af5d0e5242db49a77d270e4f4d4db764fe53ae",
+      "finished_at_utc": "2026-11-20T13:36:23.266037+00:00",
+      "log": "dag-arenas-quint-replay-019.log.gz",
+      "log_sha256": "60b8775a133549f16240497bf4009a3dbbab74a5343fe92429d26096510cfc81"
+    },
+    {
+      "name": "dag-arenas-quint-replay-020",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:36:25.327606+00:00",
+      "stdin_sha256": "d6c816739d0562a85db35d102757275706d253463ea4fd7dcd04d8af1543a0fd",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 110346,
+      "uncompressed_sha256": "02101f93d7b99dfed23076a0d144296dd35226941c5fc630f282d60907fa18d7",
+      "finished_at_utc": "2026-11-20T13:36:46.298285+00:00",
+      "log": "dag-arenas-quint-replay-020.log.gz",
+      "log_sha256": "e25361e89f56ea70012cfb54439cfe6ef2ecba1fc2b2fa7b1b85190f6c153a67"
+    },
+    {
+      "name": "dag-arenas-quint-replay-021",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:36:46.365847+00:00",
+      "stdin_sha256": "8505217209a09b8cd971ef0e56ca0a975008b2c98fdf6984bcdb9f863865cdab",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 119690,
+      "uncompressed_sha256": "78a46e3e3168419c725b877e440ce60644c073b936142b758419eea83ad08b65",
+      "finished_at_utc": "2026-11-20T13:37:05.080658+00:00",
+      "log": "dag-arenas-quint-replay-021.log.gz",
+      "log_sha256": "fe825b9764885f1e95ef7c8c47ade11136121587602aaf7363d0d4f97ff270f1"
+    },
+    {
+      "name": "dag-arenas-quint-replay-022",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:37:05.149562+00:00",
+      "stdin_sha256": "081ec515219d50fd28d6d534882e6cbccd3a2560d23eb9ef522b2106bdb2b958",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 116467,
+      "uncompressed_sha256": "0c521549dd70f59f1a38b168b2eeaecd803069c6b0af76b0d967b61ad9268cfa",
+      "finished_at_utc": "2026-11-20T13:37:26.879253+00:00",
+      "log": "dag-arenas-quint-replay-022.log.gz",
+      "log_sha256": "7b6730961b463d02d52363d95964e91fa7ecb9513329a86df36bc3aae2b2814b"
+    },
+    {
+      "name": "dag-arenas-quint-replay-023",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:37:26.910683+00:00",
+      "stdin_sha256": "1b3f9907f42e83c6559200a5500cc0493e37cef45c524dd9a5921ba27be3435d",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 115082,
+      "uncompressed_sha256": "5b338b9a4f6f5b70578aadc4a37051824a6c4ce7d64ff621e4cc0c4c86fe1313",
+      "finished_at_utc": "2026-11-20T13:37:48.374768+00:00",
+      "log": "dag-arenas-quint-replay-023.log.gz",
+      "log_sha256": "4c9b5af23c6b031f6fba75d53cb45eafd0c4e2318b1a86902ce379c2bec28fda"
+    },
+    {
+      "name": "dag-arenas-quint-replay-024",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:37:48.427294+00:00",
+      "stdin_sha256": "261138a40013d8713ed27e457c5e7921d5c8956ccafc5ff096c813f6c5c65004",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 114458,
+      "uncompressed_sha256": "5de9c3f52c73924bf6bc7370c81e78f888e92aee7db210d074284326b50e5f06",
+      "finished_at_utc": "2026-11-20T13:38:05.594184+00:00",
+      "log": "dag-arenas-quint-replay-024.log.gz",
+      "log_sha256": "b1aaa4e9d0a140ef9d573e680bc8a1b048e87b7ab3d941a0f5379a8f4ff5c8a1"
+    },
+    {
+      "name": "dag-arenas-quint-replay-025",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:38:05.632508+00:00",
+      "stdin_sha256": "aba550e3791cbb3c91b7c043a0d2f1f8db8550ced529a2eeb5f7400fd375b556",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 111595,
+      "uncompressed_sha256": "fa4e22c6dd11dd453aba597c80ef910c0262c9ec8bb989a59be453365b229fde",
+      "finished_at_utc": "2026-11-20T13:38:29.880118+00:00",
+      "log": "dag-arenas-quint-replay-025.log.gz",
+      "log_sha256": "efa6fc8dbf229a7ba5c3c32428f78198e3f3008850cfac7cbded6ccd38662591"
+    },
+    {
+      "name": "dag-arenas-quint-replay-026",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:38:29.924605+00:00",
+      "stdin_sha256": "4990290089ba6c52b48567afd7b17d90da61ccf84a12f3cb2df83a1e01aceb63",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 111304,
+      "uncompressed_sha256": "cab2e8f54cec9780ac8f65dd841c20d889065f43a375d48a936d2f2e2ebbfb1e",
+      "finished_at_utc": "2026-11-20T13:38:54.313082+00:00",
+      "log": "dag-arenas-quint-replay-026.log.gz",
+      "log_sha256": "3ea3e562315c73711dd311223003ff2824ddd19a4e82da68c51c0fd5490fa66d"
+    },
+    {
+      "name": "dag-arenas-quint-replay-027",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:38:54.343843+00:00",
+      "stdin_sha256": "0914df27f4f5adacf1d0afe465eb19b9b14ab706542aa960bcd4553aa3d4838a",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 119588,
+      "uncompressed_sha256": "e244484fdb005155f1fc9491cad564e4c3ffda8c3ee3612c09c0effb50994d0e",
+      "finished_at_utc": "2026-11-20T13:39:15.349322+00:00",
+      "log": "dag-arenas-quint-replay-027.log.gz",
+      "log_sha256": "d4f5257f50778b2232842f30f590bf11e901b75fdf0b60d04fe0b71a3e5c55f6"
+    },
+    {
+      "name": "dag-arenas-quint-replay-028",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:39:15.381042+00:00",
+      "stdin_sha256": "d82d01a2d19e9617cdfb6042a9e1dfd480da9787114dbad82ee2b5cbb51e78f2",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 116098,
+      "uncompressed_sha256": "a08909524a95882942fa6e17f777137fc37d2ed18f7da27fc8c9bb9b3a19acdb",
+      "finished_at_utc": "2026-11-20T13:39:34.988095+00:00",
+      "log": "dag-arenas-quint-replay-028.log.gz",
+      "log_sha256": "34fbc68121527bc51cddabb1190d890d8e87958516a52bde651b816e453d05f4"
+    },
+    {
+      "name": "dag-arenas-quint-replay-029",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:39:35.022681+00:00",
+      "stdin_sha256": "869a37cf2f9125691ab3263759be7d8b4e3e2b64269c714307d25f8c0dc3795e",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 117644,
+      "uncompressed_sha256": "6b2c5ecc4787e21e7580b2f25d4ff519348a8c080e5ae8c4a5db296f80c5557e",
+      "finished_at_utc": "2026-11-20T13:39:51.304010+00:00",
+      "log": "dag-arenas-quint-replay-029.log.gz",
+      "log_sha256": "9b530cac619aa76215d69666ef318a84fea7eecac30b17ee3e0739f06866b8ed"
+    },
+    {
+      "name": "dag-arenas-quint-replay-030",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:39:51.338852+00:00",
+      "stdin_sha256": "6008cf0ae92b29723b1a7376683c9c618fab52d8dfdb1fcdeb85c032c7604bd2",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 113463,
+      "uncompressed_sha256": "571d8598bfb64dbe879459d597a263a3675af6732f5f0f12480acec10fd001c2",
+      "finished_at_utc": "2026-11-20T13:40:11.802178+00:00",
+      "log": "dag-arenas-quint-replay-030.log.gz",
+      "log_sha256": "252072db56498876d206fe8e9529cbe01634b25e336f4a92c1d67e9b28dd6c25"
+    },
+    {
+      "name": "dag-arenas-quint-replay-031",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:40:11.859207+00:00",
+      "stdin_sha256": "039c389f058f7500d45350e5af4d58c89914ccab2f31926714902e20ec41c88a",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 111418,
+      "uncompressed_sha256": "0efa4715ccfde98115e6ea6324dd10124d951badede91baf284aa71a01fce47f",
+      "finished_at_utc": "2026-11-20T13:40:31.081847+00:00",
+      "log": "dag-arenas-quint-replay-031.log.gz",
+      "log_sha256": "a3364921cbc723502d16a4984bd41dc180010e6b3c547843e201ec8caac12234"
+    },
+    {
+      "name": "dag-arenas-quint-replay-032",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:40:31.155572+00:00",
+      "stdin_sha256": "d0bed2a38969d001714efa02253ea92c926105b5f10dea98a109cba48f1d250b",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 111168,
+      "uncompressed_sha256": "3ff7dd1077b1f187a63e5b576d7da37080248df8678052045f791982958f35fc",
+      "finished_at_utc": "2026-11-20T13:40:49.125581+00:00",
+      "log": "dag-arenas-quint-replay-032.log.gz",
+      "log_sha256": "d3499f5928075d403c159e4d40c041a1f0855067a8fa518334183f83b26a6a5f"
+    },
+    {
+      "name": "dag-arenas-quint-replay-033",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:40:49.164599+00:00",
+      "stdin_sha256": "6f3591b51411a57fe4c2f8997a047b5d46e5c72d6c0fe733f9e1724fdc9511eb",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 119533,
+      "uncompressed_sha256": "7d149dab08a92eca6af68d48801cd2de223f973abb036fcf1945b6995afc8834",
+      "finished_at_utc": "2026-11-20T13:41:07.973975+00:00",
+      "log": "dag-arenas-quint-replay-033.log.gz",
+      "log_sha256": "20df83a82f42aa0a81b1604fc9b5c2af0781972d2b668c3b27f1c037e8e29aea"
+    },
+    {
+      "name": "dag-arenas-quint-replay-034",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:41:08.013370+00:00",
+      "stdin_sha256": "7106d75648c20d4eb4be72f009eccf6c96b9758113fdc38ea0e90b2ae6519181",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 115930,
+      "uncompressed_sha256": "429a8103652c0b421e90d91fbf862168f7960df3ccc6412554d169f913838600",
+      "finished_at_utc": "2026-11-20T13:41:26.095673+00:00",
+      "log": "dag-arenas-quint-replay-034.log.gz",
+      "log_sha256": "cb1752f6e0f7f9a0b04f1bbf53c15cf57731a7b21010605f64ceea1b18428b97"
+    },
+    {
+      "name": "dag-arenas-quint-replay-035",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:41:26.140189+00:00",
+      "stdin_sha256": "16291618c36aaa247fc762e0ea52d19e7ab2be34b457a7a69a1eae27a040f58d",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 115647,
+      "uncompressed_sha256": "36ba67a9806b01be242615f85b4d5f24041ce04d66d0e0dc1954fcd5ec9b3e2c",
+      "finished_at_utc": "2026-11-20T13:41:48.194473+00:00",
+      "log": "dag-arenas-quint-replay-035.log.gz",
+      "log_sha256": "524db41ddaece9d387892706a69cc0c3f1fb28ece74717497e55652ef37fd030"
+    },
+    {
+      "name": "dag-arenas-quint-replay-036",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:41:48.231232+00:00",
+      "stdin_sha256": "df82a35407b868c3bece36aa9dfa6ff572b52fc7f57fe8dd28411b3ee699486e",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 110665,
+      "uncompressed_sha256": "4b61abc10edacf14f69d420f6e46abcb0f5bdd059741704da6e94944eed7de7c",
+      "finished_at_utc": "2026-11-20T13:42:07.448437+00:00",
+      "log": "dag-arenas-quint-replay-036.log.gz",
+      "log_sha256": "a46a7f52e130774f0f376f79987fa84c3906eb76e90804e289d198e2ebfd1c1d"
+    },
+    {
+      "name": "dag-arenas-quint-replay-037",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:42:07.484797+00:00",
+      "stdin_sha256": "e9dea3636f9bda538c8808e1f80484aa7caa454adbe11803f5e56bcd04e49fad",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 110048,
+      "uncompressed_sha256": "401e56027f861453e4841d0365ff9841744e118ca572793845c6480edbc1f350",
+      "finished_at_utc": "2026-11-20T13:42:22.894213+00:00",
+      "log": "dag-arenas-quint-replay-037.log.gz",
+      "log_sha256": "8115fc51c33d3c3ad24b423358f7f2d949dd0d66d871de445da79d6f9bed89f7"
+    },
+    {
+      "name": "dag-arenas-quint-replay-038",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:42:22.925837+00:00",
+      "stdin_sha256": "d830579081dc95784cac7f68930a4e7d4b37b57fb1734ee7c9bffb4fb5a6a494",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 110574,
+      "uncompressed_sha256": "9291ea8a55f25f269175d2a0f029f76a864e1792d10e1ed9067ca0a9d5610264",
+      "finished_at_utc": "2026-11-20T13:42:39.954649+00:00",
+      "log": "dag-arenas-quint-replay-038.log.gz",
+      "log_sha256": "01d1f62b377f894797033debf1e44d468094614b5b7582a1a4c8390b67723d5c"
+    },
+    {
+      "name": "dag-arenas-quint-replay-039",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:42:39.986699+00:00",
+      "stdin_sha256": "ee3affd96adf1c13c5fbc843a9ed3ac74cfd4cff7aaf80a2450065112e2ef9e4",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 119028,
+      "uncompressed_sha256": "afcc8b2923db90d7fd2265220a88950b42eb8072f1a5555d9950ef664e4f7a69",
+      "finished_at_utc": "2026-11-20T13:42:57.180705+00:00",
+      "log": "dag-arenas-quint-replay-039.log.gz",
+      "log_sha256": "8e8865e2b9f133c00f8af073cad5202614914a6671653782b6fdb91e9e20d024"
+    },
+    {
+      "name": "dag-arenas-quint-replay-040",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:42:57.214936+00:00",
+      "stdin_sha256": "3eccacb433a90003e6154151c82e3c08be9c0eb1dcda904cf762622a4bd8e971",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 113498,
+      "uncompressed_sha256": "334e3e0180e8e471023cb783d8ee3f71f6db5d7e3f613eb31028882003d1b24a",
+      "finished_at_utc": "2026-11-20T13:43:15.592064+00:00",
+      "log": "dag-arenas-quint-replay-040.log.gz",
+      "log_sha256": "caed67270679eac2f1f018f5a5df38d6c9a0a7d66e309dad388b615b560a696e"
+    },
+    {
+      "name": "dag-arenas-quint-replay-041",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:43:15.640313+00:00",
+      "stdin_sha256": "81757dae98c6a3d94c88d5f14408f069a82444c3ab561c7a299fc2dd86b5460f",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 123716,
+      "uncompressed_sha256": "0e613fee74152176c057ec00e153f70bf3c49031379b4fd980fa96fe3b40c0fc",
+      "finished_at_utc": "2026-11-20T13:43:35.827076+00:00",
+      "log": "dag-arenas-quint-replay-041.log.gz",
+      "log_sha256": "fabe102368e9c16ce3b7593c46ae4701e357aeba627d7978191106ad8f609ba6"
+    },
+    {
+      "name": "dag-arenas-quint-replay-042",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:43:35.862048+00:00",
+      "stdin_sha256": "b67b2f40bab275d19973f845bdd67bf6f3c0503a180b65e81552c6ef05a7d82e",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 127060,
+      "uncompressed_sha256": "43121383b863bc8ced80bd1127b7d5fd2417b88560b0816dc10545c33fe47501",
+      "finished_at_utc": "2026-11-20T13:43:56.650834+00:00",
+      "log": "dag-arenas-quint-replay-042.log.gz",
+      "log_sha256": "a7ea43e513a6f6b9bca7024c62705126a92c002098162d988c934c2c97917998"
+    },
+    {
+      "name": "dag-arenas-quint-replay-043",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:43:56.686597+00:00",
+      "stdin_sha256": "e714171f8937af2040bb54d31fd842c0d06dee5eefee4d1f02f6df6516448496",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 128903,
+      "uncompressed_sha256": "fb7231e9cbfabeb38ac65977b884e75ad841b2c60e688c9f201a2ad24449200d",
+      "finished_at_utc": "2026-11-20T13:44:14.297595+00:00",
+      "log": "dag-arenas-quint-replay-043.log.gz",
+      "log_sha256": "70158ae0699ec3c6b7609f038dc948a894d47b0cb93c44a7e4ca8b650a562502"
+    },
+    {
+      "name": "dag-arenas-quint-replay-044",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:44:14.336100+00:00",
+      "stdin_sha256": "6e27a1b2a1cab44aa1d497b915380eadcdbc1946362bed5bdd17a7a74e582e6a",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 146832,
+      "uncompressed_sha256": "efcee7908e74d126ee5b162de1e06acbf9c5721022f72b5fdccfb6003bd9b3fb",
+      "finished_at_utc": "2026-11-20T13:44:39.613153+00:00",
+      "log": "dag-arenas-quint-replay-044.log.gz",
+      "log_sha256": "577207856a539f7785b3f90aa21153beb48a13ea23b0731e25a25b0774322019"
+    },
+    {
+      "name": "dag-arenas-quint-replay-045",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:44:39.691220+00:00",
+      "stdin_sha256": "139281ff67d3d2497434926499d034570e18e06d2a5adeeab2ca468e263e3cd1",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 174168,
+      "uncompressed_sha256": "a7925fa873a5c64b9e4b0a261523948f6fac97711357050e4a8ebdad1a5bd874",
+      "finished_at_utc": "2026-11-20T13:44:57.518836+00:00",
+      "log": "dag-arenas-quint-replay-045.log.gz",
+      "log_sha256": "e64e7249ff3cd3ed2b31b3e64be3564feb43aba78264631e305df5d9bf7653c9"
+    },
+    {
+      "name": "dag-arenas-quint-replay-046",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/dag_replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T13:44:57.563531+00:00",
+      "stdin_sha256": "f374f82ee0e2032b8bb75ca177b4fba63c61aea33fad822d3b7433dce1b10332",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-7ty9_0da/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "log_encoding": "gzip",
+      "uncompressed_bytes": 127159,
+      "uncompressed_sha256": "075d04f41d4035b88c02e3c9006a27c9414c5c18f8f8ad21dbb48a87c1741aed",
+      "finished_at_utc": "2026-11-20T13:45:08.909634+00:00",
+      "log": "dag-arenas-quint-replay-046.log.gz",
+      "log_sha256": "da79166bd49f0ceb8dd56503ac78226507cf8e78fa093ffc53786068c19aa801"
     }
   ],
   "excluded_build_directories": [
@@ -426,21 +1761,24 @@
     ".pyc"
   ],
   "excluded_evidence_directory": "conformance/evidence/",
-  "source_tree_sha256": "50bd7fd5dea34a908cf768dc459075da83dccac76b40e8a0b8b3c1fb6648d984",
-  "policy_sha256": "d4d607d7b5c06f955b040120f0346adf83a71a1263ca752149a6e9caa0051c4f",
+  "source_tree_sha256": "927063bc181e02db0c4bf50175e26b387531e65f0b85909a9a0c1b20b7c7af56",
+  "policy_sha256": "f20b7088ee834c0d8445f91ef11ccabdf965c55d575339d2587f596ad0fd5c64",
   "source_manifest": "source-manifest.json",
   "formalization": {
     "scope": "docs/formalization.md",
     "gate": "tools/check_formal.py",
     "implementation_paths": [
+      "formal/quint/dag_replay.py",
       "formal/quint/replay.py",
       "formal/quint/stored_replay.py",
       "reference/binding-trace.patch",
       "reference/checker.goose",
       "tools/acceptance.py",
       "tools/binding_trace_controls.py",
+      "tools/check_expression_dag.py",
       "tools/check_formal.py",
       "tools/check_stored_bindings.py",
+      "tools/expression_dag_profile.py",
       "tools/run.py",
       "tools/runtime.py",
       "tools/source_derivation.py",
@@ -451,6 +1789,9 @@
       "sources": [
         "formal/lean/Audit.lean",
         "formal/lean/DefinitionTransactions.lean",
+        "formal/lean/ExpressionDag.lean",
+        "formal/lean/ExpressionDagAudit.lean",
+        "formal/lean/ExpressionDagReplay.lean",
         "formal/lean/Replay.lean",
         "formal/lean/StoredBindings.lean",
         "formal/lean/StoredBindingsAudit.lean",
@@ -458,6 +1799,36 @@
       ],
       "toolchain": "leanprover/lean4:v4.34.1",
       "obligations": [
+        "GooseExpressionDag.child_height_lt",
+        "GooseExpressionDag.closed_iff_loose_zero",
+        "GooseExpressionDag.decodeNode_append_preserves",
+        "GooseExpressionDag.decodeNode_complete",
+        "GooseExpressionDag.decodeNode_sound",
+        "GooseExpressionDag.decodeNode_success_iff_topological",
+        "GooseExpressionDag.decode_append",
+        "GooseExpressionDag.decode_complete",
+        "GooseExpressionDag.decode_length",
+        "GooseExpressionDag.decode_prefix_extends",
+        "GooseExpressionDag.decode_preserves_old_node",
+        "GooseExpressionDag.decode_rejects_non_topological",
+        "GooseExpressionDag.decode_sound",
+        "GooseExpressionDag.decode_success_iff_topological",
+        "GooseExpressionDag.decoded_dag_has_no_cycles",
+        "GooseExpressionDag.duplicate_node_decodes_same",
+        "GooseExpressionDag.duplicated_children_decode_equally",
+        "GooseExpressionDag.height_positive",
+        "GooseExpressionDag.lambda_scope_distinguishes_domain_and_body",
+        "GooseExpressionDag.let_scope_distinguishes_value_and_body",
+        "GooseExpressionDag.observe_has_no_authority",
+        "GooseExpressionDag.pi_scope_distinguishes_domain_and_body",
+        "GooseExpressionDag.refused_observation_is_empty",
+        "GooseExpressionDag.scopeCheck_correct",
+        "GooseExpressionDag.scoped_iff_loose",
+        "GooseExpressionDag.scoped_monotone",
+        "GooseExpressionDag.self_or_forward_reference_rejected",
+        "GooseExpressionDag.shared_application_decodes",
+        "GooseExpressionDag.topological_edges_decrease",
+        "GooseExpressionDag.variable_requires_exact_depth",
         "GooseStoredBindings.completed_receipt_has_no_authority",
         "GooseStoredBindings.duplicate_precedes_checks",
         "GooseStoredBindings.duplicate_preserves_environment",
@@ -513,10 +1884,33 @@
     "quint": {
       "sources": [
         "formal/quint/DefinitionTransactions.qnt",
+        "formal/quint/ExpressionDag.qnt",
         "formal/quint/StoredBindings.qnt"
       ],
       "toolchain": "@informalsystems/quint@0.33.1",
       "obligations": [
+        "ExpressionDag.applicationDecodeTest",
+        "ExpressionDag.constantNamesLosslessTest",
+        "ExpressionDag.cyclicReferenceRefusalTest",
+        "ExpressionDag.dagAuthorityPreservedTest",
+        "ExpressionDag.emptyDagTest",
+        "ExpressionDag.escapingReferenceRefusalTest",
+        "ExpressionDag.exactHeightTest",
+        "ExpressionDag.forwardReferenceRefusalTest",
+        "ExpressionDag.lambdaBinderTest",
+        "ExpressionDag.leafPayloadsTest",
+        "ExpressionDag.letBinderTest",
+        "ExpressionDag.letValueNotBoundTest",
+        "ExpressionDag.nestedBinderDecrementTest",
+        "ExpressionDag.openDomainNotBoundTest",
+        "ExpressionDag.piBinderTest",
+        "ExpressionDag.refusedDagHasNoExpressionsTest",
+        "ExpressionDag.safety",
+        "ExpressionDag.scopeDepthMonotoneTest",
+        "ExpressionDag.selfReferenceRefusalTest",
+        "ExpressionDag.sharedOpenSubtreeDepthTest",
+        "ExpressionDag.simulationBoundStuttersTest",
+        "ExpressionDag.snapshotPrefixPreservedTest",
         "StoredBindings.crossLevelDuplicateAliasTest",
         "StoredBindings.duplicatePreemptsScopeSnapshotTest",
         "StoredBindings.duplicatePreservesAllFieldsTest",
@@ -554,16 +1948,22 @@
     "ESTATE.toml",
     "conformance/dependencies.json",
     "conformance/source-provenance.json",
+    "docs/expression-dag-scope.md",
     "docs/formalization.md",
     "formal/lean/Audit.lean",
     "formal/lean/DefinitionTransactions.lean",
+    "formal/lean/ExpressionDag.lean",
+    "formal/lean/ExpressionDagAudit.lean",
+    "formal/lean/ExpressionDagReplay.lean",
     "formal/lean/Replay.lean",
     "formal/lean/StoredBindings.lean",
     "formal/lean/StoredBindingsAudit.lean",
     "formal/lean/StoredBindingsReplay.lean",
     "formal/lean/lean-toolchain",
     "formal/quint/DefinitionTransactions.qnt",
+    "formal/quint/ExpressionDag.qnt",
     "formal/quint/StoredBindings.qnt",
+    "formal/quint/dag_replay.py",
     "formal/quint/package-lock.json",
     "formal/quint/package.json",
     "formal/quint/replay.py",
@@ -571,17 +1971,20 @@
     "reference/binding-trace.patch",
     "reference/checker.goose",
     "schemas/binding-trace-v1.md",
+    "schemas/expression-dag-replay-v1.md",
     "tools/acceptance.py",
     "tools/binding_trace_controls.py",
+    "tools/check_expression_dag.py",
     "tools/check_formal.py",
     "tools/check_stored_bindings.py",
+    "tools/expression_dag_profile.py",
     "tools/run.py",
     "tools/runtime.py",
     "tools/source_derivation.py",
     "tools/stored_binding_profile.py",
     "tools/transaction_profile.py"
   ],
-  "base_revision": "d14aa4fde522cd2a74c9df2e87dd8a7d4a38759b",
+  "base_revision": "be9eccdd537d8f20c0fd15ebb6dc83d6ce9783d4",
   "dependencies_before": {
     "estate_dependencies": [
       {
@@ -826,7 +2229,7 @@
       "witnessed": true,
       "expected_exit_code": 1,
       "trace": "quint-negative.itf.json",
-      "sha256": "0cd1f8f2c83a38137526565ffb7b049aa8b8419591652bdbd8cae7b4f15b857f"
+      "sha256": "d869c8ed9dad380351c7b154e962c84aeac51baeb067d5df761f6dc7ac51a6c6"
     }
   },
   "native_build": {
@@ -856,9 +2259,9 @@
     "log": "native-comparison.jsonl",
     "log_sha256": "08988853f8aed5544a4d2fce4aace38759ad3641d75f833d38321cda31c24f57",
     "native_command_template": [
-      "/tmp/lean-goose-formal-4mh2v9iv/checker",
+      "/tmp/lean-goose-formal-7ty9_0da/checker",
       "--check",
-      "/tmp/lean-goose-formal-4mh2v9iv/transaction.tsv"
+      "/tmp/lean-goose-formal-7ty9_0da/transaction.tsv"
     ]
   },
   "stored_bindings": {
@@ -937,7 +2340,7 @@
         "expected_exit_code": 1,
         "mutation": "existing value [0,0] becomes [0,999] on a Type_mismatch refusal",
         "trace": "stored-quint-negative.itf.json",
-        "sha256": "fde1e1be586e90f3291a0a58ebfad85c618dbdbcf604fc7422fe9b005a54dd53"
+        "sha256": "ca76c9e075df5a5b5fd30d278ac5706cf2fd08f8ac96aad5bbf3e4866d834f44"
       }
     },
     "finite_correspondence": {
@@ -971,14 +2374,14 @@
       "log_sha256": "0628f7cfc4507c1bc1457b06ab022567c7a65a7a8a0a11ac2e24eca46a2089d3",
       "native_command_templates": [
         [
-          "/tmp/lean-goose-formal-4mh2v9iv/checker",
+          "/tmp/lean-goose-formal-7ty9_0da/checker",
           "--trace",
-          "/tmp/lean-goose-formal-4mh2v9iv/stored-bindings.tsv"
+          "/tmp/lean-goose-formal-7ty9_0da/stored-bindings.tsv"
         ],
         [
-          "/tmp/lean-goose-formal-4mh2v9iv/checker",
+          "/tmp/lean-goose-formal-7ty9_0da/checker",
           "--check",
-          "/tmp/lean-goose-formal-4mh2v9iv/stored-bindings.tsv"
+          "/tmp/lean-goose-formal-7ty9_0da/stored-bindings.tsv"
         ]
       ]
     },
@@ -987,8 +2390,519 @@
       "count": 26,
       "commands": 51,
       "log": "stored-native-controls.json",
-      "sha256": "56b81fa11d3777f80dad77f41b09152c6f2bd073fea9692b0f8ed4997b521ddc",
+      "sha256": "1eb183fcfb040a2148a65268b47d3c7cfceaa39e0df4a49885e0d24239f3804d",
       "acceptance_authority": false
+    }
+  },
+  "expression_dag": {
+    "status": "passed",
+    "scope": "immutable raw DAG representation and binder scope; finite native correspondence",
+    "acceptance_authority": false,
+    "lean": {
+      "status": "passed",
+      "obligations": [
+        "GooseExpressionDag.child_height_lt",
+        "GooseExpressionDag.closed_iff_loose_zero",
+        "GooseExpressionDag.decodeNode_append_preserves",
+        "GooseExpressionDag.decodeNode_complete",
+        "GooseExpressionDag.decodeNode_sound",
+        "GooseExpressionDag.decodeNode_success_iff_topological",
+        "GooseExpressionDag.decode_append",
+        "GooseExpressionDag.decode_complete",
+        "GooseExpressionDag.decode_length",
+        "GooseExpressionDag.decode_prefix_extends",
+        "GooseExpressionDag.decode_preserves_old_node",
+        "GooseExpressionDag.decode_rejects_non_topological",
+        "GooseExpressionDag.decode_sound",
+        "GooseExpressionDag.decode_success_iff_topological",
+        "GooseExpressionDag.decoded_dag_has_no_cycles",
+        "GooseExpressionDag.duplicate_node_decodes_same",
+        "GooseExpressionDag.duplicated_children_decode_equally",
+        "GooseExpressionDag.height_positive",
+        "GooseExpressionDag.lambda_scope_distinguishes_domain_and_body",
+        "GooseExpressionDag.let_scope_distinguishes_value_and_body",
+        "GooseExpressionDag.observe_has_no_authority",
+        "GooseExpressionDag.pi_scope_distinguishes_domain_and_body",
+        "GooseExpressionDag.refused_observation_is_empty",
+        "GooseExpressionDag.scopeCheck_correct",
+        "GooseExpressionDag.scoped_iff_loose",
+        "GooseExpressionDag.scoped_monotone",
+        "GooseExpressionDag.self_or_forward_reference_rejected",
+        "GooseExpressionDag.shared_application_decodes",
+        "GooseExpressionDag.topological_edges_decrease",
+        "GooseExpressionDag.variable_requires_exact_depth"
+      ],
+      "required_theorem_axioms": [],
+      "namespace_support_axiom_allowlist": [
+        "propext"
+      ],
+      "namespace_declarations": 324,
+      "namespace_theorem_declarations": 107,
+      "compiled_model_sha256": "e15faf7169566f27f0b8743cfa2d364d1e181db031fcf0c6119e2286dc648012"
+    },
+    "quint": {
+      "status": "passed",
+      "tests": [
+        "applicationDecodeTest",
+        "constantNamesLosslessTest",
+        "cyclicReferenceRefusalTest",
+        "dagAuthorityPreservedTest",
+        "emptyDagTest",
+        "escapingReferenceRefusalTest",
+        "exactHeightTest",
+        "forwardReferenceRefusalTest",
+        "lambdaBinderTest",
+        "leafPayloadsTest",
+        "letBinderTest",
+        "letValueNotBoundTest",
+        "nestedBinderDecrementTest",
+        "openDomainNotBoundTest",
+        "piBinderTest",
+        "refusedDagHasNoExpressionsTest",
+        "scopeDepthMonotoneTest",
+        "selfReferenceRefusalTest",
+        "sharedOpenSubtreeDepthTest",
+        "simulationBoundStuttersTest",
+        "snapshotPrefixPreservedTest"
+      ],
+      "backend": "typescript",
+      "invariant": "ExpressionDag.safety",
+      "seed": "20261120",
+      "max_samples": 1000,
+      "max_steps": 40,
+      "arena_node_bound": 8,
+      "at_bound": "stutter",
+      "leaf_payloads": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "unbounded_proof": false,
+      "negative_control": {
+        "witnessed": true,
+        "expected_exit_code": 1,
+        "mutation": "Lam(Sort 0, Var 1) decrements body loose by two, falsely yielding zero instead of one",
+        "trace": "dag-quint-negative.itf.json",
+        "sha256": "373cb810668cf20d6b10dfbcd493edc59284e62ed5684bf188858ace8f561d8b"
+      }
+    },
+    "finite_correspondence": {
+      "status": "passed",
+      "initial_model_cases": 2208,
+      "topological_graphs": 2163,
+      "graph_node_lengths": [
+        1,
+        2,
+        3
+      ],
+      "leaves": [
+        "Sort 0",
+        "Sort 1",
+        "Var 0",
+        "Var 1",
+        "Var 2",
+        "Var 3",
+        "Const missing"
+      ],
+      "depths": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "native_scope_probes": 8652,
+      "malformed_topology_controls": 27,
+      "named_controls": 17,
+      "empty_dag_model_only": true,
+      "native_process_executions": 8740,
+      "unique_native_arenas_replayed": 11947,
+      "native_snapshots": 17324,
+      "native_node_payloads": 154157,
+      "native_binding_records": 17429,
+      "native_scope_checks": 8669,
+      "lean_quint_full_model_agreement": true,
+      "inputs": {
+        "file": "dag-profile-inputs.jsonl.gz",
+        "encoding": "gzip",
+        "sha256": "155318452da0d73921d779c559b75721526934c0c02ea1d4d135b3abaec9dbd0",
+        "uncompressed_bytes": 169632,
+        "uncompressed_sha256": "070a775c997f88c5d9d3c368c1f804a0317837d7ba8b99f19e3389a36d574960",
+        "quint_replay_chunk_size": 256,
+        "quint_replay_chunks": [
+          {
+            "first_case_index": 0,
+            "case_count": 256,
+            "command_name": "dag-profile-quint-replay-000",
+            "stdin_sha256": "419c9544c1875dac970412277b29ac70d4f5460ea63e8cdb92ee29430e2bcfc6"
+          },
+          {
+            "first_case_index": 256,
+            "case_count": 256,
+            "command_name": "dag-profile-quint-replay-001",
+            "stdin_sha256": "1e6f04e7143a27fba60c776ba3c6f781dbadb316998f39fd9cb546430df81ceb"
+          },
+          {
+            "first_case_index": 512,
+            "case_count": 256,
+            "command_name": "dag-profile-quint-replay-002",
+            "stdin_sha256": "806f9c64c56d862c6f2f6483f55941fb0d5e471f51854d45b442283fadcf167a"
+          },
+          {
+            "first_case_index": 768,
+            "case_count": 256,
+            "command_name": "dag-profile-quint-replay-003",
+            "stdin_sha256": "90115d546eb4b9221beb454054e7065a36e0fa6ea14f71423613ec5c8aaba277"
+          },
+          {
+            "first_case_index": 1024,
+            "case_count": 256,
+            "command_name": "dag-profile-quint-replay-004",
+            "stdin_sha256": "192239fa98986f368d21289c4c137e5dfc2dcf3a2056cc5662e76abff95ee6cf"
+          },
+          {
+            "first_case_index": 1280,
+            "case_count": 256,
+            "command_name": "dag-profile-quint-replay-005",
+            "stdin_sha256": "a2eef2cf3389f8f0369c862352cd1464490762d8e5377061051d70a8513b2f69"
+          },
+          {
+            "first_case_index": 1536,
+            "case_count": 256,
+            "command_name": "dag-profile-quint-replay-006",
+            "stdin_sha256": "5bab2f237229f31b9aee47a04ac6ff32da149b0645f36e368dc7f0cb1342f8e7"
+          },
+          {
+            "first_case_index": 1792,
+            "case_count": 256,
+            "command_name": "dag-profile-quint-replay-007",
+            "stdin_sha256": "85a5e83f86a133d001f53f9cc113cfa317ec8fb02be56fa854564e5ff63f36d7"
+          },
+          {
+            "first_case_index": 2048,
+            "case_count": 160,
+            "command_name": "dag-profile-quint-replay-008",
+            "stdin_sha256": "c47f2b2c6c5ef9721bf62858b7fbdbd76dd8236e528bc1d3dfa87d172e1deea9"
+          }
+        ]
+      },
+      "arena_inputs": {
+        "file": "dag-arenas-inputs.jsonl.gz",
+        "encoding": "gzip",
+        "sha256": "98b2a2ba2486815014b086893e752c01026299359d18a2abcef3d7cfbb271e7b",
+        "uncompressed_bytes": 1871533,
+        "uncompressed_sha256": "5cc9c95b64a6696bc999ecb4f03e212b84e4cc38e0cba71beb5c889a9db0d186",
+        "quint_replay_chunk_size": 256,
+        "quint_replay_chunks": [
+          {
+            "first_case_index": 0,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-000",
+            "stdin_sha256": "b043199939a55a23e07774b8a67f3392373023d17e144e1866dcaf037d2de84c"
+          },
+          {
+            "first_case_index": 256,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-001",
+            "stdin_sha256": "64013a6242ea7cc6d5e33715e35ff6ab4ff50d3eedfa9b8cf49873fa55e70f1d"
+          },
+          {
+            "first_case_index": 512,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-002",
+            "stdin_sha256": "c2d1d3a1cdd418c9106aa39a17bdc39d12c33254585110add6898a315cc94247"
+          },
+          {
+            "first_case_index": 768,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-003",
+            "stdin_sha256": "f3d5e1d7c95b644b8c1fcb22494628379617a83d2d92e1baecfbd86a03e3455e"
+          },
+          {
+            "first_case_index": 1024,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-004",
+            "stdin_sha256": "cfe720a04b781d0766af8e0ee3ac6a068767beac8b1bc73467f9d0a68108e933"
+          },
+          {
+            "first_case_index": 1280,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-005",
+            "stdin_sha256": "5d10051ef047062cc783141f522a1ff9329fc08a3d1c1b93a48b8d5e6f3cf8b8"
+          },
+          {
+            "first_case_index": 1536,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-006",
+            "stdin_sha256": "2582297e0ade30e16479bce9470a5e4abe064a1dd1fad711e9e6958143250233"
+          },
+          {
+            "first_case_index": 1792,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-007",
+            "stdin_sha256": "d5a1c3c3445e8c3df0da03d7052a7f74506831a60274a81b400867201067ef0d"
+          },
+          {
+            "first_case_index": 2048,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-008",
+            "stdin_sha256": "fda33ab946b3f2e7942d3f9eb644eb7e47d0cec24da5be2e88ca918d99df4558"
+          },
+          {
+            "first_case_index": 2304,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-009",
+            "stdin_sha256": "ab9532226da82c0e66fcf8bed48fc8aba87b7988a576621e206d9246a9d65246"
+          },
+          {
+            "first_case_index": 2560,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-010",
+            "stdin_sha256": "45b70b76f4f14100de9e6a22e2b8d8e45fe827e59ce85a8a4312c045e531e9cc"
+          },
+          {
+            "first_case_index": 2816,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-011",
+            "stdin_sha256": "89aa4be43696883734cf02f88d3c7f965c5d39630d87b9b30871263aec01aefc"
+          },
+          {
+            "first_case_index": 3072,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-012",
+            "stdin_sha256": "dba468b92bc0316f99f9b181c79399acf5b8ede51553332a3177a0f8bdfede4a"
+          },
+          {
+            "first_case_index": 3328,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-013",
+            "stdin_sha256": "1999d3b63446906ab3fd525c615db49ae1863a6c615a1b6d67e4cfa33609a9c2"
+          },
+          {
+            "first_case_index": 3584,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-014",
+            "stdin_sha256": "9643bf5af8cf5780eeba5db58542fea9eab23741e6cd7cf555479ca18140ebe1"
+          },
+          {
+            "first_case_index": 3840,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-015",
+            "stdin_sha256": "12c49b703c7719ea4e705f7f6c502dfe945e9741c8d8002abcb890e896e5a42a"
+          },
+          {
+            "first_case_index": 4096,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-016",
+            "stdin_sha256": "5ddd53b4301feccc8323aa1eadc8e471e75ffab8be5d05c3ed4b531875632432"
+          },
+          {
+            "first_case_index": 4352,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-017",
+            "stdin_sha256": "2c18dbfd15a92dc635902f297ddd9eba626ef7f87b3da2ebbcff67b193bfab03"
+          },
+          {
+            "first_case_index": 4608,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-018",
+            "stdin_sha256": "ff653fbf8394c99bf0c6894ab7d2eb7da998f962e788d772d031f67c18e3e1c7"
+          },
+          {
+            "first_case_index": 4864,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-019",
+            "stdin_sha256": "05e34d89ca09c6f8adce5eb347dd103714a890abdf0bc7a78b68ef8f3cc85d93"
+          },
+          {
+            "first_case_index": 5120,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-020",
+            "stdin_sha256": "d6c816739d0562a85db35d102757275706d253463ea4fd7dcd04d8af1543a0fd"
+          },
+          {
+            "first_case_index": 5376,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-021",
+            "stdin_sha256": "8505217209a09b8cd971ef0e56ca0a975008b2c98fdf6984bcdb9f863865cdab"
+          },
+          {
+            "first_case_index": 5632,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-022",
+            "stdin_sha256": "081ec515219d50fd28d6d534882e6cbccd3a2560d23eb9ef522b2106bdb2b958"
+          },
+          {
+            "first_case_index": 5888,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-023",
+            "stdin_sha256": "1b3f9907f42e83c6559200a5500cc0493e37cef45c524dd9a5921ba27be3435d"
+          },
+          {
+            "first_case_index": 6144,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-024",
+            "stdin_sha256": "261138a40013d8713ed27e457c5e7921d5c8956ccafc5ff096c813f6c5c65004"
+          },
+          {
+            "first_case_index": 6400,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-025",
+            "stdin_sha256": "aba550e3791cbb3c91b7c043a0d2f1f8db8550ced529a2eeb5f7400fd375b556"
+          },
+          {
+            "first_case_index": 6656,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-026",
+            "stdin_sha256": "4990290089ba6c52b48567afd7b17d90da61ccf84a12f3cb2df83a1e01aceb63"
+          },
+          {
+            "first_case_index": 6912,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-027",
+            "stdin_sha256": "0914df27f4f5adacf1d0afe465eb19b9b14ab706542aa960bcd4553aa3d4838a"
+          },
+          {
+            "first_case_index": 7168,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-028",
+            "stdin_sha256": "d82d01a2d19e9617cdfb6042a9e1dfd480da9787114dbad82ee2b5cbb51e78f2"
+          },
+          {
+            "first_case_index": 7424,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-029",
+            "stdin_sha256": "869a37cf2f9125691ab3263759be7d8b4e3e2b64269c714307d25f8c0dc3795e"
+          },
+          {
+            "first_case_index": 7680,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-030",
+            "stdin_sha256": "6008cf0ae92b29723b1a7376683c9c618fab52d8dfdb1fcdeb85c032c7604bd2"
+          },
+          {
+            "first_case_index": 7936,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-031",
+            "stdin_sha256": "039c389f058f7500d45350e5af4d58c89914ccab2f31926714902e20ec41c88a"
+          },
+          {
+            "first_case_index": 8192,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-032",
+            "stdin_sha256": "d0bed2a38969d001714efa02253ea92c926105b5f10dea98a109cba48f1d250b"
+          },
+          {
+            "first_case_index": 8448,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-033",
+            "stdin_sha256": "6f3591b51411a57fe4c2f8997a047b5d46e5c72d6c0fe733f9e1724fdc9511eb"
+          },
+          {
+            "first_case_index": 8704,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-034",
+            "stdin_sha256": "7106d75648c20d4eb4be72f009eccf6c96b9758113fdc38ea0e90b2ae6519181"
+          },
+          {
+            "first_case_index": 8960,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-035",
+            "stdin_sha256": "16291618c36aaa247fc762e0ea52d19e7ab2be34b457a7a69a1eae27a040f58d"
+          },
+          {
+            "first_case_index": 9216,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-036",
+            "stdin_sha256": "df82a35407b868c3bece36aa9dfa6ff572b52fc7f57fe8dd28411b3ee699486e"
+          },
+          {
+            "first_case_index": 9472,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-037",
+            "stdin_sha256": "e9dea3636f9bda538c8808e1f80484aa7caa454adbe11803f5e56bcd04e49fad"
+          },
+          {
+            "first_case_index": 9728,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-038",
+            "stdin_sha256": "d830579081dc95784cac7f68930a4e7d4b37b57fb1734ee7c9bffb4fb5a6a494"
+          },
+          {
+            "first_case_index": 9984,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-039",
+            "stdin_sha256": "ee3affd96adf1c13c5fbc843a9ed3ac74cfd4cff7aaf80a2450065112e2ef9e4"
+          },
+          {
+            "first_case_index": 10240,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-040",
+            "stdin_sha256": "3eccacb433a90003e6154151c82e3c08be9c0eb1dcda904cf762622a4bd8e971"
+          },
+          {
+            "first_case_index": 10496,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-041",
+            "stdin_sha256": "81757dae98c6a3d94c88d5f14408f069a82444c3ab561c7a299fc2dd86b5460f"
+          },
+          {
+            "first_case_index": 10752,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-042",
+            "stdin_sha256": "b67b2f40bab275d19973f845bdd67bf6f3c0503a180b65e81552c6ef05a7d82e"
+          },
+          {
+            "first_case_index": 11008,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-043",
+            "stdin_sha256": "e714171f8937af2040bb54d31fd842c0d06dee5eefee4d1f02f6df6516448496"
+          },
+          {
+            "first_case_index": 11264,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-044",
+            "stdin_sha256": "6e27a1b2a1cab44aa1d497b915380eadcdbc1946362bed5bdd17a7a74e582e6a"
+          },
+          {
+            "first_case_index": 11520,
+            "case_count": 256,
+            "command_name": "dag-arenas-quint-replay-045",
+            "stdin_sha256": "139281ff67d3d2497434926499d034570e18e06d2a5adeeab2ca468e263e3cd1"
+          },
+          {
+            "first_case_index": 11776,
+            "case_count": 171,
+            "command_name": "dag-arenas-quint-replay-046",
+            "stdin_sha256": "f374f82ee0e2032b8bb75ca177b4fba63c61aea33fad822d3b7433dce1b10332"
+          }
+        ]
+      },
+      "native_log": "dag-native-comparison.jsonl.gz",
+      "native_log_sha256": "843d524cfa62dd166f61e3c6fb6442f8e262ac9946c7149d9bc76a5b0d998110",
+      "arena_comparison_log": "dag-arena-comparison.jsonl.gz",
+      "arena_comparison_log_sha256": "652a80cb5dcc3530382f782a9f2fcd10f36158f3c634658f4266904970b93177",
+      "log_encoding": "gzip",
+      "native_command_templates": [
+        [
+          "/tmp/lean-goose-formal-7ty9_0da/checker",
+          "--trace",
+          "/tmp/lean-goose-formal-7ty9_0da/expression-dag.tsv"
+        ],
+        [
+          "/tmp/lean-goose-formal-7ty9_0da/checker",
+          "--check",
+          "/tmp/lean-goose-formal-7ty9_0da/expression-dag.tsv"
+        ]
+      ],
+      "native_projection": "full raw DAGs, original decoded-node prefixes, immutable raw binding IDs and observable scope refusal or completion",
+      "native_internal_free_or_height_observed": false,
+      "universal_implementation_refinement": false,
+      "bounds": {
+        "native_arena_nodes": 4096,
+        "structural_wire_tokens_per_request": 262144,
+        "model_line_bytes": 4194304
+      }
     }
   },
   "dependencies_after": {
@@ -1144,5 +3058,5 @@
   },
   "tool_executables_unchanged": true,
   "source_unchanged": true,
-  "finished_at_utc": "2026-11-20T12:23:23.682884+00:00"
+  "finished_at_utc": "2026-11-20T13:45:16.004487+00:00"
 }

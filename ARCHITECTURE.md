@@ -12,7 +12,7 @@ inventory describes the implementation rather than assigning authority.
 | --- | --- |
 | `policy/` | Governance, evidence, and publication policy |
 | `reference/` | Locally owned, bounded Goose checking observations |
-| `formal/` | Lean transaction and full-record binding proofs, executable models, and Quint checks |
+| `formal/` | Lean transaction, full-record binding, and structural DAG/scope proofs with independent Quint checks |
 | `oracles/` | Contract for pinned external Lean and OCaml comparisons |
 | `schemas/` | Versioned input and observation contracts |
 | `conformance/` | Source identities, dependency pins, and generated observations |
@@ -47,9 +47,9 @@ definitions. Its success label is `observed_success`; its output declares
 a registered finite expectation. The local observation protocol confers no
 domain admission rights.
 
-## Formal transaction and stored-binding boundary
+## Formal transaction, stored-binding, and expression boundary
 
-Both required scopes map to `check_definition` in the Goose reference. The
+The transaction and stored-binding scopes map to `check_definition` in the Goose reference. The
 original ordered-name model captures duplicate priority, successful insertion,
 refusal atomicity, success counts, and termination without a completed `--check`
 receipt. Its 21 Lean obligations and 1,110-case comparison remain required.
@@ -69,6 +69,22 @@ simulation, and a deliberate payload-corruption counterexample. It evaluates all
 14-action profile. Native comparison covers Sort/Const payloads at levels zero
 and one, two names, duplicates, refusals, retries, and scope termination.
 
+The expression-DAG model maps topology-ordered raw nodes to structural
+expressions for all seven constructor kinds. Its Lean proofs establish the
+decoder's representation relation, topology criterion, acyclicity, length and
+prefix preservation, and recursive scope equivalence to the minimum required
+binder depth. Shared child IDs are retained in raw traces; structural decoding
+expands their meaning and does not claim a unique or physically shared tree
+representation. Height is a structural measure in the models.
+
+This third lane requires 30 axiom-free Lean theorems, 21 Quint tests, bounded
+simulation with an eight-node cap, and a wrong-binder-decrement counterexample.
+The native finite profile probes every one-to-three-node valid DAG over the
+selected seven leaves at depths zero through three, plus malformed topology
+and named context controls. All observed raw arenas are independently decoded
+by both actual models. Full details and the exact limits are in
+[docs/expression-dag-scope.md](docs/expression-dag-scope.md).
+
 ### Observable diagnostic interface
 
 `checker --trace FILE` exposes each processed definition's outcome, complete
@@ -87,10 +103,12 @@ stored-binding profile case, including the processed prefix before termination.
 The diagnostic data grants no admission authority.
 
 The trace omits mutable node caches, context stacks, fuel, and derived metadata.
-Its complete raw DAG schema can describe more syntax than the Sort/Const payloads
-covered by the current correspondence profile. General correctness of the trace
-adapter, arbitrary-expression correspondence, and refinement of the checker by
-the models remain open. The complete claims, required inventories, and limits
+The DAG lane verifies structural expression payloads and native scope outcomes
+across all node kinds in its finite profile. Native scope is observed through
+fresh-definition completion or the designated fatal `Invalid_scope` result;
+internal metadata is not directly compared. General correctness of the trace
+adapter and refinement of arbitrary runtime behavior by the models remain open.
+The complete claims, required inventories, and limits
 are in [docs/formalization.md](docs/formalization.md); execution outcomes belong
 to the receipt for the exact source tested.
 
