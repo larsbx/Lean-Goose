@@ -14,8 +14,8 @@ bytes before executing the auditor. Static manifest conformance and completed
 formal execution are separately reported checks.
 
 This repository has no accepting boundary. Its reference reports observations;
-its local proofs establish the stated transaction, stored-binding, and
-expression-DAG/scope model properties.
+its local proofs establish the stated transaction, stored-binding,
+expression-DAG/scope, and lifting/substitution model properties.
 Finite comparison and performance measurements remain evidence. The formal scope
 document records the implementation correspondence that remains unproved.
 

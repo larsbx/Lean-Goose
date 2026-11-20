@@ -8,7 +8,7 @@ permissions:
 jobs:
   conformance:
     runs-on: ubuntu-24.04
-    timeout-minutes: 50
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -20,7 +20,7 @@ jobs:
           import json
           from pathlib import Path
           for name, schema in (("verification.json", "lean-goose.local-verification.v1"),
-                               ("formal/results.json", "lean-goose.formal-evidence.v3")):
+                               ("formal/results.json", "lean-goose.formal-evidence.v4")):
               path = Path("conformance/evidence") / name
               path.parent.mkdir(parents=True, exist_ok=True)
               path.write_text(json.dumps({"schema": schema, "status": "running",

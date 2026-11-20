@@ -44,7 +44,7 @@ in the local Goose source.
 | `make pins` | External checkout and local source-provenance verification |
 | `make test` | Full finite observation comparison against native Lean and OCaml |
 | `make formal-tests` | Formal-runner acceptance and rejection controls |
-| `make formal` | All three Lean proof inventories and axiom audits, independent Quint models, finite transaction/binding/DAG comparisons, and native controls |
+| `make formal` | All four Lean proof inventories and axiom audits, independent Quint models, finite transaction/binding/DAG/substitution comparisons, and native controls |
 | `make smoke` | Small fresh three-engine benchmark execution |
 | `make audit` | Pinned external estate v3 manifest audit |
 | `make acceptance` | All required gates, logs, source manifest, and verification receipt |
@@ -159,12 +159,42 @@ Quint replay uses sequential fresh invocations of at most 256 requests, bounding
 REPL source/history growth. Exact chunk offsets, counts, and input hashes link
 every command to the complete ordered inventory. Lean evaluates the same entire
 inventory, and each Quint chunk is compared with the corresponding Lean slice.
-The repository runner allows 1,800 seconds for the expanded formal gate and
+The repository runner allows 2,400 seconds for the expanded four-scope formal gate and
 records that timeout in its receipt. Individual formal commands retain their
 300-second limit and native probes retain their 15-second limit. This changes
 the orchestration budget, not the checker resource bounds or required cases.
-The hosted workflow allows 50 minutes for toolchain setup and the complete
+The hosted workflow allows 60 minutes for toolchain setup and the complete
 acceptance sequence.
+
+### Lifting and substitution comparison
+
+The [substitution lane](substitution.md) requires 32 additional Lean theorems
+with empty transitive axiom sets and a complete namespace audit. Quint executes
+30 deterministic tests and 1,000 seeded samples of at most eight transitions,
+with a six-node arena cap and stuttering at the bound. The exact negative
+witness inserts an unlifted free variable beneath a lambda and captures it.
+
+Lean and actual Quint evaluate 2,546 operation requests. Each Quint invocation
+contains at most 128 requests, internally grouped into commands of at most 32;
+the complete ordered Lean result is compared against every corresponding chunk.
+The native diagnostic harness executes the checker's actual functions. For
+2,540 transformed results, the result ID must point into the returned arena,
+the entire expression wire must match, and every imported node must retain its
+original raw ID and payload. Six topology cases require exact parser refusal.
+
+Fourteen additional native controls separate parser, import, operation resource,
+and diagnostic-envelope failures. Eight ordinary definition controls execute
+both `--trace` and `--check`, covering beta/zeta capture and malformed scope.
+This lane requires 2,576 native process executions. The native `free` and height
+metadata is not exposed; model metadata agreement is not relabeled as direct
+native metadata observation.
+
+The generated harness changes only the unique checker main identifier and
+appends the driver. Exact reconstruction, checker and driver hashes, generated
+source/C/binary hashes, and enabled runtime checks are recorded. Complete native
+fixtures, commands, stdout, stderr, exits, and predictions are retained. Each
+actual replay helper must also reject 22 malformed requests and agree on three
+fixed positive contract cases. Earlier receipts do not verify the new scope.
 
 ### Timing smoke
 
@@ -178,8 +208,9 @@ own source identity, and no speed threshold determines smoke success.
 The top-level receipt is `conformance/evidence/verification.json`. The formal
 gate writes `conformance/evidence/formal/results.json`. Their source inventories,
 logs, toolchain identities, outcomes, and before/after checks identify the
-execution being reported. The v3 formal receipt records all three scopes,
-including its `stored_bindings` and `expression_dag` sections, and the stated finite runtime comparisons; it
+execution being reported. The v4 formal receipt records all four scopes,
+including its `stored_bindings`, `expression_dag`, and `substitution` sections,
+and the stated finite runtime comparisons; it
 does not certify full implementation
 refinement or estate-wide adoption.
 

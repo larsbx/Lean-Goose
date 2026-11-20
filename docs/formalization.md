@@ -1,8 +1,9 @@
 # Required formalization scopes
 
-Lean-Goose requires three related formal scopes: ordered definition transactions,
-preservation of complete stored bindings, and expression-DAG representation with
-binder scope. All execute Lean proofs, Quint checks, and finite comparisons with
+Lean-Goose requires four related formal scopes: ordered definition transactions,
+preservation of complete stored bindings, expression-DAG representation with
+binder scope, and capture-avoiding lifting/substitution. All execute Lean proofs,
+Quint checks, and finite comparisons with
 the bounded Goose reference. The
 stored-binding scope adds declared-type, original-value, and inferred-type
 payloads plus snapshots after each processed definition.
@@ -12,20 +13,28 @@ payloads plus snapshots after each processed definition.
 | Ordered names | 21 | 12 | 1,110 nonempty traces over 10 actions, lengths 1–3 |
 | Stored bindings | 29 | 16 | 2,954 nonempty traces over 14 actions, lengths 1–3 |
 | Expression DAG and scope | 30 | 21 | 2,163 topology-valid graphs of lengths 1–3 over seven leaves, each at four native binder depths; 45 additional model/control cases |
+| Lifting and substitution | 32 | 30 | 2,520 operations over 84 short graphs, 20 named compound/capture cases, six topology refusals; 30 additional native control commands |
 
 The [expression-DAG specification](expression-dag-scope.md) gives the third
 scope's representation relation, binder laws, exact finite profile, observed
 native arenas, and [replay wire contract](../schemas/expression-dag-replay-v1.md).
 The transaction and stored-binding scopes are detailed below.
+The [substitution specification](substitution.md) gives the fourth scope's
+cutoff laws, arbitrary nested-lambda capture theorem, native harness derivation,
+and [operation replay contract](../schemas/substitution-replay-v1.md).
+The complete required inventory is **112 Lean theorems and 79 Quint tests**,
+plus one invariant and one designated negative control per Quint model.
 
 The inventories describe what the gate must execute. They are not a claim that
 any particular source revision's acceptance run has passed. The matching formal
 and repository receipts record actual execution outcomes and source identities.
-Hosted-CI results are assessed separately for the same revision. Each Quint scope also requires 1,000 seeded
-simulated traces of at most 40 transitions and a designated invariant-failure
-control. The DAG simulation additionally caps its arena at eight nodes and
-stutters thereafter; that exploration bound is distinct from the unbounded
-Lean theorems and the finite native replay inventory.
+Hosted-CI results are assessed separately for the same revision. Each Quint
+scope requires 1,000 seeded simulated traces and a designated invariant-failure
+control. The original three models use at most 40 transitions; substitution
+uses at most eight. The DAG simulation caps its arena at eight nodes and the
+substitution simulation at six; each stutters thereafter. Those exploration
+bounds are distinct from the unbounded Lean theorems and the finite native
+replay inventories.
 
 ## Ordered-name model and implementation mapping
 
@@ -218,7 +227,7 @@ assumption inside a first-match shortcut.
 | `tools/check_stored_bindings.py` | Execute the new proof/model inventories and both native modes for every case |
 | `tools/binding_trace_controls.py` | Required diagnostic contract and envelope controls |
 | `tools/source_derivation.py` | Reconstruct the exact reviewed diagnostic extension and verify the preserved checking/parser prefix |
-| `tools/check_formal.py` | Require all three formal scopes in one source-bound receipt |
+| `tools/check_formal.py` | Require all four formal scopes in one source-bound receipt |
 
 ### Stored-binding Lean obligations
 
@@ -368,6 +377,44 @@ families using eight definitions, one sample, and one worker per engine. These
 checks retain their finite testing purposes and do not become full mathematical
 refinement or new performance measurements through this increment.
 
+## Lifting and capture-avoiding substitution
+
+The fourth scope reuses `GooseExpressionDag.Expr` and its complete-DAG decoder.
+It defines structural `lift amount cutoff` and `substitute replacement cutoff`
+for all seven constructors. A binder increases the cutoff only in its body;
+an inserted replacement is lifted by the current cutoff to preserve its free
+variables. Variables above the removed slot decrease by one.
+
+The required Lean laws include scope preservation, height preservation for
+lifting, composition at a common cutoff, fixed points below a cutoff,
+closedness, and two insertion/removal identities. The nested-lambda theorem
+quantifies over arbitrary nesting and replacement expressions. All 32 named
+obligations must have empty transitive axiom sets. The complete new namespace
+is audited, with only `propext` allowed in generated/support declarations.
+
+Quint computes the transformations independently using DAG-derived context
+tables and structural token masks. Its Python adapter only handles canonical
+framing, literal data, and echoed identities. Thirty deterministic tests and
+1,000 seeded samples of at most eight transitions are required, with a six-node
+simulation cap. The negative control must produce exactly the two states in
+which an unlifted free variable is captured beneath one lambda.
+
+Both models evaluate all 2,546 ordered operation requests, including six atomic
+topology refusals. A temporary harness preserves the entire checker except for
+renaming its unique main identifier and appends the owned diagnostic driver.
+It calls the actual `lift` and `substitute`, preserving imported raw node IDs
+and comparing the selected native result's complete expression with the model.
+Fourteen parser/resource controls and eight ordinary checking controls in two
+modes bring this lane to 2,576 native process executions. Native internal
+height/free metadata remains outside the diagnostic output.
+
+The gate also invokes each actual replay helper against 22 malformed requests
+and three fixed positive contract cases for empty/reordered depth queries and
+a large cutoff. A malformed helper request, native resource refusal, and
+mathematical topology refusal remain distinct outcomes. None may supply a
+fabricated successful result. See [substitution.md](substitution.md) for the
+complete proof inventory, assumptions, exact limits, and implementation mapping.
+
 ## Reproduction and receipts
 
 Use the pinned Lean `4.34.1` toolchain at revision
@@ -386,12 +433,25 @@ make acceptance
 Quint installation is under `formal/quint/node_modules`. Tool reports and hashes
 belong to the actual run. Formal Lean commands use the recorded `--threads=1`
 flag for a fixed worker count, without changing the proof or axiom checks. The formal receipt is
-`conformance/evidence/formal/results.json`, schema `lean-goose.formal-evidence.v3`,
-with required `stored_bindings` and `expression_dag` sections in addition to the
+`conformance/evidence/formal/results.json`, schema `lean-goose.formal-evidence.v4`,
+with required `stored_bindings`, `expression_dag`, and `substitution` sections in addition to the
 retained ordered-name scope.
 The repository receipt is `conformance/evidence/verification.json`.
 
-The gate requires all three formal scopes, their Lean and Quint lanes, actual finite
+The four-scope orchestration allowance is 2,400 seconds, with 60 minutes for
+the complete hosted workflow. Individual formal subprocesses remain limited
+to 300 seconds and native probes to 15 seconds. An earlier acceptance attempt
+under the 1,800-second allowance was explicitly interrupted after ten completed
+native-arena replay chunks. The measured pace after nine chunks projected about
+1,942 seconds for all four scopes; the timeout had not fired. Its unchanged
+unfinished receipts, current-run artifacts, prior source overrides, and explicit
+interruption record are preserved under
+[`substitution-orchestration-1800`](../conformance/evidence/formal-attempts/substitution-orchestration-1800/).
+That attempt is neither a completed pass nor an observed timeout. The allowance
+change retains every required case, comparison, and individual command limit;
+a subsequent fresh complete acceptance run must establish the new source's result.
+
+The gate requires all four formal scopes, their Lean and Quint lanes, actual finite
 runtime comparisons, and unchanged source identities. Declared scope, implementation, model, gate, and profile files
 must occur in its source inventory. Logs and receipt outcomes are generated by
 execution. CI retains its own evidence, and local success is recorded separately
@@ -414,6 +474,17 @@ Full stored-binding replay and native-comparison logs are gzip-compressed:
   probe identities, model predictions, and fixture hashes.
 - `dag-arena-comparison.jsonl.gz` links each native snapshot to its replayed arena
   and records the structural-prefix, binding-record, and scope checks.
+- `substitution-inputs.jsonl.gz`, `substitution-lean-replay.log.gz`, and
+  `substitution-quint-replay-*.log.gz` retain all transformation requests and both
+  actual model results. Quint runs sequential chunks of at most 128 requests,
+  with exact offsets, counts, and input digests.
+- `substitution-native-comparison.jsonl.gz` retains every native fixture,
+  command, exit, stdout, stderr, model prediction, and control expectation.
+  `substitution-harness.goose` retains the exact generated source; its derivation,
+  C, and binary identities are recorded in the `substitution.native_build` section.
+- `substitution-malformed-inputs.jsonl.gz` and
+  `substitution-contract-inputs.jsonl.gz` bind the general replay contract
+  controls to their actual per-helper command logs.
 
 These files are under `conformance/evidence/formal/`; the receipt identifies
 content digests. Read a compressed log with `gzip.open`:
@@ -445,9 +516,11 @@ finite-test meaning.
 The stored-binding model establishes full-record preservation at its abstract
 boundary; native correspondence currently covers the declared finite Sort/Const
 profile. The separate DAG scope proves structural decoding and binder laws and
-adds finite correspondence for all node kinds. The next obligations are
-capture-avoiding substitution and its scope laws, typing/conversion rules, and
-refinement of actual runtime transitions. Runtime/tool authenticity,
+adds finite correspondence for all node kinds. The substitution scope proves
+structural lifting, substitution, scope, and noncapture laws and adds finite
+actual-function correspondence. Typing/conversion rules and refinement of
+arbitrary concrete transformation and checker transitions remain open.
+Runtime/tool authenticity,
 faithful diagnostic serialization, filesystem consistency, and source-hash
 assumptions remain in the execution boundary. Concrete work is listed in
 [roadmap.md](roadmap.md).

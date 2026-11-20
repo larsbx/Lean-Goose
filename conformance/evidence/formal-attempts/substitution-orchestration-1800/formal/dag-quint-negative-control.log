@@ -1,0 +1,79 @@
+An example execution:
+
+[State 0]
+{
+  hasStep: false,
+  last: { a: 1, b: 0, c: 0, name: [], tag: 1 },
+  previous:
+    {
+      acceptance_authority: false,
+      decoded: true,
+      nodes:
+        [
+          { a: 0, b: 0, c: 0, name: [], tag: 0 },
+          { a: 1, b: 0, c: 0, name: [], tag: 1 }
+        ],
+      rows:
+        [
+          { expression: [0, 0], height: 1, loose: 0 },
+          { expression: [1, 1], height: 1, loose: 2 }
+        ]
+    },
+  s:
+    {
+      acceptance_authority: false,
+      decoded: true,
+      nodes:
+        [
+          { a: 0, b: 0, c: 0, name: [], tag: 0 },
+          { a: 1, b: 0, c: 0, name: [], tag: 1 }
+        ],
+      rows:
+        [
+          { expression: [0, 0], height: 1, loose: 0 },
+          { expression: [1, 1], height: 1, loose: 2 }
+        ]
+    }
+}
+
+[State 1]
+{
+  hasStep: true,
+  last: { a: 0, b: 1, c: 0, name: [], tag: 4 },
+  previous:
+    {
+      acceptance_authority: false,
+      decoded: true,
+      nodes:
+        [
+          { a: 0, b: 0, c: 0, name: [], tag: 0 },
+          { a: 1, b: 0, c: 0, name: [], tag: 1 }
+        ],
+      rows:
+        [
+          { expression: [0, 0], height: 1, loose: 0 },
+          { expression: [1, 1], height: 1, loose: 2 }
+        ]
+    },
+  s:
+    {
+      acceptance_authority: false,
+      decoded: true,
+      nodes:
+        [
+          { a: 0, b: 0, c: 0, name: [], tag: 0 },
+          { a: 1, b: 0, c: 0, name: [], tag: 1 },
+          { a: 0, b: 1, c: 0, name: [], tag: 4 }
+        ],
+      rows:
+        [
+          { expression: [0, 0], height: 1, loose: 0 },
+          { expression: [1, 1], height: 1, loose: 2 },
+          { expression: [4, 0, 0, 1, 1], height: 2, loose: 0 }
+        ]
+    }
+}
+
+[violation] Found an issue (18ms at 56 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated

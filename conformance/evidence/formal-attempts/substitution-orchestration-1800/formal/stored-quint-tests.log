@@ -1,0 +1,20 @@
+
+  StoredBindings
+    ok initialStoredStateTest passed 1 test(s)
+    ok goodPayloadLevelZeroTest passed 1 test(s)
+    ok goodPayloadLevelOneTest passed 1 test(s)
+    ok typedAliasPayloadTest passed 1 test(s)
+    ok wrongTypeAliasRefusalTest passed 1 test(s)
+    ok duplicatePreservesAllFieldsTest passed 1 test(s)
+    ok crossLevelDuplicateAliasTest passed 1 test(s)
+    ok mismatchPreservesAllFieldsTest passed 1 test(s)
+    ok unknownAliasPreservesAllFieldsTest passed 1 test(s)
+    ok refusalThenRetryTest passed 1 test(s)
+    ok levelOneAliasTest passed 1 test(s)
+    ok scopeSnapshotTest passed 1 test(s)
+    ok duplicatePreemptsScopeSnapshotTest passed 1 test(s)
+    ok haltStopsSnapshotsTest passed 1 test(s)
+    ok orderedSnapshotCountTest passed 1 test(s)
+    ok storedAuthorityPreservedTest passed 1 test(s)
+
+  16 passing (63ms)

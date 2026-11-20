@@ -12,7 +12,7 @@ inventory describes the implementation rather than assigning authority.
 | --- | --- |
 | `policy/` | Governance, evidence, and publication policy |
 | `reference/` | Locally owned, bounded Goose checking observations |
-| `formal/` | Lean transaction, full-record binding, and structural DAG/scope proofs with independent Quint checks |
+| `formal/` | Lean transaction, full-record binding, DAG/scope, and substitution proofs with independent Quint checks |
 | `oracles/` | Contract for pinned external Lean and OCaml comparisons |
 | `schemas/` | Versioned input and observation contracts |
 | `conformance/` | Source identities, dependency pins, and generated observations |
@@ -47,7 +47,7 @@ definitions. Its success label is `observed_success`; its output declares
 a registered finite expectation. The local observation protocol confers no
 domain admission rights.
 
-## Formal transaction, stored-binding, and expression boundary
+## Formal transaction, stored-binding, and expression boundaries
 
 The transaction and stored-binding scopes map to `check_definition` in the Goose reference. The
 original ordered-name model captures duplicate priority, successful insertion,
@@ -84,6 +84,31 @@ selected seven leaves at depths zero through three, plus malformed topology
 and named context controls. All observed raw arenas are independently decoded
 by both actual models. Full details and the exact limits are in
 [docs/expression-dag-scope.md](docs/expression-dag-scope.md).
+
+The fourth lane defines structural lifting and capture-avoiding substitution
+over that expression type. Its 32 required Lean theorems include cutoff rules,
+scope preservation, lift composition, insertion/removal identities, and
+noncapture under arbitrarily many lambda binders. Quint independently computes
+the operations, with 30 deterministic tests, a bounded six-node simulation, and
+an exact negative witness that captures a free variable by omitting its lift.
+
+The native transformation harness is generated temporarily from the exact
+owned checker. It renames the unique main entrypoint and appends the separate
+`reference/substitution-driver.goose`; all original algorithm, parser, import,
+resource, and serializer functions are preserved byte for byte. The gate
+verifies reversible derivation and records checker, driver, generated source,
+C, and binary identities. The driver calls the actual functions on open syntax
+without performing definition insertion. It exposes a result ID and raw arena,
+with `null` result on a fatal operation. It has no admission authority.
+
+The transformation profile compares 2,546 complete Lean/Quint observations with
+actual native behavior and requires 30 additional native control commands.
+Result structure and original raw IDs are checked; native internal `free` and
+height fields remain unobserved. Native parser, import, fuel, index, height, and
+trace-envelope refusals are separate from pure mathematical topology refusal.
+See [the substitution scope](docs/substitution.md) and its
+[replay contract](schemas/substitution-replay-v1.md). This finite comparison is
+not a general refinement proof of the concrete functions.
 
 ### Observable diagnostic interface
 

@@ -2,15 +2,15 @@
   "schema": "lean-goose.conformance-observations.v1",
   "status": "passed",
   "mode": "check",
-  "started_at_utc": "2026-11-20T13:45:16.230719+00:00",
+  "started_at_utc": "2026-11-20T15:29:16.814672+00:00",
   "acceptance_authority": false,
   "evidence_only": true,
   "authority": "unsigned_local_observations_only",
   "sources_before": [
     {
       "path": "ESTATE.toml",
-      "sha256": "f20b7088ee834c0d8445f91ef11ccabdf965c55d575339d2587f596ad0fd5c64",
-      "bytes": 9472
+      "sha256": "a10b123e6ffd3e6341419ef4b383ae7d635a79939b3cd581548d66d8f3000fb5",
+      "bytes": 12523
     },
     {
       "path": "conformance/dependencies.json",
@@ -48,7 +48,7 @@
       "bytes": 4022
     }
   ],
-  "source_revision": "be9eccdd537d8f20c0fd15ebb6dc83d6ce9783d4",
+  "source_revision": "a11bb7303735af4ea8cbca38d317dc9ee7385f63",
   "dependencies_before": {
     "estate_dependencies": [
       {
@@ -216,15 +216,15 @@
       "-DGS_DEBUG=1",
       "--standalone",
       "-o",
-      "/tmp/lean-goose-1k5rrb00/goose/checker.c",
+      "/tmp/lean-goose-wcux7clm/goose/checker.c",
       "/workspace/scratch/a402432e12bc/Lean-Goose/reference/checker.goose"
     ],
     "compile_command": [
       "/usr/bin/gcc",
       "-O2",
-      "/tmp/lean-goose-1k5rrb00/goose/checker.c",
+      "/tmp/lean-goose-wcux7clm/goose/checker.c",
       "-o",
-      "/tmp/lean-goose-1k5rrb00/goose/checker",
+      "/tmp/lean-goose-wcux7clm/goose/checker",
       "-lm",
       "-pthread"
     ],
@@ -12640,8 +12640,8 @@
   "sources_after": [
     {
       "path": "ESTATE.toml",
-      "sha256": "f20b7088ee834c0d8445f91ef11ccabdf965c55d575339d2587f596ad0fd5c64",
-      "bytes": 9472
+      "sha256": "a10b123e6ffd3e6341419ef4b383ae7d635a79939b3cd581548d66d8f3000fb5",
+      "bytes": 12523
     },
     {
       "path": "conformance/dependencies.json",
@@ -12680,5 +12680,5 @@
     }
   ],
   "source_unchanged": true,
-  "finished_at_utc": "2026-11-20T13:47:30.267123+00:00"
+  "finished_at_utc": "2026-11-20T15:29:38.552769+00:00"
 }

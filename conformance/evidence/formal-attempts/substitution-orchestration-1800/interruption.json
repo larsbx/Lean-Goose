@@ -1,0 +1,376 @@
+{
+  "schema": "lean-goose.interrupted-acceptance.v1",
+  "status": "interrupted",
+  "acceptance_authority": false,
+  "recorded_at_utc": "2026-11-20T15:01:31.208918+00:00",
+  "process_exit_code": 130,
+  "reason": "Explicitly interrupted after measured replay pace projected about 1942 seconds for four scopes against the 1800-second formal orchestration allowance; the timeout had not fired.",
+  "formal_budget_seconds": 1800,
+  "projection_sample_completed_arena_chunks": 9,
+  "projected_formal_seconds": 1942.1,
+  "completed_arena_chunks_at_interruption": 10,
+  "last_started_command": "dag-arenas-quint-replay-010",
+  "original_verification_status": "running",
+  "original_formal_status": "running",
+  "original_receipts_preserved_without_status_edits": true,
+  "source_tree_sha256": "a1a5dde0f11718b388171e77ad4ae1220cd699a14e1ee2a42c6ddb15a748234b",
+  "source_overrides": [
+    "tools/acceptance.py",
+    ".github/workflows/conformance.yml",
+    "docs/validation.md",
+    "docs/formalization.md"
+  ],
+  "archive_scope": "Only current-run referenced artifacts and completed command logs; no stale unexecuted prior-run logs.",
+  "files": [
+    {
+      "path": "estate-audit.log",
+      "bytes": 115,
+      "sha256": "47386104e1b61f5a650ab41e635fde72cbb754ad06b27acb65b71625fbcf7e02"
+    },
+    {
+      "path": "formal/dag-arenas-inputs.jsonl.gz",
+      "bytes": 42589,
+      "sha256": "98b2a2ba2486815014b086893e752c01026299359d18a2abcef3d7cfbb271e7b"
+    },
+    {
+      "path": "formal/dag-arenas-lean-replay.log.gz",
+      "bytes": 109648,
+      "sha256": "361113c1a279c662d132a23032fb97ed14b47e389bdb13a89f9584d5f954a985"
+    },
+    {
+      "path": "formal/dag-arenas-quint-replay-000.log.gz",
+      "bytes": 2599,
+      "sha256": "2104caae44540b42975906c2ca8255d2e481e715a38a66a417b1911edbe59534"
+    },
+    {
+      "path": "formal/dag-arenas-quint-replay-001.log.gz",
+      "bytes": 2833,
+      "sha256": "2f88c73b09c3ddc2857f4513173d3b45539833dac9a10026c2b16dab44a1ffca"
+    },
+    {
+      "path": "formal/dag-arenas-quint-replay-002.log.gz",
+      "bytes": 1995,
+      "sha256": "bb7e787b5a40c5ef8574ca6da647639743265f0795b8319ec845775605af9ae6"
+    },
+    {
+      "path": "formal/dag-arenas-quint-replay-003.log.gz",
+      "bytes": 2606,
+      "sha256": "7c2266e4ef6cf83a31bf575488c1e23c82b0c43c0397af05c377697e25c8fa5b"
+    },
+    {
+      "path": "formal/dag-arenas-quint-replay-004.log.gz",
+      "bytes": 2797,
+      "sha256": "a708ed4d5fe28b94c9c7bb02e9125453a387e72624ad2591dedee7e2e529b5e2"
+    },
+    {
+      "path": "formal/dag-arenas-quint-replay-005.log.gz",
+      "bytes": 2632,
+      "sha256": "1a75073a759f7692a11e41b1128fa521834001cdbe3bb06ddfea2b66a192591f"
+    },
+    {
+      "path": "formal/dag-arenas-quint-replay-006.log.gz",
+      "bytes": 2560,
+      "sha256": "38c751ee541c04b5c1780f6ee2db93058dab663d1c09c71a0dbfb157ae991294"
+    },
+    {
+      "path": "formal/dag-arenas-quint-replay-007.log.gz",
+      "bytes": 2208,
+      "sha256": "295d02ab6d82c00a6b2e4329b151b15f55fa04e01dab8c18e4292278cd52944d"
+    },
+    {
+      "path": "formal/dag-arenas-quint-replay-008.log.gz",
+      "bytes": 2473,
+      "sha256": "b9b8b902b32f639cac402594a7881b9c4a3ceb81c029f55e20d53adc12fa1447"
+    },
+    {
+      "path": "formal/dag-arenas-quint-replay-009.log.gz",
+      "bytes": 2369,
+      "sha256": "8accc1c0ab977c8a88572bae50345a800a0694a878a10bd2d791cc2ac992f078"
+    },
+    {
+      "path": "formal/dag-lean-axiom-audit.log",
+      "bytes": 142,
+      "sha256": "2a03102671f58bbfd85c06d7f2e5a6e8cee9a5e04ff6125849b826bdf6579e99"
+    },
+    {
+      "path": "formal/dag-lean-build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "formal/dag-native-comparison.jsonl.gz",
+      "bytes": 584036,
+      "sha256": "843d524cfa62dd166f61e3c6fb6442f8e262ac9946c7149d9bc76a5b0d998110"
+    },
+    {
+      "path": "formal/dag-profile-inputs.jsonl.gz",
+      "bytes": 6705,
+      "sha256": "155318452da0d73921d779c559b75721526934c0c02ea1d4d135b3abaec9dbd0"
+    },
+    {
+      "path": "formal/dag-profile-lean-replay.log.gz",
+      "bytes": 10340,
+      "sha256": "8d0d445284bd58c6b72fd3c710386c08f8516fd0a0cf302be87b6e53c3464ede"
+    },
+    {
+      "path": "formal/dag-profile-quint-replay-000.log.gz",
+      "bytes": 1543,
+      "sha256": "999a6471264b74749cc6927e759457d43311c3958f25ba495b3bbcea9b2874cf"
+    },
+    {
+      "path": "formal/dag-profile-quint-replay-001.log.gz",
+      "bytes": 1265,
+      "sha256": "30bb87fc3bed06e69176ea04a7827446cc7c36142b1cd23dcc142c1b64506279"
+    },
+    {
+      "path": "formal/dag-profile-quint-replay-002.log.gz",
+      "bytes": 1331,
+      "sha256": "141f1745fb8953fc5041efa34826473c081c90077cf8f4be17d7caf462e69758"
+    },
+    {
+      "path": "formal/dag-profile-quint-replay-003.log.gz",
+      "bytes": 1360,
+      "sha256": "8a596064f649b5954d28aba5ab1cfc5cbd9b4becd7ecf808f91a1f3c9690a6c3"
+    },
+    {
+      "path": "formal/dag-profile-quint-replay-004.log.gz",
+      "bytes": 1397,
+      "sha256": "4d95fc5f32f75db4f6031312847ad12609797cda7b71101269593517c0aa8765"
+    },
+    {
+      "path": "formal/dag-profile-quint-replay-005.log.gz",
+      "bytes": 1348,
+      "sha256": "0074704ad72b29d1f818c83b0fd5d1b9162119515a9e91ca84bd53de08935728"
+    },
+    {
+      "path": "formal/dag-profile-quint-replay-006.log.gz",
+      "bytes": 1418,
+      "sha256": "6b371aa1f7a971171f0f92caeed792595529ae82bc52c5cdb6572a83087e1cfd"
+    },
+    {
+      "path": "formal/dag-profile-quint-replay-007.log.gz",
+      "bytes": 1468,
+      "sha256": "5dd3f20633473796fe7580b7df5b6dc080ecfb3fa0970b68258f4c50c518a17d"
+    },
+    {
+      "path": "formal/dag-profile-quint-replay-008.log.gz",
+      "bytes": 1055,
+      "sha256": "a8138c0d49a8e138ea65a9c4f04640a1b0fe130fd39e0d803b84ec20347da3a5"
+    },
+    {
+      "path": "formal/dag-quint-bounded-run.log",
+      "bytes": 111,
+      "sha256": "cf09f003c6e1c4c41b4026c8119fd1883b21f5659addaa265c9647e2594d1069"
+    },
+    {
+      "path": "formal/dag-quint-negative-control.log",
+      "bytes": 1821,
+      "sha256": "9c9f3e202cc627cc9e472874b9115953e1c7db868268323e5fbf8be5cfcd9ece"
+    },
+    {
+      "path": "formal/dag-quint-negative.itf.json",
+      "bytes": 2670,
+      "sha256": "da58e7a4e3d416e73d88c6b2d53848115884c0ab7cf8e2769a1b5081ed54d963"
+    },
+    {
+      "path": "formal/dag-quint-tests.log",
+      "bytes": 1022,
+      "sha256": "4e896a34d8207e5441719d69e5569b5a398d7b38929017da8f215c9eecc8d81d"
+    },
+    {
+      "path": "formal/dag-quint-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "formal/gcc-version.log",
+      "bytes": 232,
+      "sha256": "4dc9a4e32fd9e06d42fb307688c59d6d889f0ff90ce034cbefed21b0d451fd81"
+    },
+    {
+      "path": "formal/goose-build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "formal/goose-emit.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "formal/lean-axiom-audit.log",
+      "bytes": 144,
+      "sha256": "3d3e698dbddf0ddecccd48a78b2359891da63820d90d3d73975b9a11894d216e"
+    },
+    {
+      "path": "formal/lean-build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "formal/lean-replay.log",
+      "bytes": 143786,
+      "sha256": "56cf0cc9ba6909cf35b826ae6d78e39098d55732ec0dbeb8373e7c7a8b0b5c22"
+    },
+    {
+      "path": "formal/lean-version.log",
+      "bytes": 106,
+      "sha256": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680"
+    },
+    {
+      "path": "formal/native-comparison.jsonl",
+      "bytes": 563276,
+      "sha256": "08988853f8aed5544a4d2fce4aace38759ad3641d75f833d38321cda31c24f57"
+    },
+    {
+      "path": "formal/node-version.log",
+      "bytes": 9,
+      "sha256": "4409d3bfa08b82f385bd424eeda65fc63b756129f0e89e82df77f1fecafccc14"
+    },
+    {
+      "path": "formal/quint-bounded-run.log",
+      "bytes": 111,
+      "sha256": "198f6dd97a32a606a17b32de92a658779f7c5e9142dfe89dcef92ba5fbd786a9"
+    },
+    {
+      "path": "formal/quint-negative-control.log",
+      "bytes": 786,
+      "sha256": "3fb9308abb7793f300d647c0d5618ac5f26a067dd504c1cf3afd5b3b5b8f5ad8"
+    },
+    {
+      "path": "formal/quint-negative.itf.json",
+      "bytes": 971,
+      "sha256": "57b0f37d6670293b21426e29e4bdb1e899af8f5f2c5010b5de6d297b65365314"
+    },
+    {
+      "path": "formal/quint-replay.log",
+      "bytes": 143786,
+      "sha256": "56cf0cc9ba6909cf35b826ae6d78e39098d55732ec0dbeb8373e7c7a8b0b5c22"
+    },
+    {
+      "path": "formal/quint-tests.log",
+      "bytes": 636,
+      "sha256": "f0ca13592797d7e37356640210fcfbff291553c072f06e4c0e483ae690da0689"
+    },
+    {
+      "path": "formal/quint-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "formal/quint-version.log",
+      "bytes": 7,
+      "sha256": "88dc89b23d1eb296b577d2cd6b8fd2a8013d9d499299cdb24578106eb5b4f59c"
+    },
+    {
+      "path": "formal/results.json",
+      "bytes": 76519,
+      "sha256": "a11d6e4751eafff1fbbd59119eaed1855c43ce9116dd199f18b36270ed4f06a2"
+    },
+    {
+      "path": "formal/source-manifest.json",
+      "bytes": 10881,
+      "sha256": "43f9f39dc55745c16b0772a35c4e8ae8ba0309c05a7cc72249a5efeedfc9a1d7"
+    },
+    {
+      "path": "formal/stored-binding-inputs.txt",
+      "bytes": 69104,
+      "sha256": "d033e3f785fba0df54fd94709dd3ad3ad17d3a9d4b4572035545a26ea173249c"
+    },
+    {
+      "path": "formal/stored-lean-axiom-audit.log",
+      "bytes": 141,
+      "sha256": "27ed877ac444261c9a7792fec3e8da9ec7d3a5e3e39a2fda50be23baf035b5e3"
+    },
+    {
+      "path": "formal/stored-lean-build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "formal/stored-lean-replay.log.gz",
+      "bytes": 12572,
+      "sha256": "5b7fdfb255b2d19b88dba625d6ec9b5c846d3bb0cb8cf0314a16749d317cabdf"
+    },
+    {
+      "path": "formal/stored-native-comparison.jsonl.gz",
+      "bytes": 213495,
+      "sha256": "0628f7cfc4507c1bc1457b06ab022567c7a65a7a8a0a11ac2e24eca46a2089d3"
+    },
+    {
+      "path": "formal/stored-native-controls.json",
+      "bytes": 156544,
+      "sha256": "f85f4afd3ede2f13f283ac52e6320c06f153f3e05f99b45e633dd926fc7df18d"
+    },
+    {
+      "path": "formal/stored-quint-bounded-run.log",
+      "bytes": 111,
+      "sha256": "18d1759eb3b7fafd1c0d7d13e50c8cd0116aa46e6fadf3e67ae2c5c894b29a8a"
+    },
+    {
+      "path": "formal/stored-quint-negative-control.log",
+      "bytes": 2088,
+      "sha256": "f76b352c949230d41ce9d1050db4d899735538966c5a27e113f88a8df0b89eb9"
+    },
+    {
+      "path": "formal/stored-quint-negative.itf.json",
+      "bytes": 2920,
+      "sha256": "ed5e773dcc9c23fcf8e044d33bb4f4f84225a02af1afda6f66e3d40d8a6937b7"
+    },
+    {
+      "path": "formal/stored-quint-replay.log.gz",
+      "bytes": 12572,
+      "sha256": "5b7fdfb255b2d19b88dba625d6ec9b5c846d3bb0cb8cf0314a16749d317cabdf"
+    },
+    {
+      "path": "formal/stored-quint-tests.log",
+      "bytes": 839,
+      "sha256": "1c1f33da087ad819ee9c8cca1c6c5959728844d53d0a8dcd709902391829170a"
+    },
+    {
+      "path": "formal/stored-quint-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "formal/transaction-inputs.txt",
+      "bytes": 19260,
+      "sha256": "775f942a486a05113c3671bcc1edf39383095740df39d1f64d6327cbc55493c9"
+    },
+    {
+      "path": "formal-tests.log",
+      "bytes": 15435,
+      "sha256": "18def94f16216cebd98b7edd8f96a10f2144b0357a4bad0f6902dd387022098c"
+    },
+    {
+      "path": "source-manifest.json",
+      "bytes": 10881,
+      "sha256": "43f9f39dc55745c16b0772a35c4e8ae8ba0309c05a7cc72249a5efeedfc9a1d7"
+    },
+    {
+      "path": "source-overrides/.github/workflows/conformance.yml",
+      "bytes": 3997,
+      "sha256": "33a5b5516c2cebaebe91cf51f8d56f6f054eca240123d84b51d9a479b8ba311e"
+    },
+    {
+      "path": "source-overrides/docs/formalization.md",
+      "bytes": 32459,
+      "sha256": "ced3145c1142b857a07c3d8d47cef5ecba8795651c4024ca915bf69c5fbd4490"
+    },
+    {
+      "path": "source-overrides/docs/validation.md",
+      "bytes": 12978,
+      "sha256": "a1c27ccf5883107bde747bc07be5998b868bbb5333c24d188487c4d0c6fc1278"
+    },
+    {
+      "path": "source-overrides/tools/acceptance.py",
+      "bytes": 7180,
+      "sha256": "e996bd604d712f4a2bc1d2ae6da0af72558e32826bb9769ae289058ba660fa23"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 2124,
+      "sha256": "ed00be0889e3d7d8c17b0d6bfc3928f1ebf2d9426193773f8689de3e0fac42f4"
+    }
+  ]
+}
