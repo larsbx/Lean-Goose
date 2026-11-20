@@ -1,15 +1,22 @@
-# Scaffold policy
+# Repository policy
 
-The repository follows the canonical
-[estate repository template v2](https://github.com/larsbx/estate-governance/blob/bd731398b567cfe523667fc8e23a96d299067141/docs/architecture/estate-repository-template-v2.md).
-`ESTATE.toml` carries its identity, default research position, authority planes
-and the pinned external audit. The canonical `tools/pin_estate.py` sets the
-governance revision and auditor digest; the CI gate verifies those bytes before
-executing the auditor.
+The repository adopts
+[estate-repository-v3](https://github.com/larsbx/estate-governance/blob/b851c92fceb88c8e6f4604664cf975b567ade161/docs/architecture/estate-repository-template-v3.md)
+at governance revision `b851c92fceb88c8e6f4604664cf975b567ade161`.
+[DR-0006](https://github.com/larsbx/estate-governance/blob/b851c92fceb88c8e6f4604664cf975b567ade161/docs/decisions/DR-0006-language-independent-formalization.md)
+removes implementation-language mandates and requires both Lean and Quint
+formalization with explicit scope and execution evidence.
 
-The scaffold has no authoritative kernel. Its reference reports observations;
-finite agreement and performance measurements remain evidence. No successful
-comparison can grant theorem, declaration, authorization or deployment rights.
+`ESTATE.toml` carries repository identity, position, authority, implementation
+inventory, formal declarations, and the external auditor pin. The governance
+pinning tool establishes the revision and digest; the CI gate verifies those
+bytes before executing the auditor. Static manifest conformance and completed
+formal execution are separately reported checks.
+
+This repository has no accepting boundary. Its reference reports observations;
+its local proofs establish the statements of the scoped transaction model.
+Finite comparison and performance measurements remain evidence. The formal scope
+document records the implementation correspondence that remains unproved.
 
 Changes enter through reviewed PRs against `main` under the user's instructions
 and the repository's actual branch protections. Merge evidence identifies the

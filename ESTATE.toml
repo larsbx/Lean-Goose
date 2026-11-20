@@ -1,5 +1,5 @@
-version = 2
-template = "estate-repository-v2"
+version = 3
+template = "estate-repository-v3"
 
 [repo]
 id = "lean-goose"
@@ -18,8 +18,8 @@ artifacts = []
 
 [[dep]]
 id = "estate-governance"
-rev = "bd731398b567cfe523667fc8e23a96d299067141"
-pin = "sha256:412a64dea58d709aae21e5a0315b8e7e96488c310a9d999267927ba3d8146a30"
+rev = "b851c92fceb88c8e6f4604664cf975b567ade161"
+pin = "sha256:c931b9e20388148aa706a2da0ebd78a02a69a707ae5bc60518344cdf10674cb0"
 
 [[dep]]
 id = "lean-ocaml"
@@ -38,9 +38,9 @@ names = []
 status = "canonical"
 
 [principles]
-ordering = ["authority", "domain", "language"]
+ordering = ["authority", "domain"]
 empty_silos = "forbidden"
-cross_language_disagreement = "fail_closed"
+disagreement = "fail_closed"
 generated_surfaces = "derived_only"
 vendor_code = "non_local"
 experimental_code = "non_authoritative"
@@ -51,13 +51,6 @@ target = "policy"
 authority = "governance"
 required = true
 current = ["policy", "ESTATE.toml"]
-
-[[plane]]
-id = "kernel"
-target = "kernel"
-authority = "canonical_executable"
-required = false
-current = ["kernel"]
 
 [[plane]]
 id = "reference"
@@ -101,29 +94,81 @@ authority = "exposition"
 required = true
 current = ["docs", "ARCHITECTURE.md", "LANGUAGE_BOUNDARIES.md", "README.md", "AGENTS.md"]
 
-[[language]]
-name = "Goose"
-authority = "canonical"
-roles = ["kernel", "reference", "conformance"]
+[[plane]]
+id = "formal"
+target = "formal"
+authority = "claim_state"
+required = true
+current = ["formal"]
+
+[[plane]]
+id = "formal-tests"
+target = "tests"
+authority = "evidence"
+required = true
+current = ["tests"]
+
+[authority]
 acceptance_authority = false
 
-[[language]]
-name = "Lean"
-authority = "supporting"
-roles = ["oracle"]
-acceptance_authority = false
+[formalization]
+scope = "docs/formalization.md"
+gate = "tools/check_formal.py"
+implementation_paths = [
+  "formal/quint/replay.py",
+  "reference/checker.goose",
+  "tools/acceptance.py",
+  "tools/check_formal.py",
+  "tools/run.py",
+  "tools/runtime.py",
+  "tools/transaction_profile.py",
+]
 
-[[language]]
-name = "OCaml"
-authority = "supporting"
-roles = ["oracle", "conformance"]
-acceptance_authority = false
+[formalization.lean]
+sources = ["formal/lean/DefinitionTransactions.lean", "formal/lean/Audit.lean", "formal/lean/Replay.lean"]
+toolchain = "leanprover/lean4:v4.34.1"
+obligations = [
+  "GooseTransactions.completed_receipt_has_no_authority",
+  "GooseTransactions.duplicate_precedes_checks",
+  "GooseTransactions.duplicate_preserves_environment",
+  "GooseTransactions.fresh_good_appends",
+  "GooseTransactions.fresh_scope_halts",
+  "GooseTransactions.halted_no_receipt",
+  "GooseTransactions.halted_run_identity",
+  "GooseTransactions.halted_step_identity",
+  "GooseTransactions.initial_invariant",
+  "GooseTransactions.mismatch_preserves_environment",
+  "GooseTransactions.mismatch_then_retry_succeeds",
+  "GooseTransactions.missing_alias_preserves_environment",
+  "GooseTransactions.run_environment_exact",
+  "GooseTransactions.run_environment_extends",
+  "GooseTransactions.run_environment_unique",
+  "GooseTransactions.run_has_no_authority",
+  "GooseTransactions.run_preserves_authority",
+  "GooseTransactions.run_preserves_invariant",
+  "GooseTransactions.run_success_count_exact",
+  "GooseTransactions.step_preserves_authority",
+  "GooseTransactions.step_preserves_invariant",
+]
 
-[[language]]
-name = "Python"
-authority = "supporting"
-roles = ["tooling", "conformance"]
-acceptance_authority = false
+[formalization.quint]
+sources = ["formal/quint/DefinitionTransactions.qnt"]
+toolchain = "@informalsystems/quint@0.33.1"
+obligations = [
+  "authorityPreservedTest",
+  "duplicatePreemptsScopeTest",
+  "duplicatePreservesEnvironmentTest",
+  "failedInsertionRetryTest",
+  "haltAbsorbingTest",
+  "initialStateTest",
+  "orderedSuccessCountTest",
+  "safety",
+  "scopeFailureSuppressesReceiptTest",
+  "successfulDefinitionTest",
+  "unknownAliasPreservesExistingTest",
+  "unknownAliasRecoveryTest",
+  "validAliasTest",
+]
 
 [migration]
 mode = "boundary_first"

@@ -1,0 +1,25 @@
+Formal verification failed: /tmp/tmp7lvntpzx/results.json
+Formal verification failed: /tmp/tmpalg5t9vl/results.json
+test_complete_declared_inventory (test_formal.ProfileControls.test_complete_declared_inventory) ... ok
+test_failed_process_cannot_supply_successful_observation (test_formal.ProfileControls.test_failed_process_cannot_supply_successful_observation) ... ok
+test_fatal_requires_designated_exit_diagnostic_and_no_receipt (test_formal.ProfileControls.test_fatal_requires_designated_exit_diagnostic_and_no_receipt) ... ok
+test_input_profile_bounds (test_formal.ProfileControls.test_input_profile_bounds) ... ok
+test_model_malformed_or_incomplete_results (test_formal.ProfileControls.test_model_malformed_or_incomplete_results) ... ok
+test_models_preserve_success_order (test_formal.ProfileControls.test_models_preserve_success_order) ... ok
+test_native_exact_observation (test_formal.ProfileControls.test_native_exact_observation) ... ok
+test_native_rejects_reorder_wrong_count_authority_and_categories (test_formal.ProfileControls.test_native_rejects_reorder_wrong_count_authority_and_categories) ... ok
+test_replay_rejects_missing_extra_and_duplicate_json_fields (test_formal.ProfileControls.test_replay_rejects_missing_extra_and_duplicate_json_fields) ... ok
+test_declared_scope_must_be_in_source_inventory (test_formal.ReceiptControls.test_declared_scope_must_be_in_source_inventory) ... ok
+test_escaping_and_symlinked_inputs_refused (test_formal.ReceiptControls.test_escaping_and_symlinked_inputs_refused) ... ok
+test_every_declared_input_is_covered (test_formal.ReceiptControls.test_every_declared_input_is_covered) ... ok
+test_negative_control_requires_real_refusal_mutation (test_formal.ReceiptControls.test_negative_control_requires_real_refusal_mutation) ... ok
+test_node_attestation_must_match_quint_path_node (test_formal.ReceiptControls.test_node_attestation_must_match_quint_path_node) ... ok
+test_source_change_cannot_leave_formal_success (test_formal.ReceiptControls.test_source_change_cannot_leave_formal_success) ... ValueError: source or formal declaration changed during verification
+ok
+test_stale_success_is_invalidated_before_source_failure (test_formal.ReceiptControls.test_stale_success_is_invalidated_before_source_failure) ... ValueError: source unavailable
+ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.028s
+
+OK

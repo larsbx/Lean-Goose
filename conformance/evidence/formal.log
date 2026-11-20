@@ -1,0 +1,16 @@
+lean-version: exit 0
+quint-version: exit 0
+node-version: exit 0
+gcc-version: exit 0
+lean-build: exit 0
+lean-axiom-audit: exit 0
+lean-replay: exit 0
+quint-typecheck: exit 0
+quint-tests: exit 0
+quint-bounded-run: exit 0
+quint-negative-control: exit 1
+quint-replay: exit 0
+goose-emit: exit 0
+goose-build: exit 0
+Native finite correspondence: 1110 traces passed.
+Formal verification passed: /workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/formal/results.json

@@ -1,0 +1,9 @@
+{
+  "name": "lean-goose-formal-transactions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pinned Quint model for Lean-Goose ordered definition transactions",
+  "dependencies": {
+    "@informalsystems/quint": "0.33.1"
+  }
+}

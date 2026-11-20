@@ -16,9 +16,17 @@ results to manufacture success. Record the exact source identity, local result
 and hosted status separately. Historical benchmark results belong to their
 recorded source and must not be relabeled as fresh measurements.
 
-Keep changes in their authority plane. A future kernel or promotion requires an
-explicit boundary decision and manifest update. Repository layout conformance
-does not establish estate-wide membership or broader Lean compatibility.
+Implementation languages are unrestricted under estate-repository-v3. Keep the
+Lean and Quint formalization current with the declared scope, implementation
+mapping, and exact toolchain pins. Both lanes must execute through the owned
+formal gate in `make acceptance`; a static audit or model file alone does not
+establish executed verification. State model assumptions, bounded exploration
+limits, and unproved implementation correspondence explicitly.
+
+Keep changes in their declared authority plane. A new accepting boundary or
+promotion requires an explicit boundary decision and manifest update. Repository
+layout conformance does not establish estate-wide membership or broader Lean
+compatibility.
 
 Publish changes through a branch and PR against `main`. Honor the user's
 publication and merge instructions, actual repository protections and current

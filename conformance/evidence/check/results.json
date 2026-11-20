@@ -2,15 +2,15 @@
   "schema": "lean-goose.conformance-observations.v1",
   "status": "passed",
   "mode": "check",
-  "started_at_utc": "2026-11-20T05:12:07.250734+00:00",
+  "started_at_utc": "2026-11-20T11:19:26.437442+00:00",
   "acceptance_authority": false,
   "evidence_only": true,
   "authority": "unsigned_local_observations_only",
   "sources_before": [
     {
       "path": "ESTATE.toml",
-      "sha256": "f30148560e337936b7ab4b1f1d7d5108f2375feda5065ef476937700941af0fb",
-      "bytes": 2540
+      "sha256": "09541a562ef087eacb7ecdad7f98bcc05788f47ecb052bdf00eed524e66c33f9",
+      "bytes": 4172
     },
     {
       "path": "conformance/dependencies.json",
@@ -38,7 +38,7 @@
       "bytes": 12341
     }
   ],
-  "source_revision": "bdd46cb86f3adcd3ed80f0b29e3759250436c5b0",
+  "source_revision": "fa34fb379c543073d08a4ba6ea6f87d291b90a99",
   "dependencies_before": {
     "estate_dependencies": [
       {
@@ -199,15 +199,15 @@
       "-DGS_DEBUG=1",
       "--standalone",
       "-o",
-      "/tmp/lean-goose-iylpukou/goose/checker.c",
+      "/tmp/lean-goose-4_sh5gyn/goose/checker.c",
       "/workspace/scratch/a402432e12bc/Lean-Goose/reference/checker.goose"
     ],
     "compile_command": [
       "/usr/bin/gcc",
       "-O2",
-      "/tmp/lean-goose-iylpukou/goose/checker.c",
+      "/tmp/lean-goose-4_sh5gyn/goose/checker.c",
       "-o",
-      "/tmp/lean-goose-iylpukou/goose/checker",
+      "/tmp/lean-goose-4_sh5gyn/goose/checker",
       "-lm",
       "-pthread"
     ],
@@ -218,11 +218,11 @@
         "sha256": "4d6ba74515c9e7333a4338d56c54ea4b6e06e1111f55c42f125fc8d904a20d71"
       },
       {
-        "path": "/workspace/scratch/5774662a0b69/lean-runtime/lean-4.34.1-linux/bin/lean",
+        "path": "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
         "sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550"
       },
       {
-        "path": "/workspace/scratch/5774662a0b69/lean-runtime/lean-4.34.1-linux/bin/leanc",
+        "path": "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/leanc",
         "sha256": "68a45f8329e2d79133cdcc7b1fa494e37844282d7b5f8908ce1deda7cfdf161a"
       },
       {
@@ -233,7 +233,7 @@
     "binaries": [
       {
         "engine": "lean-kernel",
-        "sha256": "5517476e8fb40fcb68b3bf717a0265353f967d10b90132749c1fa3796ab9dbb9"
+        "sha256": "ac07aa66847d1058e051a270f00e58704c82bb585458ac3726653c6fa65b4ce2"
       },
       {
         "engine": "ocaml-bytecode",
@@ -12616,8 +12616,8 @@
   "sources_after": [
     {
       "path": "ESTATE.toml",
-      "sha256": "f30148560e337936b7ab4b1f1d7d5108f2375feda5065ef476937700941af0fb",
-      "bytes": 2540
+      "sha256": "09541a562ef087eacb7ecdad7f98bcc05788f47ecb052bdf00eed524e66c33f9",
+      "bytes": 4172
     },
     {
       "path": "conformance/dependencies.json",
@@ -12646,5 +12646,5 @@
     }
   ],
   "source_unchanged": true,
-  "finished_at_utc": "2026-11-20T05:12:18.562938+00:00"
+  "finished_at_utc": "2026-11-20T11:19:51.168136+00:00"
 }

@@ -1,0 +1,774 @@
+{
+  "schema": "lean-goose.formal-evidence.v1",
+  "status": "passed",
+  "started_at_utc": "2026-11-20T11:19:06.472054+00:00",
+  "evidence_only": true,
+  "acceptance_authority": false,
+  "hosted_results_included": false,
+  "implementation_correspondence": "finite_profile_only",
+  "scope": "ordered definition transactions over abstract action classes; no full kernel refinement",
+  "commands": [
+    {
+      "name": "lean-version",
+      "command": [
+        "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T11:19:06.486510+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:06.570048+00:00",
+      "log": "lean-version.log",
+      "log_sha256": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680"
+    },
+    {
+      "name": "quint-version",
+      "command": [
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T11:19:06.570483+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:07.175507+00:00",
+      "log": "quint-version.log",
+      "log_sha256": "88dc89b23d1eb296b577d2cd6b8fd2a8013d9d499299cdb24578106eb5b4f59c"
+    },
+    {
+      "name": "node-version",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T11:19:07.176103+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:07.187706+00:00",
+      "log": "node-version.log",
+      "log_sha256": "4409d3bfa08b82f385bd424eeda65fc63b756129f0e89e82df77f1fecafccc14"
+    },
+    {
+      "name": "gcc-version",
+      "command": [
+        "/usr/bin/gcc",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T11:19:07.188079+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:07.193042+00:00",
+      "log": "gcc-version.log",
+      "log_sha256": "4dc9a4e32fd9e06d42fb307688c59d6d889f0ff90ce034cbefed21b0d451fd81"
+    },
+    {
+      "name": "lean-build",
+      "command": [
+        "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "-o",
+        "/tmp/lean-goose-formal-8x55cteg/lean/DefinitionTransactions.olean",
+        "DefinitionTransactions.lean"
+      ],
+      "cwd": "/tmp/lean-goose-formal-8x55cteg/lean",
+      "started_at_utc": "2026-11-20T11:19:08.425864+00:00",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-8x55cteg/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:09.232954+00:00",
+      "log": "lean-build.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "lean-axiom-audit",
+      "command": [
+        "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "Audit.lean"
+      ],
+      "cwd": "/tmp/lean-goose-formal-8x55cteg/lean",
+      "started_at_utc": "2026-11-20T11:19:09.234131+00:00",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-8x55cteg/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:10.028885+00:00",
+      "log": "lean-axiom-audit.log",
+      "log_sha256": "3d3e698dbddf0ddecccd48a78b2359891da63820d90d3d73975b9a11894d216e"
+    },
+    {
+      "name": "lean-replay",
+      "command": [
+        "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "--run",
+        "Replay.lean"
+      ],
+      "cwd": "/tmp/lean-goose-formal-8x55cteg/lean",
+      "started_at_utc": "2026-11-20T11:19:10.030390+00:00",
+      "stdin_sha256": "775f942a486a05113c3671bcc1edf39383095740df39d1f64d6327cbc55493c9",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-8x55cteg/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:10.419703+00:00",
+      "log": "lean-replay.log",
+      "log_sha256": "56cf0cc9ba6909cf35b826ae6d78e39098d55732ec0dbeb8373e7c7a8b0b5c22"
+    },
+    {
+      "name": "quint-typecheck",
+      "command": [
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint",
+        "typecheck",
+        "DefinitionTransactions.qnt"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
+      "started_at_utc": "2026-11-20T11:19:10.436784+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:11.570081+00:00",
+      "log": "quint-typecheck.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "quint-tests",
+      "command": [
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint",
+        "test",
+        "DefinitionTransactions.qnt",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261120"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
+      "started_at_utc": "2026-11-20T11:19:11.574053+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:12.850664+00:00",
+      "log": "quint-tests.log",
+      "log_sha256": "a3e35219e2d198eb454d44070b8d35e0240388a9871c7a0eafa078ba89f23fd4"
+    },
+    {
+      "name": "quint-bounded-run",
+      "command": [
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint",
+        "run",
+        "DefinitionTransactions.qnt",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=20261120",
+        "--verbosity=1"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
+      "started_at_utc": "2026-11-20T11:19:12.851358+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:18.606131+00:00",
+      "log": "quint-bounded-run.log",
+      "log_sha256": "10b8e233056ad86f24f9906592d9248d14f770434ac44b9489d3db83f61b012f"
+    },
+    {
+      "name": "quint-negative-control",
+      "command": [
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint",
+        "run",
+        "DefinitionTransactions.qnt",
+        "--backend=typescript",
+        "--step=unsafeStep",
+        "--invariant=safety",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--seed=20261120",
+        "--verbosity=2",
+        "--out-itf",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/formal/quint-negative.itf.json"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint",
+      "started_at_utc": "2026-11-20T11:19:18.607589+00:00",
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-20T11:19:19.989808+00:00",
+      "log": "quint-negative-control.log",
+      "log_sha256": "0b556a9bf011848b2b7ae76e4ae792629ef2d83d85e206108eb6ae1e7b89642d"
+    },
+    {
+      "name": "quint-replay",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/replay.py"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T11:19:19.997518+00:00",
+      "stdin_sha256": "775f942a486a05113c3671bcc1edf39383095740df39d1f64d6327cbc55493c9",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-8x55cteg/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:22.073788+00:00",
+      "log": "quint-replay.log",
+      "log_sha256": "56cf0cc9ba6909cf35b826ae6d78e39098d55732ec0dbeb8373e7c7a8b0b5c22"
+    },
+    {
+      "name": "goose-emit",
+      "command": [
+        "/workspace/scratch/a402432e12bc/goose/build/goose",
+        "-O2",
+        "-DGS_DEBUG=1",
+        "--standalone",
+        "-o",
+        "/tmp/lean-goose-formal-8x55cteg/checker.c",
+        "/workspace/scratch/a402432e12bc/Lean-Goose/reference/checker.goose"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T11:19:22.093150+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:22.166752+00:00",
+      "log": "goose-emit.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "goose-build",
+      "command": [
+        "/usr/bin/gcc",
+        "-O2",
+        "/tmp/lean-goose-formal-8x55cteg/checker.c",
+        "-o",
+        "/tmp/lean-goose-formal-8x55cteg/checker",
+        "-lm",
+        "-pthread"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T11:19:22.171229+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T11:19:23.429716+00:00",
+      "log": "goose-build.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "excluded_build_directories": [
+    ".cache",
+    ".git",
+    ".lake",
+    ".venv",
+    "__pycache__",
+    "_build",
+    "build",
+    "coverage",
+    "dist",
+    "node_modules"
+  ],
+  "excluded_build_suffixes": [
+    ".cmi",
+    ".cmo",
+    ".cmx",
+    ".ilean",
+    ".o",
+    ".olean",
+    ".pyc"
+  ],
+  "excluded_evidence_directory": "conformance/evidence/",
+  "source_tree_sha256": "98254a9e5c2f030837782fd67f8406621a8d326617588ef61b6623578de35595",
+  "policy_sha256": "09541a562ef087eacb7ecdad7f98bcc05788f47ecb052bdf00eed524e66c33f9",
+  "source_manifest": "source-manifest.json",
+  "formalization": {
+    "scope": "docs/formalization.md",
+    "gate": "tools/check_formal.py",
+    "implementation_paths": [
+      "formal/quint/replay.py",
+      "reference/checker.goose",
+      "tools/acceptance.py",
+      "tools/check_formal.py",
+      "tools/run.py",
+      "tools/runtime.py",
+      "tools/transaction_profile.py"
+    ],
+    "lean": {
+      "sources": [
+        "formal/lean/DefinitionTransactions.lean",
+        "formal/lean/Audit.lean",
+        "formal/lean/Replay.lean"
+      ],
+      "toolchain": "leanprover/lean4:v4.34.1",
+      "obligations": [
+        "GooseTransactions.completed_receipt_has_no_authority",
+        "GooseTransactions.duplicate_precedes_checks",
+        "GooseTransactions.duplicate_preserves_environment",
+        "GooseTransactions.fresh_good_appends",
+        "GooseTransactions.fresh_scope_halts",
+        "GooseTransactions.halted_no_receipt",
+        "GooseTransactions.halted_run_identity",
+        "GooseTransactions.halted_step_identity",
+        "GooseTransactions.initial_invariant",
+        "GooseTransactions.mismatch_preserves_environment",
+        "GooseTransactions.mismatch_then_retry_succeeds",
+        "GooseTransactions.missing_alias_preserves_environment",
+        "GooseTransactions.run_environment_exact",
+        "GooseTransactions.run_environment_extends",
+        "GooseTransactions.run_environment_unique",
+        "GooseTransactions.run_has_no_authority",
+        "GooseTransactions.run_preserves_authority",
+        "GooseTransactions.run_preserves_invariant",
+        "GooseTransactions.run_success_count_exact",
+        "GooseTransactions.step_preserves_authority",
+        "GooseTransactions.step_preserves_invariant"
+      ]
+    },
+    "quint": {
+      "sources": [
+        "formal/quint/DefinitionTransactions.qnt"
+      ],
+      "toolchain": "@informalsystems/quint@0.33.1",
+      "obligations": [
+        "authorityPreservedTest",
+        "duplicatePreemptsScopeTest",
+        "duplicatePreservesEnvironmentTest",
+        "failedInsertionRetryTest",
+        "haltAbsorbingTest",
+        "initialStateTest",
+        "orderedSuccessCountTest",
+        "safety",
+        "scopeFailureSuppressesReceiptTest",
+        "successfulDefinitionTest",
+        "unknownAliasPreservesExistingTest",
+        "unknownAliasRecoveryTest",
+        "validAliasTest"
+      ]
+    }
+  },
+  "declared_inputs": [
+    "ESTATE.toml",
+    "conformance/dependencies.json",
+    "conformance/source-provenance.json",
+    "docs/formalization.md",
+    "formal/lean/Audit.lean",
+    "formal/lean/DefinitionTransactions.lean",
+    "formal/lean/Replay.lean",
+    "formal/lean/lean-toolchain",
+    "formal/quint/DefinitionTransactions.qnt",
+    "formal/quint/package-lock.json",
+    "formal/quint/package.json",
+    "formal/quint/replay.py",
+    "reference/checker.goose",
+    "tools/acceptance.py",
+    "tools/check_formal.py",
+    "tools/run.py",
+    "tools/runtime.py",
+    "tools/transaction_profile.py"
+  ],
+  "base_revision": "fa34fb379c543073d08a4ba6ea6f87d291b90a99",
+  "dependencies_before": {
+    "estate_dependencies": [
+      {
+        "id": "lean-ocaml",
+        "rev": "403dcca50d7e8f18954618eec72109f8cb1c6b61",
+        "pin": "sha256:826077e1a13594191e7c64979a766bd5e39c83604d40698b3d6270631edc5455"
+      },
+      {
+        "id": "goose",
+        "rev": "9412b80f52d833c4697cffdbbf1f4eeb5195cd41",
+        "pin": "sha256:f1597f2e63290612653b116b2ef703fa4add4c08f32180bb2d2e98b7844ba427"
+      }
+    ],
+    "lean_ocaml": {
+      "repository": "https://github.com/larsbx/Lean-OCaml.git",
+      "revision": "403dcca50d7e8f18954618eec72109f8cb1c6b61",
+      "archive_sha256": "826077e1a13594191e7c64979a766bd5e39c83604d40698b3d6270631edc5455",
+      "checkout": "/workspace/scratch/a402432e12bc/Lean-OCaml",
+      "tracked_source_clean": true,
+      "verified_consumed_files": [
+        {
+          "path": ".ocaml-version",
+          "sha256": "db74d0caf81f43029fa28ce9888695d0b54d0a99003e6042823c9bc914897865",
+          "bytes": 6
+        },
+        {
+          "path": "conformance/benchmark_clock.c",
+          "sha256": "30ed968b2206a2e2027a6a6111d35ea2b28636bb8a0e7190f91756d84033d0b0",
+          "bytes": 602
+        },
+        {
+          "path": "conformance/benchmark_compare.ml",
+          "sha256": "0054b289cd7128a78756585b73fc4cf18b952515a27602bd5cf94d6fe949c6ca",
+          "bytes": 4951
+        },
+        {
+          "path": "conformance/generated.tsv.defs",
+          "sha256": "689929b0bd8e6a3ddf43069b092d73189588743b960dd68153e5855da1394113",
+          "bytes": 273
+        },
+        {
+          "path": "conformance/generated.tsv.types",
+          "sha256": "521823fbfc1830e17ab6b72f6f99c690bcd64918611e38a1d845d561403f20da",
+          "bytes": 3198
+        },
+        {
+          "path": "conformance/goose-toolchain.json",
+          "sha256": "704df4ab5af394102278a0c22bff8151813fca25a7ef907a54da55d252829c84",
+          "bytes": 419
+        },
+        {
+          "path": "conformance/migration_check.ml",
+          "sha256": "aebfc3d184f203191120a359db9fdf70f472f37669ff9d062ebd51cfd9e233f6",
+          "bytes": 3479
+        },
+        {
+          "path": "conformance/provenance.json",
+          "sha256": "1cf446e6d6db5ae556cbf8b660242bf3b804d0f7154732cf37b4af75f2e93035",
+          "bytes": 5434
+        },
+        {
+          "path": "lean-toolchain",
+          "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+          "bytes": 25
+        },
+        {
+          "path": "oracles/BenchmarkKernel.lean",
+          "sha256": "6ba9459a2deaa78de0637b3d3c1b35c7bc2e967e2c89fedef1b5d90fa9e0f48c",
+          "bytes": 10371
+        },
+        {
+          "path": "reference/bounded_parallel.ml",
+          "sha256": "6f686225a0bd448e6ab3241622efc6cdc763315bd7bb65fdb5f0ce9f9ee84072",
+          "bytes": 2401
+        },
+        {
+          "path": "reference/bounded_parallel.mli",
+          "sha256": "3eb129db11693eec996f19a7030313673d046bc4e7b802e92da6faed003667c4",
+          "bytes": 973
+        },
+        {
+          "path": "reference/conversion.ml",
+          "sha256": "db3798a25865d5b04cb73bff33c189df22b9e3633107d556bdef8fc28dbde179",
+          "bytes": 22288
+        },
+        {
+          "path": "reference/conversion.mli",
+          "sha256": "5d371d8f0cb5dce9eb7b6a311afde05609941dd6a89b2f21d9c069dfaff65bd5",
+          "bytes": 4670
+        },
+        {
+          "path": "reference/definition_batch.ml",
+          "sha256": "ec89f4d78d0411912893dcf8c906159c3e8350caa32849225bc3cfab268b8b42",
+          "bytes": 11268
+        },
+        {
+          "path": "reference/definition_batch.mli",
+          "sha256": "6059001a2a707ad3ecb5018da2f45104be59bffed3a4da3d93230a164ce8ac93",
+          "bytes": 2470
+        },
+        {
+          "path": "reference/goose/benchmark.goose",
+          "sha256": "71d62f9dad2f8d58a1bdb74602b41ca3e8aeabde89522c5d893d239ae0cec0a6",
+          "bytes": 19236
+        },
+        {
+          "path": "tools/compare_lean.py",
+          "sha256": "4da327cea417a1e35a02adf9134c93b17e234f657bef33251ded0b495114d4f8",
+          "bytes": 14011
+        },
+        {
+          "path": "tools/goose_common.py",
+          "sha256": "50dd0a0354dc69cc9988b0557ccfb6a44a573305083f61a307309ca7558bb73f",
+          "bytes": 4992
+        },
+        {
+          "path": "tools/optimization_workloads.py",
+          "sha256": "ce4b1a2407e42354ddebcdb23f9ce4489719e521b9d82d75292b779afc4969a3",
+          "bytes": 12045
+        },
+        {
+          "path": "tools/test_goose.py",
+          "sha256": "5de641bbd17b60b3a97c2d4d162985bd32d7c72cc1c9efa97e354ea1706a1ad5",
+          "bytes": 14192
+        }
+      ]
+    },
+    "goose": {
+      "repository": "https://github.com/aardappel/goose.git",
+      "revision": "9412b80f52d833c4697cffdbbf1f4eeb5195cd41",
+      "archive_sha256": "f1597f2e63290612653b116b2ef703fa4add4c08f32180bb2d2e98b7844ba427",
+      "checkout": "/workspace/scratch/a402432e12bc/goose",
+      "tracked_source_clean": true,
+      "verified_consumed_files": []
+    },
+    "local_derivation": {
+      "source_revision": "403dcca50d7e8f18954618eec72109f8cb1c6b61",
+      "source_git_blob": "ae04d31dde163028fdfb749d2f9ad8754ce9b673",
+      "source_sha256": "71d62f9dad2f8d58a1bdb74602b41ca3e8aeabde89522c5d893d239ae0cec0a6",
+      "local_path": "reference/checker.goose",
+      "local_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
+      "presentation_changes_only": true
+    }
+  },
+  "toolchains": {
+    "lean": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+    "quint": "0.33.1",
+    "node": "v24.22.3",
+    "quint_backend": "typescript",
+    "executables": [
+      {
+        "tool": "gcc",
+        "path": "/usr/bin/gcc",
+        "sha256": "a23ecab8ff08f09ad8c80602c2c5df7f49e09c25905cb8975902e101bf72635f"
+      },
+      {
+        "tool": "goose",
+        "path": "/workspace/scratch/a402432e12bc/goose/build/goose",
+        "sha256": "ecc852c41fba22c72ed935af4321fcff13b3167fe8ef728810c4cf8e21110814"
+      },
+      {
+        "tool": "lean",
+        "path": "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550"
+      },
+      {
+        "tool": "node",
+        "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "sha256": "acbe4b8d9153b841ed0697cbfc4f93e767386620edb745ab9358306c0a6f31aa"
+      },
+      {
+        "tool": "quint_cli",
+        "path": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint",
+        "sha256": "952a50a28932282528b5c9b86ac5542405d85da4f80876aabe8cb8c7d5a6d0e8"
+      }
+    ]
+  },
+  "lean": {
+    "status": "passed",
+    "obligations": [
+      "GooseTransactions.completed_receipt_has_no_authority",
+      "GooseTransactions.duplicate_precedes_checks",
+      "GooseTransactions.duplicate_preserves_environment",
+      "GooseTransactions.fresh_good_appends",
+      "GooseTransactions.fresh_scope_halts",
+      "GooseTransactions.halted_no_receipt",
+      "GooseTransactions.halted_run_identity",
+      "GooseTransactions.halted_step_identity",
+      "GooseTransactions.initial_invariant",
+      "GooseTransactions.mismatch_preserves_environment",
+      "GooseTransactions.mismatch_then_retry_succeeds",
+      "GooseTransactions.missing_alias_preserves_environment",
+      "GooseTransactions.run_environment_exact",
+      "GooseTransactions.run_environment_extends",
+      "GooseTransactions.run_environment_unique",
+      "GooseTransactions.run_has_no_authority",
+      "GooseTransactions.run_preserves_authority",
+      "GooseTransactions.run_preserves_invariant",
+      "GooseTransactions.run_success_count_exact",
+      "GooseTransactions.step_preserves_authority",
+      "GooseTransactions.step_preserves_invariant"
+    ],
+    "required_theorem_axioms": [],
+    "namespace_support_axiom_allowlist": [
+      "propext"
+    ],
+    "compiled_model_sha256": "4f816d1a510c067a689676cbfcb2d15e8af58b2ba75e5832b40e0da753ec65d2"
+  },
+  "quint": {
+    "status": "passed",
+    "tests": [
+      "authorityPreservedTest",
+      "duplicatePreemptsScopeTest",
+      "duplicatePreservesEnvironmentTest",
+      "failedInsertionRetryTest",
+      "haltAbsorbingTest",
+      "initialStateTest",
+      "orderedSuccessCountTest",
+      "scopeFailureSuppressesReceiptTest",
+      "successfulDefinitionTest",
+      "unknownAliasPreservesExistingTest",
+      "unknownAliasRecoveryTest",
+      "validAliasTest"
+    ],
+    "backend": "typescript",
+    "invariant": "safety",
+    "seed": "20261120",
+    "max_samples": 1000,
+    "max_steps": 40,
+    "unbounded_proof": false,
+    "negative_control": {
+      "witnessed": true,
+      "expected_exit_code": 1,
+      "trace": "quint-negative.itf.json",
+      "sha256": "455e21c8cc3e6f8aba5af095c024332e200db02d3d6ef270b05840d3d593ee10"
+    }
+  },
+  "native_build": {
+    "generated_c_sha256": "68b6b4ac48e161defe85893d8fce62a2273008780cc9f3f324e7213feef9c4fd",
+    "binary_sha256": "1ecf5a91a62cc30ff0c3a107bd129583c8c945e9eeb0beba66142c5285d1ebcd"
+  },
+  "finite_correspondence": {
+    "status": "passed",
+    "cases": 1110,
+    "action_count": 10,
+    "names": [
+      0,
+      1
+    ],
+    "trace_lengths": [
+      1,
+      2,
+      3
+    ],
+    "completed_receipts": 636,
+    "designated_scope_failures": 474,
+    "lean_quint_full_model_agreement": true,
+    "native_projection": "ordered observations, success count, authority, or designated fatal exit with no receipt",
+    "universal_implementation_refinement": false,
+    "inputs": "transaction-inputs.txt",
+    "inputs_sha256": "775f942a486a05113c3671bcc1edf39383095740df39d1f64d6327cbc55493c9",
+    "log": "native-comparison.jsonl",
+    "log_sha256": "08988853f8aed5544a4d2fce4aace38759ad3641d75f833d38321cda31c24f57",
+    "native_command_template": [
+      "/tmp/lean-goose-formal-8x55cteg/checker",
+      "--check",
+      "/tmp/lean-goose-formal-8x55cteg/transaction.tsv"
+    ]
+  },
+  "dependencies_after": {
+    "estate_dependencies": [
+      {
+        "id": "lean-ocaml",
+        "rev": "403dcca50d7e8f18954618eec72109f8cb1c6b61",
+        "pin": "sha256:826077e1a13594191e7c64979a766bd5e39c83604d40698b3d6270631edc5455"
+      },
+      {
+        "id": "goose",
+        "rev": "9412b80f52d833c4697cffdbbf1f4eeb5195cd41",
+        "pin": "sha256:f1597f2e63290612653b116b2ef703fa4add4c08f32180bb2d2e98b7844ba427"
+      }
+    ],
+    "lean_ocaml": {
+      "repository": "https://github.com/larsbx/Lean-OCaml.git",
+      "revision": "403dcca50d7e8f18954618eec72109f8cb1c6b61",
+      "archive_sha256": "826077e1a13594191e7c64979a766bd5e39c83604d40698b3d6270631edc5455",
+      "checkout": "/workspace/scratch/a402432e12bc/Lean-OCaml",
+      "tracked_source_clean": true,
+      "verified_consumed_files": [
+        {
+          "path": ".ocaml-version",
+          "sha256": "db74d0caf81f43029fa28ce9888695d0b54d0a99003e6042823c9bc914897865",
+          "bytes": 6
+        },
+        {
+          "path": "conformance/benchmark_clock.c",
+          "sha256": "30ed968b2206a2e2027a6a6111d35ea2b28636bb8a0e7190f91756d84033d0b0",
+          "bytes": 602
+        },
+        {
+          "path": "conformance/benchmark_compare.ml",
+          "sha256": "0054b289cd7128a78756585b73fc4cf18b952515a27602bd5cf94d6fe949c6ca",
+          "bytes": 4951
+        },
+        {
+          "path": "conformance/generated.tsv.defs",
+          "sha256": "689929b0bd8e6a3ddf43069b092d73189588743b960dd68153e5855da1394113",
+          "bytes": 273
+        },
+        {
+          "path": "conformance/generated.tsv.types",
+          "sha256": "521823fbfc1830e17ab6b72f6f99c690bcd64918611e38a1d845d561403f20da",
+          "bytes": 3198
+        },
+        {
+          "path": "conformance/goose-toolchain.json",
+          "sha256": "704df4ab5af394102278a0c22bff8151813fca25a7ef907a54da55d252829c84",
+          "bytes": 419
+        },
+        {
+          "path": "conformance/migration_check.ml",
+          "sha256": "aebfc3d184f203191120a359db9fdf70f472f37669ff9d062ebd51cfd9e233f6",
+          "bytes": 3479
+        },
+        {
+          "path": "conformance/provenance.json",
+          "sha256": "1cf446e6d6db5ae556cbf8b660242bf3b804d0f7154732cf37b4af75f2e93035",
+          "bytes": 5434
+        },
+        {
+          "path": "lean-toolchain",
+          "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+          "bytes": 25
+        },
+        {
+          "path": "oracles/BenchmarkKernel.lean",
+          "sha256": "6ba9459a2deaa78de0637b3d3c1b35c7bc2e967e2c89fedef1b5d90fa9e0f48c",
+          "bytes": 10371
+        },
+        {
+          "path": "reference/bounded_parallel.ml",
+          "sha256": "6f686225a0bd448e6ab3241622efc6cdc763315bd7bb65fdb5f0ce9f9ee84072",
+          "bytes": 2401
+        },
+        {
+          "path": "reference/bounded_parallel.mli",
+          "sha256": "3eb129db11693eec996f19a7030313673d046bc4e7b802e92da6faed003667c4",
+          "bytes": 973
+        },
+        {
+          "path": "reference/conversion.ml",
+          "sha256": "db3798a25865d5b04cb73bff33c189df22b9e3633107d556bdef8fc28dbde179",
+          "bytes": 22288
+        },
+        {
+          "path": "reference/conversion.mli",
+          "sha256": "5d371d8f0cb5dce9eb7b6a311afde05609941dd6a89b2f21d9c069dfaff65bd5",
+          "bytes": 4670
+        },
+        {
+          "path": "reference/definition_batch.ml",
+          "sha256": "ec89f4d78d0411912893dcf8c906159c3e8350caa32849225bc3cfab268b8b42",
+          "bytes": 11268
+        },
+        {
+          "path": "reference/definition_batch.mli",
+          "sha256": "6059001a2a707ad3ecb5018da2f45104be59bffed3a4da3d93230a164ce8ac93",
+          "bytes": 2470
+        },
+        {
+          "path": "reference/goose/benchmark.goose",
+          "sha256": "71d62f9dad2f8d58a1bdb74602b41ca3e8aeabde89522c5d893d239ae0cec0a6",
+          "bytes": 19236
+        },
+        {
+          "path": "tools/compare_lean.py",
+          "sha256": "4da327cea417a1e35a02adf9134c93b17e234f657bef33251ded0b495114d4f8",
+          "bytes": 14011
+        },
+        {
+          "path": "tools/goose_common.py",
+          "sha256": "50dd0a0354dc69cc9988b0557ccfb6a44a573305083f61a307309ca7558bb73f",
+          "bytes": 4992
+        },
+        {
+          "path": "tools/optimization_workloads.py",
+          "sha256": "ce4b1a2407e42354ddebcdb23f9ce4489719e521b9d82d75292b779afc4969a3",
+          "bytes": 12045
+        },
+        {
+          "path": "tools/test_goose.py",
+          "sha256": "5de641bbd17b60b3a97c2d4d162985bd32d7c72cc1c9efa97e354ea1706a1ad5",
+          "bytes": 14192
+        }
+      ]
+    },
+    "goose": {
+      "repository": "https://github.com/aardappel/goose.git",
+      "revision": "9412b80f52d833c4697cffdbbf1f4eeb5195cd41",
+      "archive_sha256": "f1597f2e63290612653b116b2ef703fa4add4c08f32180bb2d2e98b7844ba427",
+      "checkout": "/workspace/scratch/a402432e12bc/goose",
+      "tracked_source_clean": true,
+      "verified_consumed_files": []
+    },
+    "local_derivation": {
+      "source_revision": "403dcca50d7e8f18954618eec72109f8cb1c6b61",
+      "source_git_blob": "ae04d31dde163028fdfb749d2f9ad8754ce9b673",
+      "source_sha256": "71d62f9dad2f8d58a1bdb74602b41ca3e8aeabde89522c5d893d239ae0cec0a6",
+      "local_path": "reference/checker.goose",
+      "local_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
+      "presentation_changes_only": true
+    }
+  },
+  "tool_executables_unchanged": true,
+  "source_unchanged": true,
+  "finished_at_utc": "2026-11-20T11:19:26.348917+00:00"
+}
