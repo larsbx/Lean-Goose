@@ -1,0 +1,2144 @@
+{
+  "schema": "lean-goose.conformance-observations.v1",
+  "status": "passed",
+  "evidence_only": true,
+  "acceptance_authority": false,
+  "fixtures": 16,
+  "ordered_outcomes_per_engine": 124,
+  "registered_disagreements": [
+    "etaBoundary",
+    "proofIrrelevanceBoundary"
+  ],
+  "structural_and_resource_controls": [
+    {
+      "name": "forward_reference",
+      "fixture": "invalid_forward_reference.tsv",
+      "sha256": "50f4028fc0ba685786c4ae278617781dbe8849700788ad8c5dbf411d05ab056f",
+      "exit_code": 3,
+      "stderr": "goose benchmark parser: node reference must precede its use",
+      "status": "passed"
+    },
+    {
+      "name": "negative_index",
+      "fixture": "invalid_negative_index.tsv",
+      "sha256": "aa3d3e762f372181aee7e9c5498782c025ccc2c1b989c43a5a9907df037af759",
+      "exit_code": 3,
+      "stderr": "goose benchmark parser: invalid natural",
+      "status": "passed"
+    },
+    {
+      "name": "unknown_tag",
+      "fixture": "invalid_unknown_tag.tsv",
+      "sha256": "956c70fc322ab1b2712067d4f67fe809c7199374d967917ae1393d9252b32aba",
+      "exit_code": 3,
+      "stderr": "goose benchmark parser: unknown node tag",
+      "status": "passed"
+    },
+    {
+      "name": "missing_lf",
+      "fixture": "invalid_missing_lf.tsv",
+      "sha256": "14272ac4312a6d0697e7e0cea921ea8c1bd0d4f1aa1e828abd0a5e516b84541f",
+      "exit_code": 3,
+      "stderr": "goose benchmark parser: missing final LF",
+      "status": "passed"
+    },
+    {
+      "name": "height_limit",
+      "fixture": "invalid_height_limit.tsv",
+      "sha256": "e9090232530b0932daccb805008805577cf807960588f65cf932ca1fc34001eb",
+      "exit_code": 2,
+      "stderr": "goose bounded checker: Height_limit",
+      "status": "passed"
+    },
+    {
+      "name": "loose_variable",
+      "fixture": "invalid_loose_variable.tsv",
+      "sha256": "e66418d5326ccad06fbc3ecc1c2f5ad08a2670f34cbd5d7e8ef29a282eeab0c9",
+      "exit_code": 2,
+      "stderr": "goose bounded checker: Invalid_scope",
+      "status": "passed"
+    }
+  ],
+  "observations": [
+    {
+      "case": "committed_typing_vectors",
+      "fixture": "committed_typing_vectors.tsv",
+      "sha256": "101c930cf78bb814d048eb249739c7ab1f60937ac3cb7ae782cdaed20be5fdcf",
+      "definitions": 40,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "typing_sort",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_pi_max",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_pi_impredicative",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_identity",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_dependent_identity",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_dependent_application",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_zeta_dependent_type",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_conversion_in_argument",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_nonfunction",
+              "outcome": "funExpected"
+            },
+            {
+              "name": "typing_argument_mismatch",
+              "outcome": "appTypeMismatch"
+            },
+            {
+              "name": "typing_let_mismatch",
+              "outcome": "letTypeMismatch"
+            },
+            {
+              "name": "typing_binder_not_type",
+              "outcome": "typeExpected"
+            },
+            {
+              "name": "typing_pi_body_not_type",
+              "outcome": "typeExpected"
+            },
+            {
+              "name": "typing_depth_0_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_0_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_0_wrong_binder",
+              "outcome": "appTypeMismatch"
+            },
+            {
+              "name": "typing_depth_1_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_1_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_1_wrong_binder",
+              "outcome": "appTypeMismatch"
+            },
+            {
+              "name": "typing_depth_2_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_2_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_2_wrong_binder",
+              "outcome": "appTypeMismatch"
+            },
+            {
+              "name": "typing_depth_3_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_3_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_3_wrong_binder",
+              "outcome": "appTypeMismatch"
+            },
+            {
+              "name": "typing_depth_4_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_4_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_4_wrong_binder",
+              "outcome": "appTypeMismatch"
+            },
+            {
+              "name": "typing_depth_5_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_5_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_5_wrong_binder",
+              "outcome": "appTypeMismatch"
+            },
+            {
+              "name": "typing_depth_6_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_6_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_6_wrong_binder",
+              "outcome": "appTypeMismatch"
+            },
+            {
+              "name": "typing_depth_7_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_7_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_7_wrong_binder",
+              "outcome": "appTypeMismatch"
+            },
+            {
+              "name": "typing_depth_8_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_8_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_8_wrong_binder",
+              "outcome": "appTypeMismatch"
+            }
+          ],
+          "success_observations": 26,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "typing_sort",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_pi_max",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_pi_impredicative",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_identity",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_dependent_identity",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_dependent_application",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_zeta_dependent_type",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_conversion_in_argument",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_nonfunction",
+              "outcome": "Expected_function"
+            },
+            {
+              "name": "typing_argument_mismatch",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_let_mismatch",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_binder_not_type",
+              "outcome": "Expected_sort"
+            },
+            {
+              "name": "typing_pi_body_not_type",
+              "outcome": "Expected_sort"
+            },
+            {
+              "name": "typing_depth_0_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_0_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_0_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_1_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_1_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_1_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_2_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_2_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_2_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_3_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_3_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_3_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_4_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_4_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_4_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_5_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_5_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_5_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_6_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_6_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_6_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_7_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_7_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_7_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_8_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_8_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_8_wrong_binder",
+              "outcome": "Type_mismatch"
+            }
+          ],
+          "success_observations": 26,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "typing_sort",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_pi_max",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_pi_impredicative",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_identity",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_dependent_identity",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_dependent_application",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_zeta_dependent_type",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_conversion_in_argument",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_nonfunction",
+              "outcome": "Expected_function"
+            },
+            {
+              "name": "typing_argument_mismatch",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_let_mismatch",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_binder_not_type",
+              "outcome": "Expected_sort"
+            },
+            {
+              "name": "typing_pi_body_not_type",
+              "outcome": "Expected_sort"
+            },
+            {
+              "name": "typing_depth_0_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_0_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_0_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_1_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_1_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_1_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_2_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_2_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_2_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_3_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_3_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_3_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_4_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_4_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_4_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_5_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_5_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_5_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_6_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_6_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_6_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_7_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_7_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_7_wrong_binder",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "typing_depth_8_beta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_8_zeta",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "typing_depth_8_wrong_binder",
+              "outcome": "Type_mismatch"
+            }
+          ],
+          "success_observations": 26,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "committed_definitions_and_refusal_state",
+      "fixture": "committed_definitions_and_refusal_state.tsv",
+      "sha256": "f42b5b61729594dc5cadf2fa94e1599080841926dea6a6320d90caf25916b52b",
+      "definitions": 12,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "ocamlRefAlias",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "ocamlRefId",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "ocamlRefAlias",
+              "outcome": "alreadyDeclared"
+            },
+            {
+              "name": "ocamlRefMissing",
+              "outcome": "unknownConstant"
+            },
+            {
+              "name": "ocamlRefMismatch",
+              "outcome": "declTypeMismatch"
+            },
+            {
+              "name": "ocamlRefNonType",
+              "outcome": "typeExpected"
+            },
+            {
+              "name": "afterRefusalId",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "refusedNameAbsent",
+              "outcome": "unknownConstant"
+            },
+            {
+              "name": "oldAliasPreserved",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "reusedRefusedName",
+              "outcome": "declTypeMismatch"
+            },
+            {
+              "name": "reusedRefusedName",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "useReusedName",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 6,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "ocamlRefAlias",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "ocamlRefId",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "ocamlRefAlias",
+              "outcome": "Duplicate_definition"
+            },
+            {
+              "name": "ocamlRefMissing",
+              "outcome": "Unknown_constant"
+            },
+            {
+              "name": "ocamlRefMismatch",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "ocamlRefNonType",
+              "outcome": "Expected_sort"
+            },
+            {
+              "name": "afterRefusalId",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "refusedNameAbsent",
+              "outcome": "Unknown_constant"
+            },
+            {
+              "name": "oldAliasPreserved",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "reusedRefusedName",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "reusedRefusedName",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "useReusedName",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 6,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "ocamlRefAlias",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "ocamlRefId",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "ocamlRefAlias",
+              "outcome": "Duplicate_definition"
+            },
+            {
+              "name": "ocamlRefMissing",
+              "outcome": "Unknown_constant"
+            },
+            {
+              "name": "ocamlRefMismatch",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "ocamlRefNonType",
+              "outcome": "Expected_sort"
+            },
+            {
+              "name": "afterRefusalId",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "refusedNameAbsent",
+              "outcome": "Unknown_constant"
+            },
+            {
+              "name": "oldAliasPreserved",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "reusedRefusedName",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "reusedRefusedName",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "useReusedName",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 6,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "wrong_declared_type",
+      "fixture": "wrong_declared_type.tsv",
+      "sha256": "7b7ce96aea99796654d08eea64aa0a74d92e7d1d419fbfe9f864d4d88e83f001",
+      "definitions": 1,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "wrongDeclaredSort",
+              "outcome": "declTypeMismatch"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "wrongDeclaredSort",
+              "outcome": "Type_mismatch"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "wrongDeclaredSort",
+              "outcome": "Type_mismatch"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "wrong_dependent_argument",
+      "fixture": "wrong_dependent_argument.tsv",
+      "sha256": "40281302ec16f0a5c0e3e07b2898addd49acf60ef97bfa5a9a18d3d8b18e6483",
+      "definitions": 1,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "wrongDependentArgument",
+              "outcome": "appTypeMismatch"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "wrongDependentArgument",
+              "outcome": "Type_mismatch"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "wrongDependentArgument",
+              "outcome": "Type_mismatch"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "unused_unknown_constant",
+      "fixture": "unused_unknown_constant.tsv",
+      "sha256": "6965823ef3730b07a2746de31b8a70264368e0218a94ebf1854953808e713d30",
+      "definitions": 1,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "unusedUnknownConstant",
+              "outcome": "unknownConstant"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "unusedUnknownConstant",
+              "outcome": "Unknown_constant"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "unusedUnknownConstant",
+              "outcome": "Unknown_constant"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "erased_illtyped_let",
+      "fixture": "erased_illtyped_let.tsv",
+      "sha256": "12b69d856f9a1b8159894dd60be7c94ce1793b0dd6da9e7bd507c6075607875d",
+      "definitions": 1,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "erasedIlltypedLet",
+              "outcome": "letTypeMismatch"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "erasedIlltypedLet",
+              "outcome": "Type_mismatch"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "erasedIlltypedLet",
+              "outcome": "Type_mismatch"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "annotation_and_erasure_controls",
+      "fixture": "annotation_and_erasure_controls.tsv",
+      "sha256": "c92a98247844c6ff01d30bacd511593d4e3fac8d77fcfc77d9e1fe1933f038bf",
+      "definitions": 5,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "betaAnnotation",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wrongBetaAnnotation",
+              "outcome": "declTypeMismatch"
+            },
+            {
+              "name": "hiddenBadAnnotation",
+              "outcome": "appTypeMismatch"
+            },
+            {
+              "name": "hiddenBadArgument",
+              "outcome": "appTypeMismatch"
+            },
+            {
+              "name": "impredicative",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 2,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "betaAnnotation",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wrongBetaAnnotation",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "hiddenBadAnnotation",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "hiddenBadArgument",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "impredicative",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 2,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "betaAnnotation",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wrongBetaAnnotation",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "hiddenBadAnnotation",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "hiddenBadArgument",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "impredicative",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 2,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "context_reuse_and_capture",
+      "fixture": "context_reuse_and_capture.tsv",
+      "sha256": "5517e26b0d0e11b52ed7580e0584376a83084f55736a9dc92dcb9a42a53c3c2f",
+      "definitions": 5,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "sharedOpenGood",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "sharedOpenBad",
+              "outcome": "appTypeMismatch"
+            },
+            {
+              "name": "sharedOpenGoodAgain",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "captureAvoided",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "captureWrongType",
+              "outcome": "declTypeMismatch"
+            }
+          ],
+          "success_observations": 3,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "sharedOpenGood",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "sharedOpenBad",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "sharedOpenGoodAgain",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "captureAvoided",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "captureWrongType",
+              "outcome": "Type_mismatch"
+            }
+          ],
+          "success_observations": 3,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "sharedOpenGood",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "sharedOpenBad",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "sharedOpenGoodAgain",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "captureAvoided",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "captureWrongType",
+              "outcome": "Type_mismatch"
+            }
+          ],
+          "success_observations": 3,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "registered_conversion_boundaries",
+      "fixture": "registered_conversion_boundaries.tsv",
+      "sha256": "99c58267e72a474874d8f1657575a8c575b4c05d770f2938198defcd9691d0bb",
+      "definitions": 2,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "etaBoundary",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "proofIrrelevanceBoundary",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 2,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "etaBoundary",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "proofIrrelevanceBoundary",
+              "outcome": "Type_mismatch"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "etaBoundary",
+              "outcome": "Type_mismatch"
+            },
+            {
+              "name": "proofIrrelevanceBoundary",
+              "outcome": "Type_mismatch"
+            }
+          ],
+          "success_observations": 0,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "wide",
+      "fixture": "wide.tsv",
+      "sha256": "800297c2f5ba5208e7a12892de441aabd4873dbcc693578aa5b89f9cbcae1fab",
+      "definitions": 8,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "wide_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "wide_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "wide_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "wide_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "chain",
+      "fixture": "chain.tsv",
+      "sha256": "51b99588f53c75c2cd07e7a6b5fd59e0af10398cf72942254f17521801f2d2ad",
+      "definitions": 8,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "chain_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "chain_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "chain_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "chain_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "identities",
+      "fixture": "identities.tsv",
+      "sha256": "1adf6135bc935a83ccf72e49d9143a3f5e14ba53f2d62571990cf9e2b682d246",
+      "definitions": 8,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "identities_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "identities_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "identities_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "identities_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "distinct_trees",
+      "fixture": "distinct_trees.tsv",
+      "sha256": "555ec7110f37a817f668f9ffd8a741b43b798dcd6013e8e6db37a8f4ea52aeca",
+      "definitions": 8,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "distinct_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "distinct_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "distinct_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "distinct_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "unshared_trees",
+      "fixture": "unshared_trees.tsv",
+      "sha256": "2284cb491cd55055101f76d5474bbc41b6df90d01e56320971eaf9276304eb89",
+      "definitions": 8,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "unshared_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "unshared_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "unshared_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "unshared_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "dependent_terms",
+      "fixture": "dependent_terms.tsv",
+      "sha256": "02545cc29c9b142435441665c6e066ab0827d37b674d0ff7456cb8c29e01b2ae",
+      "definitions": 8,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "dependent_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "dependent_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "dependent_0000",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0001",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0002",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0003",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0004",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0005",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0006",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "dependent_0007",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        }
+      ]
+    },
+    {
+      "case": "alias_diamonds",
+      "fixture": "alias_diamonds.tsv",
+      "sha256": "c61333e449ab2e83e3c31183b82fc8faca5ad2800351cdde9e4763e70738cf9a",
+      "definitions": 8,
+      "engines": [
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "lean-kernel",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "diamond_0000_base",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0000_left",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0000_right",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0000_join",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0001_base",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0001_left",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0001_right",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0001_join",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false,
+          "trust_level": 0,
+          "checked_insertion": true
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "ocaml-bytecode",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "diamond_0000_base",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0000_left",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0000_right",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0000_join",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0001_base",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0001_left",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0001_right",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0001_join",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        },
+        {
+          "schema": "lean-goose.definition-observations.v1",
+          "engine": "goose-aot",
+          "status": "checked",
+          "outcomes": [
+            {
+              "name": "diamond_0000_base",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0000_left",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0000_right",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0000_join",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0001_base",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0001_left",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0001_right",
+              "outcome": "observed_success"
+            },
+            {
+              "name": "diamond_0001_join",
+              "outcome": "observed_success"
+            }
+          ],
+          "success_observations": 8,
+          "acceptance_authority": false
+        }
+      ]
+    }
+  ]
+}

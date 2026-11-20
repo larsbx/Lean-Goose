@@ -1,0 +1,38 @@
+{
+  "schema": "lean-goose.pin-negative-observations.v1",
+  "acceptance_authority": false,
+  "evidence_only": true,
+  "status": "passed",
+  "isolated_temporary_copies_only": true,
+  "wrong_revision_specimen": "ef050f37db37a983da2f6abbe713aa29bb67c53e",
+  "wrong_revision_tree_unchanged": true,
+  "controls": [
+    {
+      "control": "wrong-external-revision",
+      "exit_code": 1,
+      "status": "failed",
+      "failure": "dependency revision differs from pin: /tmp/lean-goose-pin-negative-t_3p6sr3/wrong-goose-revision",
+      "stale_success_replaced": true,
+      "acceptance_authority": false,
+      "evidence_only": true
+    },
+    {
+      "control": "tracked-dirty-external-source",
+      "exit_code": 1,
+      "status": "failed",
+      "failure": "dependency has tracked changes: /tmp/lean-goose-pin-negative-t_3p6sr3/dirty-lean-ocaml",
+      "stale_success_replaced": true,
+      "acceptance_authority": false,
+      "evidence_only": true
+    },
+    {
+      "control": "altered-local-derivative",
+      "exit_code": 1,
+      "status": "failed",
+      "failure": "local checker derivative differs from its recorded source transform",
+      "stale_success_replaced": true,
+      "acceptance_authority": false,
+      "evidence_only": true
+    }
+  ]
+}

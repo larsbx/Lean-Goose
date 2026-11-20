@@ -1,0 +1,90 @@
+{
+  "schema": "lean-goose.local-verification.v1",
+  "status": "passed",
+  "started_at_utc": "2026-11-20T05:12:06.934808+00:00",
+  "acceptance_authority": false,
+  "authority": "unsigned_local_test_observations_only",
+  "hosted_results_included": false,
+  "source_manifest": "conformance/evidence/source-manifest.json",
+  "evidence_directory_excluded_from_source_digest": "conformance/evidence/",
+  "source_digest_encoding": "SHA-256 of sorted path/bytes/sha256 objects; compact JSON with sorted keys",
+  "excluded_build_directories": [
+    ".cache",
+    ".git",
+    ".venv",
+    "__pycache__",
+    "_build",
+    "build",
+    "coverage",
+    "dist"
+  ],
+  "excluded_build_suffixes": [
+    ".cmi",
+    ".cmo",
+    ".cmx",
+    ".o",
+    ".pyc"
+  ],
+  "checks": [
+    {
+      "name": "estate-audit",
+      "command": [
+        "sh",
+        "tools/estate-audit.sh",
+        "/workspace/scratch/a402432e12bc/estate-governance/kernel/audit_estate_layout.py"
+      ],
+      "started_at_utc": "2026-11-20T05:12:06.946652+00:00",
+      "status": "passed",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T05:12:07.161157+00:00",
+      "log": "conformance/evidence/estate-audit.log",
+      "log_sha256": "3bbb5b207ba673082cc4629ba4ba9daf7fb8e1a37fbb215671ec122a5b1378a7"
+    },
+    {
+      "name": "conformance",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tools/run.py",
+        "check",
+        "--definitions",
+        "128",
+        "--output",
+        "conformance/evidence/check"
+      ],
+      "started_at_utc": "2026-11-20T05:12:07.161598+00:00",
+      "status": "passed",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T05:12:18.590714+00:00",
+      "log": "conformance/evidence/conformance.log",
+      "log_sha256": "3bf9e00239dfe3df48c4f506a2efe610cb8f6f1c9dbd4c9352cedfd99bd2492e"
+    },
+    {
+      "name": "benchmark-smoke",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tools/run.py",
+        "bench",
+        "--samples",
+        "1",
+        "--definitions",
+        "8",
+        "--workers",
+        "1",
+        "--min-sample-seconds",
+        "0.05",
+        "--output",
+        "conformance/evidence/smoke"
+      ],
+      "started_at_utc": "2026-11-20T05:12:18.591398+00:00",
+      "status": "passed",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T05:12:33.633324+00:00",
+      "log": "conformance/evidence/benchmark-smoke.log",
+      "log_sha256": "21710ac1632dbf8a6aac6a6db50e667c988a0489f8a4b22356593f689fcccba9"
+    }
+  ],
+  "base_revision": "bdd46cb86f3adcd3ed80f0b29e3759250436c5b0",
+  "source_tree_sha256": "779b78a4aee9f0cd16e0a28b9b512511fd32ebcf8ef5c30dd075ac0049ca173e",
+  "source_unchanged_during_verification": true,
+  "finished_at_utc": "2026-11-20T05:12:33.640578+00:00"
+}
