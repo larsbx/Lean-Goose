@@ -6,10 +6,10 @@ and boundary level in `ESTATE.toml`.
 
 | Language | Location | Current role |
 | --- | --- | --- |
-| Goose | `reference/checker.goose` | Locally owned bounded reference, checking observations, and opt-in binding diagnostics |
-| Lean | `formal/lean/` | Transaction, complete binding, and structural DAG/scope models, proofs, axiom audits, and executable replays |
+| Goose | `reference/` | Locally owned bounded checker, binding diagnostics, and an appended transformation driver for temporary diagnostic builds |
+| Lean | `formal/lean/` | Transaction, complete binding, DAG/scope, and substitution models, proofs, axiom audits, and executable replays |
 | Lean | Pinned external comparison checkout | Native checked declaration insertion used for finite comparison |
-| Quint | `formal/quint/` | Independent transaction, stored-binding, and DAG models, invariant checks, tests, and counterexample controls |
+| Quint | `formal/quint/` | Independent transaction, stored-binding, DAG, and substitution models, invariant checks, tests, and counterexample controls |
 | OCaml | Pinned external comparison checkout | Bytecode reference used for independent finite comparisons |
 | Python | `tools/`, `tests/` | Dependency checks, fixture orchestration, formal gates, and unsigned receipts |
 | Shell | `tools/*.sh`, CI | Compiler builds and pinned auditor execution |
@@ -18,6 +18,11 @@ and boundary level in `ESTATE.toml`.
 All supported expression-checking rules in the local reference originate in
 Goose source. Its generated C and native backend retain the same declared lack
 of admission authority.
+
+The substitution harness calls the actual Goose functions after exact source
+reconstruction. Python handles fixtures, framing, raw identities, and structural
+wire comparison; it does not implement lifting or substitution. Those semantic
+operations execute independently in Lean, Quint, and the native Goose binary.
 
 Source history from Lean-OCaml remains attributed by immutable repository,
 commit, path, Git blob, and SHA-256. Comparison code is consumed from its pinned

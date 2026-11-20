@@ -2,15 +2,15 @@
   "schema": "lean-goose.benchmark-evidence.v1",
   "status": "passed",
   "mode": "bench",
-  "started_at_utc": "2026-11-20T13:47:30.398516+00:00",
+  "started_at_utc": "2026-11-20T15:29:38.742230+00:00",
   "acceptance_authority": false,
   "evidence_only": true,
   "authority": "unsigned_local_observations_only",
   "sources_before": [
     {
       "path": "ESTATE.toml",
-      "sha256": "f20b7088ee834c0d8445f91ef11ccabdf965c55d575339d2587f596ad0fd5c64",
-      "bytes": 9472
+      "sha256": "a10b123e6ffd3e6341419ef4b383ae7d635a79939b3cd581548d66d8f3000fb5",
+      "bytes": 12523
     },
     {
       "path": "conformance/dependencies.json",
@@ -48,7 +48,7 @@
       "bytes": 4022
     }
   ],
-  "source_revision": "be9eccdd537d8f20c0fd15ebb6dc83d6ce9783d4",
+  "source_revision": "a11bb7303735af4ea8cbca38d317dc9ee7385f63",
   "samples_per_configuration": 1,
   "definitions_per_batch": 8,
   "ocaml_workers": [
@@ -242,15 +242,15 @@
       "-DGS_DEBUG=1",
       "--standalone",
       "-o",
-      "/tmp/lean-goose-b2z0m2i9/goose/checker.c",
+      "/tmp/lean-goose-5lihn6if/goose/checker.c",
       "/workspace/scratch/a402432e12bc/Lean-Goose/reference/checker.goose"
     ],
     "compile_command": [
       "/usr/bin/gcc",
       "-O2",
-      "/tmp/lean-goose-b2z0m2i9/goose/checker.c",
+      "/tmp/lean-goose-5lihn6if/goose/checker.c",
       "-o",
-      "/tmp/lean-goose-b2z0m2i9/goose/checker",
+      "/tmp/lean-goose-5lihn6if/goose/checker",
       "-lm",
       "-pthread"
     ],
@@ -426,10 +426,10 @@
       "workload": "wide",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 140028,
+      "elapsed_ns": 147352,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 140028,
+      "per_batch_ns": 147352,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -437,13 +437,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 51719473,
+      "process_elapsed_ns": 48421215,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/wide.tsv",
         "1"
       ],
-      "selected_iterations": 358
+      "selected_iterations": 340
     },
     {
       "workload": "wide",
@@ -453,19 +453,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 2776,
-      "per_batch_ns": 2776.0,
+      "elapsed_ns": 2792,
+      "per_batch_ns": 2792.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 1986604,
+      "process_elapsed_ns": 2138282,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/wide.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 18012
+      "selected_iterations": 17909
     },
     {
       "workload": "wide",
@@ -475,30 +475,30 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 851387,
-      "per_batch_ns": 851387.0,
-      "cpu_s": 0.000862,
+      "elapsed_ns": 166027,
+      "per_batch_ns": 166027.0,
+      "cpu_s": 0.000174,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 25600236,
+      "process_elapsed_ns": 8686255,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/wide.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 59
+      "selected_iterations": 302
     },
     {
       "workload": "chain",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 57322,
+      "elapsed_ns": 57009,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 57322,
+      "per_batch_ns": 57009,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -506,13 +506,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 46940837,
+      "process_elapsed_ns": 57404932,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/chain.tsv",
         "1"
       ],
-      "selected_iterations": 873
+      "selected_iterations": 878
     },
     {
       "workload": "chain",
@@ -522,19 +522,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 2837,
-      "per_batch_ns": 2837.0,
+      "elapsed_ns": 2770,
+      "per_batch_ns": 2770.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 2907793,
+      "process_elapsed_ns": 2087971,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/chain.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 17625
+      "selected_iterations": 18051
     },
     {
       "workload": "chain",
@@ -544,30 +544,30 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 8,
-      "elapsed_ns": 193565,
-      "per_batch_ns": 193565.0,
-      "cpu_s": 0.000203,
+      "elapsed_ns": 190171,
+      "per_batch_ns": 190171.0,
+      "cpu_s": 0.000198,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 23922724,
+      "process_elapsed_ns": 10551673,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/chain.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 259
+      "selected_iterations": 263
     },
     {
       "workload": "identities",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 21085,
+      "elapsed_ns": 21246,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 21085,
+      "per_batch_ns": 21246,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -575,13 +575,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 119979293,
+      "process_elapsed_ns": 48937793,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/identities.tsv",
         "1"
       ],
-      "selected_iterations": 2372
+      "selected_iterations": 2354
     },
     {
       "workload": "identities",
@@ -591,19 +591,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 810,
-      "per_batch_ns": 810.0,
+      "elapsed_ns": 767,
+      "per_batch_ns": 767.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 2586699,
+      "process_elapsed_ns": 2166888,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/identities.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 61729
+      "selected_iterations": 65190
     },
     {
       "workload": "identities",
@@ -613,30 +613,30 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 89867,
-      "per_batch_ns": 89867.0,
-      "cpu_s": 0.000103,
+      "elapsed_ns": 51196,
+      "per_batch_ns": 51196.0,
+      "cpu_s": 5.7e-05,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 17631730,
+      "process_elapsed_ns": 4434059,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/identities.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 557
+      "selected_iterations": 977
     },
     {
       "workload": "distinct_trees",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 116921,
+      "elapsed_ns": 130513,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 116921,
+      "per_batch_ns": 130513,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -644,13 +644,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 135927344,
+      "process_elapsed_ns": 44490569,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/distinct_trees.tsv",
         "1"
       ],
-      "selected_iterations": 428
+      "selected_iterations": 384
     },
     {
       "workload": "distinct_trees",
@@ -660,19 +660,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 8305,
-      "per_batch_ns": 8305.0,
+      "elapsed_ns": 8739,
+      "per_batch_ns": 8739.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 2956954,
+      "process_elapsed_ns": 3565132,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/distinct_trees.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 6021
+      "selected_iterations": 5722
     },
     {
       "workload": "distinct_trees",
@@ -682,30 +682,30 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 907134,
-      "per_batch_ns": 907134.0,
-      "cpu_s": 0.000919,
+      "elapsed_ns": 1284580,
+      "per_batch_ns": 1284580.0,
+      "cpu_s": 0.001296,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 23784104,
+      "process_elapsed_ns": 13038560,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/distinct_trees.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 56
+      "selected_iterations": 39
     },
     {
       "workload": "unshared_trees",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 102184,
+      "elapsed_ns": 102218,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 102184,
+      "per_batch_ns": 102218,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -713,9 +713,9 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 146370711,
+      "process_elapsed_ns": 59239945,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/unshared_trees.tsv",
         "1"
       ],
@@ -729,19 +729,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 123881,
-      "per_batch_ns": 123881.0,
+      "elapsed_ns": 79120,
+      "per_batch_ns": 79120.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 5563610,
+      "process_elapsed_ns": 2812833,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/unshared_trees.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 404
+      "selected_iterations": 632
     },
     {
       "workload": "unshared_trees",
@@ -751,30 +751,30 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 5047509,
-      "per_batch_ns": 5047509.0,
-      "cpu_s": 0.00506,
+      "elapsed_ns": 6944002,
+      "per_batch_ns": 6944002.0,
+      "cpu_s": 0.006954,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 41763684,
+      "process_elapsed_ns": 87370916,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/unshared_trees.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 10
+      "selected_iterations": 8
     },
     {
       "workload": "dependent_terms",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 71807,
+      "elapsed_ns": 72224,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 71807,
+      "per_batch_ns": 72224,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -782,13 +782,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 51039320,
+      "process_elapsed_ns": 60229304,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/dependent_terms.tsv",
         "1"
       ],
-      "selected_iterations": 697
+      "selected_iterations": 693
     },
     {
       "workload": "dependent_terms",
@@ -798,19 +798,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 9475,
-      "per_batch_ns": 9475.0,
+      "elapsed_ns": 9533,
+      "per_batch_ns": 9533.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 2158141,
+      "process_elapsed_ns": 2053206,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/dependent_terms.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 5278
+      "selected_iterations": 5245
     },
     {
       "workload": "dependent_terms",
@@ -820,30 +820,30 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 603738,
-      "per_batch_ns": 603738.0,
-      "cpu_s": 0.000612,
+      "elapsed_ns": 689463,
+      "per_batch_ns": 689463.0,
+      "cpu_s": 0.000698,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 6645452,
+      "process_elapsed_ns": 8611120,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/dependent_terms.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 83
+      "selected_iterations": 73
     },
     {
       "workload": "alias_diamonds",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 41898,
+      "elapsed_ns": 40953,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 41898,
+      "per_batch_ns": 40953,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -851,13 +851,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 139017523,
+      "process_elapsed_ns": 62391286,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/alias_diamonds.tsv",
         "1"
       ],
-      "selected_iterations": 1194
+      "selected_iterations": 1221
     },
     {
       "workload": "alias_diamonds",
@@ -867,19 +867,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 4436,
-      "per_batch_ns": 4436.0,
+      "elapsed_ns": 3946,
+      "per_batch_ns": 3946.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 2950064,
+      "process_elapsed_ns": 3216575,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/alias_diamonds.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 11272
+      "selected_iterations": 12672
     },
     {
       "workload": "alias_diamonds",
@@ -889,21 +889,21 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 3,
-      "elapsed_ns": 2460457,
-      "per_batch_ns": 2460457.0,
-      "cpu_s": 0.002469,
+      "elapsed_ns": 589865,
+      "per_batch_ns": 589865.0,
+      "cpu_s": 0.000601,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 18094761,
+      "process_elapsed_ns": 8844912,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/alias_diamonds.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 21
+      "selected_iterations": 85
     }
   ],
   "observations": [
@@ -913,22 +913,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 59,
+      "iterations": 302,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 12983609,
-      "per_batch_ns": 220061.169,
-      "cpu_s": 0.013131,
-      "validated_batches": 59,
+      "elapsed_ns": 59668666,
+      "per_batch_ns": 197578.364,
+      "cpu_s": 0.060075,
+      "validated_batches": 302,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 173276286,
+      "process_elapsed_ns": 874420504,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/wide.tsv",
         "1",
-        "59"
+        "302"
       ]
     },
     {
@@ -936,22 +936,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 55760687,
+      "elapsed_ns": 50503206,
       "engine": "lean-kernel",
-      "iterations": 358,
-      "per_batch_ns": 155756,
+      "iterations": 340,
+      "per_batch_ns": 148538,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 358,
+      "validated_batches": 340,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 190866864,
+      "process_elapsed_ns": 99125717,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/wide.tsv",
-        "358"
+        "340"
       ]
     },
     {
@@ -961,19 +961,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 18012,
+      "iterations": 17909,
       "definitions": 8,
-      "elapsed_ns": 48997331,
-      "per_batch_ns": 2720.2604374861203,
-      "validated_batches": 18012,
+      "elapsed_ns": 62354196,
+      "per_batch_ns": 3481.724049360657,
+      "validated_batches": 17909,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 73236277,
+      "process_elapsed_ns": 88193965,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/wide.tsv",
         "1",
-        "18012"
+        "17909"
       ]
     },
     {
@@ -982,22 +982,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 259,
+      "iterations": 263,
       "definitions": 8,
       "waves": 8,
-      "elapsed_ns": 144922978,
-      "per_batch_ns": 559548.178,
-      "cpu_s": 0.145456,
-      "validated_batches": 259,
+      "elapsed_ns": 121464533,
+      "per_batch_ns": 461842.331,
+      "cpu_s": 0.121933,
+      "validated_batches": 263,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 1695609387,
+      "process_elapsed_ns": 1574433465,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/chain.tsv",
         "1",
-        "259"
+        "263"
       ]
     },
     {
@@ -1005,22 +1005,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 63796875,
+      "elapsed_ns": 51893494,
       "engine": "lean-kernel",
-      "iterations": 873,
-      "per_batch_ns": 73077,
+      "iterations": 878,
+      "per_batch_ns": 59104,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 873,
+      "validated_batches": 878,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 129658774,
+      "process_elapsed_ns": 113985864,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/chain.tsv",
-        "873"
+        "878"
       ]
     },
     {
@@ -1030,19 +1030,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 17625,
+      "iterations": 18051,
       "definitions": 8,
-      "elapsed_ns": 49473366,
-      "per_batch_ns": 2806.999489361702,
-      "validated_batches": 17625,
+      "elapsed_ns": 57215683,
+      "per_batch_ns": 3169.668328624453,
+      "validated_batches": 18051,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 72713131,
+      "process_elapsed_ns": 83591337,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/chain.tsv",
         "1",
-        "17625"
+        "18051"
       ]
     },
     {
@@ -1051,22 +1051,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 557,
+      "iterations": 977,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 75280743,
-      "per_batch_ns": 135153.937,
-      "cpu_s": 0.075721,
-      "validated_batches": 557,
+      "elapsed_ns": 58711564,
+      "per_batch_ns": 60093.72,
+      "cpu_s": 0.059284,
+      "validated_batches": 977,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 198374896,
+      "process_elapsed_ns": 148204329,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/identities.tsv",
         "1",
-        "557"
+        "977"
       ]
     },
     {
@@ -1074,22 +1074,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 129836097,
+      "elapsed_ns": 49375103,
       "engine": "lean-kernel",
-      "iterations": 2372,
-      "per_batch_ns": 54736,
+      "iterations": 2354,
+      "per_batch_ns": 20974,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 2372,
+      "validated_batches": 2354,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 226355625,
+      "process_elapsed_ns": 115897412,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/identities.tsv",
-        "2372"
+        "2354"
       ]
     },
     {
@@ -1099,19 +1099,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 61729,
+      "iterations": 65190,
       "definitions": 8,
-      "elapsed_ns": 33033971,
-      "per_batch_ns": 535.1450857781593,
-      "validated_batches": 61729,
+      "elapsed_ns": 41573362,
+      "per_batch_ns": 637.7260622794907,
+      "validated_batches": 65190,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 62420135,
+      "process_elapsed_ns": 77054152,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/identities.tsv",
         "1",
-        "61729"
+        "65190"
       ]
     },
     {
@@ -1120,22 +1120,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 56,
+      "iterations": 39,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 170131666,
-      "per_batch_ns": 3038065.464,
-      "cpu_s": 0.168481,
-      "validated_batches": 56,
+      "elapsed_ns": 45021011,
+      "per_batch_ns": 1154384.897,
+      "cpu_s": 0.042992,
+      "validated_batches": 39,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 460164688,
+      "process_elapsed_ns": 146636233,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/distinct_trees.tsv",
         "1",
-        "56"
+        "39"
       ]
     },
     {
@@ -1143,22 +1143,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 56160061,
+      "elapsed_ns": 46714852,
       "engine": "lean-kernel",
-      "iterations": 428,
-      "per_batch_ns": 131215,
+      "iterations": 384,
+      "per_batch_ns": 121653,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 428,
+      "validated_batches": 384,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 242868979,
+      "process_elapsed_ns": 95875739,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/distinct_trees.tsv",
-        "428"
+        "384"
       ]
     },
     {
@@ -1168,19 +1168,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 6021,
+      "iterations": 5722,
       "definitions": 8,
-      "elapsed_ns": 58640393,
-      "per_batch_ns": 9739.311243979406,
-      "validated_batches": 6021,
+      "elapsed_ns": 50222837,
+      "per_batch_ns": 8777.147326109753,
+      "validated_batches": 5722,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 93946014,
+      "process_elapsed_ns": 82283136,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/distinct_trees.tsv",
         "1",
-        "6021"
+        "5722"
       ]
     },
     {
@@ -1189,22 +1189,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 10,
+      "iterations": 8,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 57284527,
-      "per_batch_ns": 5728452.7,
-      "cpu_s": 0.054236,
-      "validated_batches": 10,
+      "elapsed_ns": 16915473,
+      "per_batch_ns": 2114434.125,
+      "cpu_s": 0.016942,
+      "validated_batches": 8,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 97971210,
+      "process_elapsed_ns": 37616483,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/unshared_trees.tsv",
         "1",
-        "10"
+        "8"
       ]
     },
     {
@@ -1212,10 +1212,10 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 55891458,
+      "elapsed_ns": 87170453,
       "engine": "lean-kernel",
       "iterations": 490,
-      "per_batch_ns": 114064,
+      "per_batch_ns": 177898,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -1223,9 +1223,9 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 115547442,
+      "process_elapsed_ns": 193975442,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/unshared_trees.tsv",
         "490"
       ]
@@ -1237,19 +1237,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 404,
+      "iterations": 632,
       "definitions": 8,
-      "elapsed_ns": 36373853,
-      "per_batch_ns": 90034.2896039604,
-      "validated_batches": 404,
+      "elapsed_ns": 65305131,
+      "per_batch_ns": 103330.90348101266,
+      "validated_batches": 632,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 72577625,
+      "process_elapsed_ns": 120624123,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/unshared_trees.tsv",
         "1",
-        "404"
+        "632"
       ]
     },
     {
@@ -1258,22 +1258,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 83,
+      "iterations": 73,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 51546951,
-      "per_batch_ns": 621047.602,
-      "cpu_s": 0.051613,
-      "validated_batches": 83,
+      "elapsed_ns": 176825333,
+      "per_batch_ns": 2422264.836,
+      "cpu_s": 0.176934,
+      "validated_batches": 73,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 69086565,
+      "process_elapsed_ns": 240687810,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/dependent_terms.tsv",
         "1",
-        "83"
+        "73"
       ]
     },
     {
@@ -1281,22 +1281,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 44382272,
+      "elapsed_ns": 54036897,
       "engine": "lean-kernel",
-      "iterations": 697,
-      "per_batch_ns": 63676,
+      "iterations": 693,
+      "per_batch_ns": 77975,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 697,
+      "validated_batches": 693,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 178188525,
+      "process_elapsed_ns": 107831803,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/dependent_terms.tsv",
-        "697"
+        "693"
       ]
     },
     {
@@ -1306,19 +1306,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 5278,
+      "iterations": 5245,
       "definitions": 8,
-      "elapsed_ns": 54866781,
-      "per_batch_ns": 10395.37343690792,
-      "validated_batches": 5278,
+      "elapsed_ns": 60529590,
+      "per_batch_ns": 11540.436606291707,
+      "validated_batches": 5245,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 95649033,
+      "process_elapsed_ns": 104820864,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/dependent_terms.tsv",
         "1",
-        "5278"
+        "5245"
       ]
     },
     {
@@ -1327,22 +1327,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 21,
+      "iterations": 85,
       "definitions": 8,
       "waves": 3,
-      "elapsed_ns": 22867961,
-      "per_batch_ns": 1088950.524,
-      "cpu_s": 0.022899,
-      "validated_batches": 21,
+      "elapsed_ns": 50203841,
+      "per_batch_ns": 590633.424,
+      "cpu_s": 0.05048,
+      "validated_batches": 85,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 46496719,
+      "process_elapsed_ns": 86061742,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/bytecode/benchmark_compare",
+        "/tmp/lean-goose-5lihn6if/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/alias_diamonds.tsv",
         "1",
-        "21"
+        "85"
       ]
     },
     {
@@ -1350,22 +1350,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 126951801,
+      "elapsed_ns": 63820108,
       "engine": "lean-kernel",
-      "iterations": 1194,
-      "per_batch_ns": 106324,
+      "iterations": 1221,
+      "per_batch_ns": 52268,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 1194,
+      "validated_batches": 1221,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 273641044,
+      "process_elapsed_ns": 135711728,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/lean/benchmark_kernel",
+        "/tmp/lean-goose-5lihn6if/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/alias_diamonds.tsv",
-        "1194"
+        "1221"
       ]
     },
     {
@@ -1375,19 +1375,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 11272,
+      "iterations": 12672,
       "definitions": 8,
-      "elapsed_ns": 44222858,
-      "per_batch_ns": 3923.248580553584,
-      "validated_batches": 11272,
+      "elapsed_ns": 53150242,
+      "per_batch_ns": 4194.305713383838,
+      "validated_batches": 12672,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 69143732,
+      "process_elapsed_ns": 83629569,
       "command": [
-        "/tmp/lean-goose-b2z0m2i9/goose/checker",
+        "/tmp/lean-goose-5lihn6if/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/alias_diamonds.tsv",
         "1",
-        "11272"
+        "12672"
       ]
     }
   ],
@@ -1396,210 +1396,210 @@
       "workload": "wide",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.1557561089385475,
-      "mean_ms": 0.1557561089385475,
-      "min_ms": 0.1557561089385475,
-      "max_ms": 0.1557561089385475,
+      "median_ms": 0.1485388411764706,
+      "mean_ms": 0.1485388411764706,
+      "min_ms": 0.1485388411764706,
+      "max_ms": 0.1485388411764706,
       "stdev_ms": 0.0
     },
     {
       "workload": "wide",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.00272026043748612,
-      "mean_ms": 0.00272026043748612,
-      "min_ms": 0.00272026043748612,
-      "max_ms": 0.00272026043748612,
+      "median_ms": 0.003481724049360657,
+      "mean_ms": 0.003481724049360657,
+      "min_ms": 0.003481724049360657,
+      "max_ms": 0.003481724049360657,
       "stdev_ms": 0.0
     },
     {
       "workload": "wide",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 0.22006116949152543,
-      "mean_ms": 0.22006116949152543,
-      "min_ms": 0.22006116949152543,
-      "max_ms": 0.22006116949152543,
+      "median_ms": 0.1975783642384106,
+      "mean_ms": 0.1975783642384106,
+      "min_ms": 0.1975783642384106,
+      "max_ms": 0.1975783642384106,
       "stdev_ms": 0.0
     },
     {
       "workload": "chain",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.07307774914089347,
-      "mean_ms": 0.07307774914089347,
-      "min_ms": 0.07307774914089347,
-      "max_ms": 0.07307774914089347,
+      "median_ms": 0.05910420728929385,
+      "mean_ms": 0.05910420728929385,
+      "min_ms": 0.05910420728929385,
+      "max_ms": 0.05910420728929385,
       "stdev_ms": 0.0
     },
     {
       "workload": "chain",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.0028069994893617023,
-      "mean_ms": 0.0028069994893617023,
-      "min_ms": 0.0028069994893617023,
-      "max_ms": 0.0028069994893617023,
+      "median_ms": 0.003169668328624453,
+      "mean_ms": 0.003169668328624453,
+      "min_ms": 0.003169668328624453,
+      "max_ms": 0.003169668328624453,
       "stdev_ms": 0.0
     },
     {
       "workload": "chain",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 0.5595481776061776,
-      "mean_ms": 0.5595481776061776,
-      "min_ms": 0.5595481776061776,
-      "max_ms": 0.5595481776061776,
+      "median_ms": 0.4618423307984791,
+      "mean_ms": 0.4618423307984791,
+      "min_ms": 0.4618423307984791,
+      "max_ms": 0.4618423307984791,
       "stdev_ms": 0.0
     },
     {
       "workload": "identities",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.054736971753794265,
-      "mean_ms": 0.054736971753794265,
-      "min_ms": 0.054736971753794265,
-      "max_ms": 0.054736971753794265,
+      "median_ms": 0.020974980033984705,
+      "mean_ms": 0.020974980033984705,
+      "min_ms": 0.020974980033984705,
+      "max_ms": 0.020974980033984705,
       "stdev_ms": 0.0
     },
     {
       "workload": "identities",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.0005351450857781593,
-      "mean_ms": 0.0005351450857781593,
-      "min_ms": 0.0005351450857781593,
-      "max_ms": 0.0005351450857781593,
+      "median_ms": 0.0006377260622794907,
+      "mean_ms": 0.0006377260622794907,
+      "min_ms": 0.0006377260622794907,
+      "max_ms": 0.0006377260622794907,
       "stdev_ms": 0.0
     },
     {
       "workload": "identities",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 0.13515393716337523,
-      "mean_ms": 0.13515393716337523,
-      "min_ms": 0.13515393716337523,
-      "max_ms": 0.13515393716337523,
+      "median_ms": 0.06009371954964176,
+      "mean_ms": 0.06009371954964176,
+      "min_ms": 0.06009371954964176,
+      "max_ms": 0.06009371954964176,
       "stdev_ms": 0.0
     },
     {
       "workload": "distinct_trees",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.13121509579439253,
-      "mean_ms": 0.13121509579439253,
-      "min_ms": 0.13121509579439253,
-      "max_ms": 0.13121509579439253,
+      "median_ms": 0.12165326041666667,
+      "mean_ms": 0.12165326041666667,
+      "min_ms": 0.12165326041666667,
+      "max_ms": 0.12165326041666667,
       "stdev_ms": 0.0
     },
     {
       "workload": "distinct_trees",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.009739311243979407,
-      "mean_ms": 0.009739311243979407,
-      "min_ms": 0.009739311243979407,
-      "max_ms": 0.009739311243979407,
+      "median_ms": 0.008777147326109753,
+      "mean_ms": 0.008777147326109753,
+      "min_ms": 0.008777147326109753,
+      "max_ms": 0.008777147326109753,
       "stdev_ms": 0.0
     },
     {
       "workload": "distinct_trees",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 3.038065464285714,
-      "mean_ms": 3.038065464285714,
-      "min_ms": 3.038065464285714,
-      "max_ms": 3.038065464285714,
+      "median_ms": 1.1543848974358975,
+      "mean_ms": 1.1543848974358975,
+      "min_ms": 1.1543848974358975,
+      "max_ms": 1.1543848974358975,
       "stdev_ms": 0.0
     },
     {
       "workload": "unshared_trees",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.11406419999999999,
-      "mean_ms": 0.11406419999999999,
-      "min_ms": 0.11406419999999999,
-      "max_ms": 0.11406419999999999,
+      "median_ms": 0.1778988836734694,
+      "mean_ms": 0.1778988836734694,
+      "min_ms": 0.1778988836734694,
+      "max_ms": 0.1778988836734694,
       "stdev_ms": 0.0
     },
     {
       "workload": "unshared_trees",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.0900342896039604,
-      "mean_ms": 0.0900342896039604,
-      "min_ms": 0.0900342896039604,
-      "max_ms": 0.0900342896039604,
+      "median_ms": 0.10333090348101266,
+      "mean_ms": 0.10333090348101266,
+      "min_ms": 0.10333090348101266,
+      "max_ms": 0.10333090348101266,
       "stdev_ms": 0.0
     },
     {
       "workload": "unshared_trees",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 5.7284527,
-      "mean_ms": 5.7284527,
-      "min_ms": 5.7284527,
-      "max_ms": 5.7284527,
+      "median_ms": 2.114434125,
+      "mean_ms": 2.114434125,
+      "min_ms": 2.114434125,
+      "max_ms": 2.114434125,
       "stdev_ms": 0.0
     },
     {
       "workload": "dependent_terms",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.06367614347202295,
-      "mean_ms": 0.06367614347202295,
-      "min_ms": 0.06367614347202295,
-      "max_ms": 0.06367614347202295,
+      "median_ms": 0.07797532034632035,
+      "mean_ms": 0.07797532034632035,
+      "min_ms": 0.07797532034632035,
+      "max_ms": 0.07797532034632035,
       "stdev_ms": 0.0
     },
     {
       "workload": "dependent_terms",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.010395373436907919,
-      "mean_ms": 0.010395373436907919,
-      "min_ms": 0.010395373436907919,
-      "max_ms": 0.010395373436907919,
+      "median_ms": 0.011540436606291707,
+      "mean_ms": 0.011540436606291707,
+      "min_ms": 0.011540436606291707,
+      "max_ms": 0.011540436606291707,
       "stdev_ms": 0.0
     },
     {
       "workload": "dependent_terms",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 0.6210476024096386,
-      "mean_ms": 0.6210476024096386,
-      "min_ms": 0.6210476024096386,
-      "max_ms": 0.6210476024096386,
+      "median_ms": 2.422264835616438,
+      "mean_ms": 2.422264835616438,
+      "min_ms": 2.422264835616438,
+      "max_ms": 2.422264835616438,
       "stdev_ms": 0.0
     },
     {
       "workload": "alias_diamonds",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.10632479145728643,
-      "mean_ms": 0.10632479145728643,
-      "min_ms": 0.10632479145728643,
-      "max_ms": 0.10632479145728643,
+      "median_ms": 0.05226872072072072,
+      "mean_ms": 0.05226872072072072,
+      "min_ms": 0.05226872072072072,
+      "max_ms": 0.05226872072072072,
       "stdev_ms": 0.0
     },
     {
       "workload": "alias_diamonds",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.003923248580553584,
-      "mean_ms": 0.003923248580553584,
-      "min_ms": 0.003923248580553584,
-      "max_ms": 0.003923248580553584,
+      "median_ms": 0.004194305713383839,
+      "mean_ms": 0.004194305713383839,
+      "min_ms": 0.004194305713383839,
+      "max_ms": 0.004194305713383839,
       "stdev_ms": 0.0
     },
     {
       "workload": "alias_diamonds",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 1.0889505238095238,
-      "mean_ms": 1.0889505238095238,
-      "min_ms": 1.0889505238095238,
-      "max_ms": 1.0889505238095238,
+      "median_ms": 0.5906334235294117,
+      "mean_ms": 0.5906334235294117,
+      "min_ms": 0.5906334235294117,
+      "max_ms": 0.5906334235294117,
       "stdev_ms": 0.0
     }
   ],
@@ -1758,8 +1758,8 @@
   "sources_after": [
     {
       "path": "ESTATE.toml",
-      "sha256": "f20b7088ee834c0d8445f91ef11ccabdf965c55d575339d2587f596ad0fd5c64",
-      "bytes": 9472
+      "sha256": "a10b123e6ffd3e6341419ef4b383ae7d635a79939b3cd581548d66d8f3000fb5",
+      "bytes": 12523
     },
     {
       "path": "conformance/dependencies.json",
@@ -1798,5 +1798,5 @@
     }
   ],
   "source_unchanged": true,
-  "finished_at_utc": "2026-11-20T13:49:47.729197+00:00"
+  "finished_at_utc": "2026-11-20T15:29:54.043605+00:00"
 }

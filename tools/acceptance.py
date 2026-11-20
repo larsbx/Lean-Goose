@@ -118,10 +118,10 @@ def main() -> int:
                                  "--output", "conformance/evidence/smoke"]),
         ]
         for name, command in commands:
-            # Three required formal scopes include replay of every observed
+            # Four required formal scopes include replay of every observed
             # native arena. Keep individual model/native command limits intact;
-            # allow the expanded sequential orchestration thirty minutes.
-            record = run(name, command, timeout=1800 if name == "formal" else 600)
+            # allow the expanded sequential orchestration forty minutes.
+            record = run(name, command, timeout=2400 if name == "formal" else 600)
             receipt["checks"].append(record)
             write_json(RECEIPT, receipt)
             if record["status"] != "passed":

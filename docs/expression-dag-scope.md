@@ -245,8 +245,9 @@ resource accounting, parser or compiler correctness, or general implementation r
 Structural constants are considered in scope independently of environment
 lookup; this is not a proof that they are defined or well typed.
 
-The next semantic obligations are expression substitution and binder-sensitive
-operations, followed by typing/conversion and a precise refinement relation to
-the actual checker. Broader native correspondence needs additional registered
+The separate [substitution scope](substitution.md) now supplies structural
+lifting/substitution laws and finite comparisons with the actual functions.
+Typing/conversion and a precise refinement relation to the actual checker
+remain open. Broader native correspondence needs additional registered
 inputs and proof obligations. Any admission boundary still requires an explicit
 authority decision; adding this formal scope does not create one.

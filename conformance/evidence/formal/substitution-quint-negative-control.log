@@ -1,0 +1,53 @@
+An example execution:
+
+[State 0]
+{
+  observed:
+    {
+      acceptance_authority: false,
+      decoded: true,
+      rows: [{ expression: [4, 0, 0, 1, 1], height: 2, loose: 1 }]
+    },
+  q:
+    {
+      cutoff: 0,
+      nodes:
+        [
+          { a: 0, b: 0, c: 0, name: [], tag: 0 },
+          { a: 0, b: 0, c: 0, name: [], tag: 1 },
+          { a: 1, b: 0, c: 0, name: [], tag: 1 },
+          { a: 0, b: 2, c: 0, name: [], tag: 4 }
+        ],
+      operation: 1,
+      parameter: 1,
+      root: 3
+    }
+}
+
+[State 1]
+{
+  observed:
+    {
+      acceptance_authority: false,
+      decoded: true,
+      rows: [{ expression: [4, 0, 0, 1, 0], height: 2, loose: 0 }]
+    },
+  q:
+    {
+      cutoff: 0,
+      nodes:
+        [
+          { a: 0, b: 0, c: 0, name: [], tag: 0 },
+          { a: 0, b: 0, c: 0, name: [], tag: 1 },
+          { a: 1, b: 0, c: 0, name: [], tag: 1 },
+          { a: 0, b: 2, c: 0, name: [], tag: 4 }
+        ],
+      operation: 1,
+      parameter: 1,
+      root: 3
+    }
+}
+
+[violation] Found an issue (36ms at 28 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated

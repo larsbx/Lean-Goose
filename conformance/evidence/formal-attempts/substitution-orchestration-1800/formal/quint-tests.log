@@ -1,0 +1,16 @@
+
+  DefinitionTransactions
+    ok initialStateTest passed 1 test(s)
+    ok successfulDefinitionTest passed 1 test(s)
+    ok failedInsertionRetryTest passed 1 test(s)
+    ok duplicatePreservesEnvironmentTest passed 1 test(s)
+    ok duplicatePreemptsScopeTest passed 1 test(s)
+    ok unknownAliasRecoveryTest passed 1 test(s)
+    ok validAliasTest passed 1 test(s)
+    ok unknownAliasPreservesExistingTest passed 1 test(s)
+    ok scopeFailureSuppressesReceiptTest passed 1 test(s)
+    ok haltAbsorbingTest passed 1 test(s)
+    ok orderedSuccessCountTest passed 1 test(s)
+    ok authorityPreservedTest passed 1 test(s)
+
+  12 passing (64ms)

@@ -1,0 +1,3 @@
+{"decoded":true,"expressions":[[1,1]],"heights":[1],"loose":[2],"scoped":[[]],"acceptance_authority":false}
+{"decoded":true,"expressions":[[1,1]],"heights":[1],"loose":[2],"scoped":[[true,false,true,false]],"acceptance_authority":false}
+{"decoded":true,"expressions":[[1,0]],"heights":[1],"loose":[1],"scoped":[[false,true,true]],"acceptance_authority":false}

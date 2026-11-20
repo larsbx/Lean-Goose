@@ -1,0 +1,45 @@
+An example execution:
+
+[State 0]
+{
+  hasStep: false,
+  last: { kind: 0, name: 0, target: 0 },
+  previous:
+    {
+      acceptance_authority: false,
+      environment: [],
+      halted: false,
+      outcomes: []
+    },
+  s:
+    {
+      acceptance_authority: false,
+      environment: [],
+      halted: false,
+      outcomes: []
+    }
+}
+
+[State 1]
+{
+  hasStep: true,
+  last: { kind: 1, name: 0, target: 0 },
+  previous:
+    {
+      acceptance_authority: false,
+      environment: [],
+      halted: false,
+      outcomes: []
+    },
+  s:
+    {
+      acceptance_authority: false,
+      environment: [0],
+      halted: false,
+      outcomes: [{ code: 6, name: 0 }]
+    }
+}
+
+[violation] Found an issue (19ms at 53 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated
