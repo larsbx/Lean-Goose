@@ -14,8 +14,8 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT / "conformance/evidence"
 RECEIPT = EVIDENCE / "verification.json"
-SKIP_DIRS = {".git", "_build", "__pycache__", "build", "dist", "coverage", ".cache", ".venv"}
-SKIP_SUFFIXES = {".cmi", ".cmo", ".cmx", ".o", ".pyc"}
+SKIP_DIRS = {".git", "_build", "__pycache__", "build", "dist", "coverage", ".cache", ".venv", "node_modules", ".lake"}
+SKIP_SUFFIXES = {".cmi", ".cmo", ".cmx", ".o", ".pyc", ".olean", ".ilean"}
 
 
 def now() -> str:
@@ -109,6 +109,8 @@ def main() -> int:
         commands = [
             ("estate-audit", ["sh", "tools/estate-audit.sh"]
              + ([str(args.audit.resolve())] if args.audit else [])),
+            ("formal-tests", [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"]),
+            ("formal", [sys.executable, "tools/check_formal.py"]),
             ("conformance", [sys.executable, "tools/run.py", "check", "--definitions", "128",
                              "--output", "conformance/evidence/check"]),
             ("benchmark-smoke", [sys.executable, "tools/run.py", "bench", "--samples", "1",

@@ -1,0 +1,192 @@
+[
+  {
+    "path": ".gitattributes",
+    "bytes": 48,
+    "sha256": "2df22fbb92e6350bddc00f3f977619734fd11359a9ae0fc6e16d0aed7e784fa5"
+  },
+  {
+    "path": ".github/PULL_REQUEST_TEMPLATE.md",
+    "bytes": 852,
+    "sha256": "998e7275119904f7054f94177b01e84172585a055e2a86d0984c21335b427ba9"
+  },
+  {
+    "path": ".github/workflows/conformance.yml",
+    "bytes": 3997,
+    "sha256": "a2d77ad4b4652e96477bbfad7bb19a9f3a49ee9f2b56b257ca88d4f3419451c3"
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 99,
+    "sha256": "f9e5a932b63ff042cc1f4250e451adcc4eb7ef2ab4ec8f0de53a0333175e5319"
+  },
+  {
+    "path": "AGENTS.md",
+    "bytes": 2027,
+    "sha256": "c8608f56ab8ecad8866d9da777791321c818f262d36007c89971bfd85361996d"
+  },
+  {
+    "path": "ARCHITECTURE.md",
+    "bytes": 5546,
+    "sha256": "4226d3c14aeb27b7328643b7ecb8e5495cd4a87e5bb4621aba3929e8c8a2d26e"
+  },
+  {
+    "path": "ESTATE.toml",
+    "bytes": 4172,
+    "sha256": "09541a562ef087eacb7ecdad7f98bcc05788f47ecb052bdf00eed524e66c33f9"
+  },
+  {
+    "path": "LANGUAGE_BOUNDARIES.md",
+    "bytes": 1853,
+    "sha256": "9a3b7d29087f387c40c5b0068ba7dc63d68341c9f6d9af48e61187f4a0a8720b"
+  },
+  {
+    "path": "Makefile",
+    "bytes": 696,
+    "sha256": "8497ec8ac6a8b7b756c74606bb665022ff9170fe9ee29f29c2232b6f9aa52cfa"
+  },
+  {
+    "path": "README.md",
+    "bytes": 5505,
+    "sha256": "dc01136af5cbdda4a980b33efdef49e51b697bd8da46c9bb85103c2ca762efcb"
+  },
+  {
+    "path": "conformance/dependencies.json",
+    "bytes": 4967,
+    "sha256": "617b4254c20cfb0c78f83c7f758612162b30d328609a64318c22692e180c16ee"
+  },
+  {
+    "path": "conformance/source-provenance.json",
+    "bytes": 1794,
+    "sha256": "a6753ad80c4d0c2deb73fcd1a1fd2082f4f1d1f259aa7001e5c1873816dd17f0"
+  },
+  {
+    "path": "docs/benchmark-baseline.md",
+    "bytes": 2703,
+    "sha256": "027bf01f2d92becbccac61f115a309af033ebc113a56a4723590cc5da54834e4"
+  },
+  {
+    "path": "docs/formalization.md",
+    "bytes": 11872,
+    "sha256": "aefb5797b939c29184849ba73f4bd4e258f87d34a45b692bc91f90dadc3dcf69"
+  },
+  {
+    "path": "docs/roadmap.md",
+    "bytes": 2755,
+    "sha256": "151f64fbe41acd55e5d70b159e1edf54dedf07665d20fcf68b9069069d500e38"
+  },
+  {
+    "path": "docs/scaffold-sop.md",
+    "bytes": 2473,
+    "sha256": "aa7851a597b84a27095394a0f06c40e3aabeb3123e01edb6af3f8a019b3ad8a4"
+  },
+  {
+    "path": "docs/validation.md",
+    "bytes": 5743,
+    "sha256": "1bede3381b2b4c4dea153029a02415ae910637463daf6ac175a0f477d9024c93"
+  },
+  {
+    "path": "formal/lean/Audit.lean",
+    "bytes": 2767,
+    "sha256": "2a81b1d209863671c2b68a94dec23d3e832057f9fd0b15b35570af93990f2c17"
+  },
+  {
+    "path": "formal/lean/DefinitionTransactions.lean",
+    "bytes": 14529,
+    "sha256": "2fb3907bb8016c541ed7c2d7cfdd86bc075f357cc3bcdef598150ba63add452b"
+  },
+  {
+    "path": "formal/lean/Replay.lean",
+    "bytes": 2712,
+    "sha256": "30c6efdf863baf002c5cd0d5faf9293ed9b0289c682660ac7cfbe8927f6f66f7"
+  },
+  {
+    "path": "formal/lean/lean-toolchain",
+    "bytes": 25,
+    "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b"
+  },
+  {
+    "path": "formal/quint/DefinitionTransactions.qnt",
+    "bytes": 7348,
+    "sha256": "4a7dcd3075fb9ea9560a6883e7c527fa623be78e4220349eef671b3177cde408"
+  },
+  {
+    "path": "formal/quint/package-lock.json",
+    "bytes": 31042,
+    "sha256": "30b0fc049c56f050817d1546a5eb10faba35af166774f3a28bd23760f3927993"
+  },
+  {
+    "path": "formal/quint/package.json",
+    "bytes": 238,
+    "sha256": "ba65b1813e0d1611c5eaeb1b40747d18665263d1b0094458fae46b266bb5668c"
+  },
+  {
+    "path": "formal/quint/replay.py",
+    "bytes": 4786,
+    "sha256": "960124d95806fe5061902f0c5c9164e0c07fc024c0c3ea7c3a2d38e8356ac4c4"
+  },
+  {
+    "path": "oracles/README.md",
+    "bytes": 1236,
+    "sha256": "8227d5b9e3786146767146532762cb120e6acc29781f5fbfc5cf066ddd2e4d4e"
+  },
+  {
+    "path": "policy/README.md",
+    "bytes": 1548,
+    "sha256": "60cc1f53b75b086e94a4ece08279b0e0201c55df7dc45169badb95c7496e5565"
+  },
+  {
+    "path": "reference/checker.goose",
+    "bytes": 19360,
+    "sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52"
+  },
+  {
+    "path": "schemas/definition-observations-v1.md",
+    "bytes": 3448,
+    "sha256": "5bfb8970ce78ea84f8a0f2c90522a13de2e66e76de55b9b3d93e811f214a28ad"
+  },
+  {
+    "path": "tests/test_formal.py",
+    "bytes": 9060,
+    "sha256": "c80f912baf16257d72bd6a0d8c2a8f8188402d14d6702810bbd4a8806e788abb"
+  },
+  {
+    "path": "tools/acceptance.py",
+    "bytes": 6880,
+    "sha256": "12d546b2e827039ea409aba8a6beee646b65388328c82f729288de4887151841"
+  },
+  {
+    "path": "tools/build_goose.sh",
+    "bytes": 1938,
+    "sha256": "4a6fdfc54922cf902f35249c1b1b1d7a6b6af289761a4e3662903f5da003cba9"
+  },
+  {
+    "path": "tools/build_ocaml.sh",
+    "bytes": 2070,
+    "sha256": "229f15de957372f8eeb82dbc4fe7eeed474bc95ad379bcee0b84f12a5d989d93"
+  },
+  {
+    "path": "tools/check_formal.py",
+    "bytes": 19402,
+    "sha256": "f53fccf9d886603d2ce8293635930b47b6b1bd20f4e3ef9a0a939d87feb15872"
+  },
+  {
+    "path": "tools/estate-audit.sh",
+    "bytes": 1197,
+    "sha256": "ddf0175a81059635f422f52e430c8b787a52bf16cc097c3bbe2aed7fd380c6e4"
+  },
+  {
+    "path": "tools/run.py",
+    "bytes": 20063,
+    "sha256": "55a2681c7cb2bf147da8bda284f51da895d76393522bc58ab4e4eab6267605b7"
+  },
+  {
+    "path": "tools/runtime.py",
+    "bytes": 12341,
+    "sha256": "0879bb3a08c987e83ecb226aa7ac64b24a0197cafb9bbd57367020cc9d063ecc"
+  },
+  {
+    "path": "tools/transaction_profile.py",
+    "bytes": 4998,
+    "sha256": "8cfe4ca660a43f2e6fff9fb264dacdc2bbfd7a1cb08cb1c4a408f838fbdeaf1b"
+  }
+]

@@ -6,48 +6,48 @@
   },
   {
     "path": ".github/PULL_REQUEST_TEMPLATE.md",
-    "bytes": 529,
-    "sha256": "f2ecca3ab523ec28b6720eefc06a15079ac391278a559c94818a79b425be0e02"
+    "bytes": 852,
+    "sha256": "998e7275119904f7054f94177b01e84172585a055e2a86d0984c21335b427ba9"
   },
   {
     "path": ".github/workflows/conformance.yml",
-    "bytes": 3014,
-    "sha256": "5de1028707c2721cf3b6c32bde7a80132e51d23d131f85be8436970493ea9551"
+    "bytes": 3997,
+    "sha256": "a2d77ad4b4652e96477bbfad7bb19a9f3a49ee9f2b56b257ca88d4f3419451c3"
   },
   {
     "path": ".gitignore",
-    "bytes": 62,
-    "sha256": "4e43b040103b81111b9a39f0c0850f81b47887626faa3e28aafb62e0cd957ba4"
+    "bytes": 99,
+    "sha256": "f9e5a932b63ff042cc1f4250e451adcc4eb7ef2ab4ec8f0de53a0333175e5319"
   },
   {
     "path": "AGENTS.md",
-    "bytes": 1556,
-    "sha256": "e0a3945e651c6e73ccd54e341d7dad38b209b7d124b3446e4caf82001e0b36b1"
+    "bytes": 2027,
+    "sha256": "c8608f56ab8ecad8866d9da777791321c818f262d36007c89971bfd85361996d"
   },
   {
     "path": "ARCHITECTURE.md",
-    "bytes": 3823,
-    "sha256": "d8bfff689a08ac14cc18f75d57adcade43e3c27e28c1718388819f97edbfe800"
+    "bytes": 5546,
+    "sha256": "4226d3c14aeb27b7328643b7ecb8e5495cd4a87e5bb4621aba3929e8c8a2d26e"
   },
   {
     "path": "ESTATE.toml",
-    "bytes": 2540,
-    "sha256": "f30148560e337936b7ab4b1f1d7d5108f2375feda5065ef476937700941af0fb"
+    "bytes": 4172,
+    "sha256": "09541a562ef087eacb7ecdad7f98bcc05788f47ecb052bdf00eed524e66c33f9"
   },
   {
     "path": "LANGUAGE_BOUNDARIES.md",
-    "bytes": 1294,
-    "sha256": "552fc00e2fa79f662e404e74ea396a2a1d3540dd959a505a85230d7449642329"
+    "bytes": 1853,
+    "sha256": "9a3b7d29087f387c40c5b0068ba7dc63d68341c9f6d9af48e61187f4a0a8720b"
   },
   {
     "path": "Makefile",
-    "bytes": 579,
-    "sha256": "09ccc8dc12b4da495abcb663c6d769ebdaaa89d7bf802288359a4fe0efbfc29e"
+    "bytes": 696,
+    "sha256": "8497ec8ac6a8b7b756c74606bb665022ff9170fe9ee29f29c2232b6f9aa52cfa"
   },
   {
     "path": "README.md",
-    "bytes": 4159,
-    "sha256": "e21e71ea272af61f2ea7c4a4d659a45514d9f94de75fbd601cdc6ab8c3ccd897"
+    "bytes": 5505,
+    "sha256": "dc01136af5cbdda4a980b33efdef49e51b697bd8da46c9bb85103c2ca762efcb"
   },
   {
     "path": "conformance/dependencies.json",
@@ -65,24 +65,64 @@
     "sha256": "027bf01f2d92becbccac61f115a309af033ebc113a56a4723590cc5da54834e4"
   },
   {
+    "path": "docs/formalization.md",
+    "bytes": 11872,
+    "sha256": "aefb5797b939c29184849ba73f4bd4e258f87d34a45b692bc91f90dadc3dcf69"
+  },
+  {
     "path": "docs/roadmap.md",
-    "bytes": 1332,
-    "sha256": "1ebde09a6db8da16d301487ae1a3961b2f35cfdb96aec37e25e57f47457e1374"
+    "bytes": 2755,
+    "sha256": "151f64fbe41acd55e5d70b159e1edf54dedf07665d20fcf68b9069069d500e38"
   },
   {
     "path": "docs/scaffold-sop.md",
-    "bytes": 1459,
-    "sha256": "76cbeac1c0cef55ba94f2e8b8275a3f14fad2e4b0456fcadecb48d2e5436d289"
+    "bytes": 2473,
+    "sha256": "aa7851a597b84a27095394a0f06c40e3aabeb3123e01edb6af3f8a019b3ad8a4"
   },
   {
     "path": "docs/validation.md",
-    "bytes": 3202,
-    "sha256": "0a23d3b0ca226dc69b0c50583bec7ded95b25b0766cdaa2de7cbb6d629abc43c"
+    "bytes": 5743,
+    "sha256": "1bede3381b2b4c4dea153029a02415ae910637463daf6ac175a0f477d9024c93"
   },
   {
-    "path": "kernel/README.md",
-    "bytes": 544,
-    "sha256": "73fd6f28248c4b942d0c68eb9bd906e54b420732e9c2cfeae1b5d7b31b1883af"
+    "path": "formal/lean/Audit.lean",
+    "bytes": 2767,
+    "sha256": "2a81b1d209863671c2b68a94dec23d3e832057f9fd0b15b35570af93990f2c17"
+  },
+  {
+    "path": "formal/lean/DefinitionTransactions.lean",
+    "bytes": 14529,
+    "sha256": "2fb3907bb8016c541ed7c2d7cfdd86bc075f357cc3bcdef598150ba63add452b"
+  },
+  {
+    "path": "formal/lean/Replay.lean",
+    "bytes": 2712,
+    "sha256": "30c6efdf863baf002c5cd0d5faf9293ed9b0289c682660ac7cfbe8927f6f66f7"
+  },
+  {
+    "path": "formal/lean/lean-toolchain",
+    "bytes": 25,
+    "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b"
+  },
+  {
+    "path": "formal/quint/DefinitionTransactions.qnt",
+    "bytes": 7348,
+    "sha256": "4a7dcd3075fb9ea9560a6883e7c527fa623be78e4220349eef671b3177cde408"
+  },
+  {
+    "path": "formal/quint/package-lock.json",
+    "bytes": 31042,
+    "sha256": "30b0fc049c56f050817d1546a5eb10faba35af166774f3a28bd23760f3927993"
+  },
+  {
+    "path": "formal/quint/package.json",
+    "bytes": 238,
+    "sha256": "ba65b1813e0d1611c5eaeb1b40747d18665263d1b0094458fae46b266bb5668c"
+  },
+  {
+    "path": "formal/quint/replay.py",
+    "bytes": 4786,
+    "sha256": "960124d95806fe5061902f0c5c9164e0c07fc024c0c3ea7c3a2d38e8356ac4c4"
   },
   {
     "path": "oracles/README.md",
@@ -91,8 +131,8 @@
   },
   {
     "path": "policy/README.md",
-    "bytes": 1033,
-    "sha256": "e6913d53150e8c488efc3d1ff7f5674f06e37cd22e9fcc771ab7a2d1421d7cec"
+    "bytes": 1548,
+    "sha256": "60cc1f53b75b086e94a4ece08279b0e0201c55df7dc45169badb95c7496e5565"
   },
   {
     "path": "reference/checker.goose",
@@ -105,9 +145,14 @@
     "sha256": "5bfb8970ce78ea84f8a0f2c90522a13de2e66e76de55b9b3d93e811f214a28ad"
   },
   {
+    "path": "tests/test_formal.py",
+    "bytes": 9060,
+    "sha256": "c80f912baf16257d72bd6a0d8c2a8f8188402d14d6702810bbd4a8806e788abb"
+  },
+  {
     "path": "tools/acceptance.py",
-    "bytes": 6669,
-    "sha256": "8542a9348597d904bafb86a3a2af1c2d1ba61e15b8fc2b7dcd838a37cbc47a52"
+    "bytes": 6880,
+    "sha256": "12d546b2e827039ea409aba8a6beee646b65388328c82f729288de4887151841"
   },
   {
     "path": "tools/build_goose.sh",
@@ -118,6 +163,11 @@
     "path": "tools/build_ocaml.sh",
     "bytes": 2070,
     "sha256": "229f15de957372f8eeb82dbc4fe7eeed474bc95ad379bcee0b84f12a5d989d93"
+  },
+  {
+    "path": "tools/check_formal.py",
+    "bytes": 19402,
+    "sha256": "f53fccf9d886603d2ce8293635930b47b6b1bd20f4e3ef9a0a939d87feb15872"
   },
   {
     "path": "tools/estate-audit.sh",
@@ -133,5 +183,10 @@
     "path": "tools/runtime.py",
     "bytes": 12341,
     "sha256": "0879bb3a08c987e83ecb226aa7ac64b24a0197cafb9bbd57367020cc9d063ecc"
+  },
+  {
+    "path": "tools/transaction_profile.py",
+    "bytes": 4998,
+    "sha256": "8cfe4ca660a43f2e6fff9fb264dacdc2bbfd7a1cb08cb1c4a408f838fbdeaf1b"
   }
 ]

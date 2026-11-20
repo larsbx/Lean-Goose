@@ -1,4 +1,4 @@
-.PHONY: pins test smoke benchmark audit acceptance
+.PHONY: pins test smoke benchmark audit formal-tests formal acceptance
 
 pins:
 	python3 tools/run.py pins --output conformance/evidence/pins
@@ -14,6 +14,12 @@ benchmark:
 
 audit:
 	sh tools/estate-audit.sh $(if $(ESTATE_AUDITOR),"$(ESTATE_AUDITOR)")
+
+formal-tests:
+	python3 -m unittest discover -s tests -v
+
+formal:
+	python3 tools/check_formal.py
 
 acceptance:
 	python3 tools/acceptance.py
