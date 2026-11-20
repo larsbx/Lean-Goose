@@ -1,7 +1,7 @@
 {
   "schema": "lean-goose.local-verification.v1",
   "status": "passed",
-  "started_at_utc": "2026-11-20T11:19:05.822209+00:00",
+  "started_at_utc": "2026-11-20T12:22:12.087817+00:00",
   "acceptance_authority": false,
   "authority": "unsigned_local_test_observations_only",
   "hosted_results_included": false,
@@ -37,12 +37,12 @@
         "tools/estate-audit.sh",
         "/workspace/scratch/a402432e12bc/estate-governance/kernel/audit_estate_layout.py"
       ],
-      "started_at_utc": "2026-11-20T11:19:05.841893+00:00",
+      "started_at_utc": "2026-11-20T12:22:12.106963+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T11:19:06.099909+00:00",
+      "finished_at_utc": "2026-11-20T12:22:12.436550+00:00",
       "log": "conformance/evidence/estate-audit.log",
-      "log_sha256": "0fb56139eb641e24398fe4349f6a344e3058690e0ff5219aaddc2b7b5b4e6255"
+      "log_sha256": "7feb9808f62cd187267043758844ed16af62250f1f1bf63c60d8d088bdfebc5b"
     },
     {
       "name": "formal-tests",
@@ -55,12 +55,12 @@
         "tests",
         "-v"
       ],
-      "started_at_utc": "2026-11-20T11:19:06.100343+00:00",
+      "started_at_utc": "2026-11-20T12:22:12.436907+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T11:19:06.389960+00:00",
+      "finished_at_utc": "2026-11-20T12:22:12.864351+00:00",
       "log": "conformance/evidence/formal-tests.log",
-      "log_sha256": "44cbaa2f01a4870cf8a24a7415788e554c549be93d39629005d9c0f5bb3dc9f0"
+      "log_sha256": "6a190172d4c704ef337387c0e50ab7b02b263a92b92d2bb107eabcbaca31093d"
     },
     {
       "name": "formal",
@@ -68,12 +68,12 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "tools/check_formal.py"
       ],
-      "started_at_utc": "2026-11-20T11:19:06.390480+00:00",
+      "started_at_utc": "2026-11-20T12:22:12.864764+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T11:19:26.362074+00:00",
+      "finished_at_utc": "2026-11-20T12:23:23.725149+00:00",
       "log": "conformance/evidence/formal.log",
-      "log_sha256": "3317266054e7a69bc9e4a534ecc24f8b4c9e2cac4a14f54fd7d13889307c2817"
+      "log_sha256": "1c3ebbfab0d56cd2410b3408b271630322968ff9bf59ab06744a58512cb0bfe8"
     },
     {
       "name": "conformance",
@@ -86,10 +86,10 @@
         "--output",
         "conformance/evidence/check"
       ],
-      "started_at_utc": "2026-11-20T11:19:26.362689+00:00",
+      "started_at_utc": "2026-11-20T12:23:23.739218+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T11:19:51.197782+00:00",
+      "finished_at_utc": "2026-11-20T12:28:16.211901+00:00",
       "log": "conformance/evidence/conformance.log",
       "log_sha256": "3bf9e00239dfe3df48c4f506a2efe610cb8f6f1c9dbd4c9352cedfd99bd2492e"
     },
@@ -110,16 +110,16 @@
         "--output",
         "conformance/evidence/smoke"
       ],
-      "started_at_utc": "2026-11-20T11:19:51.198414+00:00",
+      "started_at_utc": "2026-11-20T12:28:16.236760+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T11:20:16.193863+00:00",
+      "finished_at_utc": "2026-11-20T12:30:30.769528+00:00",
       "log": "conformance/evidence/benchmark-smoke.log",
-      "log_sha256": "c40d126bbcb2941560b49567f569a59865ebcc557bcb29ee8e3e769179438c02"
+      "log_sha256": "6852ddba788af566731138d73825c58944705c024dee2783922385aee42d0130"
     }
   ],
-  "base_revision": "fa34fb379c543073d08a4ba6ea6f87d291b90a99",
-  "source_tree_sha256": "98254a9e5c2f030837782fd67f8406621a8d326617588ef61b6623578de35595",
+  "base_revision": "d14aa4fde522cd2a74c9df2e87dd8a7d4a38759b",
+  "source_tree_sha256": "50bd7fd5dea34a908cf768dc459075da83dccac76b40e8a0b8b3c1fb6648d984",
   "source_unchanged_during_verification": true,
-  "finished_at_utc": "2026-11-20T11:20:16.209100+00:00"
+  "finished_at_utc": "2026-11-20T12:30:30.793512+00:00"
 }

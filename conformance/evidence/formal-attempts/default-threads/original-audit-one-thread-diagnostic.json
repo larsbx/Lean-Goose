@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+    "--threads=1",
+    "formal/lean/Audit.lean"
+  ],
+  "started": "2026-11-20T12:21:23.786163+00:00",
+  "lean_path": "/workspace/scratch/a402432e12bc/goose-stored-proof-build",
+  "timeout_seconds": 90,
+  "exit_code": 0,
+  "stdout": "Goose transaction axiom audit passed: 21 required theorems without axioms; 170 declarations; 52 theorem declarations; support axioms: [propext]\n",
+  "stderr": "",
+  "elapsed_seconds": 4.299243456989643
+}

@@ -1,0 +1,87 @@
+An example execution:
+
+[State 0]
+{
+  hasStep: false,
+  last: { kind: 0, level: 0, name: 0, target: 0 },
+  previous:
+    {
+      acceptance_authority: false,
+      environment: [{ inferred: [0, 1], name: 0, ty: [0, 1], value: [0, 0] }],
+      halted: false,
+      outcomes: [{ code: 0, name: 0 }],
+      snapshots:
+        [
+          {
+            code: 0,
+            environment:
+              [{ inferred: [0, 1], name: 0, ty: [0, 1], value: [0, 0] }],
+            name: 0
+          }
+        ]
+    },
+  s:
+    {
+      acceptance_authority: false,
+      environment: [{ inferred: [0, 1], name: 0, ty: [0, 1], value: [0, 0] }],
+      halted: false,
+      outcomes: [{ code: 0, name: 0 }],
+      snapshots:
+        [
+          {
+            code: 0,
+            environment:
+              [{ inferred: [0, 1], name: 0, ty: [0, 1], value: [0, 0] }],
+            name: 0
+          }
+        ]
+    }
+}
+
+[State 1]
+{
+  hasStep: true,
+  last: { kind: 1, level: 0, name: 1, target: 0 },
+  previous:
+    {
+      acceptance_authority: false,
+      environment: [{ inferred: [0, 1], name: 0, ty: [0, 1], value: [0, 0] }],
+      halted: false,
+      outcomes: [{ code: 0, name: 0 }],
+      snapshots:
+        [
+          {
+            code: 0,
+            environment:
+              [{ inferred: [0, 1], name: 0, ty: [0, 1], value: [0, 0] }],
+            name: 0
+          }
+        ]
+    },
+  s:
+    {
+      acceptance_authority: false,
+      environment: [{ inferred: [0, 1], name: 0, ty: [0, 1], value: [0, 999] }],
+      halted: false,
+      outcomes: [{ code: 0, name: 0 }, { code: 6, name: 1 }],
+      snapshots:
+        [
+          {
+            code: 0,
+            environment:
+              [{ inferred: [0, 1], name: 0, ty: [0, 1], value: [0, 0] }],
+            name: 0
+          },
+          {
+            code: 6,
+            environment:
+              [{ inferred: [0, 1], name: 0, ty: [0, 1], value: [0, 999] }],
+            name: 1
+          }
+        ]
+    }
+}
+
+[violation] Found an issue (31ms at 32 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated

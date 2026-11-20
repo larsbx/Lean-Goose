@@ -12,7 +12,7 @@ inventory describes the implementation rather than assigning authority.
 | --- | --- |
 | `policy/` | Governance, evidence, and publication policy |
 | `reference/` | Locally owned, bounded Goose checking observations |
-| `formal/` | Lean transaction proofs, executable model, and Quint checks |
+| `formal/` | Lean transaction and full-record binding proofs, executable models, and Quint checks |
 | `oracles/` | Contract for pinned external Lean and OCaml comparisons |
 | `schemas/` | Versioned input and observation contracts |
 | `conformance/` | Source identities, dependency pins, and generated observations |
@@ -27,11 +27,19 @@ observations and scoped mathematical claims under their declared assumptions.
 ## Owned reference
 
 `reference/checker.goose` is an explicitly adopted derivative of the Goose
-prototype in Lean-OCaml at the recorded source commit. The source adaptation
-changes presentation-only observation labels and output schema IDs. Its checking
-algorithm, substitution, normalization, caching, and resource limits remain the
-recorded derivative. Provenance records the original file identity, exact
-replacements, and local file digest.
+prototype in Lean-OCaml at the recorded source commit. Source provenance v2
+reconstructs the local file in two stages: the original four presentation changes,
+then the exact reviewed `reference/binding-trace.patch`. The verifier requires
+exact patch context and offsets, the patch digest, and the final local digest.
+It also verifies that the presentation-adapted base's checking and parser
+function prefix before `main` remains byte-for-byte unchanged.
+
+The patch adds diagnostic serialization and opt-in `--trace` dispatch. It uses
+the existing `check_definition` result and stored records; the renderer performs
+no fresh inference, normalization, substitution, or validation. The existing
+`--check` and timing contracts remain subject to their full regression gates.
+The trace adds its own bounded output envelope without changing the original
+checker or parser limits.
 
 The checker observes success or a designated refusal for transparent monomorphic
 definitions. Its success label is `observed_success`; its output declares
@@ -39,30 +47,52 @@ definitions. Its success label is `observed_success`; its output declares
 a registered finite expectation. The local observation protocol confers no
 domain admission rights.
 
-## Formal transaction boundary
+## Formal transaction and stored-binding boundary
 
-The first formal scope models ordered definition insertion. It captures the
-priority of duplicate-name checks, insertion only after success, preservation of
-the environment on designated refusals, and the absence of a completed receipt
-when scope checking terminates execution. It also relates the number of successful
-observations to the model's environment size and preserves its lack of authority.
+Both required scopes map to `check_definition` in the Goose reference. The
+original ordered-name model captures duplicate priority, successful insertion,
+refusal atomicity, success counts, and termination without a completed `--check`
+receipt. Its 21 Lean obligations and 1,110-case comparison remain required.
 
-The implementation mapping is to `check_definition` and `check_only` in the Goose
-reference, with observation validation in `tools/run.py`. The model abstracts
-expression checking into four action classes. Its names and environment are
-mathematical values; the runtime adapter encodes a finite set as actual DAG inputs.
+The additional model represents each binding's name, declared type, original
+value, and inferred type. Lean's full-record preservation statements quantify
+over arbitrary existing payload vectors and finite action traces. They establish
+that extension retains the old records and lookups, while refusals retain the
+entire environment. The model's successful insertion rules are still an abstract
+four-action specification, with exact type equality for the scoped aliases.
+They do not implement general expression typing or reduction.
 
-Lean proves properties for arbitrary finite action traces. Quint provides an
-independently written executable model, deterministic tests, bounded simulation,
-and an unsafe-transition counterexample. Finite comparison checks the Lean and
-Quint models and the observable Goose output for a declared input inventory.
-The complete claims, assumptions, mappings, and limits are in
-[docs/formalization.md](docs/formalization.md).
+The stored-binding gate requires 29 named Lean obligations, a complete namespace
+axiom audit, an independent Quint model, 16 deterministic Quint tests, bounded
+simulation, and a deliberate payload-corruption counterexample. It evaluates all
+2,954 nonempty action sequences of lengths one through three from the declared
+14-action profile. Native comparison covers Sort/Const payloads at levels zero
+and one, two names, duplicates, refusals, retries, and scope termination.
 
-The runtime does not expose its environment representation. Equality of the
-models' full states is distinct from agreement with Goose's observable ordered
-outcomes, success count, and fatal-process behavior. Full refinement of the
-Goose implementation remains open.
+### Observable diagnostic interface
+
+`checker --trace FILE` exposes each processed definition's outcome, complete
+stored binding records, and immutable raw node table. A binding's `type`, `value`,
+and `inferred` fields retain their actual node IDs. The table provides structural
+payloads and child IDs, allowing the adapter to check both raw-record preservation
+and decoded payload equality. Snapshots are serialized immediately after the
+check, before the next definition can change the state. Trace input, node,
+definition, arena, and serialized-output bounds are specified in the
+[trace contract](schemas/binding-trace-v1.md).
+
+A fatal checker result produces a final diagnostic snapshot in `--trace`, with
+`status: halted` and a nonzero exit. The original `--check` mode still emits no
+completed receipt for that fatal run. The formal gate checks both modes for every
+stored-binding profile case, including the processed prefix before termination.
+The diagnostic data grants no admission authority.
+
+The trace omits mutable node caches, context stacks, fuel, and derived metadata.
+Its complete raw DAG schema can describe more syntax than the Sort/Const payloads
+covered by the current correspondence profile. General correctness of the trace
+adapter, arbitrary-expression correspondence, and refinement of the checker by
+the models remain open. The complete claims, required inventories, and limits
+are in [docs/formalization.md](docs/formalization.md); execution outcomes belong
+to the receipt for the exact source tested.
 
 ## External comparison boundary
 

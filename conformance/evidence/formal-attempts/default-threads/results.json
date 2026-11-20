@@ -1,0 +1,465 @@
+{
+  "schema": "lean-goose.formal-evidence.v2",
+  "status": "failed",
+  "started_at_utc": "2026-11-20T12:14:57.313792+00:00",
+  "evidence_only": true,
+  "acceptance_authority": false,
+  "hosted_results_included": false,
+  "implementation_correspondence": "finite_profile_only",
+  "scope": "ordered transactions and complete stored bindings over abstract action classes; no full kernel refinement",
+  "commands": [
+    {
+      "name": "lean-version",
+      "command": [
+        "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T12:14:57.378654+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T12:14:57.753752+00:00",
+      "log": "lean-version.log",
+      "log_sha256": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680"
+    },
+    {
+      "name": "quint-version",
+      "command": [
+        "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T12:14:57.756071+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T12:14:59.066039+00:00",
+      "log": "quint-version.log",
+      "log_sha256": "88dc89b23d1eb296b577d2cd6b8fd2a8013d9d499299cdb24578106eb5b4f59c"
+    },
+    {
+      "name": "node-version",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T12:14:59.068148+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T12:14:59.077306+00:00",
+      "log": "node-version.log",
+      "log_sha256": "4409d3bfa08b82f385bd424eeda65fc63b756129f0e89e82df77f1fecafccc14"
+    },
+    {
+      "name": "gcc-version",
+      "command": [
+        "/usr/bin/gcc",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/a402432e12bc/Lean-Goose",
+      "started_at_utc": "2026-11-20T12:14:59.077717+00:00",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T12:14:59.082955+00:00",
+      "log": "gcc-version.log",
+      "log_sha256": "4dc9a4e32fd9e06d42fb307688c59d6d889f0ff90ce034cbefed21b0d451fd81"
+    },
+    {
+      "name": "lean-build",
+      "command": [
+        "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "-o",
+        "/tmp/lean-goose-formal-3tcznlsr/lean/DefinitionTransactions.olean",
+        "DefinitionTransactions.lean"
+      ],
+      "cwd": "/tmp/lean-goose-formal-3tcznlsr/lean",
+      "started_at_utc": "2026-11-20T12:15:00.451808+00:00",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-3tcznlsr/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T12:15:22.008991+00:00",
+      "log": "lean-build.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "lean-axiom-audit",
+      "command": [
+        "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "Audit.lean"
+      ],
+      "cwd": "/tmp/lean-goose-formal-3tcznlsr/lean",
+      "started_at_utc": "2026-11-20T12:15:22.012987+00:00",
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/lean-goose-formal-3tcznlsr/lean",
+        "QUINT": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint"
+      },
+      "exit_code": null,
+      "execution_error": "TimeoutExpired",
+      "finished_at_utc": "2026-11-20T12:20:22.168075+00:00",
+      "log": "lean-axiom-audit.log",
+      "log_sha256": "a670e36f4d6c0fd1955403bc6e57caa3f0b8685f365786e903719c54efe5f5ab"
+    }
+  ],
+  "excluded_build_directories": [
+    ".cache",
+    ".git",
+    ".lake",
+    ".venv",
+    "__pycache__",
+    "_build",
+    "build",
+    "coverage",
+    "dist",
+    "node_modules"
+  ],
+  "excluded_build_suffixes": [
+    ".cmi",
+    ".cmo",
+    ".cmx",
+    ".ilean",
+    ".o",
+    ".olean",
+    ".pyc"
+  ],
+  "excluded_evidence_directory": "conformance/evidence/",
+  "source_tree_sha256": "88c0002bced04e2089ce6875cdac3d9938e9c2e74a71ffef96d12447d6c8c05e",
+  "policy_sha256": "d4d607d7b5c06f955b040120f0346adf83a71a1263ca752149a6e9caa0051c4f",
+  "source_manifest": "source-manifest.json",
+  "formalization": {
+    "scope": "docs/formalization.md",
+    "gate": "tools/check_formal.py",
+    "implementation_paths": [
+      "formal/quint/replay.py",
+      "formal/quint/stored_replay.py",
+      "reference/binding-trace.patch",
+      "reference/checker.goose",
+      "tools/acceptance.py",
+      "tools/binding_trace_controls.py",
+      "tools/check_formal.py",
+      "tools/check_stored_bindings.py",
+      "tools/run.py",
+      "tools/runtime.py",
+      "tools/source_derivation.py",
+      "tools/stored_binding_profile.py",
+      "tools/transaction_profile.py"
+    ],
+    "lean": {
+      "sources": [
+        "formal/lean/Audit.lean",
+        "formal/lean/DefinitionTransactions.lean",
+        "formal/lean/Replay.lean",
+        "formal/lean/StoredBindings.lean",
+        "formal/lean/StoredBindingsAudit.lean",
+        "formal/lean/StoredBindingsReplay.lean"
+      ],
+      "toolchain": "leanprover/lean4:v4.34.1",
+      "obligations": [
+        "GooseStoredBindings.completed_receipt_has_no_authority",
+        "GooseStoredBindings.duplicate_precedes_checks",
+        "GooseStoredBindings.duplicate_preserves_environment",
+        "GooseStoredBindings.fresh_alias_payload_exact",
+        "GooseStoredBindings.fresh_good_payload_exact",
+        "GooseStoredBindings.halted_no_receipt",
+        "GooseStoredBindings.halted_run_identity",
+        "GooseStoredBindings.halted_step_identity",
+        "GooseStoredBindings.initial_invariant",
+        "GooseStoredBindings.lookup_append_fresh_preserves_existing",
+        "GooseStoredBindings.lookup_latest_binding",
+        "GooseStoredBindings.mismatch_preserves_environment",
+        "GooseStoredBindings.missing_alias_preserves_environment",
+        "GooseStoredBindings.run_environment_extends",
+        "GooseStoredBindings.run_environment_unique",
+        "GooseStoredBindings.run_has_no_authority",
+        "GooseStoredBindings.run_preserves_authority",
+        "GooseStoredBindings.run_preserves_existing_binding",
+        "GooseStoredBindings.run_preserves_existing_binding_fields",
+        "GooseStoredBindings.run_preserves_existing_lookup",
+        "GooseStoredBindings.run_preserves_invariant",
+        "GooseStoredBindings.run_preserves_name_uniqueness",
+        "GooseStoredBindings.run_success_count_exact",
+        "GooseStoredBindings.run_success_names_exact",
+        "GooseStoredBindings.step_environment_extends",
+        "GooseStoredBindings.step_preserves_authority",
+        "GooseStoredBindings.step_preserves_existing_lookup",
+        "GooseStoredBindings.step_preserves_invariant",
+        "GooseStoredBindings.wrong_type_alias_preserves_environment",
+        "GooseTransactions.completed_receipt_has_no_authority",
+        "GooseTransactions.duplicate_precedes_checks",
+        "GooseTransactions.duplicate_preserves_environment",
+        "GooseTransactions.fresh_good_appends",
+        "GooseTransactions.fresh_scope_halts",
+        "GooseTransactions.halted_no_receipt",
+        "GooseTransactions.halted_run_identity",
+        "GooseTransactions.halted_step_identity",
+        "GooseTransactions.initial_invariant",
+        "GooseTransactions.mismatch_preserves_environment",
+        "GooseTransactions.mismatch_then_retry_succeeds",
+        "GooseTransactions.missing_alias_preserves_environment",
+        "GooseTransactions.run_environment_exact",
+        "GooseTransactions.run_environment_extends",
+        "GooseTransactions.run_environment_unique",
+        "GooseTransactions.run_has_no_authority",
+        "GooseTransactions.run_preserves_authority",
+        "GooseTransactions.run_preserves_invariant",
+        "GooseTransactions.run_success_count_exact",
+        "GooseTransactions.step_preserves_authority",
+        "GooseTransactions.step_preserves_invariant"
+      ]
+    },
+    "quint": {
+      "sources": [
+        "formal/quint/DefinitionTransactions.qnt",
+        "formal/quint/StoredBindings.qnt"
+      ],
+      "toolchain": "@informalsystems/quint@0.33.1",
+      "obligations": [
+        "StoredBindings.crossLevelDuplicateAliasTest",
+        "StoredBindings.duplicatePreemptsScopeSnapshotTest",
+        "StoredBindings.duplicatePreservesAllFieldsTest",
+        "StoredBindings.goodPayloadLevelOneTest",
+        "StoredBindings.goodPayloadLevelZeroTest",
+        "StoredBindings.haltStopsSnapshotsTest",
+        "StoredBindings.initialStoredStateTest",
+        "StoredBindings.levelOneAliasTest",
+        "StoredBindings.mismatchPreservesAllFieldsTest",
+        "StoredBindings.orderedSnapshotCountTest",
+        "StoredBindings.refusalThenRetryTest",
+        "StoredBindings.safety",
+        "StoredBindings.scopeSnapshotTest",
+        "StoredBindings.storedAuthorityPreservedTest",
+        "StoredBindings.typedAliasPayloadTest",
+        "StoredBindings.unknownAliasPreservesAllFieldsTest",
+        "StoredBindings.wrongTypeAliasRefusalTest",
+        "authorityPreservedTest",
+        "duplicatePreemptsScopeTest",
+        "duplicatePreservesEnvironmentTest",
+        "failedInsertionRetryTest",
+        "haltAbsorbingTest",
+        "initialStateTest",
+        "orderedSuccessCountTest",
+        "safety",
+        "scopeFailureSuppressesReceiptTest",
+        "successfulDefinitionTest",
+        "unknownAliasPreservesExistingTest",
+        "unknownAliasRecoveryTest",
+        "validAliasTest"
+      ]
+    }
+  },
+  "declared_inputs": [
+    "ESTATE.toml",
+    "conformance/dependencies.json",
+    "conformance/source-provenance.json",
+    "docs/formalization.md",
+    "formal/lean/Audit.lean",
+    "formal/lean/DefinitionTransactions.lean",
+    "formal/lean/Replay.lean",
+    "formal/lean/StoredBindings.lean",
+    "formal/lean/StoredBindingsAudit.lean",
+    "formal/lean/StoredBindingsReplay.lean",
+    "formal/lean/lean-toolchain",
+    "formal/quint/DefinitionTransactions.qnt",
+    "formal/quint/StoredBindings.qnt",
+    "formal/quint/package-lock.json",
+    "formal/quint/package.json",
+    "formal/quint/replay.py",
+    "formal/quint/stored_replay.py",
+    "reference/binding-trace.patch",
+    "reference/checker.goose",
+    "schemas/binding-trace-v1.md",
+    "tools/acceptance.py",
+    "tools/binding_trace_controls.py",
+    "tools/check_formal.py",
+    "tools/check_stored_bindings.py",
+    "tools/run.py",
+    "tools/runtime.py",
+    "tools/source_derivation.py",
+    "tools/stored_binding_profile.py",
+    "tools/transaction_profile.py"
+  ],
+  "base_revision": "d14aa4fde522cd2a74c9df2e87dd8a7d4a38759b",
+  "dependencies_before": {
+    "estate_dependencies": [
+      {
+        "id": "lean-ocaml",
+        "rev": "403dcca50d7e8f18954618eec72109f8cb1c6b61",
+        "pin": "sha256:826077e1a13594191e7c64979a766bd5e39c83604d40698b3d6270631edc5455"
+      },
+      {
+        "id": "goose",
+        "rev": "9412b80f52d833c4697cffdbbf1f4eeb5195cd41",
+        "pin": "sha256:f1597f2e63290612653b116b2ef703fa4add4c08f32180bb2d2e98b7844ba427"
+      }
+    ],
+    "lean_ocaml": {
+      "repository": "https://github.com/larsbx/Lean-OCaml.git",
+      "revision": "403dcca50d7e8f18954618eec72109f8cb1c6b61",
+      "archive_sha256": "826077e1a13594191e7c64979a766bd5e39c83604d40698b3d6270631edc5455",
+      "checkout": "/workspace/scratch/a402432e12bc/Lean-OCaml",
+      "tracked_source_clean": true,
+      "verified_consumed_files": [
+        {
+          "path": ".ocaml-version",
+          "sha256": "db74d0caf81f43029fa28ce9888695d0b54d0a99003e6042823c9bc914897865",
+          "bytes": 6
+        },
+        {
+          "path": "conformance/benchmark_clock.c",
+          "sha256": "30ed968b2206a2e2027a6a6111d35ea2b28636bb8a0e7190f91756d84033d0b0",
+          "bytes": 602
+        },
+        {
+          "path": "conformance/benchmark_compare.ml",
+          "sha256": "0054b289cd7128a78756585b73fc4cf18b952515a27602bd5cf94d6fe949c6ca",
+          "bytes": 4951
+        },
+        {
+          "path": "conformance/generated.tsv.defs",
+          "sha256": "689929b0bd8e6a3ddf43069b092d73189588743b960dd68153e5855da1394113",
+          "bytes": 273
+        },
+        {
+          "path": "conformance/generated.tsv.types",
+          "sha256": "521823fbfc1830e17ab6b72f6f99c690bcd64918611e38a1d845d561403f20da",
+          "bytes": 3198
+        },
+        {
+          "path": "conformance/goose-toolchain.json",
+          "sha256": "704df4ab5af394102278a0c22bff8151813fca25a7ef907a54da55d252829c84",
+          "bytes": 419
+        },
+        {
+          "path": "conformance/migration_check.ml",
+          "sha256": "aebfc3d184f203191120a359db9fdf70f472f37669ff9d062ebd51cfd9e233f6",
+          "bytes": 3479
+        },
+        {
+          "path": "conformance/provenance.json",
+          "sha256": "1cf446e6d6db5ae556cbf8b660242bf3b804d0f7154732cf37b4af75f2e93035",
+          "bytes": 5434
+        },
+        {
+          "path": "lean-toolchain",
+          "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+          "bytes": 25
+        },
+        {
+          "path": "oracles/BenchmarkKernel.lean",
+          "sha256": "6ba9459a2deaa78de0637b3d3c1b35c7bc2e967e2c89fedef1b5d90fa9e0f48c",
+          "bytes": 10371
+        },
+        {
+          "path": "reference/bounded_parallel.ml",
+          "sha256": "6f686225a0bd448e6ab3241622efc6cdc763315bd7bb65fdb5f0ce9f9ee84072",
+          "bytes": 2401
+        },
+        {
+          "path": "reference/bounded_parallel.mli",
+          "sha256": "3eb129db11693eec996f19a7030313673d046bc4e7b802e92da6faed003667c4",
+          "bytes": 973
+        },
+        {
+          "path": "reference/conversion.ml",
+          "sha256": "db3798a25865d5b04cb73bff33c189df22b9e3633107d556bdef8fc28dbde179",
+          "bytes": 22288
+        },
+        {
+          "path": "reference/conversion.mli",
+          "sha256": "5d371d8f0cb5dce9eb7b6a311afde05609941dd6a89b2f21d9c069dfaff65bd5",
+          "bytes": 4670
+        },
+        {
+          "path": "reference/definition_batch.ml",
+          "sha256": "ec89f4d78d0411912893dcf8c906159c3e8350caa32849225bc3cfab268b8b42",
+          "bytes": 11268
+        },
+        {
+          "path": "reference/definition_batch.mli",
+          "sha256": "6059001a2a707ad3ecb5018da2f45104be59bffed3a4da3d93230a164ce8ac93",
+          "bytes": 2470
+        },
+        {
+          "path": "reference/goose/benchmark.goose",
+          "sha256": "71d62f9dad2f8d58a1bdb74602b41ca3e8aeabde89522c5d893d239ae0cec0a6",
+          "bytes": 19236
+        },
+        {
+          "path": "tools/compare_lean.py",
+          "sha256": "4da327cea417a1e35a02adf9134c93b17e234f657bef33251ded0b495114d4f8",
+          "bytes": 14011
+        },
+        {
+          "path": "tools/goose_common.py",
+          "sha256": "50dd0a0354dc69cc9988b0557ccfb6a44a573305083f61a307309ca7558bb73f",
+          "bytes": 4992
+        },
+        {
+          "path": "tools/optimization_workloads.py",
+          "sha256": "ce4b1a2407e42354ddebcdb23f9ce4489719e521b9d82d75292b779afc4969a3",
+          "bytes": 12045
+        },
+        {
+          "path": "tools/test_goose.py",
+          "sha256": "5de641bbd17b60b3a97c2d4d162985bd32d7c72cc1c9efa97e354ea1706a1ad5",
+          "bytes": 14192
+        }
+      ]
+    },
+    "goose": {
+      "repository": "https://github.com/aardappel/goose.git",
+      "revision": "9412b80f52d833c4697cffdbbf1f4eeb5195cd41",
+      "archive_sha256": "f1597f2e63290612653b116b2ef703fa4add4c08f32180bb2d2e98b7844ba427",
+      "checkout": "/workspace/scratch/a402432e12bc/goose",
+      "tracked_source_clean": true,
+      "verified_consumed_files": []
+    },
+    "local_derivation": {
+      "source_revision": "403dcca50d7e8f18954618eec72109f8cb1c6b61",
+      "source_git_blob": "ae04d31dde163028fdfb749d2f9ad8754ce9b673",
+      "source_sha256": "71d62f9dad2f8d58a1bdb74602b41ca3e8aeabde89522c5d893d239ae0cec0a6",
+      "local_path": "reference/checker.goose",
+      "local_sha256": "0de9dfe21a2e95fd0468fd9365ff8e73a18a22e91f457dd4e16209bf740f0e0a",
+      "presentation_changes_only": false,
+      "diagnostic_extension": {
+        "path": "reference/binding-trace.patch",
+        "sha256": "736c8e3c0cba1271123c12c33d1c45bcc3592f4ff3ba70e9053ed79b6d858d13",
+        "base_derivative_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
+        "preserved_checker_prefix_sha256": "06eaa20d4f097c08693622927fa9ce15c3de0f1a554dfc54bde18040671e59ca",
+        "checking_and_parser_function_prefix_unchanged": true
+      }
+    }
+  },
+  "toolchains": {
+    "lean": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+    "quint": "0.33.1",
+    "node": "v24.22.3",
+    "quint_backend": "typescript",
+    "executables": [
+      {
+        "tool": "gcc",
+        "path": "/usr/bin/gcc",
+        "sha256": "a23ecab8ff08f09ad8c80602c2c5df7f49e09c25905cb8975902e101bf72635f"
+      },
+      {
+        "tool": "goose",
+        "path": "/workspace/scratch/a402432e12bc/goose/build/goose",
+        "sha256": "ecc852c41fba22c72ed935af4321fcff13b3167fe8ef728810c4cf8e21110814"
+      },
+      {
+        "tool": "lean",
+        "path": "/workspace/scratch/6773324ddc0c/toolchain/lean-4.34.1-linux/bin/lean",
+        "sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550"
+      },
+      {
+        "tool": "node",
+        "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "sha256": "acbe4b8d9153b841ed0697cbfc4f93e767386620edb745ab9358306c0a6f31aa"
+      },
+      {
+        "tool": "quint_cli",
+        "path": "/workspace/scratch/a402432e12bc/Lean-Goose/formal/quint/node_modules/.bin/quint",
+        "sha256": "952a50a28932282528b5c9b86ac5542405d85da4f80876aabe8cb8c7d5a6d0e8"
+      }
+    ]
+  },
+  "failure": "RuntimeError: lean-axiom-audit: expected exit 0, got None; see lean-axiom-audit.log",
+  "finished_at_utc": "2026-11-20T12:20:22.173906+00:00"
+}

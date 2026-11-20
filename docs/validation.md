@@ -9,14 +9,23 @@ The runner requires the exact revision, a clean tracked source tree, matching
 archive bytes, and matching consumed-file hashes. A wrong or modified checkout
 fails before comparison.
 
-`conformance/source-provenance.json` identifies the upstream Goose source and
-the local observation-only derivative. The original blob, source SHA-256,
-explicit replacements, and local SHA-256 make the extraction reviewable.
+`conformance/source-provenance.json` v2 identifies the upstream Goose source,
+the four original presentation replacements, and the reviewed diagnostic patch
+in `reference/binding-trace.patch`. The runner applies the patch with exact
+contexts, offsets, paths, and hashes, then compares the reconstructed source
+with the owned checker bytes. It also verifies that all 18,034 bytes of the
+original checking and parser function prefix remain unchanged. The extension
+adds opt-in tracing and main dispatch; it is no longer a presentation-only port.
 
 The local proof lane uses Lean `leanprover/lean4:v4.34.1`, revision
 `5045d0056413266e57c625dcd7c365b10e377c52`. Quint is pinned to
 `@informalsystems/quint@0.33.1` with a committed npm lockfile. The workflow uses
 Node `24.22.3`. Install the locked dependencies before the formal gate:
+
+Formal Lean compilation, axiom audits, and replay pass `--threads=1`, fixing the
+worker count independently of the host CPU inventory. The actual flag is
+recorded with the toolchain and each command. This scheduling choice does not
+change proof obligations or the axiom audit.
 
 ```sh
 npm --prefix formal/quint ci --ignore-scripts --no-audit --no-fund
@@ -35,7 +44,7 @@ in the local Goose source.
 | `make pins` | External checkout and local source-provenance verification |
 | `make test` | Full finite observation comparison against native Lean and OCaml |
 | `make formal-tests` | Formal-runner acceptance and rejection controls |
-| `make formal` | Lean proof replay and audit, Quint checks, and finite transaction comparison |
+| `make formal` | Both Lean proof inventories and axiom audits, both Quint models, finite transaction and full stored-binding comparisons, and native trace controls |
 | `make smoke` | Small fresh three-engine benchmark execution |
 | `make audit` | Pinned external estate v3 manifest audit |
 | `make acceptance` | All required gates, logs, source manifest, and verification receipt |
@@ -68,8 +77,55 @@ native Goose executable.
 For nonfatal traces, comparison checks ordered names and outcome categories,
 success count, schema, and absence of admission authority. For fatal traces,
 it requires the designated scope-failure exit and diagnostic, with no completed
-definition-observation JSON. The runtime does not expose an environment list;
-model-state equality and runtime-output agreement are distinct checks.
+definition-observation JSON. This original `--check` lane does not expose an
+environment list; model-state equality and runtime-output agreement are
+distinct checks.
+
+### Stored-binding comparison
+
+The additional required lane runs all **2,954 nonempty sequences of length one
+through three** over fourteen actions on two names and two sort levels. Both
+executed models must agree on all type, value, and inferred-type payloads in the
+final environment and every intermediate snapshot. The profile has 2,032
+completed traces, 922 designated scope halts, and 7,546 snapshots.
+
+Each input runs through both native `--trace` and `--check`. The trace adapter
+decodes actual node IDs into the profile's Sort/Const payloads, compares every
+full binding with the model, checks exact retention of earlier raw binding IDs
+and immutable node payloads, and checks that successful insertions retain the
+declared input type and value IDs. The same input must still satisfy the existing
+`--check` output or fatal-exit contract. This comparison is finite; it does not
+establish general expression refinement, compiler correctness, or cache-state
+correspondence.
+
+`tools/binding_trace_controls.py` adds 26 required native checks of all seven
+node tags, semantic refusals, processed scope/height/fuel failures, import and
+parser failures, and trace resource limits. Fatal trace JSON is diagnostic data
+from an interrupted execution, not a completed checking receipt. No partial
+JSON may escape when a trace envelope limit fails.
+
+The stored-binding Lean model has 29 required axiom-free theorems, alongside the
+original 21. Quint has 16 additional deterministic tests and a separate seeded
+1,000-trace run of at most 40 transitions. Its designated negative control must
+produce the exact two-state witness in which a refused definition illegally
+changes an existing value from `[0,0]` to `[0,999]`. An arbitrary command failure
+does not satisfy that control.
+
+Large replay and native comparison logs are losslessly compressed:
+`stored-lean-replay.log.gz`, `stored-quint-replay.log.gz`, and
+`stored-native-comparison.jsonl.gz` under `conformance/evidence/formal/`.
+The native comparison records the actual stdout, stderr, and exit code for both
+modes on every input. Read a JSONL log with:
+
+```python
+import gzip
+import json
+
+with gzip.open("conformance/evidence/formal/stored-native-comparison.jsonl.gz", "rt") as stream:
+    for line in stream:
+        execution = json.loads(line)
+        # execution["model"] and execution["native"]["--trace"] identify this case.
+```
 
 The scope document distinguishes these finite tests from the unbounded Lean
 model theorems and Quint's seeded bounded exploration. Missing tool output,
@@ -88,8 +144,9 @@ own source identity, and no speed threshold determines smoke success.
 The top-level receipt is `conformance/evidence/verification.json`. The formal
 gate writes `conformance/evidence/formal/results.json`. Their source inventories,
 logs, toolchain identities, outcomes, and before/after checks identify the
-execution being reported. The formal receipt records model proof/check results
-and the stated finite runtime comparison; it does not certify full implementation
+execution being reported. The v2 formal receipt records both scopes, including
+its `stored_bindings` section, and the stated finite runtime comparisons; it
+does not certify full implementation
 refinement or estate-wide adoption.
 
 A new attempt invalidates prior success before checking prerequisites. Command

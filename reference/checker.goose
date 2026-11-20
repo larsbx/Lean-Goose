@@ -456,18 +456,130 @@ fn parse(text: const u8[:], nodes: Node[>..]&, definitions: Definition[>..]&) {
     if definitions.len == 0 { parse_failure("empty definition inventory"); }
 }
 
+// Opt-in diagnostic snapshots. These bounds do not change check/timing modes.
+const MAX_TRACE_NODES = 4096;
+const MAX_TRACE_DEFINITIONS = 64;
+const MAX_TRACE_INPUT_BYTES = 4 * 1024 * 1024;
+const MAX_TRACE_OUTPUT_BYTES = 4 * 1024 * 1024;
+
+fn trace_failure(message: const u8[:]) {
+    write_stderr("goose binding trace: ");
+    write_stderr(message);
+    write_stderr("\n");
+    exit(2);
+}
+
+// Keep one byte for print's final LF. Nothing reaches stdout until complete.
+fn trace_append(output: u8[>..]&, part: const u8[:]) {
+    if part.len > MAX_TRACE_OUTPUT_BYTES - output.len - 1 {
+        trace_failure("serialized output exceeds trace bound");
+    }
+    format(output, part);
+}
+
+fn trace_number(output: u8[>..]&, value: i64) {
+    var number: u8[>..] = [];
+    format(number, value);
+    trace_append(output, number);
+}
+
+fn trace_tag(tag: u8) -> const u8[:] {
+    match tag {
+        's' => "s", 'v' => "v", 'c' => "c", 'a' => "a",
+        'l' => "l", 'p' => "p", 't' => "t", _ => ""
+    }
+}
+
+// Capture immutable payloads now, without inference, normalization, or caches.
+// Array positions are node IDs; child IDs retain sharing instead of unfolding.
+fn trace_snapshot(output: u8[>..]&, d: Definition, outcome: i64,
+                  nodes: const Node[:], env: const Binding[:]) {
+    trace_append(output, "{\"name\":\"");
+    trace_append(output, d.name);
+    trace_append(output, "\",\"outcome\":\"");
+    trace_append(output, error_name(outcome));
+    trace_append(output, "\",\"bindings\":[");
+    for b, i in env {
+        if i > 0 { trace_append(output, ","); }
+        trace_append(output, "{\"name\":\"");
+        trace_append(output, b.name);
+        trace_append(output, "\",\"type\":");
+        trace_number(output, b.ty);
+        trace_append(output, ",\"value\":");
+        trace_number(output, b.value);
+        trace_append(output, ",\"inferred\":");
+        trace_number(output, b.inferred);
+        trace_append(output, "}");
+    }
+    trace_append(output, "],\"nodes\":[");
+    for n, i in nodes {
+        let tag = trace_tag(n.tag);
+        if tag.len == 0 { trace_failure("unknown node tag while serializing"); }
+        if i > 0 { trace_append(output, ","); }
+        trace_append(output, "{\"tag\":\"");
+        trace_append(output, tag);
+        trace_append(output, "\",\"a\":");
+        trace_number(output, n.a);
+        trace_append(output, ",\"b\":");
+        trace_number(output, n.b);
+        trace_append(output, ",\"c\":");
+        trace_number(output, n.c);
+        trace_append(output, ",\"name\":\"");
+        trace_append(output, n.name);
+        trace_append(output, "\"}");
+    }
+    trace_append(output, "]}");
+}
+
+fn trace_finish(output: u8[>..]&, status: const u8[:], count: i64) {
+    trace_append(output, "],\"status\":\"");
+    trace_append(output, status);
+    trace_append(output, "\",\"success_observations\":");
+    trace_number(output, count);
+    trace_append(output, ",\"acceptance_authority\":false}");
+    print(output);
+}
+
+fn trace_only(raw: const Node[:], definitions: const Definition[:]) {
+    if raw.len > MAX_TRACE_NODES { trace_failure("input nodes exceed trace bound"); }
+    if definitions.len > MAX_TRACE_DEFINITIONS { trace_failure("definitions exceed trace bound"); }
+    var nodes: Node[>..] = [];
+    var env: Binding[>..] = [];
+    var context: i64[>..<] = [];
+    var s = State { nodes: nodes, env: env, context: context };
+    import_nodes(s, raw);
+    var output: u8[>..] = [];
+    trace_append(output, "{\"schema\":\"lean-goose.binding-trace.v1\",\"engine\":\"goose-aot\",\"steps\":[");
+    for d, i in definitions {
+        let count = env.len;
+        let outcome = check_definition(s, d);
+        if outcome != 0 && env.len != count { abort("refusal mutated environment"); }
+        if nodes.len > MAX_TRACE_NODES { trace_failure("derived nodes exceed trace bound"); }
+        if i > 0 { trace_append(output, ","); }
+        trace_snapshot(output, d, outcome, nodes, env);
+        if outcome == E_LIMIT || outcome == E_HEIGHT || outcome == E_SCOPE {
+            trace_finish(output, "halted", env.len);
+            execution_error(outcome);
+        }
+    }
+    trace_finish(output, "traced", env.len);
+}
+
 fn main() {
     let argv = args();
     let only_check = argv.len == 3 && argv[1] == "--check";
-    if !only_check && argv.len != 4 { parse_failure("usage: benchmark fixture workers iterations | --check fixture"); }
-    let path = if only_check { argv[2] } else { argv[1] };
+    let only_trace = argv.len == 3 && argv[1] == "--trace";
+    if !only_check && !only_trace && argv.len != 4 { parse_failure("usage: benchmark fixture workers iterations | --check fixture | --trace fixture"); }
+    let path = if only_check || only_trace { argv[2] } else { argv[1] };
     var text: u8[>..] = [];
     if !read_file(path, text) { parse_failure("cannot read fixture"); }
+    if only_trace && text.len > MAX_TRACE_INPUT_BYTES { trace_failure("input bytes exceed trace bound"); }
     var raw: Node[>..] = [];
     var definitions: Definition[>..] = [];
     parse(text, raw, definitions);
     refusal_control();
     if only_check { check_only(raw, definitions); return; }
+    if only_trace { trace_only(raw, definitions); return; }
     let workers = natural(argv[2]);
     let iterations = natural(argv[3]);
     if workers != 1 || iterations < 1 || iterations > 100000 { parse_failure("workers=1 and iterations=1..100000 required"); }

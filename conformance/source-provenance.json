@@ -1,5 +1,5 @@
 {
-  "schema": "lean-goose.source-provenance.v1",
+  "schema": "lean-goose.source-provenance.v2",
   "acceptance_authority": false,
   "source_repository": "https://github.com/larsbx/Lean-OCaml",
   "source_revision": "403dcca50d7e8f18954618eec72109f8cb1c6b61",
@@ -7,8 +7,8 @@
   "source_git_blob": "ae04d31dde163028fdfb749d2f9ad8754ce9b673",
   "source_sha256": "71d62f9dad2f8d58a1bdb74602b41ca3e8aeabde89522c5d893d239ae0cec0a6",
   "local_path": "reference/checker.goose",
-  "local_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
-  "derivation": "Local reference ownership transfer; two output-vocabulary substitutions and explicit observation-schema identifiers. No checker algorithm or resource limit changes.",
+  "local_sha256": "0de9dfe21a2e95fd0468fd9365ff8e73a18a22e91f457dd4e16209bf740f0e0a",
+  "derivation": "Pinned upstream source with the four recorded presentation substitutions, followed by the exact reviewed diagnostic extension in reference/binding-trace.patch. All checking and parser functions before the original main entry point remain byte-identical. The extension adds bounded opt-in stored-binding diagnostics and main dispatch; existing checking and benchmark contracts remain required comparison gates.",
   "replacements": [
     {
       "from": "0 => \"accepted\"",
@@ -31,5 +31,11 @@
     "url": "https://github.com/larsbx/Lean-OCaml/blob/403dcca50d7e8f18954618eec72109f8cb1c6b61/conformance/evidence/goose-comparison/results.json",
     "sha256": "9fc67423dd7151641db2abff95954eb29b35ac9f519743363cd4aa6c0c85a585",
     "status": "external historical evidence; not a fresh Lean-Goose benchmark"
+  },
+  "diagnostic_extension": {
+    "path": "reference/binding-trace.patch",
+    "sha256": "736c8e3c0cba1271123c12c33d1c45bcc3592f4ff3ba70e9053ed79b6d858d13",
+    "base_derivative_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
+    "preserved_checker_prefix_sha256": "06eaa20d4f097c08693622927fa9ce15c3de0f1a554dfc54bde18040671e59ca"
   }
 }

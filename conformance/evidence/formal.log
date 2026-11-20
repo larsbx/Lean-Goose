@@ -12,5 +12,14 @@ quint-negative-control: exit 1
 quint-replay: exit 0
 goose-emit: exit 0
 goose-build: exit 0
+stored-lean-build: exit 0
+stored-lean-axiom-audit: exit 0
+stored-lean-replay: exit 0
+stored-quint-typecheck: exit 0
+stored-quint-tests: exit 0
+stored-quint-bounded-run: exit 0
+stored-quint-negative-control: exit 1
+stored-quint-replay: exit 0
+Stored-binding correspondence: 2954 traces, 7546 snapshots passed.
 Native finite correspondence: 1110 traces passed.
 Formal verification passed: /workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/formal/results.json

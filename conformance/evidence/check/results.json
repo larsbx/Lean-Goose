@@ -2,15 +2,15 @@
   "schema": "lean-goose.conformance-observations.v1",
   "status": "passed",
   "mode": "check",
-  "started_at_utc": "2026-11-20T11:19:26.437442+00:00",
+  "started_at_utc": "2026-11-20T12:23:24.065068+00:00",
   "acceptance_authority": false,
   "evidence_only": true,
   "authority": "unsigned_local_observations_only",
   "sources_before": [
     {
       "path": "ESTATE.toml",
-      "sha256": "09541a562ef087eacb7ecdad7f98bcc05788f47ecb052bdf00eed524e66c33f9",
-      "bytes": 4172
+      "sha256": "d4d607d7b5c06f955b040120f0346adf83a71a1263ca752149a6e9caa0051c4f",
+      "bytes": 6832
     },
     {
       "path": "conformance/dependencies.json",
@@ -19,13 +19,18 @@
     },
     {
       "path": "conformance/source-provenance.json",
-      "sha256": "a6753ad80c4d0c2deb73fcd1a1fd2082f4f1d1f259aa7001e5c1873816dd17f0",
-      "bytes": 1794
+      "sha256": "2d2c62d01807995d42025e835f76cb18eabf4d818dbd5cf5a36dbd50661d28a6",
+      "bytes": 2403
+    },
+    {
+      "path": "reference/binding-trace.patch",
+      "sha256": "736c8e3c0cba1271123c12c33d1c45bcc3592f4ff3ba70e9053ed79b6d858d13",
+      "bytes": 5070
     },
     {
       "path": "reference/checker.goose",
-      "sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
-      "bytes": 19360
+      "sha256": "0de9dfe21a2e95fd0468fd9365ff8e73a18a22e91f457dd4e16209bf740f0e0a",
+      "bytes": 23818
     },
     {
       "path": "tools/run.py",
@@ -34,11 +39,16 @@
     },
     {
       "path": "tools/runtime.py",
-      "sha256": "0879bb3a08c987e83ecb226aa7ac64b24a0197cafb9bbd57367020cc9d063ecc",
-      "bytes": 12341
+      "sha256": "24ca100d5dcc58912660608b24f4f9a33b2b89a1edb437caed552f4df659427c",
+      "bytes": 13056
+    },
+    {
+      "path": "tools/source_derivation.py",
+      "sha256": "b0806fa0c1880de9f783773a6717defb5c20e80e11f91a8dab09f6152efc5c5f",
+      "bytes": 4022
     }
   ],
-  "source_revision": "fa34fb379c543073d08a4ba6ea6f87d291b90a99",
+  "source_revision": "d14aa4fde522cd2a74c9df2e87dd8a7d4a38759b",
   "dependencies_before": {
     "estate_dependencies": [
       {
@@ -179,8 +189,15 @@
       "source_git_blob": "ae04d31dde163028fdfb749d2f9ad8754ce9b673",
       "source_sha256": "71d62f9dad2f8d58a1bdb74602b41ca3e8aeabde89522c5d893d239ae0cec0a6",
       "local_path": "reference/checker.goose",
-      "local_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
-      "presentation_changes_only": true
+      "local_sha256": "0de9dfe21a2e95fd0468fd9365ff8e73a18a22e91f457dd4e16209bf740f0e0a",
+      "presentation_changes_only": false,
+      "diagnostic_extension": {
+        "path": "reference/binding-trace.patch",
+        "sha256": "736c8e3c0cba1271123c12c33d1c45bcc3592f4ff3ba70e9053ed79b6d858d13",
+        "base_derivative_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
+        "preserved_checker_prefix_sha256": "06eaa20d4f097c08693622927fa9ce15c3de0f1a554dfc54bde18040671e59ca",
+        "checking_and_parser_function_prefix_unchanged": true
+      }
     }
   },
   "toolchains": {
@@ -191,23 +208,23 @@
     "goose_source_archive_sha256": "f1597f2e63290612653b116b2ef703fa4add4c08f32180bb2d2e98b7844ba427",
     "goose_compiler": "/workspace/scratch/a402432e12bc/goose/build/goose",
     "goose_compiler_sha256": "ecc852c41fba22c72ed935af4321fcff13b3167fe8ef728810c4cf8e21110814",
-    "generated_c_sha256": "68b6b4ac48e161defe85893d8fce62a2273008780cc9f3f324e7213feef9c4fd",
-    "generated_c_bytes": 436156,
+    "generated_c_sha256": "75aac465e9ed9dd2569279160edc658d2d85053b9d088c045a412ea904eb5cd0",
+    "generated_c_bytes": 472709,
     "emit_command": [
       "/workspace/scratch/a402432e12bc/goose/build/goose",
       "-O2",
       "-DGS_DEBUG=1",
       "--standalone",
       "-o",
-      "/tmp/lean-goose-4_sh5gyn/goose/checker.c",
+      "/tmp/lean-goose-z3m2e4hp/goose/checker.c",
       "/workspace/scratch/a402432e12bc/Lean-Goose/reference/checker.goose"
     ],
     "compile_command": [
       "/usr/bin/gcc",
       "-O2",
-      "/tmp/lean-goose-4_sh5gyn/goose/checker.c",
+      "/tmp/lean-goose-z3m2e4hp/goose/checker.c",
       "-o",
-      "/tmp/lean-goose-4_sh5gyn/goose/checker",
+      "/tmp/lean-goose-z3m2e4hp/goose/checker",
       "-lm",
       "-pthread"
     ],
@@ -245,7 +262,7 @@
       },
       {
         "engine": "goose-aot",
-        "sha256": "1ecf5a91a62cc30ff0c3a107bd129583c8c945e9eeb0beba66142c5285d1ebcd"
+        "sha256": "8b40f4951779ea16339d83332fd0c1786689cb762087f2af374b413edb8f85d2"
       }
     ]
   },
@@ -12608,16 +12625,23 @@
       "source_git_blob": "ae04d31dde163028fdfb749d2f9ad8754ce9b673",
       "source_sha256": "71d62f9dad2f8d58a1bdb74602b41ca3e8aeabde89522c5d893d239ae0cec0a6",
       "local_path": "reference/checker.goose",
-      "local_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
-      "presentation_changes_only": true
+      "local_sha256": "0de9dfe21a2e95fd0468fd9365ff8e73a18a22e91f457dd4e16209bf740f0e0a",
+      "presentation_changes_only": false,
+      "diagnostic_extension": {
+        "path": "reference/binding-trace.patch",
+        "sha256": "736c8e3c0cba1271123c12c33d1c45bcc3592f4ff3ba70e9053ed79b6d858d13",
+        "base_derivative_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
+        "preserved_checker_prefix_sha256": "06eaa20d4f097c08693622927fa9ce15c3de0f1a554dfc54bde18040671e59ca",
+        "checking_and_parser_function_prefix_unchanged": true
+      }
     }
   },
   "dependencies_unchanged": true,
   "sources_after": [
     {
       "path": "ESTATE.toml",
-      "sha256": "09541a562ef087eacb7ecdad7f98bcc05788f47ecb052bdf00eed524e66c33f9",
-      "bytes": 4172
+      "sha256": "d4d607d7b5c06f955b040120f0346adf83a71a1263ca752149a6e9caa0051c4f",
+      "bytes": 6832
     },
     {
       "path": "conformance/dependencies.json",
@@ -12626,13 +12650,18 @@
     },
     {
       "path": "conformance/source-provenance.json",
-      "sha256": "a6753ad80c4d0c2deb73fcd1a1fd2082f4f1d1f259aa7001e5c1873816dd17f0",
-      "bytes": 1794
+      "sha256": "2d2c62d01807995d42025e835f76cb18eabf4d818dbd5cf5a36dbd50661d28a6",
+      "bytes": 2403
+    },
+    {
+      "path": "reference/binding-trace.patch",
+      "sha256": "736c8e3c0cba1271123c12c33d1c45bcc3592f4ff3ba70e9053ed79b6d858d13",
+      "bytes": 5070
     },
     {
       "path": "reference/checker.goose",
-      "sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
-      "bytes": 19360
+      "sha256": "0de9dfe21a2e95fd0468fd9365ff8e73a18a22e91f457dd4e16209bf740f0e0a",
+      "bytes": 23818
     },
     {
       "path": "tools/run.py",
@@ -12641,10 +12670,15 @@
     },
     {
       "path": "tools/runtime.py",
-      "sha256": "0879bb3a08c987e83ecb226aa7ac64b24a0197cafb9bbd57367020cc9d063ecc",
-      "bytes": 12341
+      "sha256": "24ca100d5dcc58912660608b24f4f9a33b2b89a1edb437caed552f4df659427c",
+      "bytes": 13056
+    },
+    {
+      "path": "tools/source_derivation.py",
+      "sha256": "b0806fa0c1880de9f783773a6717defb5c20e80e11f91a8dab09f6152efc5c5f",
+      "bytes": 4022
     }
   ],
   "source_unchanged": true,
-  "finished_at_utc": "2026-11-20T11:19:51.168136+00:00"
+  "finished_at_utc": "2026-11-20T12:28:16.175356+00:00"
 }

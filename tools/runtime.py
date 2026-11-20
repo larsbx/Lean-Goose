@@ -13,6 +13,8 @@ import sys
 import tomllib
 from typing import Any
 
+import source_derivation
+
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "conformance/dependencies.json"
 PROVENANCE = ROOT / "conformance/source-provenance.json"
@@ -88,9 +90,14 @@ def verify_checkout(path: Path, pin: dict[str, Any]) -> dict[str, Any]:
 
 def verify_derivation(baseline: Path) -> dict[str, Any]:
     provenance = json.loads(PROVENANCE.read_text())
-    if provenance.get("acceptance_authority") is not False or provenance.get("replacements") != REPLACEMENTS:
+    if provenance.get("schema") != "lean-goose.source-provenance.v2" \
+            or provenance.get("acceptance_authority") is not False or provenance.get("replacements") != REPLACEMENTS:
         raise RuntimeError("source provenance does not match the observation-only port contract")
     config = json.loads(CONFIG.read_text())
+    if provenance.get("local_path") != "reference/checker.goose" \
+            or provenance.get("source_path") != "reference/goose/benchmark.goose" \
+            or provenance.get("source_repository") != config["lean_ocaml"]["repository"].removesuffix(".git"):
+        raise RuntimeError("source provenance paths or repository differ from the compiled checker contract")
     if provenance["source_revision"] != config["lean_ocaml"]["revision"]:
         raise RuntimeError("source provenance revision differs from comparison pin")
     source_path = relative(provenance["source_path"])
@@ -106,11 +113,13 @@ def verify_derivation(baseline: Path) -> dict[str, Any]:
         if transformed.count(replacement["from"]) != 1:
             raise RuntimeError("source presentation replacement is not unique")
         transformed = transformed.replace(replacement["from"], replacement["to"])
+    transformed, extension = source_derivation.reconstruct(ROOT, transformed, provenance["diagnostic_extension"])
     if transformed.encode() != local.read_bytes() or sha256(local) != provenance["local_sha256"]:
         raise RuntimeError("local checker derivative differs from its recorded source transform")
     return {"source_revision": provenance["source_revision"], "source_git_blob": blob,
             "source_sha256": provenance["source_sha256"], "local_path": provenance["local_path"],
-            "local_sha256": provenance["local_sha256"], "presentation_changes_only": True}
+            "local_sha256": provenance["local_sha256"], "presentation_changes_only": False,
+            "diagnostic_extension": extension}
 
 
 def prepare(build: Path) -> dict[str, Any]:
@@ -157,6 +166,7 @@ def verify_estate_dependencies(config: dict[str, Any], manifest: Path | None = N
 
 def source_files() -> list[dict[str, Any]]:
     paths = ["ESTATE.toml", "reference/checker.goose", "tools/runtime.py", "tools/run.py",
+             "tools/source_derivation.py", "reference/binding-trace.patch",
              "conformance/dependencies.json", "conformance/source-provenance.json"]
     return [{"path": path, "sha256": sha256(ROOT / path), "bytes": (ROOT / path).stat().st_size}
             for path in sorted(paths)]

@@ -1,41 +1,54 @@
 # Next concrete obligations
 
-Estate v3 adoption establishes local Lean and Quint formalization of ordered
-definition transactions. The complete proof scope, bounded checks, and runtime
-comparison limits are recorded in [formalization.md](formalization.md). The
-following obligations remain distinct from that completed implementation work;
-execution results belong to the actual receipts for each revision.
+The required formal scope now includes ordered-name transactions and complete
+stored-binding preservation. The original 1,110-case lane remains, and the new
+2,954-case profile connects model snapshots to bounded native `--trace` and
+`--check` observations. The proof scope and required execution inventories are in
+[formalization.md](formalization.md). A particular revision is verified only when
+its matching execution receipt records the required gates as passed.
 
-1. **Stored-binding correspondence:** extend the ordered-name transaction model
-   to typed bindings and show preservation of existing type/value/inferred fields
-   across refusals and successful extension. The current runtime interface
-   exposes outcomes and counts, so additional observable probes or a reviewed
-   trace interface are needed before claiming direct representation agreement.
-2. **Expression-level formalization:** formalize capture-avoiding substitution,
-   scope preservation, and the selected typing/reduction rules, then connect them
-   to concrete Goose evaluation. The current action model abstracts those checks;
-   finite expression comparison does not prove their general correctness.
-3. **Fresh unshared syntax:** profile arena import, metadata construction, and
-   inference on `unshared_trees`. Retain all current positive/refusal comparisons
-   and formal transaction checks when changing representation or caches.
-4. **Broader conversion coverage:** expose and compare additional beta/zeta,
-   substitution, and normalization observations from the independent corpora.
-   Keep eta and proof irrelevance explicitly outside the implemented relation
-   until separately implemented and validated.
-5. **Resource behavior:** specify and test work, height, intermediate-node, and
-   context boundaries. Model failure priority when resource limits interact with
-   duplicate or semantic checks. Current limits are implementation-specific;
-   matching another engine's fuel is not established.
-6. **Module separation:** split reference semantics from observation and timing
-   adapters under source-bound replay, preserving every current case and the
-   formal implementation mapping.
-7. **Accepting-boundary proposal:** before adding an authoritative entrypoint,
+1. **Expression representation and scope:** define the correspondence between
+   raw node IDs, the immutable DAG, and structural expressions beyond Sort/Const.
+   Cover applications, Pis, lambdas, typed lets, and de Bruijn variables; preserve
+   sharing and identify the exact scope assumptions at import and lookup.
+2. **Capture-avoiding substitution:** prove the selected lifting and substitution
+   laws, including binder cutoffs, index shifting, and scope preservation. Connect
+   those definitions to Goose `lift` and `substitute`, with concrete capture and
+   malformed-scope controls. The current transaction models abstract these
+   operations into action classes.
+3. **Typing and conversion correspondence:** extend the formal mapping to
+   inference and beta/zeta reduction for the supported fragment. Exercise stored
+   type/value/inferred fields for compound expressions and verify rejection
+   behavior as well as successful cases. Eta, proof irrelevance, and unsupported
+   Lean features retain their explicit boundaries until separately implemented.
+4. **Implementation refinement:** prove the relation between model transitions,
+   concrete binding lookup, DAG decoding, and the native checker. The present
+   Lean statements preserve arbitrary model records, while native comparison
+   covers a finite Sort/Const inventory. Add evidence for the diagnostic
+   serializer and its snapshot timing without treating diagnostic output alone
+   as a proof of the implementation.
+5. **Resource and cache behavior:** model work, height, intermediate-node, and
+   context limits, including failure priority around duplicate and semantic
+   checks. Specify which caches remain valid across insertion or refusal.
+   Diagnostic trace bounds and checker resource limits are separate contracts;
+   existing cache state, contexts, and fuel are outside the stored-binding model.
+6. **Fresh unshared syntax:** profile arena import, metadata construction, and
+   inference on `unshared_trees`. Preserve both formal scopes, full positive and
+   refusal conformance, and trace compatibility when optimizing representations
+   or caches. Re-run the full performance experiment on the new source revision
+   before making a new speed claim.
+7. **Module separation:** split checking semantics from observation, diagnostic,
+   and timing adapters under source-bound replay. Preserve both the original
+   checking/parser source relationship and the explicit formal implementation
+   mappings, or document and verify any intended semantic change.
+8. **Accepting-boundary proposal:** before introducing an authoritative entrypoint,
    name its exact contract and implementation files, trusted base, supported
    semantics, rejection evidence, and formal obligations. Review the manifest
-   authority change explicitly. Any implementation language combination may be
-   used; performance results do not promote authority.
+   authority change explicitly. Implementation languages remain unrestricted;
+   proofs, comparisons, diagnostics, and performance measurements do not grant
+   declaration, theorem, operational, or deployment admission authority.
 
 General universes, inductives, recursors, quotients, `.olean` ingestion, and full
-Lean theorem admission remain outside the current reference. A fresh full
-benchmark can measure the current revision; it cannot close those semantic or
-formal correspondence obligations.
+Lean theorem admission remain outside the reference. The retained 964-outcome
+comparison, structural/resource controls, and benchmark smoke continue to serve
+their stated finite validation roles alongside the formal work.

@@ -7,17 +7,20 @@ dependencies. The reference produces observations and has no declaration,
 theorem, deployment or other admission authority.
 
 The repository adopts **estate-repository-v3** with unrestricted implementation
-languages and required **Lean and Quint formalization**. Its first formal scope
-is ordered definition transactions: successful insertion, refusal without
-insertion, duplicate priority, and termination on a scope failure. The
-[formalization document](docs/formalization.md) identifies the exact claims,
-implementation mapping, executed checks, and remaining correspondence work.
+languages and required **Lean and Quint formalization**. The required formal
+scopes cover ordered definition transactions and preservation of complete stored
+bindings: names, declared types, original values, and inferred types. The
+[formalization document](docs/formalization.md) identifies the claims,
+implementation mapping, required checks, and remaining correspondence work.
+Execution status belongs to the source-bound receipts for the revision tested.
 
 The reference is derived from
 [Lean-OCaml PR #8](https://github.com/larsbx/Lean-OCaml/pull/8) at
-`403dcca50d7e8f18954618eec72109f8cb1c6b61`. The local adaptation changes output
-vocabulary and schema identifiers. Source and derivative identities are recorded
-in [source provenance](conformance/source-provenance.json).
+`403dcca50d7e8f18954618eec72109f8cb1c6b61`. The local derivation applies the four
+recorded presentation changes, then an exact reviewed diagnostic patch adding
+bounded stored-binding traces. The v2 [source-provenance contract](conformance/source-provenance.json)
+binds the original source, patch, preserved checking/parser function prefix,
+and final local bytes.
 
 ## Build and verify
 
@@ -67,11 +70,27 @@ recursive declarations, eta, proof irrelevance and `.olean` import remain
 outside this implementation. Eta and proof-irrelevance examples are explicit
 registered differences from Lean in the conformance gate.
 
-The formal transaction model covers a smaller, stated subset of the observation
-protocol. Lean establishes unbounded properties of that model; Quint checks its
-executable counterpart. Finite runtime comparisons connect selected action
-sequences to the actual Goose executable. Full correctness of Goose inference,
-substitution, normalization, caches, and all supported syntax remains unproved.
+The formal models cover smaller, stated subsets of the implementation. The
+original transaction lane retains its 21 Lean obligations and 1,110 finite
+cases. The stored-binding lane requires 29 additional Lean obligations,
+16 Quint tests, and 2,954 finite cases spanning two names and sort levels zero
+and one. Its gate compares complete model states and every processed snapshot,
+then checks both native `--trace` and `--check` behavior. Both Quint models also
+run seeded, bounded invariant simulations and designated negative controls.
+
+The opt-in [`--trace` contract](schemas/binding-trace-v1.md) exposes raw stored
+type/value/inferred node IDs and the immutable node DAG after each processed
+definition. The finite stored-binding profile decodes Sort/Const payloads and
+checks preservation of the raw records and existing node payloads. Full
+correctness of Goose inference, substitution, normalization, caches, and
+arbitrary expression graphs remains unproved.
+
+`make acceptance` retains the broader 964 ordered outcomes per engine, six
+structural/resource controls, and seven-family benchmark smoke alongside both
+formal scopes. Large replay and native-comparison logs are preserved as gzip
+files; [the reproduction notes](docs/formalization.md#reproduction-and-receipts)
+explain how to inspect them. Required inventories describe what a successful run
+must establish; they do not relabel an earlier receipt as a pass for new code.
 
 ## Review surfaces
 
@@ -81,6 +100,7 @@ substitution, normalization, caches, and all supported syntax remains unproved.
 | [Estate manifest](ESTATE.toml) | Research/candidate identity, v3 formal scope, and pinned governance |
 | [Formalization scope](docs/formalization.md) | Lean claims, Quint checks, runtime mapping, and limits |
 | [Observation contract](schemas/definition-observations-v1.md) | Input DAG and evidence-only output schemas |
+| [Stored-binding trace](schemas/binding-trace-v1.md) | Bounded snapshots of stored records and immutable node payloads |
 | [Dependency pins](conformance/dependencies.json) | Exact compiler/comparison revisions and archive hashes |
 | [Source provenance](conformance/source-provenance.json) | Original and locally adapted Goose bytes |
 | [Validation guide](docs/validation.md) | Gates, reproducibility, and evidence interpretation |
