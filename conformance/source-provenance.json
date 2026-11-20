@@ -1,0 +1,35 @@
+{
+  "schema": "lean-goose.source-provenance.v1",
+  "acceptance_authority": false,
+  "source_repository": "https://github.com/larsbx/Lean-OCaml",
+  "source_revision": "403dcca50d7e8f18954618eec72109f8cb1c6b61",
+  "source_path": "reference/goose/benchmark.goose",
+  "source_git_blob": "ae04d31dde163028fdfb749d2f9ad8754ce9b673",
+  "source_sha256": "71d62f9dad2f8d58a1bdb74602b41ca3e8aeabde89522c5d893d239ae0cec0a6",
+  "local_path": "reference/checker.goose",
+  "local_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
+  "derivation": "Local reference ownership transfer; two output-vocabulary substitutions and explicit observation-schema identifiers. No checker algorithm or resource limit changes.",
+  "replacements": [
+    {
+      "from": "0 => \"accepted\"",
+      "to": "0 => \"observed_success\""
+    },
+    {
+      "from": "\\\"accepted\\\":",
+      "to": "\\\"success_observations\\\":"
+    },
+    {
+      "from": "format(output, \"{\\\"engine\\\":\\\"goose-aot\\\",\\\"status\\\":\\\"checked\\\",",
+      "to": "format(output, \"{\\\"schema\\\":\\\"lean-goose.definition-observations.v1\\\",\\\"engine\\\":\\\"goose-aot\\\",\\\"status\\\":\\\"checked\\\","
+    },
+    {
+      "from": "print(\"{\\\"engine\\\":\\\"goose-aot\\\",\\\"status\\\":\\\"passed\\\",",
+      "to": "print(\"{\\\"schema\\\":\\\"lean-goose.benchmark-observation.v1\\\",\\\"engine\\\":\\\"goose-aot\\\",\\\"status\\\":\\\"passed\\\","
+    }
+  ],
+  "historical_benchmark": {
+    "url": "https://github.com/larsbx/Lean-OCaml/blob/403dcca50d7e8f18954618eec72109f8cb1c6b61/conformance/evidence/goose-comparison/results.json",
+    "sha256": "9fc67423dd7151641db2abff95954eb29b35ac9f519743363cd4aa6c0c85a585",
+    "status": "external historical evidence; not a fresh Lean-Goose benchmark"
+  }
+}

@@ -1,0 +1,103 @@
+lean-ocaml-benchmark-dag-v1
+n	0	s	2
+n	1	s	1
+n	2	v	0
+n	3	l	0	2
+n	4	a	3	1
+n	5	s	1
+n	6	s	0
+n	7	v	0
+n	8	l	5	7
+n	9	a	8	6
+n	10	v	0
+n	11	l	5	10
+n	12	a	11	9
+n	13	p	12	12
+n	14	p	12	13
+n	15	p	12	14
+n	16	p	12	15
+n	17	p	12	16
+n	18	p	17	17
+n	19	p	18	18
+n	20	p	19	19
+n	21	s	2
+n	22	s	1
+n	23	v	0
+n	24	l	21	23
+n	25	a	24	22
+n	26	c	diamond_0000_base
+n	27	s	2
+n	28	s	1
+n	29	v	0
+n	30	l	27	29
+n	31	a	30	28
+n	32	c	diamond_0000_base
+n	33	s	2
+n	34	s	1
+n	35	v	0
+n	36	l	33	35
+n	37	a	36	34
+n	38	c	diamond_0000_left
+n	39	c	diamond_0000_right
+n	40	p	38	39
+n	41	s	2
+n	42	s	1
+n	43	v	0
+n	44	l	41	43
+n	45	a	44	42
+n	46	v	0
+n	47	l	41	46
+n	48	a	47	45
+n	49	s	1
+n	50	s	0
+n	51	v	0
+n	52	l	49	51
+n	53	a	52	50
+n	54	v	0
+n	55	l	49	54
+n	56	a	55	53
+n	57	p	56	56
+n	58	p	56	57
+n	59	p	58	56
+n	60	p	56	59
+n	61	p	56	60
+n	62	p	61	61
+n	63	p	62	62
+n	64	p	63	63
+n	65	s	2
+n	66	s	1
+n	67	v	0
+n	68	l	65	67
+n	69	a	68	66
+n	70	v	0
+n	71	l	65	70
+n	72	a	71	69
+n	73	c	diamond_0001_base
+n	74	s	2
+n	75	s	1
+n	76	v	0
+n	77	l	74	76
+n	78	a	77	75
+n	79	v	0
+n	80	l	74	79
+n	81	a	80	78
+n	82	c	diamond_0001_base
+n	83	s	2
+n	84	s	1
+n	85	v	0
+n	86	l	83	85
+n	87	a	86	84
+n	88	v	0
+n	89	l	83	88
+n	90	a	89	87
+n	91	c	diamond_0001_left
+n	92	c	diamond_0001_right
+n	93	p	91	92
+d	diamond_0000_base	4	20
+d	diamond_0000_left	25	26
+d	diamond_0000_right	31	32
+d	diamond_0000_join	37	40
+d	diamond_0001_base	48	64
+d	diamond_0001_left	72	73
+d	diamond_0001_right	81	82
+d	diamond_0001_join	90	93

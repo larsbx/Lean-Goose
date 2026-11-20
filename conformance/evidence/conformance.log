@@ -1,0 +1,18 @@
+Building local Goose reference and pinned external comparison drivers.
+Observed committed_typing_vectors: 40 ordered outcomes match expectations.
+Observed committed_definitions_and_refusal_state: 12 ordered outcomes match expectations.
+Observed wrong_declared_type: 1 ordered outcomes match expectations.
+Observed wrong_dependent_argument: 1 ordered outcomes match expectations.
+Observed unused_unknown_constant: 1 ordered outcomes match expectations.
+Observed erased_illtyped_let: 1 ordered outcomes match expectations.
+Observed annotation_and_erasure_controls: 5 ordered outcomes match expectations.
+Observed context_reuse_and_capture: 5 ordered outcomes match expectations.
+Observed registered_conversion_boundaries: 2 ordered outcomes match expectations.
+Observed wide: 128 ordered outcomes match expectations.
+Observed chain: 128 ordered outcomes match expectations.
+Observed identities: 128 ordered outcomes match expectations.
+Observed distinct_trees: 128 ordered outcomes match expectations.
+Observed unshared_trees: 128 ordered outcomes match expectations.
+Observed dependent_terms: 128 ordered outcomes match expectations.
+Observed alias_diamonds: 128 ordered outcomes match expectations.
+check: passed finite observation checks; evidence only. Receipt: /workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/check/results.json
