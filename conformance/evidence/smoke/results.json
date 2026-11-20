@@ -2,15 +2,15 @@
   "schema": "lean-goose.benchmark-evidence.v1",
   "status": "passed",
   "mode": "bench",
-  "started_at_utc": "2026-11-20T11:19:51.262031+00:00",
+  "started_at_utc": "2026-11-20T12:28:16.599546+00:00",
   "acceptance_authority": false,
   "evidence_only": true,
   "authority": "unsigned_local_observations_only",
   "sources_before": [
     {
       "path": "ESTATE.toml",
-      "sha256": "09541a562ef087eacb7ecdad7f98bcc05788f47ecb052bdf00eed524e66c33f9",
-      "bytes": 4172
+      "sha256": "d4d607d7b5c06f955b040120f0346adf83a71a1263ca752149a6e9caa0051c4f",
+      "bytes": 6832
     },
     {
       "path": "conformance/dependencies.json",
@@ -19,13 +19,18 @@
     },
     {
       "path": "conformance/source-provenance.json",
-      "sha256": "a6753ad80c4d0c2deb73fcd1a1fd2082f4f1d1f259aa7001e5c1873816dd17f0",
-      "bytes": 1794
+      "sha256": "2d2c62d01807995d42025e835f76cb18eabf4d818dbd5cf5a36dbd50661d28a6",
+      "bytes": 2403
+    },
+    {
+      "path": "reference/binding-trace.patch",
+      "sha256": "736c8e3c0cba1271123c12c33d1c45bcc3592f4ff3ba70e9053ed79b6d858d13",
+      "bytes": 5070
     },
     {
       "path": "reference/checker.goose",
-      "sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
-      "bytes": 19360
+      "sha256": "0de9dfe21a2e95fd0468fd9365ff8e73a18a22e91f457dd4e16209bf740f0e0a",
+      "bytes": 23818
     },
     {
       "path": "tools/run.py",
@@ -34,11 +39,16 @@
     },
     {
       "path": "tools/runtime.py",
-      "sha256": "0879bb3a08c987e83ecb226aa7ac64b24a0197cafb9bbd57367020cc9d063ecc",
-      "bytes": 12341
+      "sha256": "24ca100d5dcc58912660608b24f4f9a33b2b89a1edb437caed552f4df659427c",
+      "bytes": 13056
+    },
+    {
+      "path": "tools/source_derivation.py",
+      "sha256": "b0806fa0c1880de9f783773a6717defb5c20e80e11f91a8dab09f6152efc5c5f",
+      "bytes": 4022
     }
   ],
-  "source_revision": "fa34fb379c543073d08a4ba6ea6f87d291b90a99",
+  "source_revision": "d14aa4fde522cd2a74c9df2e87dd8a7d4a38759b",
   "samples_per_configuration": 1,
   "definitions_per_batch": 8,
   "ocaml_workers": [
@@ -205,8 +215,15 @@
       "source_git_blob": "ae04d31dde163028fdfb749d2f9ad8754ce9b673",
       "source_sha256": "71d62f9dad2f8d58a1bdb74602b41ca3e8aeabde89522c5d893d239ae0cec0a6",
       "local_path": "reference/checker.goose",
-      "local_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
-      "presentation_changes_only": true
+      "local_sha256": "0de9dfe21a2e95fd0468fd9365ff8e73a18a22e91f457dd4e16209bf740f0e0a",
+      "presentation_changes_only": false,
+      "diagnostic_extension": {
+        "path": "reference/binding-trace.patch",
+        "sha256": "736c8e3c0cba1271123c12c33d1c45bcc3592f4ff3ba70e9053ed79b6d858d13",
+        "base_derivative_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
+        "preserved_checker_prefix_sha256": "06eaa20d4f097c08693622927fa9ce15c3de0f1a554dfc54bde18040671e59ca",
+        "checking_and_parser_function_prefix_unchanged": true
+      }
     }
   },
   "toolchains": {
@@ -217,23 +234,23 @@
     "goose_source_archive_sha256": "f1597f2e63290612653b116b2ef703fa4add4c08f32180bb2d2e98b7844ba427",
     "goose_compiler": "/workspace/scratch/a402432e12bc/goose/build/goose",
     "goose_compiler_sha256": "ecc852c41fba22c72ed935af4321fcff13b3167fe8ef728810c4cf8e21110814",
-    "generated_c_sha256": "68b6b4ac48e161defe85893d8fce62a2273008780cc9f3f324e7213feef9c4fd",
-    "generated_c_bytes": 436156,
+    "generated_c_sha256": "75aac465e9ed9dd2569279160edc658d2d85053b9d088c045a412ea904eb5cd0",
+    "generated_c_bytes": 472709,
     "emit_command": [
       "/workspace/scratch/a402432e12bc/goose/build/goose",
       "-O2",
       "-DGS_DEBUG=1",
       "--standalone",
       "-o",
-      "/tmp/lean-goose-tm0_fpvd/goose/checker.c",
+      "/tmp/lean-goose-jll6wcad/goose/checker.c",
       "/workspace/scratch/a402432e12bc/Lean-Goose/reference/checker.goose"
     ],
     "compile_command": [
       "/usr/bin/gcc",
       "-O2",
-      "/tmp/lean-goose-tm0_fpvd/goose/checker.c",
+      "/tmp/lean-goose-jll6wcad/goose/checker.c",
       "-o",
-      "/tmp/lean-goose-tm0_fpvd/goose/checker",
+      "/tmp/lean-goose-jll6wcad/goose/checker",
       "-lm",
       "-pthread"
     ],
@@ -271,7 +288,7 @@
       },
       {
         "engine": "goose-aot",
-        "sha256": "1ecf5a91a62cc30ff0c3a107bd129583c8c945e9eeb0beba66142c5285d1ebcd"
+        "sha256": "8b40f4951779ea16339d83332fd0c1786689cb762087f2af374b413edb8f85d2"
       }
     ]
   },
@@ -409,10 +426,10 @@
       "workload": "wide",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 141854,
+      "elapsed_ns": 176864,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 141854,
+      "per_batch_ns": 176864,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -420,13 +437,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 49484684,
+      "process_elapsed_ns": 49145782,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/wide.tsv",
         "1"
       ],
-      "selected_iterations": 353
+      "selected_iterations": 283
     },
     {
       "workload": "wide",
@@ -436,19 +453,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 2755,
-      "per_batch_ns": 2755.0,
+      "elapsed_ns": 2680,
+      "per_batch_ns": 2680.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 2407162,
+      "process_elapsed_ns": 1883881,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/wide.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 18149
+      "selected_iterations": 18657
     },
     {
       "workload": "wide",
@@ -458,30 +475,30 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 528775,
-      "per_batch_ns": 528775.0,
-      "cpu_s": 0.00054,
+      "elapsed_ns": 183038,
+      "per_batch_ns": 183038.0,
+      "cpu_s": 0.000191,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 14728348,
+      "process_elapsed_ns": 9926138,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/wide.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 95
+      "selected_iterations": 274
     },
     {
       "workload": "chain",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 56368,
+      "elapsed_ns": 57369,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 56368,
+      "per_batch_ns": 57369,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -489,13 +506,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 57562363,
+      "process_elapsed_ns": 125111027,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/chain.tsv",
         "1"
       ],
-      "selected_iterations": 888
+      "selected_iterations": 872
     },
     {
       "workload": "chain",
@@ -505,19 +522,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 2799,
-      "per_batch_ns": 2799.0,
+      "elapsed_ns": 2719,
+      "per_batch_ns": 2719.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 2029073,
+      "process_elapsed_ns": 2855657,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/chain.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 17864
+      "selected_iterations": 18390
     },
     {
       "workload": "chain",
@@ -527,30 +544,30 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 8,
-      "elapsed_ns": 225829,
-      "per_batch_ns": 225829.0,
-      "cpu_s": 0.000233,
+      "elapsed_ns": 250880,
+      "per_batch_ns": 250880.0,
+      "cpu_s": 0.000261,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 10020228,
+      "process_elapsed_ns": 9427524,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/chain.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 222
+      "selected_iterations": 200
     },
     {
       "workload": "identities",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 21087,
+      "elapsed_ns": 55994,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 21087,
+      "per_batch_ns": 55994,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -558,13 +575,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 98614487,
+      "process_elapsed_ns": 85877632,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/identities.tsv",
         "1"
       ],
-      "selected_iterations": 2372
+      "selected_iterations": 893
     },
     {
       "workload": "identities",
@@ -574,19 +591,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 714,
-      "per_batch_ns": 714.0,
+      "elapsed_ns": 772,
+      "per_batch_ns": 772.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 2458470,
+      "process_elapsed_ns": 2355129,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/identities.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 70029
+      "selected_iterations": 64767
     },
     {
       "workload": "identities",
@@ -596,30 +613,30 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 55918,
-      "per_batch_ns": 55918.0,
-      "cpu_s": 6.5e-05,
+      "elapsed_ns": 74087,
+      "per_batch_ns": 74087.0,
+      "cpu_s": 8.1e-05,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 8059309,
+      "process_elapsed_ns": 13617691,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/identities.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 895
+      "selected_iterations": 675
     },
     {
       "workload": "distinct_trees",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 131804,
+      "elapsed_ns": 147245,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 131804,
+      "per_batch_ns": 147245,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -627,13 +644,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 52006607,
+      "process_elapsed_ns": 215585727,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/distinct_trees.tsv",
         "1"
       ],
-      "selected_iterations": 380
+      "selected_iterations": 340
     },
     {
       "workload": "distinct_trees",
@@ -643,19 +660,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 8451,
-      "per_batch_ns": 8451.0,
+      "elapsed_ns": 8298,
+      "per_batch_ns": 8298.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 3456061,
+      "process_elapsed_ns": 2839572,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/distinct_trees.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 5917
+      "selected_iterations": 6026
     },
     {
       "workload": "distinct_trees",
@@ -665,30 +682,30 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 958797,
-      "per_batch_ns": 958797.0,
-      "cpu_s": 0.000967,
+      "elapsed_ns": 908098,
+      "per_batch_ns": 908098.0,
+      "cpu_s": 0.000918,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 9965363,
+      "process_elapsed_ns": 9720484,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/distinct_trees.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 53
+      "selected_iterations": 56
     },
     {
       "workload": "unshared_trees",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 102257,
+      "elapsed_ns": 100124,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 102257,
+      "per_batch_ns": 100124,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -696,13 +713,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 81000751,
+      "process_elapsed_ns": 58368504,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/unshared_trees.tsv",
         "1"
       ],
-      "selected_iterations": 489
+      "selected_iterations": 500
     },
     {
       "workload": "unshared_trees",
@@ -712,19 +729,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 94086,
-      "per_batch_ns": 94086.0,
+      "elapsed_ns": 87060,
+      "per_batch_ns": 87060.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 8176470,
+      "process_elapsed_ns": 3845900,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/unshared_trees.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 532
+      "selected_iterations": 575
     },
     {
       "workload": "unshared_trees",
@@ -734,30 +751,30 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 2871630,
-      "per_batch_ns": 2871630.0,
-      "cpu_s": 0.002883,
+      "elapsed_ns": 1965530,
+      "per_batch_ns": 1965530.0,
+      "cpu_s": 0.001978,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 22444485,
+      "process_elapsed_ns": 13976308,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/unshared_trees.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 18
+      "selected_iterations": 26
     },
     {
       "workload": "dependent_terms",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 72244,
+      "elapsed_ns": 70065,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 72244,
+      "per_batch_ns": 70065,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -765,13 +782,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 44801979,
+      "process_elapsed_ns": 118331182,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/dependent_terms.tsv",
         "1"
       ],
-      "selected_iterations": 693
+      "selected_iterations": 714
     },
     {
       "workload": "dependent_terms",
@@ -781,19 +798,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 9438,
-      "per_batch_ns": 9438.0,
+      "elapsed_ns": 9502,
+      "per_batch_ns": 9502.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 2023545,
+      "process_elapsed_ns": 2074130,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/dependent_terms.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 5298
+      "selected_iterations": 5263
     },
     {
       "workload": "dependent_terms",
@@ -803,30 +820,30 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 567112,
-      "per_batch_ns": 567112.0,
-      "cpu_s": 0.000573,
+      "elapsed_ns": 735333,
+      "per_batch_ns": 735333.0,
+      "cpu_s": 0.000736,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 6490872,
+      "process_elapsed_ns": 6338773,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/dependent_terms.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 89
+      "selected_iterations": 68
     },
     {
       "workload": "alias_diamonds",
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 40210,
+      "elapsed_ns": 41725,
       "engine": "lean-kernel",
       "iterations": 1,
-      "per_batch_ns": 40210,
+      "per_batch_ns": 41725,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
@@ -834,13 +851,13 @@
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 46390255,
+      "process_elapsed_ns": 129781272,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/alias_diamonds.tsv",
         "1"
       ],
-      "selected_iterations": 1244
+      "selected_iterations": 1199
     },
     {
       "workload": "alias_diamonds",
@@ -850,19 +867,19 @@
       "workers": 1,
       "iterations": 1,
       "definitions": 8,
-      "elapsed_ns": 4036,
-      "per_batch_ns": 4036.0,
+      "elapsed_ns": 4126,
+      "per_batch_ns": 4126.0,
       "validated_batches": 1,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 1813388,
+      "process_elapsed_ns": 2055947,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/alias_diamonds.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 12389
+      "selected_iterations": 12119
     },
     {
       "workload": "alias_diamonds",
@@ -872,21 +889,21 @@
       "iterations": 1,
       "definitions": 8,
       "waves": 3,
-      "elapsed_ns": 467731,
-      "per_batch_ns": 467731.0,
-      "cpu_s": 0.000476,
+      "elapsed_ns": 435005,
+      "per_batch_ns": 435005.0,
+      "cpu_s": 0.000441,
       "validated_batches": 1,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 7903619,
+      "process_elapsed_ns": 10668247,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/alias_diamonds.tsv",
         "1",
         "1"
       ],
-      "selected_iterations": 107
+      "selected_iterations": 115
     }
   ],
   "observations": [
@@ -896,22 +913,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 95,
+      "iterations": 274,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 18673090,
-      "per_batch_ns": 196558.842,
-      "cpu_s": 0.018784,
-      "validated_batches": 95,
+      "elapsed_ns": 66973727,
+      "per_batch_ns": 244429.661,
+      "cpu_s": 0.066903,
+      "validated_batches": 274,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 271049987,
+      "process_elapsed_ns": 950721018,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/wide.tsv",
         "1",
-        "95"
+        "274"
       ]
     },
     {
@@ -919,22 +936,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 62310945,
+      "elapsed_ns": 43979093,
       "engine": "lean-kernel",
-      "iterations": 353,
-      "per_batch_ns": 176518,
+      "iterations": 283,
+      "per_batch_ns": 155403,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 353,
+      "validated_batches": 283,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 152662995,
+      "process_elapsed_ns": 123081435,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/wide.tsv",
-        "353"
+        "283"
       ]
     },
     {
@@ -944,19 +961,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 18149,
+      "iterations": 18657,
       "definitions": 8,
-      "elapsed_ns": 65573977,
-      "per_batch_ns": 3613.0903631054052,
-      "validated_batches": 18149,
+      "elapsed_ns": 47900666,
+      "per_batch_ns": 2567.436672562577,
+      "validated_batches": 18657,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 97022478,
+      "process_elapsed_ns": 72741621,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/wide.tsv",
         "1",
-        "18149"
+        "18657"
       ]
     },
     {
@@ -965,22 +982,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 222,
+      "iterations": 200,
       "definitions": 8,
       "waves": 8,
-      "elapsed_ns": 54595797,
-      "per_batch_ns": 245927.014,
-      "cpu_s": 0.054806,
-      "validated_batches": 222,
+      "elapsed_ns": 46569570,
+      "per_batch_ns": 232847.85,
+      "cpu_s": 0.049082,
+      "validated_batches": 200,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 678733710,
+      "process_elapsed_ns": 594990094,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/chain.tsv",
         "1",
-        "222"
+        "200"
       ]
     },
     {
@@ -988,22 +1005,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 52355538,
+      "elapsed_ns": 135099651,
       "engine": "lean-kernel",
-      "iterations": 888,
-      "per_batch_ns": 58958,
+      "iterations": 872,
+      "per_batch_ns": 154930,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 888,
+      "validated_batches": 872,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 105671739,
+      "process_elapsed_ns": 197964181,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/chain.tsv",
-        "888"
+        "872"
       ]
     },
     {
@@ -1013,19 +1030,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 17864,
+      "iterations": 18390,
       "definitions": 8,
-      "elapsed_ns": 70544566,
-      "per_batch_ns": 3948.9792879534257,
-      "validated_batches": 17864,
+      "elapsed_ns": 53355551,
+      "per_batch_ns": 2901.3350190320825,
+      "validated_batches": 18390,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 116079747,
+      "process_elapsed_ns": 86226758,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/chain.tsv",
         "1",
-        "17864"
+        "18390"
       ]
     },
     {
@@ -1034,22 +1051,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 895,
+      "iterations": 675,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 93226537,
-      "per_batch_ns": 104163.728,
-      "cpu_s": 0.095697,
-      "validated_batches": 895,
+      "elapsed_ns": 39737778,
+      "per_batch_ns": 58870.782,
+      "cpu_s": 0.04032,
+      "validated_batches": 675,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 223336908,
+      "process_elapsed_ns": 98358141,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/identities.tsv",
         "1",
-        "895"
+        "675"
       ]
     },
     {
@@ -1057,22 +1074,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 48993577,
+      "elapsed_ns": 35175818,
       "engine": "lean-kernel",
-      "iterations": 2372,
-      "per_batch_ns": 20654,
+      "iterations": 893,
+      "per_batch_ns": 39390,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 2372,
+      "validated_batches": 893,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 172871070,
+      "process_elapsed_ns": 114304139,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/identities.tsv",
-        "2372"
+        "893"
       ]
     },
     {
@@ -1082,19 +1099,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 70029,
+      "iterations": 64767,
       "definitions": 8,
-      "elapsed_ns": 33505962,
-      "per_batch_ns": 478.4583815276528,
-      "validated_batches": 70029,
+      "elapsed_ns": 77142340,
+      "per_batch_ns": 1191.0747757345562,
+      "validated_batches": 64767,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 63561702,
+      "process_elapsed_ns": 138035728,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/identities.tsv",
         "1",
-        "70029"
+        "64767"
       ]
     },
     {
@@ -1103,22 +1120,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 53,
+      "iterations": 56,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 55874032,
-      "per_batch_ns": 1054227.019,
-      "cpu_s": 0.055966,
-      "validated_batches": 53,
+      "elapsed_ns": 62017296,
+      "per_batch_ns": 1107451.714,
+      "cpu_s": 0.062128,
+      "validated_batches": 56,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 178581121,
+      "process_elapsed_ns": 188846958,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/distinct_trees.tsv",
         "1",
-        "53"
+        "56"
       ]
     },
     {
@@ -1126,22 +1143,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 53257225,
+      "elapsed_ns": 43128409,
       "engine": "lean-kernel",
-      "iterations": 380,
-      "per_batch_ns": 140150,
+      "iterations": 340,
+      "per_batch_ns": 126848,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 380,
+      "validated_batches": 340,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 140409226,
+      "process_elapsed_ns": 98371516,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/distinct_trees.tsv",
-        "380"
+        "340"
       ]
     },
     {
@@ -1151,19 +1168,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 5917,
+      "iterations": 6026,
       "definitions": 8,
-      "elapsed_ns": 47993243,
-      "per_batch_ns": 8111.077066080784,
-      "validated_batches": 5917,
+      "elapsed_ns": 51346928,
+      "per_batch_ns": 8520.897444407567,
+      "validated_batches": 6026,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 81112363,
+      "process_elapsed_ns": 84430411,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/distinct_trees.tsv",
         "1",
-        "5917"
+        "6026"
       ]
     },
     {
@@ -1172,22 +1189,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 18,
+      "iterations": 26,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 29975692,
-      "per_batch_ns": 1665316.222,
-      "cpu_s": 0.030028,
-      "validated_batches": 18,
+      "elapsed_ns": 137643095,
+      "per_batch_ns": 5293965.192,
+      "cpu_s": 0.132907,
+      "validated_batches": 26,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 54972883,
+      "process_elapsed_ns": 184415255,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/unshared_trees.tsv",
         "1",
-        "18"
+        "26"
       ]
     },
     {
@@ -1195,22 +1212,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 74207107,
+      "elapsed_ns": 53856339,
       "engine": "lean-kernel",
-      "iterations": 489,
-      "per_batch_ns": 151752,
+      "iterations": 500,
+      "per_batch_ns": 107712,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 489,
+      "validated_batches": 500,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 141214063,
+      "process_elapsed_ns": 149468643,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/unshared_trees.tsv",
-        "489"
+        "500"
       ]
     },
     {
@@ -1220,19 +1237,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 532,
+      "iterations": 575,
       "definitions": 8,
-      "elapsed_ns": 47339207,
-      "per_batch_ns": 88983.47180451128,
-      "validated_batches": 532,
+      "elapsed_ns": 94388069,
+      "per_batch_ns": 164153.16347826086,
+      "validated_batches": 575,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 93915414,
+      "process_elapsed_ns": 213733899,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/unshared_trees.tsv",
         "1",
-        "532"
+        "575"
       ]
     },
     {
@@ -1241,22 +1258,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 89,
+      "iterations": 68,
       "definitions": 8,
       "waves": 1,
-      "elapsed_ns": 62429370,
-      "per_batch_ns": 701453.596,
-      "cpu_s": 0.062553,
-      "validated_batches": 89,
+      "elapsed_ns": 91042408,
+      "per_batch_ns": 1338858.941,
+      "cpu_s": 0.091113,
+      "validated_batches": 68,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 85702484,
+      "process_elapsed_ns": 122322701,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/dependent_terms.tsv",
         "1",
-        "89"
+        "68"
       ]
     },
     {
@@ -1264,22 +1281,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 46439610,
+      "elapsed_ns": 48601895,
       "engine": "lean-kernel",
-      "iterations": 693,
-      "per_batch_ns": 67012,
+      "iterations": 714,
+      "per_batch_ns": 68069,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 693,
+      "validated_batches": 714,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 94890858,
+      "process_elapsed_ns": 155531847,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/dependent_terms.tsv",
-        "693"
+        "714"
       ]
     },
     {
@@ -1289,19 +1306,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 5298,
+      "iterations": 5263,
       "definitions": 8,
-      "elapsed_ns": 48249027,
-      "per_batch_ns": 9107.026613816535,
-      "validated_batches": 5298,
+      "elapsed_ns": 49543258,
+      "per_batch_ns": 9413.501425042752,
+      "validated_batches": 5263,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 81970630,
+      "process_elapsed_ns": 84396748,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/dependent_terms.tsv",
         "1",
-        "5298"
+        "5263"
       ]
     },
     {
@@ -1310,22 +1327,22 @@
       "engine": "ocaml-bytecode",
       "status": "passed",
       "workers": 1,
-      "iterations": 107,
+      "iterations": 115,
       "definitions": 8,
       "waves": 3,
-      "elapsed_ns": 57568381,
-      "per_batch_ns": 538022.252,
-      "cpu_s": 0.057732,
-      "validated_batches": 107,
+      "elapsed_ns": 132471818,
+      "per_batch_ns": 1151928.852,
+      "cpu_s": 0.132563,
+      "validated_batches": 115,
       "refusal_controls": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 94120239,
+      "process_elapsed_ns": 204879408,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/bytecode/benchmark_compare",
+        "/tmp/lean-goose-jll6wcad/bytecode/benchmark_compare",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/alias_diamonds.tsv",
         "1",
-        "107"
+        "115"
       ]
     },
     {
@@ -1333,22 +1350,22 @@
       "sample": 1,
       "checked_insertion": true,
       "definitions": 8,
-      "elapsed_ns": 67647964,
+      "elapsed_ns": 53712573,
       "engine": "lean-kernel",
-      "iterations": 1244,
-      "per_batch_ns": 54379,
+      "iterations": 1199,
+      "per_batch_ns": 44797,
       "refusal_controls": 1,
       "status": "passed",
       "trust_level": 0,
-      "validated_batches": 1244,
+      "validated_batches": 1199,
       "workers": 1,
       "schema": "lean-goose.benchmark-observation.v1",
       "acceptance_authority": false,
-      "process_elapsed_ns": 142949090,
+      "process_elapsed_ns": 186777580,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/lean/benchmark_kernel",
+        "/tmp/lean-goose-jll6wcad/lean/benchmark_kernel",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/alias_diamonds.tsv",
-        "1244"
+        "1199"
       ]
     },
     {
@@ -1358,19 +1375,19 @@
       "engine": "goose-aot",
       "status": "passed",
       "workers": 1,
-      "iterations": 12389,
+      "iterations": 12119,
       "definitions": 8,
-      "elapsed_ns": 41785205,
-      "per_batch_ns": 3372.76656711599,
-      "validated_batches": 12389,
+      "elapsed_ns": 54084233,
+      "per_batch_ns": 4462.763676871029,
+      "validated_batches": 12119,
       "refusal_controls": 1,
       "acceptance_authority": false,
-      "process_elapsed_ns": 71106852,
+      "process_elapsed_ns": 98904897,
       "command": [
-        "/tmp/lean-goose-tm0_fpvd/goose/checker",
+        "/tmp/lean-goose-jll6wcad/goose/checker",
         "/workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/fixtures/alias_diamonds.tsv",
         "1",
-        "12389"
+        "12119"
       ]
     }
   ],
@@ -1379,210 +1396,210 @@
       "workload": "wide",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.17651825779036828,
-      "mean_ms": 0.17651825779036828,
-      "min_ms": 0.17651825779036828,
-      "max_ms": 0.17651825779036828,
+      "median_ms": 0.1554031554770318,
+      "mean_ms": 0.1554031554770318,
+      "min_ms": 0.1554031554770318,
+      "max_ms": 0.1554031554770318,
       "stdev_ms": 0.0
     },
     {
       "workload": "wide",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.0036130903631054053,
-      "mean_ms": 0.0036130903631054053,
-      "min_ms": 0.0036130903631054053,
-      "max_ms": 0.0036130903631054053,
+      "median_ms": 0.002567436672562577,
+      "mean_ms": 0.002567436672562577,
+      "min_ms": 0.002567436672562577,
+      "max_ms": 0.002567436672562577,
       "stdev_ms": 0.0
     },
     {
       "workload": "wide",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 0.19655884210526314,
-      "mean_ms": 0.19655884210526314,
-      "min_ms": 0.19655884210526314,
-      "max_ms": 0.19655884210526314,
+      "median_ms": 0.2444296605839416,
+      "mean_ms": 0.2444296605839416,
+      "min_ms": 0.2444296605839416,
+      "max_ms": 0.2444296605839416,
       "stdev_ms": 0.0
     },
     {
       "workload": "chain",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.05895893918918919,
-      "mean_ms": 0.05895893918918919,
-      "min_ms": 0.05895893918918919,
-      "max_ms": 0.05895893918918919,
+      "median_ms": 0.15493079243119265,
+      "mean_ms": 0.15493079243119265,
+      "min_ms": 0.15493079243119265,
+      "max_ms": 0.15493079243119265,
       "stdev_ms": 0.0
     },
     {
       "workload": "chain",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.003948979287953426,
-      "mean_ms": 0.003948979287953426,
-      "min_ms": 0.003948979287953426,
-      "max_ms": 0.003948979287953426,
+      "median_ms": 0.0029013350190320824,
+      "mean_ms": 0.0029013350190320824,
+      "min_ms": 0.0029013350190320824,
+      "max_ms": 0.0029013350190320824,
       "stdev_ms": 0.0
     },
     {
       "workload": "chain",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 0.2459270135135135,
-      "mean_ms": 0.2459270135135135,
-      "min_ms": 0.2459270135135135,
-      "max_ms": 0.2459270135135135,
+      "median_ms": 0.23284785,
+      "mean_ms": 0.23284785,
+      "min_ms": 0.23284785,
+      "max_ms": 0.23284785,
       "stdev_ms": 0.0
     },
     {
       "workload": "identities",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.020654965008431704,
-      "mean_ms": 0.020654965008431704,
-      "min_ms": 0.020654965008431704,
-      "max_ms": 0.020654965008431704,
+      "median_ms": 0.03939061366181411,
+      "mean_ms": 0.03939061366181411,
+      "min_ms": 0.03939061366181411,
+      "max_ms": 0.03939061366181411,
       "stdev_ms": 0.0
     },
     {
       "workload": "identities",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.0004784583815276528,
-      "mean_ms": 0.0004784583815276528,
-      "min_ms": 0.0004784583815276528,
-      "max_ms": 0.0004784583815276528,
+      "median_ms": 0.001191074775734556,
+      "mean_ms": 0.001191074775734556,
+      "min_ms": 0.001191074775734556,
+      "max_ms": 0.001191074775734556,
       "stdev_ms": 0.0
     },
     {
       "workload": "identities",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 0.10416372849162012,
-      "mean_ms": 0.10416372849162012,
-      "min_ms": 0.10416372849162012,
-      "max_ms": 0.10416372849162012,
+      "median_ms": 0.05887078222222222,
+      "mean_ms": 0.05887078222222222,
+      "min_ms": 0.05887078222222222,
+      "max_ms": 0.05887078222222222,
       "stdev_ms": 0.0
     },
     {
       "workload": "distinct_trees",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.14015059210526315,
-      "mean_ms": 0.14015059210526315,
-      "min_ms": 0.14015059210526315,
-      "max_ms": 0.14015059210526315,
+      "median_ms": 0.12684826176470587,
+      "mean_ms": 0.12684826176470587,
+      "min_ms": 0.12684826176470587,
+      "max_ms": 0.12684826176470587,
       "stdev_ms": 0.0
     },
     {
       "workload": "distinct_trees",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.008111077066080784,
-      "mean_ms": 0.008111077066080784,
-      "min_ms": 0.008111077066080784,
-      "max_ms": 0.008111077066080784,
+      "median_ms": 0.008520897444407566,
+      "mean_ms": 0.008520897444407566,
+      "min_ms": 0.008520897444407566,
+      "max_ms": 0.008520897444407566,
       "stdev_ms": 0.0
     },
     {
       "workload": "distinct_trees",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 1.0542270188679246,
-      "mean_ms": 1.0542270188679246,
-      "min_ms": 1.0542270188679246,
-      "max_ms": 1.0542270188679246,
+      "median_ms": 1.1074517142857143,
+      "mean_ms": 1.1074517142857143,
+      "min_ms": 1.1074517142857143,
+      "max_ms": 1.1074517142857143,
       "stdev_ms": 0.0
     },
     {
       "workload": "unshared_trees",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.15175277505112475,
-      "mean_ms": 0.15175277505112475,
-      "min_ms": 0.15175277505112475,
-      "max_ms": 0.15175277505112475,
+      "median_ms": 0.107712678,
+      "mean_ms": 0.107712678,
+      "min_ms": 0.107712678,
+      "max_ms": 0.107712678,
       "stdev_ms": 0.0
     },
     {
       "workload": "unshared_trees",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.08898347180451129,
-      "mean_ms": 0.08898347180451129,
-      "min_ms": 0.08898347180451129,
-      "max_ms": 0.08898347180451129,
+      "median_ms": 0.16415316347826087,
+      "mean_ms": 0.16415316347826087,
+      "min_ms": 0.16415316347826087,
+      "max_ms": 0.16415316347826087,
       "stdev_ms": 0.0
     },
     {
       "workload": "unshared_trees",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 1.6653162222222222,
-      "mean_ms": 1.6653162222222222,
-      "min_ms": 1.6653162222222222,
-      "max_ms": 1.6653162222222222,
+      "median_ms": 5.293965192307692,
+      "mean_ms": 5.293965192307692,
+      "min_ms": 5.293965192307692,
+      "max_ms": 5.293965192307692,
       "stdev_ms": 0.0
     },
     {
       "workload": "dependent_terms",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.06701242424242423,
-      "mean_ms": 0.06701242424242423,
-      "min_ms": 0.06701242424242423,
-      "max_ms": 0.06701242424242423,
+      "median_ms": 0.06806988095238095,
+      "mean_ms": 0.06806988095238095,
+      "min_ms": 0.06806988095238095,
+      "max_ms": 0.06806988095238095,
       "stdev_ms": 0.0
     },
     {
       "workload": "dependent_terms",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.009107026613816535,
-      "mean_ms": 0.009107026613816535,
-      "min_ms": 0.009107026613816535,
-      "max_ms": 0.009107026613816535,
+      "median_ms": 0.009413501425042752,
+      "mean_ms": 0.009413501425042752,
+      "min_ms": 0.009413501425042752,
+      "max_ms": 0.009413501425042752,
       "stdev_ms": 0.0
     },
     {
       "workload": "dependent_terms",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 0.701453595505618,
-      "mean_ms": 0.701453595505618,
-      "min_ms": 0.701453595505618,
-      "max_ms": 0.701453595505618,
+      "median_ms": 1.3388589411764706,
+      "mean_ms": 1.3388589411764706,
+      "min_ms": 1.3388589411764706,
+      "max_ms": 1.3388589411764706,
       "stdev_ms": 0.0
     },
     {
       "workload": "alias_diamonds",
       "engine": "lean-kernel",
       "workers": 1,
-      "median_ms": 0.054379392282958204,
-      "mean_ms": 0.054379392282958204,
-      "min_ms": 0.054379392282958204,
-      "max_ms": 0.054379392282958204,
+      "median_ms": 0.04479780900750626,
+      "mean_ms": 0.04479780900750626,
+      "min_ms": 0.04479780900750626,
+      "max_ms": 0.04479780900750626,
       "stdev_ms": 0.0
     },
     {
       "workload": "alias_diamonds",
       "engine": "goose-aot",
       "workers": 1,
-      "median_ms": 0.0033727665671159897,
-      "mean_ms": 0.0033727665671159897,
-      "min_ms": 0.0033727665671159897,
-      "max_ms": 0.0033727665671159897,
+      "median_ms": 0.004462763676871029,
+      "mean_ms": 0.004462763676871029,
+      "min_ms": 0.004462763676871029,
+      "max_ms": 0.004462763676871029,
       "stdev_ms": 0.0
     },
     {
       "workload": "alias_diamonds",
       "engine": "ocaml-bytecode",
       "workers": 1,
-      "median_ms": 0.5380222523364486,
-      "mean_ms": 0.5380222523364486,
-      "min_ms": 0.5380222523364486,
-      "max_ms": 0.5380222523364486,
+      "median_ms": 1.151928852173913,
+      "mean_ms": 1.151928852173913,
+      "min_ms": 1.151928852173913,
+      "max_ms": 1.151928852173913,
       "stdev_ms": 0.0
     }
   ],
@@ -1726,16 +1743,23 @@
       "source_git_blob": "ae04d31dde163028fdfb749d2f9ad8754ce9b673",
       "source_sha256": "71d62f9dad2f8d58a1bdb74602b41ca3e8aeabde89522c5d893d239ae0cec0a6",
       "local_path": "reference/checker.goose",
-      "local_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
-      "presentation_changes_only": true
+      "local_sha256": "0de9dfe21a2e95fd0468fd9365ff8e73a18a22e91f457dd4e16209bf740f0e0a",
+      "presentation_changes_only": false,
+      "diagnostic_extension": {
+        "path": "reference/binding-trace.patch",
+        "sha256": "736c8e3c0cba1271123c12c33d1c45bcc3592f4ff3ba70e9053ed79b6d858d13",
+        "base_derivative_sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
+        "preserved_checker_prefix_sha256": "06eaa20d4f097c08693622927fa9ce15c3de0f1a554dfc54bde18040671e59ca",
+        "checking_and_parser_function_prefix_unchanged": true
+      }
     }
   },
   "dependencies_unchanged": true,
   "sources_after": [
     {
       "path": "ESTATE.toml",
-      "sha256": "09541a562ef087eacb7ecdad7f98bcc05788f47ecb052bdf00eed524e66c33f9",
-      "bytes": 4172
+      "sha256": "d4d607d7b5c06f955b040120f0346adf83a71a1263ca752149a6e9caa0051c4f",
+      "bytes": 6832
     },
     {
       "path": "conformance/dependencies.json",
@@ -1744,13 +1768,18 @@
     },
     {
       "path": "conformance/source-provenance.json",
-      "sha256": "a6753ad80c4d0c2deb73fcd1a1fd2082f4f1d1f259aa7001e5c1873816dd17f0",
-      "bytes": 1794
+      "sha256": "2d2c62d01807995d42025e835f76cb18eabf4d818dbd5cf5a36dbd50661d28a6",
+      "bytes": 2403
+    },
+    {
+      "path": "reference/binding-trace.patch",
+      "sha256": "736c8e3c0cba1271123c12c33d1c45bcc3592f4ff3ba70e9053ed79b6d858d13",
+      "bytes": 5070
     },
     {
       "path": "reference/checker.goose",
-      "sha256": "cc834255035d8529d138c327586e38f9733bb87ec0c879e5445748f15627fc52",
-      "bytes": 19360
+      "sha256": "0de9dfe21a2e95fd0468fd9365ff8e73a18a22e91f457dd4e16209bf740f0e0a",
+      "bytes": 23818
     },
     {
       "path": "tools/run.py",
@@ -1759,10 +1788,15 @@
     },
     {
       "path": "tools/runtime.py",
-      "sha256": "0879bb3a08c987e83ecb226aa7ac64b24a0197cafb9bbd57367020cc9d063ecc",
-      "bytes": 12341
+      "sha256": "24ca100d5dcc58912660608b24f4f9a33b2b89a1edb437caed552f4df659427c",
+      "bytes": 13056
+    },
+    {
+      "path": "tools/source_derivation.py",
+      "sha256": "b0806fa0c1880de9f783773a6717defb5c20e80e11f91a8dab09f6152efc5c5f",
+      "bytes": 4022
     }
   ],
   "source_unchanged": true,
-  "finished_at_utc": "2026-11-20T11:20:16.173015+00:00"
+  "finished_at_utc": "2026-11-20T12:30:30.741141+00:00"
 }

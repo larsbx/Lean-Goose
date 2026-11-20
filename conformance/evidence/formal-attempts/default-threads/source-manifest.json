@@ -1,0 +1,252 @@
+[
+  {
+    "path": ".gitattributes",
+    "bytes": 48,
+    "sha256": "2df22fbb92e6350bddc00f3f977619734fd11359a9ae0fc6e16d0aed7e784fa5"
+  },
+  {
+    "path": ".github/PULL_REQUEST_TEMPLATE.md",
+    "bytes": 852,
+    "sha256": "998e7275119904f7054f94177b01e84172585a055e2a86d0984c21335b427ba9"
+  },
+  {
+    "path": ".github/workflows/conformance.yml",
+    "bytes": 3997,
+    "sha256": "faa0d3b1a1878ff92dd92317737a9947b9d89cfd028579a04e76b135479db47e"
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 99,
+    "sha256": "f9e5a932b63ff042cc1f4250e451adcc4eb7ef2ab4ec8f0de53a0333175e5319"
+  },
+  {
+    "path": "AGENTS.md",
+    "bytes": 2027,
+    "sha256": "c8608f56ab8ecad8866d9da777791321c818f262d36007c89971bfd85361996d"
+  },
+  {
+    "path": "ARCHITECTURE.md",
+    "bytes": 7549,
+    "sha256": "471ca00662c096b6716be1229f04699dcb17f768749572b3c3e9a4d679c7a8f6"
+  },
+  {
+    "path": "ESTATE.toml",
+    "bytes": 6832,
+    "sha256": "d4d607d7b5c06f955b040120f0346adf83a71a1263ca752149a6e9caa0051c4f"
+  },
+  {
+    "path": "LANGUAGE_BOUNDARIES.md",
+    "bytes": 1937,
+    "sha256": "bdaf2443ee541eeaa26a2e8056141039b171623bc2ac26c81df67b0f206125e5"
+  },
+  {
+    "path": "Makefile",
+    "bytes": 696,
+    "sha256": "8497ec8ac6a8b7b756c74606bb665022ff9170fe9ee29f29c2232b6f9aa52cfa"
+  },
+  {
+    "path": "README.md",
+    "bytes": 6891,
+    "sha256": "70206ac7557d346cd3e10a895526290fc9fd2d6bfb99a1a021a0cfbb9b071d30"
+  },
+  {
+    "path": "conformance/dependencies.json",
+    "bytes": 4967,
+    "sha256": "617b4254c20cfb0c78f83c7f758612162b30d328609a64318c22692e180c16ee"
+  },
+  {
+    "path": "conformance/source-provenance.json",
+    "bytes": 2403,
+    "sha256": "2d2c62d01807995d42025e835f76cb18eabf4d818dbd5cf5a36dbd50661d28a6"
+  },
+  {
+    "path": "docs/benchmark-baseline.md",
+    "bytes": 2703,
+    "sha256": "027bf01f2d92becbccac61f115a309af033ebc113a56a4723590cc5da54834e4"
+  },
+  {
+    "path": "docs/formalization.md",
+    "bytes": 26869,
+    "sha256": "b36e68db211a0042fcca7a67dfebc3694c9140c360998518cd060ec6794e1264"
+  },
+  {
+    "path": "docs/roadmap.md",
+    "bytes": 3807,
+    "sha256": "f5e404c1c00fd2e9af3e4072e7f5f400996e28a839a2aa39d9c937ab767c3a3e"
+  },
+  {
+    "path": "docs/scaffold-sop.md",
+    "bytes": 2473,
+    "sha256": "aa7851a597b84a27095394a0f06c40e3aabeb3123e01edb6af3f8a019b3ad8a4"
+  },
+  {
+    "path": "docs/validation.md",
+    "bytes": 8569,
+    "sha256": "4d300d8f9222a8fb7712270cc03453c0d73c828bad148fcd0d7d8939a00a92ba"
+  },
+  {
+    "path": "formal/lean/Audit.lean",
+    "bytes": 2767,
+    "sha256": "2a81b1d209863671c2b68a94dec23d3e832057f9fd0b15b35570af93990f2c17"
+  },
+  {
+    "path": "formal/lean/DefinitionTransactions.lean",
+    "bytes": 14529,
+    "sha256": "2fb3907bb8016c541ed7c2d7cfdd86bc075f357cc3bcdef598150ba63add452b"
+  },
+  {
+    "path": "formal/lean/Replay.lean",
+    "bytes": 2712,
+    "sha256": "30c6efdf863baf002c5cd0d5faf9293ed9b0289c682660ac7cfbe8927f6f66f7"
+  },
+  {
+    "path": "formal/lean/StoredBindings.lean",
+    "bytes": 21555,
+    "sha256": "7c1bc7aa2e783ba183a5c20512ce03012aa9f0e1f4bce21b5312b15909e95e6d"
+  },
+  {
+    "path": "formal/lean/StoredBindingsAudit.lean",
+    "bytes": 3309,
+    "sha256": "852367d91584c35c114ef24de39ce35f8ae90a32cab61f0fa11cad5ef90d1a7c"
+  },
+  {
+    "path": "formal/lean/StoredBindingsReplay.lean",
+    "bytes": 3534,
+    "sha256": "4cd1d1732e5f3f77022966b5d12aadc65b12e284844121aa1f7f6434e5c001b0"
+  },
+  {
+    "path": "formal/lean/lean-toolchain",
+    "bytes": 25,
+    "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b"
+  },
+  {
+    "path": "formal/quint/DefinitionTransactions.qnt",
+    "bytes": 7348,
+    "sha256": "4a7dcd3075fb9ea9560a6883e7c527fa623be78e4220349eef671b3177cde408"
+  },
+  {
+    "path": "formal/quint/StoredBindings.qnt",
+    "bytes": 11634,
+    "sha256": "2bc13a5d30c7011a753e0bd42aaf7a6593f8071c811bcc210e823fe1f3e1ac1f"
+  },
+  {
+    "path": "formal/quint/package-lock.json",
+    "bytes": 31042,
+    "sha256": "30b0fc049c56f050817d1546a5eb10faba35af166774f3a28bd23760f3927993"
+  },
+  {
+    "path": "formal/quint/package.json",
+    "bytes": 238,
+    "sha256": "ba65b1813e0d1611c5eaeb1b40747d18665263d1b0094458fae46b266bb5668c"
+  },
+  {
+    "path": "formal/quint/replay.py",
+    "bytes": 4786,
+    "sha256": "960124d95806fe5061902f0c5c9164e0c07fc024c0c3ea7c3a2d38e8356ac4c4"
+  },
+  {
+    "path": "formal/quint/stored_replay.py",
+    "bytes": 6929,
+    "sha256": "8657201817f86c8c122e236820c96fff56ce3bf778eb21323545cf60c2df2589"
+  },
+  {
+    "path": "oracles/README.md",
+    "bytes": 1236,
+    "sha256": "8227d5b9e3786146767146532762cb120e6acc29781f5fbfc5cf066ddd2e4d4e"
+  },
+  {
+    "path": "policy/README.md",
+    "bytes": 1548,
+    "sha256": "60cc1f53b75b086e94a4ece08279b0e0201c55df7dc45169badb95c7496e5565"
+  },
+  {
+    "path": "reference/binding-trace.patch",
+    "bytes": 5070,
+    "sha256": "736c8e3c0cba1271123c12c33d1c45bcc3592f4ff3ba70e9053ed79b6d858d13"
+  },
+  {
+    "path": "reference/checker.goose",
+    "bytes": 23818,
+    "sha256": "0de9dfe21a2e95fd0468fd9365ff8e73a18a22e91f457dd4e16209bf740f0e0a"
+  },
+  {
+    "path": "schemas/binding-trace-v1.md",
+    "bytes": 8747,
+    "sha256": "686fcb151434707692fcf9d733f8bfdcff251d29542cc4e51be4a5467384e451"
+  },
+  {
+    "path": "schemas/definition-observations-v1.md",
+    "bytes": 3448,
+    "sha256": "5bfb8970ce78ea84f8a0f2c90522a13de2e66e76de55b9b3d93e811f214a28ad"
+  },
+  {
+    "path": "tests/test_formal.py",
+    "bytes": 9060,
+    "sha256": "c80f912baf16257d72bd6a0d8c2a8f8188402d14d6702810bbd4a8806e788abb"
+  },
+  {
+    "path": "tests/test_stored_bindings.py",
+    "bytes": 25244,
+    "sha256": "db785473bd037ce6adc6b5d10db2cf7ac133725206bbbc72631bf657f4df22e1"
+  },
+  {
+    "path": "tools/acceptance.py",
+    "bytes": 6880,
+    "sha256": "12d546b2e827039ea409aba8a6beee646b65388328c82f729288de4887151841"
+  },
+  {
+    "path": "tools/binding_trace_controls.py",
+    "bytes": 27622,
+    "sha256": "4613cc8c55bfd77bb0d09f807f31ba8999969fa753cd02d19df7287108007e46"
+  },
+  {
+    "path": "tools/build_goose.sh",
+    "bytes": 1938,
+    "sha256": "4a6fdfc54922cf902f35249c1b1b1d7a6b6af289761a4e3662903f5da003cba9"
+  },
+  {
+    "path": "tools/build_ocaml.sh",
+    "bytes": 2070,
+    "sha256": "229f15de957372f8eeb82dbc4fe7eeed474bc95ad379bcee0b84f12a5d989d93"
+  },
+  {
+    "path": "tools/check_formal.py",
+    "bytes": 20164,
+    "sha256": "57147563fa0f19db74099bd6c2b09d3bbe4045351d6cf351f0c2cbed5570cb28"
+  },
+  {
+    "path": "tools/check_stored_bindings.py",
+    "bytes": 11759,
+    "sha256": "071d755ec90920bdce5a2811ce5c4e5340db34b5cdd780a7f2ad2791a81021dc"
+  },
+  {
+    "path": "tools/estate-audit.sh",
+    "bytes": 1197,
+    "sha256": "ddf0175a81059635f422f52e430c8b787a52bf16cc097c3bbe2aed7fd380c6e4"
+  },
+  {
+    "path": "tools/run.py",
+    "bytes": 20063,
+    "sha256": "55a2681c7cb2bf147da8bda284f51da895d76393522bc58ab4e4eab6267605b7"
+  },
+  {
+    "path": "tools/runtime.py",
+    "bytes": 13056,
+    "sha256": "24ca100d5dcc58912660608b24f4f9a33b2b89a1edb437caed552f4df659427c"
+  },
+  {
+    "path": "tools/source_derivation.py",
+    "bytes": 4022,
+    "sha256": "b0806fa0c1880de9f783773a6717defb5c20e80e11f91a8dab09f6152efc5c5f"
+  },
+  {
+    "path": "tools/stored_binding_profile.py",
+    "bytes": 12286,
+    "sha256": "0302b53027d461009f0b8d99b7687f759cde78ca57c3747a2e45e8273dabd9d1"
+  },
+  {
+    "path": "tools/transaction_profile.py",
+    "bytes": 4998,
+    "sha256": "8cfe4ca660a43f2e6fff9fb264dacdc2bbfd7a1cb08cb1c4a408f838fbdeaf1b"
+  }
+]

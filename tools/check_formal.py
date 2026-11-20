@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import gzip
 import hashlib
 import json
 import os
@@ -14,19 +15,21 @@ import tempfile
 import tomllib
 
 import acceptance
+import check_stored_bindings as stored
 import runtime
 import transaction_profile as profile
 
 ROOT = runtime.ROOT
 LEAN_TOOLCHAIN = "leanprover/lean4:v4.34.1"
 LEAN_COMMIT = "5045d0056413266e57c625dcd7c365b10e377c52"
+LEAN_FLAGS = ["--threads=1"]
 QUINT_TOOLCHAIN = "@informalsystems/quint@0.33.1"
 NODE_VERSION = "v24.22.3"
 SEED = "20261120"
-LEAN_SOURCES = {"formal/lean/DefinitionTransactions.lean", "formal/lean/Audit.lean", "formal/lean/Replay.lean"}
-QUINT_SOURCES = {"formal/quint/DefinitionTransactions.qnt"}
+LEAN_SOURCES = {"formal/lean/DefinitionTransactions.lean", "formal/lean/Audit.lean", "formal/lean/Replay.lean"} | stored.LEAN_SOURCES
+QUINT_SOURCES = {"formal/quint/DefinitionTransactions.qnt"} | stored.QUINT_SOURCES
 IMPLEMENTATIONS = {"reference/checker.goose", "tools/run.py", "tools/runtime.py", "tools/acceptance.py",
-                   "tools/check_formal.py", "tools/transaction_profile.py", "formal/quint/replay.py"}
+                   "tools/check_formal.py", "tools/transaction_profile.py", "formal/quint/replay.py"} | stored.IMPLEMENTATIONS
 LEAN_OBLIGATIONS = {"GooseTransactions." + name for name in (
     "initial_invariant", "step_preserves_invariant", "run_preserves_invariant",
     "run_environment_exact", "run_environment_unique", "run_success_count_exact",
@@ -69,8 +72,8 @@ def configuration(root: Path) -> tuple[dict, list[str]]:
     if spec["gate"] != "tools/check_formal.py" or set(spec["implementation_paths"]) != IMPLEMENTATIONS:
         raise ValueError("manifest implementation scope differs from the executed formal profile")
     for lane, sources, pin, obligations in (
-        ("lean", LEAN_SOURCES, LEAN_TOOLCHAIN, LEAN_OBLIGATIONS),
-        ("quint", QUINT_SOURCES, QUINT_TOOLCHAIN, QUINT_TESTS | {"safety"}),
+        ("lean", LEAN_SOURCES, LEAN_TOOLCHAIN, LEAN_OBLIGATIONS | stored.LEAN_OBLIGATIONS),
+        ("quint", QUINT_SOURCES, QUINT_TOOLCHAIN, QUINT_TESTS | {"safety"} | stored.QUINT_OBLIGATIONS),
     ):
         row = spec[lane]
         if set(row) != {"toolchain", "sources", "obligations"} \
@@ -88,6 +91,7 @@ def configuration(root: Path) -> tuple[dict, list[str]]:
     paths = sorted(LEAN_SOURCES | QUINT_SOURCES | IMPLEMENTATIONS | {
         "ESTATE.toml", spec["scope"], "formal/lean/lean-toolchain", "formal/quint/package.json",
         "formal/quint/package-lock.json", "conformance/dependencies.json", "conformance/source-provenance.json",
+        "schemas/binding-trace-v1.md",
     })
     for path in paths:
         owned(root, path)
@@ -103,7 +107,8 @@ def covered_inputs(root: Path, files: list[dict]) -> tuple[dict, list[str]]:
 
 
 def run(command: list[str], cwd: Path, output: Path, receipt: dict, name: str,
-        *, env: dict | None = None, stdin: str | None = None, expected_exit: int = 0) -> str:
+        *, env: dict | None = None, stdin: str | None = None, expected_exit: int = 0,
+        compress_log: bool = False) -> str:
     row = {"name": name, "command": command, "cwd": str(cwd), "started_at_utc": acceptance.now()}
     if stdin is not None:
         row["stdin_sha256"] = hashlib.sha256(stdin.encode()).hexdigest()
@@ -119,8 +124,14 @@ def run(command: list[str], cwd: Path, output: Path, receipt: dict, name: str,
     except (OSError, subprocess.TimeoutExpired) as error:
         text = f"{type(error).__name__}: {error}\n"
         row.update(exit_code=None, execution_error=type(error).__name__)
-    log = output / f"{name}.log"
-    log.write_text(text)
+    log = output / (f"{name}.log.gz" if compress_log else f"{name}.log")
+    encoded = text.encode()
+    if compress_log:
+        log.write_bytes(gzip.compress(encoded, mtime=0))
+        row.update(log_encoding="gzip", uncompressed_bytes=len(encoded),
+                   uncompressed_sha256=hashlib.sha256(encoded).hexdigest())
+    else:
+        log.write_bytes(encoded)
     row.update(finished_at_utc=acceptance.now(), log=log.name, log_sha256=runtime.sha256(log))
     save(output / "results.json", receipt)
     if row["exit_code"] != expected_exit:
@@ -184,6 +195,7 @@ def execute(output: Path, receipt: dict) -> None:
         goose = Path(os.environ.get("GOOSE", str(context["goose_path"] / "build/goose"))).absolute()
         executables = {"lean": lean, "quint_cli": quint, "node": node, "gcc": gcc, "goose": goose}
         receipt["toolchains"] = {"lean": lean_version, "quint": "0.33.1", "node": NODE_VERSION,
+                                 "lean_flags": LEAN_FLAGS,
                                  "quint_backend": "typescript", "executables": fingerprint(executables)}
         lean_build = build / "lean"
         lean_build.mkdir()
@@ -191,15 +203,15 @@ def execute(output: Path, receipt: dict) -> None:
             shutil.copyfile(ROOT / source, lean_build / Path(source).name)
         env = dict(os.environ, LEAN_PATH=str(lean_build), QUINT=str(quint))
         model = lean_build / "DefinitionTransactions.olean"
-        run([str(lean), "-o", str(model), "DefinitionTransactions.lean"], lean_build, output, receipt,
+        run([str(lean), *LEAN_FLAGS, "-o", str(model), "DefinitionTransactions.lean"], lean_build, output, receipt,
             "lean-build", env=env)
-        audit = run([str(lean), "Audit.lean"], lean_build, output, receipt, "lean-axiom-audit", env=env)
+        audit = run([str(lean), *LEAN_FLAGS, "Audit.lean"], lean_build, output, receipt, "lean-axiom-audit", env=env)
         if "Goose transaction axiom audit passed: 21 required theorems without axioms;" not in audit:
             raise ValueError("Lean audit did not confirm its entire required theorem inventory")
         receipt["lean"] = {"status": "passed", "obligations": sorted(LEAN_OBLIGATIONS),
                            "required_theorem_axioms": [], "namespace_support_axiom_allowlist": ["propext"],
                            "compiled_model_sha256": runtime.sha256(model)}
-        lean_results = profile.decode_models(run([str(lean), "--run", "Replay.lean"], lean_build,
+        lean_results = profile.decode_models(run([str(lean), *LEAN_FLAGS, "--run", "Replay.lean"], lean_build,
             output, receipt, "lean-replay", env=env, stdin=inputs), inventory)
         quint_root = ROOT / "formal/quint"
         run([str(quint), "typecheck", "DefinitionTransactions.qnt"], quint_root, output, receipt, "quint-typecheck")
@@ -260,6 +272,8 @@ def execute(output: Path, receipt: dict) -> None:
             "inputs": "transaction-inputs.txt", "inputs_sha256": runtime.sha256(output / "transaction-inputs.txt"),
             "log": comparison.name, "log_sha256": runtime.sha256(comparison),
             "native_command_template": [str(binary), "--check", str(fixture)]}
+        stored.execute(output=output, receipt=receipt, build=build, lean_build=lean_build,
+                       lean=lean, lean_flags=LEAN_FLAGS, quint=quint, binary=binary, env=env, seed=SEED, run=run)
         receipt["dependencies_after"] = runtime.verify_dependencies(context)
         if receipt["dependencies_before"] != receipt["dependencies_after"]:
             raise ValueError("external dependency source changed during formal verification")
@@ -274,10 +288,10 @@ def verify(output: Path) -> int:
     if output.is_relative_to(ROOT) and not output.is_relative_to(acceptance.EVIDENCE):
         raise ValueError("formal output must be under conformance/evidence or outside the repository")
     output.mkdir(parents=True, exist_ok=True)
-    receipt = {"schema": "lean-goose.formal-evidence.v1", "status": "running",
+    receipt = {"schema": "lean-goose.formal-evidence.v2", "status": "running",
         "started_at_utc": acceptance.now(), "evidence_only": True, "acceptance_authority": False,
         "hosted_results_included": False, "implementation_correspondence": "finite_profile_only",
-        "scope": "ordered definition transactions over abstract action classes; no full kernel refinement",
+        "scope": "ordered transactions and complete stored bindings over abstract action classes; no full kernel refinement",
         "commands": [], "excluded_build_directories": sorted(acceptance.SKIP_DIRS),
         "excluded_build_suffixes": sorted(acceptance.SKIP_SUFFIXES),
         "excluded_evidence_directory": "conformance/evidence/"}

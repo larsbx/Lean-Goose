@@ -1,0 +1,83 @@
+{
+  "schema": "lean-goose.local-verification.v1",
+  "status": "failed",
+  "started_at_utc": "2026-11-20T12:14:55.644018+00:00",
+  "acceptance_authority": false,
+  "authority": "unsigned_local_test_observations_only",
+  "hosted_results_included": false,
+  "source_manifest": "conformance/evidence/source-manifest.json",
+  "evidence_directory_excluded_from_source_digest": "conformance/evidence/",
+  "source_digest_encoding": "SHA-256 of sorted path/bytes/sha256 objects; compact JSON with sorted keys",
+  "excluded_build_directories": [
+    ".cache",
+    ".git",
+    ".lake",
+    ".venv",
+    "__pycache__",
+    "_build",
+    "build",
+    "coverage",
+    "dist",
+    "node_modules"
+  ],
+  "excluded_build_suffixes": [
+    ".cmi",
+    ".cmo",
+    ".cmx",
+    ".ilean",
+    ".o",
+    ".olean",
+    ".pyc"
+  ],
+  "checks": [
+    {
+      "name": "estate-audit",
+      "command": [
+        "sh",
+        "tools/estate-audit.sh",
+        "/workspace/scratch/a402432e12bc/estate-governance/kernel/audit_estate_layout.py"
+      ],
+      "started_at_utc": "2026-11-20T12:14:55.742071+00:00",
+      "status": "passed",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T12:14:56.208727+00:00",
+      "log": "conformance/evidence/estate-audit.log",
+      "log_sha256": "acf2e33b9d74e6940bed53c988ff6e125669fcce14eb89a984c222c5526ffdf5"
+    },
+    {
+      "name": "formal-tests",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "started_at_utc": "2026-11-20T12:14:56.213927+00:00",
+      "status": "passed",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-20T12:14:57.046846+00:00",
+      "log": "conformance/evidence/formal-tests.log",
+      "log_sha256": "3ba75151ba28779f0f2ffb18662bd343cca528ae89aba46be65fa55895a53d12"
+    },
+    {
+      "name": "formal",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tools/check_formal.py"
+      ],
+      "started_at_utc": "2026-11-20T12:14:57.048641+00:00",
+      "status": "failed",
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-20T12:20:22.236398+00:00",
+      "log": "conformance/evidence/formal.log",
+      "log_sha256": "ba9084adefdcd5595091de8935b42181d60ed55eaf9ee144203f89fd82ee9c4e"
+    }
+  ],
+  "base_revision": "d14aa4fde522cd2a74c9df2e87dd8a7d4a38759b",
+  "source_tree_sha256": "88c0002bced04e2089ce6875cdac3d9938e9c2e74a71ffef96d12447d6c8c05e",
+  "failure": "RuntimeError: formal failed; see conformance/evidence/formal.log",
+  "finished_at_utc": "2026-11-20T12:20:22.252317+00:00"
+}
