@@ -1,0 +1,37 @@
+{
+  "schema": "lean-goose.typing-conversion-review.v1",
+  "source_revision": "3718d12fbe977ed322faa10fe81143b3ddbcb0f3",
+  "source_tree_sha256": "9f167c6549e77d58a60b540baca0cda5b4c8ca3307e2ed0917e7c9596a8422d4",
+  "publication_status": "approved_for_pull_request_and_merge",
+  "files": [
+    {
+      "path": "typing-conversion-review.md",
+      "sha256": "74a5904cae5b108530442672fb8618407742467480b76a78f2b432f2ee84bf17"
+    },
+    {
+      "path": "typing-conversion-proposal.patch",
+      "sha256": "d618d18fe2305d422e1843130609f7a9322691145c90a0b2aedd3248d665c21b"
+    },
+    {
+      "path": "verification.json",
+      "sha256": "982c469229a7d3580900c618544838b3167f5af5dea708e8cc960904416f81df"
+    },
+    {
+      "path": "source-manifest.json",
+      "sha256": "a8799db4421c865dc6263d7dcd00ec39c371fab6aa8fa7ccc472b49d31be89ef"
+    },
+    {
+      "path": "formal/results.json",
+      "sha256": "10de50b8e216a75e31e67448eba8df8f680d3442c906ab0878f5274bf79961cc"
+    },
+    {
+      "path": "check/results.json",
+      "sha256": "10295c98ea61b2932541d582b0e124bc22257813e5cc926e2c9ea9788dc383d3"
+    },
+    {
+      "path": "smoke/results.json",
+      "sha256": "f75504417d9c9385edf9d8f570f0eaa953ee7290e226e310177440f578eccba7"
+    }
+  ],
+  "publication_authorization": "User instruction: Open the PR against main and merge"
+}

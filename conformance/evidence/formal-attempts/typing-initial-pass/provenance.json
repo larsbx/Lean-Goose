@@ -1,0 +1,8 @@
+{
+  "description": "Completed first acceptance pass before correcting repeat-run fixture-directory creation. Retained as historical evidence for its exact original source only.",
+  "source_revision": "b8b53413a1fb735d244579897ae9157aa071a6b2",
+  "source_tree_sha256": "bd19a0116c2075d7704d7e5e21d5187848a9485391b5fbe56fd3e8a8b131dba6",
+  "recorded_status": "passed",
+  "archive": "acceptance.tar.gz",
+  "archive_sha256": "1afee5c2acfb05195789990fcce669c33932babfd7f8bf66865a615d90ea0859"
+}

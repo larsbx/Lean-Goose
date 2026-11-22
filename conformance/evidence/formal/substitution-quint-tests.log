@@ -31,4 +31,4 @@
     ok triangularRowsCoverAllContextsTest passed 1 test(s)
     ok simulationBoundStuttersTest passed 1 test(s)
 
-  30 passing (160ms)
+  30 passing (95ms)

@@ -15,4 +15,4 @@ Observed distinct_trees: 128 ordered outcomes match expectations.
 Observed unshared_trees: 128 ordered outcomes match expectations.
 Observed dependent_terms: 128 ordered outcomes match expectations.
 Observed alias_diamonds: 128 ordered outcomes match expectations.
-check: passed finite observation checks; evidence only. Receipt: /workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/check/results.json
+check: passed finite observation checks; evidence only. Receipt: /workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/results.json

@@ -12,7 +12,7 @@
   {
     "path": ".github/workflows/conformance.yml",
     "bytes": 3997,
-    "sha256": "145f2de9582fdb7a4d2d3aea98f89e3cde7d1e2cffca1b040047a660971753a5"
+    "sha256": "a7a3aaad9f60b3fd859c31b8bf9d22a4ae15b2edd0e1bf874ee7408ce88c0be8"
   },
   {
     "path": ".gitignore",
@@ -26,18 +26,18 @@
   },
   {
     "path": "ARCHITECTURE.md",
-    "bytes": 10432,
-    "sha256": "620c97836f149a559007a9523b1161053a8e5cd4a19447cc75e2852b9dd605f4"
+    "bytes": 11716,
+    "sha256": "013dda27b3013d0b0aac20edb52b77bd43c7714265e622f37b4d174282654f1b"
   },
   {
     "path": "ESTATE.toml",
-    "bytes": 12523,
-    "sha256": "a10b123e6ffd3e6341419ef4b383ae7d635a79939b3cd581548d66d8f3000fb5"
+    "bytes": 15741,
+    "sha256": "d1bdbed29fe8c555ac97f184ef42e96a0021138499e96dff1d1c7c942640b5de"
   },
   {
     "path": "LANGUAGE_BOUNDARIES.md",
-    "bytes": 2314,
-    "sha256": "bc434f4d508a404ba6831406c55e605f6aeb42cafcfbd24ebe9fe142c8a31d21"
+    "bytes": 2719,
+    "sha256": "a4b6e059b13e81016d27d27cda1e403e06a54b511944d27bf0882ec3406d6098"
   },
   {
     "path": "Makefile",
@@ -46,8 +46,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 9295,
-    "sha256": "79de446f70aa4923a85b73a5d87c5c381e0a6ce220af4e0282da79f89792721f"
+    "bytes": 10446,
+    "sha256": "3c1d2f6ddfa46e24fbb8993cb397827dec68621366f19f5d2acdab2cf11e1647"
   },
   {
     "path": "conformance/dependencies.json",
@@ -71,13 +71,13 @@
   },
   {
     "path": "docs/formalization.md",
-    "bytes": 33400,
-    "sha256": "acd34f97477668ee57a4961f057b16b84ad5649bc1d29c755381a325afe8e276"
+    "bytes": 34566,
+    "sha256": "29bdb8cbdd040569c6537a2c96ecf1b330b667162fc14c6c1b30261c177971bf"
   },
   {
     "path": "docs/roadmap.md",
-    "bytes": 3710,
-    "sha256": "9e2192c0bfd0b02de93f2ab0462451edb9e2275773f51bd50540385ac2a0441e"
+    "bytes": 4489,
+    "sha256": "217ca9c8982304c79b8040e59f3fff2ed2e3512c9113272285082d449a636897"
   },
   {
     "path": "docs/scaffold-sop.md",
@@ -90,9 +90,14 @@
     "sha256": "957d2cf94675aa68b50f22427c54655bf5d6af1b2b6e06d53f3dc56fbcaad18e"
   },
   {
+    "path": "docs/typing-conversion.md",
+    "bytes": 14160,
+    "sha256": "1d893b1e0cab75c1327dca9edb47ed181e142b45ed2a8393101a7116e4b7dc7c"
+  },
+  {
     "path": "docs/validation.md",
-    "bytes": 12989,
-    "sha256": "8a28772122f27b8d8f3bca68cef1f437475066c673e5905f5429f0e19484b1b7"
+    "bytes": 14517,
+    "sha256": "04b10c69a8b796fde773e3aaf77b6913b014a4e1039a7973be5f5370d0eb4895"
   },
   {
     "path": "formal/lean/Audit.lean",
@@ -155,6 +160,21 @@
     "sha256": "9edb9080d08e500bd31503c69d3137db7d0c2b80c2ca3f187fcbc4adb996202e"
   },
   {
+    "path": "formal/lean/TypingConversion.lean",
+    "bytes": 34064,
+    "sha256": "436a2ccf0026dbfde81712d1300d2df14d23e5a56efc26f9976de3bcc6fc2f50"
+  },
+  {
+    "path": "formal/lean/TypingConversionAudit.lean",
+    "bytes": 3444,
+    "sha256": "df65ba6b7a772531cab58c2026055a16f7ff6fe9ed8afd7b7dde01ac9abfab18"
+  },
+  {
+    "path": "formal/lean/TypingConversionReplay.lean",
+    "bytes": 8559,
+    "sha256": "d40dca5ac5b535397cab4c9db65077f8cde0d87822fa7c8627830476f2837951"
+  },
+  {
     "path": "formal/lean/lean-toolchain",
     "bytes": 25,
     "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b"
@@ -178,6 +198,11 @@
     "path": "formal/quint/Substitution.qnt",
     "bytes": 17182,
     "sha256": "60fe6643cc3b5b8558bdff3dfd4eaaedab93fb24fd2fc76b86e17b4df62864c8"
+  },
+  {
+    "path": "formal/quint/TypingConversion.qnt",
+    "bytes": 24982,
+    "sha256": "9b5d1995519044e58f0bf36d145dd250cabd7a058749d0de02a9f59c23f28496"
   },
   {
     "path": "formal/quint/dag_replay.py",
@@ -208,6 +233,11 @@
     "path": "formal/quint/substitution_replay.py",
     "bytes": 9388,
     "sha256": "acc2588d11e69be59adebed5dedb28468c44f27a72a13403d588c366f06f877c"
+  },
+  {
+    "path": "formal/quint/typing_replay.py",
+    "bytes": 9586,
+    "sha256": "7e63ecb97ccd54ce30a85a26a5792d2cc830e6513b8718dedac1a06e55243c39"
   },
   {
     "path": "oracles/README.md",
@@ -255,6 +285,11 @@
     "sha256": "a7681c6ccef9d826de55600deb2a4217e65bfa6750834811dbce94ad8e6fc113"
   },
   {
+    "path": "schemas/typing-conversion-replay-v1.md",
+    "bytes": 5637,
+    "sha256": "c3a10729d3878fc9bcb8d622af10a0065b4b350851ebd8cfc09ffd51b3be4186"
+  },
+  {
     "path": "tests/test_expression_dag.py",
     "bytes": 21820,
     "sha256": "c14465193ae80552d3d1e46565e80a0dc06d3f72ffa3d6e06ab4ade47c02614c"
@@ -275,9 +310,14 @@
     "sha256": "d559cc7466898671c5c1e36697c5c39b235af0ff78ce23535d308b5b06ad4e8d"
   },
   {
+    "path": "tests/test_typing_conversion.py",
+    "bytes": 20353,
+    "sha256": "2f59d5e57f268cdd1e54c47b57ee0071951848dc9dd87c4de8a8fc47ed3a84a3"
+  },
+  {
     "path": "tools/acceptance.py",
     "bytes": 7179,
-    "sha256": "43d5b6aab17fa322206c9b118c89503e3c9faf868b80468e51c80c38fb10c220"
+    "sha256": "33a7d3ac0031ed4a26cd005abce22285fca7706087a17c34f22be1299cf74bbd"
   },
   {
     "path": "tools/binding_trace_controls.py",
@@ -301,8 +341,8 @@
   },
   {
     "path": "tools/check_formal.py",
-    "bytes": 21210,
-    "sha256": "6e769eceb46e75229cd0e188de180c5ce86b59e6cfea6d55607330cfbb9a43c4"
+    "bytes": 21670,
+    "sha256": "072d36c573272309f74ea103d659f07b170a005a1d7209ab7144a827dfdff006"
   },
   {
     "path": "tools/check_stored_bindings.py",
@@ -313,6 +353,11 @@
     "path": "tools/check_substitution.py",
     "bytes": 22931,
     "sha256": "875a055de2fa61424db09b84193c2a58135e937da8c1fb82e8f2beceb9ddefb0"
+  },
+  {
+    "path": "tools/check_typing_conversion.py",
+    "bytes": 18393,
+    "sha256": "c9c3cbb1f4d5a07a018c405ac18f53b86e7ca36a0690bc91e4f90ec65b48f104"
   },
   {
     "path": "tools/estate-audit.sh",
@@ -326,13 +371,13 @@
   },
   {
     "path": "tools/run.py",
-    "bytes": 20063,
-    "sha256": "55a2681c7cb2bf147da8bda284f51da895d76393522bc58ab4e4eab6267605b7"
+    "bytes": 20220,
+    "sha256": "cf75f553135c80f1fb5808a6a2d4723fda9750c596433f0988b8f5b9a2fec5f9"
   },
   {
     "path": "tools/runtime.py",
-    "bytes": 13056,
-    "sha256": "24ca100d5dcc58912660608b24f4f9a33b2b89a1edb437caed552f4df659427c"
+    "bytes": 13443,
+    "sha256": "35ecfe542756fd6f65cbc4988dbd86499145e14a34f4dfeaa0f1e0ed49fee742"
   },
   {
     "path": "tools/source_derivation.py",
@@ -358,5 +403,10 @@
     "path": "tools/transaction_profile.py",
     "bytes": 4998,
     "sha256": "8cfe4ca660a43f2e6fff9fb264dacdc2bbfd7a1cb08cb1c4a408f838fbdeaf1b"
+  },
+  {
+    "path": "tools/typing_conversion_profile.py",
+    "bytes": 23488,
+    "sha256": "c33f32cede592e62930a12e8e655deba7fe0d18b70ec44ec089e47151b2221d1"
   }
 ]

@@ -162,5 +162,64 @@ substitution-quint-replay-019: exit 0
 substitution-goose-emit: exit 0
 substitution-goose-build: exit 0
 Substitution correspondence: 2546 model cases, 2540 actual function results, 2576 native commands passed.
+typing-lean-build: exit 0
+typing-lean-axiom-audit: exit 0
+typing-quint-typecheck: exit 0
+typing-quint-tests: exit 0
+typing-quint-bounded-run: exit 0
+typing-quint-negative-control: exit 1
+typing-lean-replay: exit 0
+typing-quint-replay: exit 0
+typing-lean-reject-empty-stream: exit 2
+typing-quint-reject-empty-stream: exit 1
+typing-lean-reject-blank-line: exit 2
+typing-quint-reject-blank-line: exit 1
+typing-lean-reject-broken-json: exit 2
+typing-quint-reject-broken-json: exit 1
+typing-lean-reject-unknown-key: exit 2
+typing-quint-reject-unknown-key: exit 1
+typing-lean-reject-missing-key: exit 2
+typing-quint-reject-missing-key: exit 1
+typing-lean-reject-boolean-fuel: exit 2
+typing-quint-reject-boolean-fuel: exit 1
+typing-lean-reject-negative-fuel: exit 2
+typing-quint-reject-negative-fuel: exit 1
+typing-lean-reject-float-fuel: exit 2
+typing-quint-reject-float-fuel: exit 1
+typing-lean-reject-excess-fuel: exit 2
+typing-quint-reject-excess-fuel: exit 1
+typing-lean-reject-empty-nodes: exit 2
+typing-quint-reject-empty-nodes: exit 1
+typing-lean-reject-empty-definitions: exit 2
+typing-quint-reject-empty-definitions: exit 1
+typing-lean-reject-excess-nodes: exit 2
+typing-quint-reject-excess-nodes: exit 1
+typing-lean-reject-excess-definitions: exit 2
+typing-quint-reject-excess-definitions: exit 1
+typing-lean-reject-definition-selector-outside: exit 2
+typing-quint-reject-definition-selector-outside: exit 1
+typing-lean-reject-boolean-selector: exit 2
+typing-quint-reject-boolean-selector: exit 1
+typing-lean-reject-invalid-definition-name: exit 2
+typing-quint-reject-invalid-definition-name: exit 1
+typing-lean-reject-self-reference: exit 2
+typing-quint-reject-self-reference: exit 1
+typing-lean-reject-noncanonical-unused-field: exit 2
+typing-quint-reject-noncanonical-unused-field: exit 1
+typing-lean-reject-unknown-tag: exit 2
+typing-quint-reject-unknown-tag: exit 1
+typing-lean-reject-boolean-payload: exit 2
+typing-quint-reject-boolean-payload: exit 1
+typing-lean-reject-shared-expansion-envelope: exit 2
+typing-quint-reject-shared-expansion-envelope: exit 1
+typing-lean-reject-duplicate-key: exit 2
+typing-quint-reject-duplicate-key: exit 1
+typing-lean-reject-nonfinite-fuel: exit 2
+typing-quint-reject-nonfinite-fuel: exit 1
+typing-lean-reject-exponent-fuel: exit 2
+typing-quint-reject-exponent-fuel: exit 1
+typing-lean-model-exhaustion: exit 0
+typing-quint-model-exhaustion: exit 0
+Typing/conversion: 48 full-field native/model cases passed.
 Native finite correspondence: 1110 traces passed.
-Formal verification passed: /workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/formal/results.json
+Formal verification passed: /workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/formal/results.json
