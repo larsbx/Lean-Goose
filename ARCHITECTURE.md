@@ -12,7 +12,7 @@ inventory describes the implementation rather than assigning authority.
 | --- | --- |
 | `policy/` | Governance, evidence, and publication policy |
 | `reference/` | Locally owned, bounded Goose checking observations |
-| `formal/` | Lean transaction, full-record binding, DAG/scope, and substitution proofs with independent Quint checks |
+| `formal/` | Lean transaction, full-record binding, DAG/scope, substitution, and typing/conversion proofs with independent Quint checks |
 | `oracles/` | Contract for pinned external Lean and OCaml comparisons |
 | `schemas/` | Versioned input and observation contracts |
 | `conformance/` | Source identities, dependency pins, and generated observations |
@@ -109,6 +109,25 @@ trace-envelope refusals are separate from pure mathematical topology refusal.
 See [the substitution scope](docs/substitution.md) and its
 [replay contract](schemas/substitution-replay-v1.md). This finite comparison is
 not a general refinement proof of the concrete functions.
+
+The fifth lane reuses those expressions and transformations to specify the
+checker's numeric-sort inference and beta/zeta/delta conversion. Successful
+execution of the Lean model derives independent typing and reduction judgments.
+The definition-checking bridge connects normalized inferred types to original
+declared types and exact stored records. A dedicated model recursion budget is
+distinct from native work accounting. The owned checker and earlier four model
+sources are unchanged.
+
+The gate adds 32 required axiom-free Lean theorems, 26 deterministic Quint tests,
+bounded exploration, and a precise wrong-inferred-field negative witness.
+Both actual models replay 48 authored compound cases; native `--trace` and
+`--check` execute each case. Forty-four common-fragment fixtures additionally
+produce 59 ordered outcomes per external engine in the conformance gate.
+Those external drivers observe success/refusal, while the native diagnostic
+interface exposes full stored fields. See [typing/conversion](docs/typing-conversion.md).
+This proves successful model evaluation satisfies its rules and supplies finite
+implementation evidence. General environment invariants, typed reduction
+preservation, totality, completeness and native refinement remain open.
 
 ### Observable diagnostic interface
 

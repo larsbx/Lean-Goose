@@ -2,7 +2,7 @@
 
 The required formal scope includes ordered-name transactions, complete
 stored-binding preservation, structural expression DAGs with binder scope,
-and capture-avoiding lifting/substitution.
+capture-avoiding lifting/substitution, and numeric-sort typing with beta/zeta/delta conversion.
 The original 1,110-case and 2,954-case lanes remain. The
 [DAG lane](expression-dag-scope.md) connects all seven raw node kinds to
 structural expressions, proves recursive scope laws, and adds native probes at
@@ -10,19 +10,29 @@ four binder depths plus malformed topology and context controls.
 The [substitution lane](substitution.md) adds scope and index laws, arbitrary
 nested-lambda noncapture, and direct comparisons with actual Goose `lift` and
 `substitute`, including capture, malformed-scope, and resource controls.
+The [typing/conversion lane](typing-conversion.md) connects successful model
+evaluation to independent typing/reduction judgments, compares compound stored
+fields and refusals against native Goose, and adds common-fragment outcome
+comparisons with pinned Lean and OCaml. General implementation refinement is
+still separate from this model soundness and finite evidence.
 The proof scope and required execution inventories are in
 [formalization.md](formalization.md). A particular revision is verified only when
 its matching execution receipt records the required gates as passed.
 
-1. **Typing and conversion correspondence:** extend the formal mapping to
-   inference and beta/zeta reduction for the supported fragment. Exercise stored
-   type/value/inferred fields for compound expressions and verify rejection
-   behavior as well as successful cases. Eta, proof irrelevance, and unsupported
-   Lean features retain their explicit boundaries until separately implemented.
+1. **Typing metatheory and semantic environments:** define well-formed bindings
+   and contexts, prove their preservation across successful traces, and connect
+   this semantic environment to the earlier full-record model. Then establish
+   sufficient-budget completeness, deterministic normal forms and typed
+   beta/zeta preservation for a precisely stated admissible fragment.
+   Successful model inference already derives the independent rules; general
+   completeness and native correspondence are not consequences of that result.
+   Eta, proof irrelevance and unsupported Lean features retain their boundaries.
 2. **Implementation refinement:** prove the relation between model transitions,
    concrete binding lookup, DAG decoding, and the native checker. The present
    Lean statements preserve arbitrary model records and define structural DAG
-   decoding, scope, lifting, and substitution; native comparison remains finite.
+   decoding, scope, lifting, substitution, and typing/reduction soundness;
+   native comparison remains finite. Refine concrete inference, validation,
+   conversion and error behavior as well as transformations.
    Prove refinement of the actual transformation functions and their metadata
    optimizations. Add evidence for the diagnostic
    serializer and its snapshot timing without treating diagnostic output alone
@@ -33,7 +43,7 @@ its matching execution receipt records the required gates as passed.
    Diagnostic trace bounds and checker resource limits are separate contracts;
    existing cache state, contexts, and fuel are outside the stored-binding model.
 4. **Fresh unshared syntax:** profile arena import, metadata construction, and
-   inference on `unshared_trees`. Preserve all four formal scopes, full positive and
+   inference on `unshared_trees`. Preserve all five formal scopes, full positive and
    refusal conformance, and trace compatibility when optimizing representations
    or caches. Re-run the full performance experiment on the new source revision
    before making a new speed claim.
