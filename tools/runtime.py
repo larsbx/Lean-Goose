@@ -165,9 +165,14 @@ def verify_estate_dependencies(config: dict[str, Any], manifest: Path | None = N
 
 
 def source_files() -> list[dict[str, Any]]:
-    paths = ["ESTATE.toml", "reference/checker.goose", "tools/runtime.py", "tools/run.py",
+    paths = {"ESTATE.toml", "reference/checker.goose", "tools/runtime.py", "tools/run.py",
              "tools/source_derivation.py", "reference/binding-trace.patch",
-             "conformance/dependencies.json", "conformance/source-provenance.json"]
+             "conformance/dependencies.json", "conformance/source-provenance.json"}
+    # Bind the complete local Python comparison dependency set; the outer
+    # acceptance source snapshot is a separate source-bound guarantee.
+    paths.update(path.relative_to(ROOT).as_posix() for path in (ROOT / "tools").glob("*.py"))
+    if any((ROOT / path).is_symlink() for path in paths):
+        raise RuntimeError("comparison source symlinks are outside the receipt contract")
     return [{"path": path, "sha256": sha256(ROOT / path), "bytes": (ROOT / path).stat().st_size}
             for path in sorted(paths)]
 

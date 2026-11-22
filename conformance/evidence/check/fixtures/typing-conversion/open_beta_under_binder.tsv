@@ -1,0 +1,8 @@
+lean-ocaml-benchmark-dag-v1
+n	0	s	1
+n	1	p	0	0
+n	2	v	0
+n	3	l	0	2
+n	4	a	3	2
+n	5	l	0	4
+d	openBeta	1	5

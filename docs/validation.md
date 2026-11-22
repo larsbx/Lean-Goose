@@ -44,7 +44,7 @@ in the local Goose source.
 | `make pins` | External checkout and local source-provenance verification |
 | `make test` | Full finite observation comparison against native Lean and OCaml |
 | `make formal-tests` | Formal-runner acceptance and rejection controls |
-| `make formal` | All four Lean proof inventories and axiom audits, independent Quint models, finite transaction/binding/DAG/substitution comparisons, and native controls |
+| `make formal` | All five Lean proof inventories and axiom audits, independent Quint models, finite transaction/binding/DAG/substitution/typing comparisons, and native controls |
 | `make smoke` | Small fresh three-engine benchmark execution |
 | `make audit` | Pinned external estate v3 manifest audit |
 | `make acceptance` | All required gates, logs, source manifest, and verification receipt |
@@ -159,7 +159,7 @@ Quint replay uses sequential fresh invocations of at most 256 requests, bounding
 REPL source/history growth. Exact chunk offsets, counts, and input hashes link
 every command to the complete ordered inventory. Lean evaluates the same entire
 inventory, and each Quint chunk is compared with the corresponding Lean slice.
-The repository runner allows 2,400 seconds for the expanded four-scope formal gate and
+The repository runner allows 2,400 seconds for the expanded five-scope formal gate and
 records that timeout in its receipt. Individual formal commands retain their
 300-second limit and native probes retain their 15-second limit. This changes
 the orchestration budget, not the checker resource bounds or required cases.
@@ -196,6 +196,31 @@ fixtures, commands, stdout, stderr, exits, and predictions are retained. Each
 actual replay helper must also reject 22 malformed requests and agree on three
 fixed positive contract cases. Earlier receipts do not verify the new scope.
 
+### Typing and conversion comparison
+
+The [typing/conversion lane](typing-conversion.md) requires 32 new Lean
+successful-execution soundness and stored-field theorems, 26 deterministic Quint
+tests, 1,000 seeded samples of at most eight transitions (four processed
+snapshots), and the exact corrupted-inferred-field negative witness. Both
+actual models evaluate all 48 authored requests. Native Goose executes each in
+both trace and check modes, for 96 commands and 66 processed snapshots from
+67 input definitions; one definition is intentionally suppressed after a fatal
+scope outcome.
+
+The standalone conformance gate adds 44 common-fragment fixtures and 59 ordered
+outcomes per engine, retaining the previous 964-outcome inventory separately.
+These external Lean/OCaml drivers do not expose stored fields. Four native-only
+scope/competing-error-priority cases remain explicit in the formal comparison.
+No new semantic disagreement is permitted in the common fragment. The complete
+local Python comparison dependency set is included in standalone source hashes.
+
+The actual replay helpers each reject 24 malformed requests and report model
+budget exhaustion separately. The diagnostic envelope, Quint continuation cap,
+input/output identities and complete compressed logs are described in the
+[replay contract](../schemas/typing-conversion-replay-v1.md). None of these
+budgets is identified with native resource accounting. The theorem and finite
+execution scopes retain their different meanings.
+
 ### Timing smoke
 
 The smoke run uses all seven families with eight definitions, one sample, and
@@ -208,8 +233,8 @@ own source identity, and no speed threshold determines smoke success.
 The top-level receipt is `conformance/evidence/verification.json`. The formal
 gate writes `conformance/evidence/formal/results.json`. Their source inventories,
 logs, toolchain identities, outcomes, and before/after checks identify the
-execution being reported. The v4 formal receipt records all four scopes,
-including its `stored_bindings`, `expression_dag`, and `substitution` sections,
+execution being reported. The v5 formal receipt records all five scopes,
+including its `stored_bindings`, `expression_dag`, `substitution`, and `typing_conversion` sections,
 and the stated finite runtime comparisons; it
 does not certify full implementation
 refinement or estate-wide adoption.

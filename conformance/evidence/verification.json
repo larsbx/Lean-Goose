@@ -1,7 +1,7 @@
 {
   "schema": "lean-goose.local-verification.v1",
   "status": "passed",
-  "started_at_utc": "2026-11-20T15:02:23.600567+00:00",
+  "started_at_utc": "2026-11-22T22:17:13.379185+00:00",
   "acceptance_authority": false,
   "authority": "unsigned_local_test_observations_only",
   "hosted_results_included": false,
@@ -35,15 +35,15 @@
       "command": [
         "sh",
         "tools/estate-audit.sh",
-        "/workspace/scratch/a402432e12bc/estate-governance/kernel/audit_estate_layout.py"
+        "/workspace/scratch/54f19fd932d0/toolchains/audit_estate_layout.py"
       ],
       "timeout_seconds": 600,
-      "started_at_utc": "2026-11-20T15:02:23.631326+00:00",
+      "started_at_utc": "2026-11-22T22:17:13.389192+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T15:02:24.002745+00:00",
+      "finished_at_utc": "2026-11-22T22:17:13.508507+00:00",
       "log": "conformance/evidence/estate-audit.log",
-      "log_sha256": "4978322474ded82f08730ef374408172a5033b6801e2d6fadba18b20a1f3dfb1"
+      "log_sha256": "0cf77ae44d3459332a58ee6d42d617c0d393186885b8eeeb23e313f0bdbb9afc"
     },
     {
       "name": "formal-tests",
@@ -57,12 +57,12 @@
         "-v"
       ],
       "timeout_seconds": 600,
-      "started_at_utc": "2026-11-20T15:02:24.003566+00:00",
+      "started_at_utc": "2026-11-22T22:17:13.508755+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T15:02:25.315575+00:00",
+      "finished_at_utc": "2026-11-22T22:17:13.990261+00:00",
       "log": "conformance/evidence/formal-tests.log",
-      "log_sha256": "60b34770053d9c7801043b5558011728b4225fc4892700b4626d41aa38f8820f"
+      "log_sha256": "db77009e189540a45a6ab438913538e567ed190996c7ba53d86231e7961e520d"
     },
     {
       "name": "formal",
@@ -71,12 +71,12 @@
         "tools/check_formal.py"
       ],
       "timeout_seconds": 2400,
-      "started_at_utc": "2026-11-20T15:02:25.317311+00:00",
+      "started_at_utc": "2026-11-22T22:17:13.990719+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T15:29:16.594682+00:00",
+      "finished_at_utc": "2026-11-22T22:29:15.806393+00:00",
       "log": "conformance/evidence/formal.log",
-      "log_sha256": "c65054d7217623210bf688236d88a75e3b8d85446417051aed74ce3748ad0efc"
+      "log_sha256": "b806db6de584a946c30e5af88b71d1f16a749618788b427dd47adfa028e27de8"
     },
     {
       "name": "conformance",
@@ -90,12 +90,12 @@
         "conformance/evidence/check"
       ],
       "timeout_seconds": 600,
-      "started_at_utc": "2026-11-20T15:29:16.602463+00:00",
+      "started_at_utc": "2026-11-22T22:29:15.808586+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T15:29:38.579247+00:00",
+      "finished_at_utc": "2026-11-22T22:29:26.232007+00:00",
       "log": "conformance/evidence/conformance.log",
-      "log_sha256": "3bf9e00239dfe3df48c4f506a2efe610cb8f6f1c9dbd4c9352cedfd99bd2492e"
+      "log_sha256": "6e899375e4c5ae3559b2456630be47fb93cc0825bf5c0335f13d734605adf4ec"
     },
     {
       "name": "benchmark-smoke",
@@ -115,16 +115,16 @@
         "conformance/evidence/smoke"
       ],
       "timeout_seconds": 600,
-      "started_at_utc": "2026-11-20T15:29:38.580039+00:00",
+      "started_at_utc": "2026-11-22T22:29:26.232750+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-20T15:29:54.075293+00:00",
+      "finished_at_utc": "2026-11-22T22:29:35.764207+00:00",
       "log": "conformance/evidence/benchmark-smoke.log",
-      "log_sha256": "6db2acb9cd630b05e293dd70df0943b1d56068d4a6d50b55dd7958f9e4327e71"
+      "log_sha256": "fd6635f00d5e56ed0d1650b941b48025c9be277f2c949cfa93929f842285fa31"
     }
   ],
-  "base_revision": "a11bb7303735af4ea8cbca38d317dc9ee7385f63",
-  "source_tree_sha256": "9dc8a402277afd363db3652f38328813e3013245cb2e4861291c29869ac0a6e0",
+  "base_revision": "3718d12fbe977ed322faa10fe81143b3ddbcb0f3",
+  "source_tree_sha256": "9f167c6549e77d58a60b540baca0cda5b4c8ca3307e2ed0917e7c9596a8422d4",
   "source_unchanged_during_verification": true,
-  "finished_at_utc": "2026-11-20T15:29:54.132633+00:00"
+  "finished_at_utc": "2026-11-22T22:29:35.772036+00:00"
 }

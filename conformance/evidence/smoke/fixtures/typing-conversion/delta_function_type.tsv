@@ -1,0 +1,13 @@
+lean-ocaml-benchmark-dag-v1
+n	0	s	2
+n	1	s	1
+n	2	p	1	1
+n	3	c	F
+n	4	v	0
+n	5	l	1	4
+n	6	c	id
+n	7	s	0
+n	8	a	6	7
+d	F	0	2
+d	id	3	5
+d	call	1	8

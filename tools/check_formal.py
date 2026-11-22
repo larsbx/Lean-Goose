@@ -18,6 +18,7 @@ import acceptance
 import check_expression_dag as dag
 import check_stored_bindings as stored
 import check_substitution as substitution
+import check_typing_conversion as typing
 import runtime
 import transaction_profile as profile
 
@@ -28,10 +29,10 @@ LEAN_FLAGS = ["--threads=1"]
 QUINT_TOOLCHAIN = "@informalsystems/quint@0.33.1"
 NODE_VERSION = "v24.22.3"
 SEED = "20261120"
-LEAN_SOURCES = {"formal/lean/DefinitionTransactions.lean", "formal/lean/Audit.lean", "formal/lean/Replay.lean"} | stored.LEAN_SOURCES | dag.LEAN_SOURCES | substitution.LEAN_SOURCES
-QUINT_SOURCES = {"formal/quint/DefinitionTransactions.qnt"} | stored.QUINT_SOURCES | dag.QUINT_SOURCES | substitution.QUINT_SOURCES
+LEAN_SOURCES = {"formal/lean/DefinitionTransactions.lean", "formal/lean/Audit.lean", "formal/lean/Replay.lean"} | stored.LEAN_SOURCES | dag.LEAN_SOURCES | substitution.LEAN_SOURCES | typing.LEAN_SOURCES
+QUINT_SOURCES = {"formal/quint/DefinitionTransactions.qnt"} | stored.QUINT_SOURCES | dag.QUINT_SOURCES | substitution.QUINT_SOURCES | typing.QUINT_SOURCES
 IMPLEMENTATIONS = {"reference/checker.goose", "tools/run.py", "tools/runtime.py", "tools/acceptance.py",
-                   "tools/check_formal.py", "tools/transaction_profile.py", "formal/quint/replay.py"} | stored.IMPLEMENTATIONS | dag.IMPLEMENTATIONS | substitution.IMPLEMENTATIONS
+                   "tools/check_formal.py", "tools/transaction_profile.py", "formal/quint/replay.py"} | stored.IMPLEMENTATIONS | dag.IMPLEMENTATIONS | substitution.IMPLEMENTATIONS | typing.IMPLEMENTATIONS
 LEAN_OBLIGATIONS = {"GooseTransactions." + name for name in (
     "initial_invariant", "step_preserves_invariant", "run_preserves_invariant",
     "run_environment_exact", "run_environment_unique", "run_success_count_exact",
@@ -74,8 +75,8 @@ def configuration(root: Path) -> tuple[dict, list[str]]:
     if spec["gate"] != "tools/check_formal.py" or set(spec["implementation_paths"]) != IMPLEMENTATIONS:
         raise ValueError("manifest implementation scope differs from the executed formal profile")
     for lane, sources, pin, obligations in (
-        ("lean", LEAN_SOURCES, LEAN_TOOLCHAIN, LEAN_OBLIGATIONS | stored.LEAN_OBLIGATIONS | dag.LEAN_OBLIGATIONS | substitution.LEAN_OBLIGATIONS),
-        ("quint", QUINT_SOURCES, QUINT_TOOLCHAIN, QUINT_TESTS | {"safety"} | stored.QUINT_OBLIGATIONS | dag.QUINT_OBLIGATIONS | substitution.QUINT_OBLIGATIONS),
+        ("lean", LEAN_SOURCES, LEAN_TOOLCHAIN, LEAN_OBLIGATIONS | stored.LEAN_OBLIGATIONS | dag.LEAN_OBLIGATIONS | substitution.LEAN_OBLIGATIONS | typing.LEAN_OBLIGATIONS),
+        ("quint", QUINT_SOURCES, QUINT_TOOLCHAIN, QUINT_TESTS | {"safety"} | stored.QUINT_OBLIGATIONS | dag.QUINT_OBLIGATIONS | substitution.QUINT_OBLIGATIONS | typing.QUINT_OBLIGATIONS),
     ):
         row = spec[lane]
         if set(row) != {"toolchain", "sources", "obligations"} \
@@ -90,7 +91,7 @@ def configuration(root: Path) -> tuple[dict, list[str]]:
     if package["dependencies"].get("@informalsystems/quint") != "0.33.1" \
             or lock["packages"]["node_modules/@informalsystems/quint"]["version"] != "0.33.1":
         raise ValueError("Quint package or lock differs from its declared pin")
-    paths = sorted(LEAN_SOURCES | QUINT_SOURCES | IMPLEMENTATIONS | dag.DOCUMENTS | substitution.DOCUMENTS | {
+    paths = sorted(LEAN_SOURCES | QUINT_SOURCES | IMPLEMENTATIONS | dag.DOCUMENTS | substitution.DOCUMENTS | typing.DOCUMENTS | {
         "ESTATE.toml", spec["scope"], "formal/lean/lean-toolchain", "formal/quint/package.json",
         "formal/quint/package-lock.json", "conformance/dependencies.json", "conformance/source-provenance.json",
         "schemas/binding-trace-v1.md",
@@ -281,6 +282,9 @@ def execute(output: Path, receipt: dict) -> None:
         substitution.execute(output=output, receipt=receipt, build=build, lean_build=lean_build,
                              lean=lean, lean_flags=LEAN_FLAGS, quint=quint, goose=goose, gcc=gcc,
                              binary=binary, env=env, seed=SEED, run=run)
+        typing.execute(output=output, receipt=receipt, build=build, lean_build=lean_build,
+                       lean=lean, lean_flags=LEAN_FLAGS, quint=quint, binary=binary,
+                       env=env, seed=SEED, run=run)
         receipt["dependencies_after"] = runtime.verify_dependencies(context)
         if receipt["dependencies_before"] != receipt["dependencies_after"]:
             raise ValueError("external dependency source changed during formal verification")
@@ -295,10 +299,10 @@ def verify(output: Path) -> int:
     if output.is_relative_to(ROOT) and not output.is_relative_to(acceptance.EVIDENCE):
         raise ValueError("formal output must be under conformance/evidence or outside the repository")
     output.mkdir(parents=True, exist_ok=True)
-    receipt = {"schema": "lean-goose.formal-evidence.v4", "status": "running",
+    receipt = {"schema": "lean-goose.formal-evidence.v5", "status": "running",
         "started_at_utc": acceptance.now(), "evidence_only": True, "acceptance_authority": False,
         "hosted_results_included": False, "implementation_correspondence": "finite_profile_only",
-        "scope": "ordered transactions, complete stored bindings, immutable expression DAGs, binder scope, lifting and capture-avoiding substitution; no full kernel refinement",
+        "scope": "ordered transactions, complete stored bindings, immutable expression DAGs, binder scope, lifting, capture-avoiding substitution, numeric-sort typing and beta/zeta/delta conversion; no full kernel refinement",
         "commands": [], "excluded_build_directories": sorted(acceptance.SKIP_DIRS),
         "excluded_build_suffixes": sorted(acceptance.SKIP_SUFFIXES),
         "excluded_evidence_directory": "conformance/evidence/"}

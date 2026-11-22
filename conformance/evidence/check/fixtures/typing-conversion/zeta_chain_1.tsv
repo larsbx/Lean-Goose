@@ -1,0 +1,6 @@
+lean-ocaml-benchmark-dag-v1
+n	0	s	1
+n	1	s	0
+n	2	v	0
+n	3	t	0	1	2
+d	chain	0	3

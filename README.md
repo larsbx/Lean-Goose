@@ -9,8 +9,8 @@ theorem, deployment or other admission authority.
 The repository adopts **estate-repository-v3** with unrestricted implementation
 languages and required **Lean and Quint formalization**. The required formal
 scopes cover ordered definition transactions, preservation of complete stored
-bindings, structural expression DAGs with binder scope, and capture-avoiding
-lifting and substitution. Stored records retain
+bindings, structural expression DAGs with binder scope, capture-avoiding
+lifting/substitution, and numeric-sort typing with beta/zeta/delta conversion. Stored records retain
 names, declared types, original values, and inferred types. The
 [formalization document](docs/formalization.md) identifies the claims,
 implementation mapping, required checks, and remaining correspondence work.
@@ -96,7 +96,17 @@ commands also exercise parser/resource refusals and ordinary checking controls.
 The harness preserves the entire checker source except for renaming its main
 entrypoint; the appended driver and generated source are separately identified.
 
-All four Quint models run seeded, bounded invariant simulations and designated
+The [typing/conversion lane](docs/typing-conversion.md) adds 32 required Lean
+theorems connecting successful model evaluation to independent inference and
+reduction judgments, and 26 Quint tests. Actual Lean and Quint models agree on
+48 authored compound-expression requests, with 67 input definitions and 66
+processed snapshots. Native comparison checks all stored fields, original raw
+IDs, immutable prefixes and successful/refused/fatal outcomes in both modes.
+The 44 common-fragment fixtures also compare 59 ordered outcomes per engine
+against the pinned native Lean and OCaml references. Model soundness and finite
+implementation correspondence remain separate claims.
+
+All five Quint models run seeded, bounded invariant simulations and designated
 negative controls. The DAG simulation has an eight-node arena cap; substitution
 has a six-node cap. Both stutter at their bounds. Their replay inventories and
 the unbounded Lean theorems have separate coverage meanings.
@@ -112,8 +122,9 @@ correctness of Goose inference, substitution, normalization, caches, and the
 implementation's refinement of these models remains unproved.
 
 `make acceptance` retains the broader 964 ordered outcomes per engine, six
-structural/resource controls, and seven-family benchmark smoke alongside all four
-formal scopes. Large replay and native-comparison logs are preserved as gzip
+structural/resource controls, and seven-family benchmark smoke alongside all five
+formal scopes. The new 59-outcome typing comparison is recorded separately from
+that retained 964-outcome inventory. Large replay and native-comparison logs are preserved as gzip
 files; [the reproduction notes](docs/formalization.md#reproduction-and-receipts)
 explain how to inspect them. Required inventories describe what a successful run
 must establish; they do not relabel an earlier receipt as a pass for new code.
@@ -131,6 +142,8 @@ must establish; they do not relabel an earlier receipt as a pass for new code.
 | [DAG replay contract](schemas/expression-dag-replay-v1.md) | Canonical raw nodes, structural expression wires, and strict model observations |
 | [Substitution scope](docs/substitution.md) | Lifting and substitution laws, actual-function comparison, and remaining refinement work |
 | [Substitution replay contract](schemas/substitution-replay-v1.md) | Operation inputs, transformed-root observations, and native diagnostic boundary |
+| [Typing/conversion scope](docs/typing-conversion.md) | Model soundness, compound stored fields, finite reference comparisons, and remaining semantic obligations |
+| [Typing/conversion replay](schemas/typing-conversion-replay-v1.md) | Strict requests, separate model budget, full-field observations, and diagnostic limits |
 | [Dependency pins](conformance/dependencies.json) | Exact compiler/comparison revisions and archive hashes |
 | [Source provenance](conformance/source-provenance.json) | Original and locally adapted Goose bytes |
 | [Validation guide](docs/validation.md) | Gates, reproducibility, and evidence interpretation |

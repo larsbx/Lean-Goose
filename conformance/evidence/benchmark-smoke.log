@@ -15,25 +15,25 @@ Observed distinct_trees: 8 ordered outcomes match expectations.
 Observed unshared_trees: 8 ordered outcomes match expectations.
 Observed dependent_terms: 8 ordered outcomes match expectations.
 Observed alias_diamonds: 8 ordered outcomes match expectations.
-wide: ocaml-bytecode, workers=1, sample=1: 0.197578 ms/batch
-wide: lean-kernel, workers=1, sample=1: 0.148539 ms/batch
-wide: goose-aot, workers=1, sample=1: 0.003482 ms/batch
-chain: ocaml-bytecode, workers=1, sample=1: 0.461842 ms/batch
-chain: lean-kernel, workers=1, sample=1: 0.059104 ms/batch
-chain: goose-aot, workers=1, sample=1: 0.003170 ms/batch
-identities: ocaml-bytecode, workers=1, sample=1: 0.060094 ms/batch
-identities: lean-kernel, workers=1, sample=1: 0.020975 ms/batch
-identities: goose-aot, workers=1, sample=1: 0.000638 ms/batch
-distinct_trees: ocaml-bytecode, workers=1, sample=1: 1.154385 ms/batch
-distinct_trees: lean-kernel, workers=1, sample=1: 0.121653 ms/batch
-distinct_trees: goose-aot, workers=1, sample=1: 0.008777 ms/batch
-unshared_trees: ocaml-bytecode, workers=1, sample=1: 2.114434 ms/batch
-unshared_trees: lean-kernel, workers=1, sample=1: 0.177899 ms/batch
-unshared_trees: goose-aot, workers=1, sample=1: 0.103331 ms/batch
-dependent_terms: ocaml-bytecode, workers=1, sample=1: 2.422265 ms/batch
-dependent_terms: lean-kernel, workers=1, sample=1: 0.077975 ms/batch
-dependent_terms: goose-aot, workers=1, sample=1: 0.011540 ms/batch
-alias_diamonds: ocaml-bytecode, workers=1, sample=1: 0.590633 ms/batch
-alias_diamonds: lean-kernel, workers=1, sample=1: 0.052269 ms/batch
-alias_diamonds: goose-aot, workers=1, sample=1: 0.004194 ms/batch
-bench: passed finite observation checks; evidence only. Receipt: /workspace/scratch/a402432e12bc/Lean-Goose/conformance/evidence/smoke/results.json
+wide: ocaml-bytecode, workers=1, sample=1: 0.240636 ms/batch
+wide: lean-kernel, workers=1, sample=1: 0.112762 ms/batch
+wide: goose-aot, workers=1, sample=1: 0.002222 ms/batch
+chain: ocaml-bytecode, workers=1, sample=1: 0.242843 ms/batch
+chain: lean-kernel, workers=1, sample=1: 0.043114 ms/batch
+chain: goose-aot, workers=1, sample=1: 0.002481 ms/batch
+identities: ocaml-bytecode, workers=1, sample=1: 0.045651 ms/batch
+identities: lean-kernel, workers=1, sample=1: 0.016520 ms/batch
+identities: goose-aot, workers=1, sample=1: 0.000464 ms/batch
+distinct_trees: ocaml-bytecode, workers=1, sample=1: 1.061807 ms/batch
+distinct_trees: lean-kernel, workers=1, sample=1: 0.083904 ms/batch
+distinct_trees: goose-aot, workers=1, sample=1: 0.007185 ms/batch
+unshared_trees: ocaml-bytecode, workers=1, sample=1: 2.079852 ms/batch
+unshared_trees: lean-kernel, workers=1, sample=1: 0.077803 ms/batch
+unshared_trees: goose-aot, workers=1, sample=1: 0.068777 ms/batch
+dependent_terms: ocaml-bytecode, workers=1, sample=1: 0.626631 ms/batch
+dependent_terms: lean-kernel, workers=1, sample=1: 0.065665 ms/batch
+dependent_terms: goose-aot, workers=1, sample=1: 0.008150 ms/batch
+alias_diamonds: ocaml-bytecode, workers=1, sample=1: 0.451066 ms/batch
+alias_diamonds: lean-kernel, workers=1, sample=1: 0.029681 ms/batch
+alias_diamonds: goose-aot, workers=1, sample=1: 0.002917 ms/batch
+bench: passed finite observation checks; evidence only. Receipt: /workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/smoke/results.json
