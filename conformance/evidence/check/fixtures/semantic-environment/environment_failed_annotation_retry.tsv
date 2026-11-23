@@ -1,0 +1,13 @@
+lean-ocaml-benchmark-dag-v1
+n	0	s	1
+n	1	s	0
+n	2	s	2
+n	3	t	2	1	0
+n	4	c	seed
+n	5	v	0
+n	6	t	2	0	5
+n	7	c	retry
+d	seed	0	1
+d	retry	3	4
+d	retry	6	4
+d	use	0	7

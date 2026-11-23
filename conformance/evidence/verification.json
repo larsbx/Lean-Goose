@@ -1,7 +1,7 @@
 {
   "schema": "lean-goose.local-verification.v1",
   "status": "passed",
-  "started_at_utc": "2026-11-22T22:17:13.379185+00:00",
+  "started_at_utc": "2026-11-23T11:15:41.479009+00:00",
   "acceptance_authority": false,
   "authority": "unsigned_local_test_observations_only",
   "hosted_results_included": false,
@@ -38,12 +38,12 @@
         "/workspace/scratch/54f19fd932d0/toolchains/audit_estate_layout.py"
       ],
       "timeout_seconds": 600,
-      "started_at_utc": "2026-11-22T22:17:13.389192+00:00",
+      "started_at_utc": "2026-11-23T11:15:41.490625+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-22T22:17:13.508507+00:00",
+      "finished_at_utc": "2026-11-23T11:15:41.654451+00:00",
       "log": "conformance/evidence/estate-audit.log",
-      "log_sha256": "0cf77ae44d3459332a58ee6d42d617c0d393186885b8eeeb23e313f0bdbb9afc"
+      "log_sha256": "caa59004e775faabc07b3a98bde9c838a3a179621802b224cc9c92ce0a4417d3"
     },
     {
       "name": "formal-tests",
@@ -57,12 +57,12 @@
         "-v"
       ],
       "timeout_seconds": 600,
-      "started_at_utc": "2026-11-22T22:17:13.508755+00:00",
+      "started_at_utc": "2026-11-23T11:15:41.654730+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-22T22:17:13.990261+00:00",
+      "finished_at_utc": "2026-11-23T11:15:42.321217+00:00",
       "log": "conformance/evidence/formal-tests.log",
-      "log_sha256": "db77009e189540a45a6ab438913538e567ed190996c7ba53d86231e7961e520d"
+      "log_sha256": "b4466a02de9590e04d66a02617186e1fced08e6fe903a729ae004335e1e8359f"
     },
     {
       "name": "formal",
@@ -71,12 +71,12 @@
         "tools/check_formal.py"
       ],
       "timeout_seconds": 2400,
-      "started_at_utc": "2026-11-22T22:17:13.990719+00:00",
+      "started_at_utc": "2026-11-23T11:15:42.321539+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-22T22:29:15.806393+00:00",
+      "finished_at_utc": "2026-11-23T11:29:34.828622+00:00",
       "log": "conformance/evidence/formal.log",
-      "log_sha256": "b806db6de584a946c30e5af88b71d1f16a749618788b427dd47adfa028e27de8"
+      "log_sha256": "95e59a26d1cb8b800e59916f860739b6d2336cdac3825049939f74c924d19613"
     },
     {
       "name": "conformance",
@@ -90,10 +90,10 @@
         "conformance/evidence/check"
       ],
       "timeout_seconds": 600,
-      "started_at_utc": "2026-11-22T22:29:15.808586+00:00",
+      "started_at_utc": "2026-11-23T11:29:34.829243+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-22T22:29:26.232007+00:00",
+      "finished_at_utc": "2026-11-23T11:29:48.143913+00:00",
       "log": "conformance/evidence/conformance.log",
       "log_sha256": "6e899375e4c5ae3559b2456630be47fb93cc0825bf5c0335f13d734605adf4ec"
     },
@@ -115,16 +115,16 @@
         "conformance/evidence/smoke"
       ],
       "timeout_seconds": 600,
-      "started_at_utc": "2026-11-22T22:29:26.232750+00:00",
+      "started_at_utc": "2026-11-23T11:29:48.144242+00:00",
       "status": "passed",
       "exit_code": 0,
-      "finished_at_utc": "2026-11-22T22:29:35.764207+00:00",
+      "finished_at_utc": "2026-11-23T11:29:59.817704+00:00",
       "log": "conformance/evidence/benchmark-smoke.log",
-      "log_sha256": "fd6635f00d5e56ed0d1650b941b48025c9be277f2c949cfa93929f842285fa31"
+      "log_sha256": "96400c8fb0f246fa80a23c7782a11444fad2ce8c3d8d05e8e1873ec82955ba84"
     }
   ],
-  "base_revision": "3718d12fbe977ed322faa10fe81143b3ddbcb0f3",
-  "source_tree_sha256": "9f167c6549e77d58a60b540baca0cda5b4c8ca3307e2ed0917e7c9596a8422d4",
+  "base_revision": "92c9c07b3bcc4e408a1ce4bb81b7ba34ec355346",
+  "source_tree_sha256": "0fa93f85941c64b99d1641bd19a374b599f1ec8d17a3c661e70f6b1f53af578b",
   "source_unchanged_during_verification": true,
-  "finished_at_utc": "2026-11-22T22:29:35.772036+00:00"
+  "finished_at_utc": "2026-11-23T11:29:59.831249+00:00"
 }

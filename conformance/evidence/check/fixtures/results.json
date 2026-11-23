@@ -12255,7 +12255,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/identity.tsv"
             ],
@@ -12280,7 +12280,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/identity.tsv"
             ],
@@ -12303,7 +12303,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/identity.tsv"
             ],
@@ -12334,7 +12334,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_value.tsv"
             ],
@@ -12359,7 +12359,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_value.tsv"
             ],
@@ -12382,7 +12382,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_value.tsv"
             ],
@@ -12413,7 +12413,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_declared_type.tsv"
             ],
@@ -12438,7 +12438,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_declared_type.tsv"
             ],
@@ -12461,7 +12461,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_declared_type.tsv"
             ],
@@ -12492,7 +12492,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_value.tsv"
             ],
@@ -12517,7 +12517,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_value.tsv"
             ],
@@ -12540,7 +12540,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_value.tsv"
             ],
@@ -12571,7 +12571,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_declared_type.tsv"
             ],
@@ -12596,7 +12596,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_declared_type.tsv"
             ],
@@ -12619,7 +12619,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_declared_type.tsv"
             ],
@@ -12650,7 +12650,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_zeta.tsv"
             ],
@@ -12675,7 +12675,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_zeta.tsv"
             ],
@@ -12698,7 +12698,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_zeta.tsv"
             ],
@@ -12729,7 +12729,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/dependent_identity.tsv"
             ],
@@ -12754,7 +12754,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/dependent_identity.tsv"
             ],
@@ -12777,7 +12777,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/dependent_identity.tsv"
             ],
@@ -12808,7 +12808,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/dependent_application.tsv"
             ],
@@ -12833,7 +12833,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/dependent_application.tsv"
             ],
@@ -12856,7 +12856,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/dependent_application.tsv"
             ],
@@ -12887,7 +12887,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/open_zeta_under_binder.tsv"
             ],
@@ -12912,7 +12912,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/open_zeta_under_binder.tsv"
             ],
@@ -12935,7 +12935,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/open_zeta_under_binder.tsv"
             ],
@@ -12966,7 +12966,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/open_beta_under_binder.tsv"
             ],
@@ -12991,7 +12991,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/open_beta_under_binder.tsv"
             ],
@@ -13014,7 +13014,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/open_beta_under_binder.tsv"
             ],
@@ -13057,7 +13057,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/stored_alias_fields.tsv"
             ],
@@ -13094,7 +13094,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/stored_alias_fields.tsv"
             ],
@@ -13129,7 +13129,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/stored_alias_fields.tsv"
             ],
@@ -13168,7 +13168,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/delta_function_type.tsv"
             ],
@@ -13201,7 +13201,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/delta_function_type.tsv"
             ],
@@ -13232,7 +13232,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/delta_function_type.tsv"
             ],
@@ -13267,7 +13267,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/delta_dependent_application.tsv"
             ],
@@ -13296,7 +13296,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/delta_dependent_application.tsv"
             ],
@@ -13323,7 +13323,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/delta_dependent_application.tsv"
             ],
@@ -13370,7 +13370,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/refusal_retry_and_lookup.tsv"
             ],
@@ -13411,7 +13411,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/refusal_retry_and_lookup.tsv"
             ],
@@ -13450,7 +13450,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/refusal_retry_and_lookup.tsv"
             ],
@@ -13489,7 +13489,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/duplicate_compound_preservation.tsv"
             ],
@@ -13522,7 +13522,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/duplicate_compound_preservation.tsv"
             ],
@@ -13553,7 +13553,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/duplicate_compound_preservation.tsv"
             ],
@@ -13584,7 +13584,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/declared_term_not_type.tsv"
             ],
@@ -13609,7 +13609,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/declared_term_not_type.tsv"
             ],
@@ -13632,7 +13632,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/declared_term_not_type.tsv"
             ],
@@ -13663,7 +13663,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/lambda_domain_not_type.tsv"
             ],
@@ -13688,7 +13688,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/lambda_domain_not_type.tsv"
             ],
@@ -13711,7 +13711,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/lambda_domain_not_type.tsv"
             ],
@@ -13742,7 +13742,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_domain_not_type.tsv"
             ],
@@ -13767,7 +13767,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_domain_not_type.tsv"
             ],
@@ -13790,7 +13790,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_domain_not_type.tsv"
             ],
@@ -13821,7 +13821,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_codomain_not_type.tsv"
             ],
@@ -13846,7 +13846,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_codomain_not_type.tsv"
             ],
@@ -13869,7 +13869,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_codomain_not_type.tsv"
             ],
@@ -13900,7 +13900,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/nonfunction.tsv"
             ],
@@ -13925,7 +13925,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/nonfunction.tsv"
             ],
@@ -13948,7 +13948,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/nonfunction.tsv"
             ],
@@ -13979,7 +13979,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/erased_bad_beta_argument.tsv"
             ],
@@ -14004,7 +14004,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/erased_bad_beta_argument.tsv"
             ],
@@ -14027,7 +14027,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/erased_bad_beta_argument.tsv"
             ],
@@ -14058,7 +14058,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/erased_bad_let_value.tsv"
             ],
@@ -14083,7 +14083,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/erased_bad_let_value.tsv"
             ],
@@ -14106,7 +14106,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/erased_bad_let_value.tsv"
             ],
@@ -14137,7 +14137,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/bad_beta_annotation.tsv"
             ],
@@ -14162,7 +14162,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/bad_beta_annotation.tsv"
             ],
@@ -14185,7 +14185,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/bad_beta_annotation.tsv"
             ],
@@ -14216,7 +14216,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/bad_zeta_annotation.tsv"
             ],
@@ -14241,7 +14241,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/bad_zeta_annotation.tsv"
             ],
@@ -14264,7 +14264,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/bad_zeta_annotation.tsv"
             ],
@@ -14295,7 +14295,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/unknown_erased_beta_argument.tsv"
             ],
@@ -14320,7 +14320,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/unknown_erased_beta_argument.tsv"
             ],
@@ -14343,7 +14343,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/unknown_erased_beta_argument.tsv"
             ],
@@ -14374,7 +14374,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/unknown_erased_let_value.tsv"
             ],
@@ -14399,7 +14399,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/unknown_erased_let_value.tsv"
             ],
@@ -14422,7 +14422,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/unknown_erased_let_value.tsv"
             ],
@@ -14453,7 +14453,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/unknown_in_declared_type.tsv"
             ],
@@ -14478,7 +14478,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/unknown_in_declared_type.tsv"
             ],
@@ -14501,7 +14501,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/unknown_in_declared_type.tsv"
             ],
@@ -14532,7 +14532,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/universe_mismatch.tsv"
             ],
@@ -14557,7 +14557,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/universe_mismatch.tsv"
             ],
@@ -14580,7 +14580,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/universe_mismatch.tsv"
             ],
@@ -14611,7 +14611,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/wrong_dependent_codomain.tsv"
             ],
@@ -14636,7 +14636,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/wrong_dependent_codomain.tsv"
             ],
@@ -14659,7 +14659,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/wrong_dependent_codomain.tsv"
             ],
@@ -14690,7 +14690,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/impredicative_pi.tsv"
             ],
@@ -14715,7 +14715,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/impredicative_pi.tsv"
             ],
@@ -14738,7 +14738,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/impredicative_pi.tsv"
             ],
@@ -14777,7 +14777,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/shared_open_context.tsv"
             ],
@@ -14810,7 +14810,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/shared_open_context.tsv"
             ],
@@ -14841,7 +14841,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/shared_open_context.tsv"
             ],
@@ -14876,7 +14876,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/capture_avoided.tsv"
             ],
@@ -14905,7 +14905,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/capture_avoided.tsv"
             ],
@@ -14932,7 +14932,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/capture_avoided.tsv"
             ],
@@ -14963,7 +14963,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_chain_1.tsv"
             ],
@@ -14988,7 +14988,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_chain_1.tsv"
             ],
@@ -15011,7 +15011,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_chain_1.tsv"
             ],
@@ -15042,7 +15042,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_chain_1.tsv"
             ],
@@ -15067,7 +15067,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_chain_1.tsv"
             ],
@@ -15090,7 +15090,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_chain_1.tsv"
             ],
@@ -15121,7 +15121,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_chain_2.tsv"
             ],
@@ -15146,7 +15146,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_chain_2.tsv"
             ],
@@ -15169,7 +15169,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_chain_2.tsv"
             ],
@@ -15200,7 +15200,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_chain_2.tsv"
             ],
@@ -15225,7 +15225,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_chain_2.tsv"
             ],
@@ -15248,7 +15248,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_chain_2.tsv"
             ],
@@ -15279,7 +15279,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_chain_3.tsv"
             ],
@@ -15304,7 +15304,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_chain_3.tsv"
             ],
@@ -15327,7 +15327,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_chain_3.tsv"
             ],
@@ -15358,7 +15358,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_chain_3.tsv"
             ],
@@ -15383,7 +15383,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_chain_3.tsv"
             ],
@@ -15406,7 +15406,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_chain_3.tsv"
             ],
@@ -15437,7 +15437,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_chain_4.tsv"
             ],
@@ -15462,7 +15462,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_chain_4.tsv"
             ],
@@ -15485,7 +15485,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/beta_chain_4.tsv"
             ],
@@ -15516,7 +15516,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_chain_4.tsv"
             ],
@@ -15541,7 +15541,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_chain_4.tsv"
             ],
@@ -15564,7 +15564,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/zeta_chain_4.tsv"
             ],
@@ -15595,7 +15595,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_numeric_0_0.tsv"
             ],
@@ -15620,7 +15620,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_numeric_0_0.tsv"
             ],
@@ -15643,7 +15643,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_numeric_0_0.tsv"
             ],
@@ -15674,7 +15674,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_numeric_0_2.tsv"
             ],
@@ -15699,7 +15699,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_numeric_0_2.tsv"
             ],
@@ -15722,7 +15722,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_numeric_0_2.tsv"
             ],
@@ -15753,7 +15753,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_numeric_2_0.tsv"
             ],
@@ -15778,7 +15778,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_numeric_2_0.tsv"
             ],
@@ -15801,7 +15801,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_numeric_2_0.tsv"
             ],
@@ -15832,7 +15832,7 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/goose/checker",
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_numeric_2_2.tsv"
             ],
@@ -15857,7 +15857,7 @@
               "checked_insertion": true
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/lean/benchmark_kernel",
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_numeric_2_2.tsv"
             ],
@@ -15880,12 +15880,1320 @@
               "acceptance_authority": false
             },
             "command": [
-              "/tmp/lean-goose-ozfqlhj6/bytecode/migration_check",
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
               "--check",
               "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/typing-conversion/pi_numeric_2_2.tsv"
             ],
             "exit_code": 0,
             "raw_stdout": "{\"engine\":\"ocaml-bytecode\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"pi\",\"outcome\":\"accepted\"}],\"accepted\":1,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          }
+        ]
+      }
+    ],
+    "universal_implementation_refinement": false
+  },
+  "semantic_environment": {
+    "status": "passed",
+    "cases": 10,
+    "ordered_outcomes_per_engine": 52,
+    "registered_semantic_disagreements": [],
+    "comparison_scope": "ordered success/refusal histories; external drivers expose no stored fields or semantic certificates",
+    "excluded_native_priority_and_fatal_cases": [
+      "environment_scope_after_history",
+      "environment_duplicate_priority_after_history"
+    ],
+    "observations": [
+      {
+        "case": "environment_compound_alias_chain",
+        "purpose": "Six insertions preserve earlier original fields while inference and conversion follow predecessor aliases.",
+        "fixture": "semantic-environment/environment_compound_alias_chain.tsv",
+        "fixture_sha256": "5aa87832de4c28cd14a47ce442e8fe12fd0d2e91da71065c4c6d1c3080cc24a7",
+        "engines": [
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "goose-aot",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "U",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "alias",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "aliasAgain",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "call",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "use",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 6,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_compound_alias_chain.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"U\",\"outcome\":\"observed_success\"},{\"name\":\"id\",\"outcome\":\"observed_success\"},{\"name\":\"alias\",\"outcome\":\"observed_success\"},{\"name\":\"aliasAgain\",\"outcome\":\"observed_success\"},{\"name\":\"call\",\"outcome\":\"observed_success\"},{\"name\":\"use\",\"outcome\":\"observed_success\"}],\"success_observations\":6,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "lean-kernel",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "U",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "alias",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "aliasAgain",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "call",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "use",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 6,
+              "acceptance_authority": false,
+              "trust_level": 0,
+              "checked_insertion": true
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_compound_alias_chain.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"acceptance_authority\":false,\"accepted\":6,\"checked_insertion\":true,\"engine\":\"lean-kernel\",\"outcomes\":[{\"name\":\"U\",\"outcome\":\"accepted\"},{\"name\":\"id\",\"outcome\":\"accepted\"},{\"name\":\"alias\",\"outcome\":\"accepted\"},{\"name\":\"aliasAgain\",\"outcome\":\"accepted\"},{\"name\":\"call\",\"outcome\":\"accepted\"},{\"name\":\"use\",\"outcome\":\"accepted\"}],\"status\":\"checked\",\"trust_level\":0}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "ocaml-bytecode",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "U",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "alias",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "aliasAgain",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "call",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "use",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 6,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_compound_alias_chain.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"engine\":\"ocaml-bytecode\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"U\",\"outcome\":\"accepted\"},{\"name\":\"id\",\"outcome\":\"accepted\"},{\"name\":\"alias\",\"outcome\":\"accepted\"},{\"name\":\"aliasAgain\",\"outcome\":\"accepted\"},{\"name\":\"call\",\"outcome\":\"accepted\"},{\"name\":\"use\",\"outcome\":\"accepted\"}],\"accepted\":6,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          }
+        ]
+      },
+      {
+        "case": "environment_declared_type_alias_chain",
+        "purpose": "Declared type aliases remain original constants while stored inferred fields normalize to Pi.",
+        "fixture": "semantic-environment/environment_declared_type_alias_chain.tsv",
+        "fixture_sha256": "6095e9482382ca5741c9796c02e529a4a9dfbee765c149f9a8e8de6876629c0d",
+        "engines": [
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "goose-aot",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "F",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "G",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "H",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "copy",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "call",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 6,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_declared_type_alias_chain.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"F\",\"outcome\":\"observed_success\"},{\"name\":\"G\",\"outcome\":\"observed_success\"},{\"name\":\"H\",\"outcome\":\"observed_success\"},{\"name\":\"id\",\"outcome\":\"observed_success\"},{\"name\":\"copy\",\"outcome\":\"observed_success\"},{\"name\":\"call\",\"outcome\":\"observed_success\"}],\"success_observations\":6,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "lean-kernel",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "F",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "G",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "H",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "copy",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "call",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 6,
+              "acceptance_authority": false,
+              "trust_level": 0,
+              "checked_insertion": true
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_declared_type_alias_chain.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"acceptance_authority\":false,\"accepted\":6,\"checked_insertion\":true,\"engine\":\"lean-kernel\",\"outcomes\":[{\"name\":\"F\",\"outcome\":\"accepted\"},{\"name\":\"G\",\"outcome\":\"accepted\"},{\"name\":\"H\",\"outcome\":\"accepted\"},{\"name\":\"id\",\"outcome\":\"accepted\"},{\"name\":\"copy\",\"outcome\":\"accepted\"},{\"name\":\"call\",\"outcome\":\"accepted\"}],\"status\":\"checked\",\"trust_level\":0}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "ocaml-bytecode",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "F",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "G",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "H",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "copy",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "call",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 6,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_declared_type_alias_chain.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"engine\":\"ocaml-bytecode\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"F\",\"outcome\":\"accepted\"},{\"name\":\"G\",\"outcome\":\"accepted\"},{\"name\":\"H\",\"outcome\":\"accepted\"},{\"name\":\"id\",\"outcome\":\"accepted\"},{\"name\":\"copy\",\"outcome\":\"accepted\"},{\"name\":\"call\",\"outcome\":\"accepted\"}],\"accepted\":6,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          }
+        ]
+      },
+      {
+        "case": "environment_forward_reference_recovery",
+        "purpose": "A future declaration cannot justify an earlier refusal; retry succeeds only after its predecessor exists.",
+        "fixture": "semantic-environment/environment_forward_reference_recovery.tsv",
+        "fixture_sha256": "d159dd05cd635671557ef67714dc22600f3a6de8c0ad75ef899a3b9942dc6166",
+        "engines": [
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "goose-aot",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "early",
+                  "outcome": "Unknown_constant"
+                },
+                {
+                  "name": "late",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "early",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "use",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 3,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_forward_reference_recovery.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"early\",\"outcome\":\"Unknown_constant\"},{\"name\":\"late\",\"outcome\":\"observed_success\"},{\"name\":\"early\",\"outcome\":\"observed_success\"},{\"name\":\"use\",\"outcome\":\"observed_success\"}],\"success_observations\":3,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "lean-kernel",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "early",
+                  "outcome": "unknownConstant"
+                },
+                {
+                  "name": "late",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "early",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "use",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 3,
+              "acceptance_authority": false,
+              "trust_level": 0,
+              "checked_insertion": true
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_forward_reference_recovery.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"acceptance_authority\":false,\"accepted\":3,\"checked_insertion\":true,\"engine\":\"lean-kernel\",\"outcomes\":[{\"name\":\"early\",\"outcome\":\"unknownConstant\"},{\"name\":\"late\",\"outcome\":\"accepted\"},{\"name\":\"early\",\"outcome\":\"accepted\"},{\"name\":\"use\",\"outcome\":\"accepted\"}],\"status\":\"checked\",\"trust_level\":0}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "ocaml-bytecode",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "early",
+                  "outcome": "Unknown_constant"
+                },
+                {
+                  "name": "late",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "early",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "use",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 3,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_forward_reference_recovery.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"engine\":\"ocaml-bytecode\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"early\",\"outcome\":\"Unknown_constant\"},{\"name\":\"late\",\"outcome\":\"accepted\"},{\"name\":\"early\",\"outcome\":\"accepted\"},{\"name\":\"use\",\"outcome\":\"accepted\"}],\"accepted\":3,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          }
+        ]
+      },
+      {
+        "case": "environment_self_reference_refusal",
+        "purpose": "An insertion cannot use itself as a predecessor, and refusal leaves its name available.",
+        "fixture": "semantic-environment/environment_self_reference_refusal.tsv",
+        "fixture_sha256": "5f6e27c06f24d56a603b29a825c7882203449e14b6b7b678c5fdb660d891b9f4",
+        "engines": [
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "goose-aot",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "seed",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "self",
+                  "outcome": "Unknown_constant"
+                },
+                {
+                  "name": "self",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 2,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_self_reference_refusal.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"seed\",\"outcome\":\"observed_success\"},{\"name\":\"self\",\"outcome\":\"Unknown_constant\"},{\"name\":\"self\",\"outcome\":\"observed_success\"}],\"success_observations\":2,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "lean-kernel",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "seed",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "self",
+                  "outcome": "unknownConstant"
+                },
+                {
+                  "name": "self",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 2,
+              "acceptance_authority": false,
+              "trust_level": 0,
+              "checked_insertion": true
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_self_reference_refusal.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"acceptance_authority\":false,\"accepted\":2,\"checked_insertion\":true,\"engine\":\"lean-kernel\",\"outcomes\":[{\"name\":\"seed\",\"outcome\":\"accepted\"},{\"name\":\"self\",\"outcome\":\"unknownConstant\"},{\"name\":\"self\",\"outcome\":\"accepted\"}],\"status\":\"checked\",\"trust_level\":0}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "ocaml-bytecode",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "seed",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "self",
+                  "outcome": "Unknown_constant"
+                },
+                {
+                  "name": "self",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 2,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_self_reference_refusal.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"engine\":\"ocaml-bytecode\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"seed\",\"outcome\":\"accepted\"},{\"name\":\"self\",\"outcome\":\"Unknown_constant\"},{\"name\":\"self\",\"outcome\":\"accepted\"}],\"accepted\":2,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          }
+        ]
+      },
+      {
+        "case": "environment_refusals_do_not_bind",
+        "purpose": "Multiple semantic refusals and retries preserve the ordered successful-record history and lookup targets.",
+        "fixture": "semantic-environment/environment_refusals_do_not_bind.tsv",
+        "fixture_sha256": "824320515794b3779fc31813635bfe19c1e1fe7078ee4be68ea36b086a4763c7",
+        "engines": [
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "goose-aot",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "id",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "blocked",
+                  "outcome": "Type_mismatch"
+                },
+                {
+                  "name": "missing",
+                  "outcome": "Unknown_constant"
+                },
+                {
+                  "name": "blocked",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "notfn",
+                  "outcome": "Expected_function"
+                },
+                {
+                  "name": "notfn",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "use",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "Duplicate_definition"
+                }
+              ],
+              "success_observations": 4,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_refusals_do_not_bind.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"id\",\"outcome\":\"observed_success\"},{\"name\":\"blocked\",\"outcome\":\"Type_mismatch\"},{\"name\":\"missing\",\"outcome\":\"Unknown_constant\"},{\"name\":\"blocked\",\"outcome\":\"observed_success\"},{\"name\":\"notfn\",\"outcome\":\"Expected_function\"},{\"name\":\"notfn\",\"outcome\":\"observed_success\"},{\"name\":\"use\",\"outcome\":\"observed_success\"},{\"name\":\"id\",\"outcome\":\"Duplicate_definition\"}],\"success_observations\":4,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "lean-kernel",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "id",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "blocked",
+                  "outcome": "declTypeMismatch"
+                },
+                {
+                  "name": "missing",
+                  "outcome": "unknownConstant"
+                },
+                {
+                  "name": "blocked",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "notfn",
+                  "outcome": "funExpected"
+                },
+                {
+                  "name": "notfn",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "use",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "alreadyDeclared"
+                }
+              ],
+              "success_observations": 4,
+              "acceptance_authority": false,
+              "trust_level": 0,
+              "checked_insertion": true
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_refusals_do_not_bind.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"acceptance_authority\":false,\"accepted\":4,\"checked_insertion\":true,\"engine\":\"lean-kernel\",\"outcomes\":[{\"name\":\"id\",\"outcome\":\"accepted\"},{\"name\":\"blocked\",\"outcome\":\"declTypeMismatch\"},{\"name\":\"missing\",\"outcome\":\"unknownConstant\"},{\"name\":\"blocked\",\"outcome\":\"accepted\"},{\"name\":\"notfn\",\"outcome\":\"funExpected\"},{\"name\":\"notfn\",\"outcome\":\"accepted\"},{\"name\":\"use\",\"outcome\":\"accepted\"},{\"name\":\"id\",\"outcome\":\"alreadyDeclared\"}],\"status\":\"checked\",\"trust_level\":0}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "ocaml-bytecode",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "id",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "blocked",
+                  "outcome": "Type_mismatch"
+                },
+                {
+                  "name": "missing",
+                  "outcome": "Unknown_constant"
+                },
+                {
+                  "name": "blocked",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "notfn",
+                  "outcome": "Expected_function"
+                },
+                {
+                  "name": "notfn",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "use",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "Duplicate_definition"
+                }
+              ],
+              "success_observations": 4,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_refusals_do_not_bind.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"engine\":\"ocaml-bytecode\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"id\",\"outcome\":\"accepted\"},{\"name\":\"blocked\",\"outcome\":\"Type_mismatch\"},{\"name\":\"missing\",\"outcome\":\"Unknown_constant\"},{\"name\":\"blocked\",\"outcome\":\"accepted\"},{\"name\":\"notfn\",\"outcome\":\"Expected_function\"},{\"name\":\"notfn\",\"outcome\":\"accepted\"},{\"name\":\"use\",\"outcome\":\"accepted\"},{\"name\":\"id\",\"outcome\":\"Duplicate_definition\"}],\"accepted\":4,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          }
+        ]
+      },
+      {
+        "case": "environment_duplicate_full_record",
+        "purpose": "Duplicate proposals with different types or values cannot replace the record used by later lookup.",
+        "fixture": "semantic-environment/environment_duplicate_full_record.tsv",
+        "fixture_sha256": "f48fa6c2b8310775b3e3a1578f982af62081916ff2a0cff891687f4568527de4",
+        "engines": [
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "goose-aot",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "id",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "Duplicate_definition"
+                },
+                {
+                  "name": "alias",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "Duplicate_definition"
+                },
+                {
+                  "name": "call",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 3,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_duplicate_full_record.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"id\",\"outcome\":\"observed_success\"},{\"name\":\"id\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"alias\",\"outcome\":\"observed_success\"},{\"name\":\"id\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"call\",\"outcome\":\"observed_success\"}],\"success_observations\":3,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "lean-kernel",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "id",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "alreadyDeclared"
+                },
+                {
+                  "name": "alias",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "alreadyDeclared"
+                },
+                {
+                  "name": "call",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 3,
+              "acceptance_authority": false,
+              "trust_level": 0,
+              "checked_insertion": true
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_duplicate_full_record.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"acceptance_authority\":false,\"accepted\":3,\"checked_insertion\":true,\"engine\":\"lean-kernel\",\"outcomes\":[{\"name\":\"id\",\"outcome\":\"accepted\"},{\"name\":\"id\",\"outcome\":\"alreadyDeclared\"},{\"name\":\"alias\",\"outcome\":\"accepted\"},{\"name\":\"id\",\"outcome\":\"alreadyDeclared\"},{\"name\":\"call\",\"outcome\":\"accepted\"}],\"status\":\"checked\",\"trust_level\":0}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "ocaml-bytecode",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "id",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "Duplicate_definition"
+                },
+                {
+                  "name": "alias",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "id",
+                  "outcome": "Duplicate_definition"
+                },
+                {
+                  "name": "call",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 3,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_duplicate_full_record.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"engine\":\"ocaml-bytecode\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"id\",\"outcome\":\"accepted\"},{\"name\":\"id\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"alias\",\"outcome\":\"accepted\"},{\"name\":\"id\",\"outcome\":\"Duplicate_definition\"},{\"name\":\"call\",\"outcome\":\"accepted\"}],\"accepted\":3,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          }
+        ]
+      },
+      {
+        "case": "environment_beta_zeta_declared_history",
+        "purpose": "Original reducible declarations stay stored while later aliases reuse normalized inferred types.",
+        "fixture": "semantic-environment/environment_beta_zeta_declared_history.tsv",
+        "fixture_sha256": "bd5dfc4a450e5cabebe322e348fafd77c64cf3ee48e1da18574b7e2e85fdc4d3",
+        "engines": [
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "goose-aot",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "beta",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "zeta",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "copy",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "tail",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 4,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_beta_zeta_declared_history.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"beta\",\"outcome\":\"observed_success\"},{\"name\":\"zeta\",\"outcome\":\"observed_success\"},{\"name\":\"copy\",\"outcome\":\"observed_success\"},{\"name\":\"tail\",\"outcome\":\"observed_success\"}],\"success_observations\":4,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "lean-kernel",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "beta",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "zeta",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "copy",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "tail",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 4,
+              "acceptance_authority": false,
+              "trust_level": 0,
+              "checked_insertion": true
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_beta_zeta_declared_history.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"acceptance_authority\":false,\"accepted\":4,\"checked_insertion\":true,\"engine\":\"lean-kernel\",\"outcomes\":[{\"name\":\"beta\",\"outcome\":\"accepted\"},{\"name\":\"zeta\",\"outcome\":\"accepted\"},{\"name\":\"copy\",\"outcome\":\"accepted\"},{\"name\":\"tail\",\"outcome\":\"accepted\"}],\"status\":\"checked\",\"trust_level\":0}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "ocaml-bytecode",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "beta",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "zeta",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "copy",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "tail",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 4,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_beta_zeta_declared_history.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"engine\":\"ocaml-bytecode\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"beta\",\"outcome\":\"accepted\"},{\"name\":\"zeta\",\"outcome\":\"accepted\"},{\"name\":\"copy\",\"outcome\":\"accepted\"},{\"name\":\"tail\",\"outcome\":\"accepted\"}],\"accepted\":4,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          }
+        ]
+      },
+      {
+        "case": "environment_dependent_chain",
+        "purpose": "A dependent inferred type and its exact stored fields survive aliases, specialization, and unrelated extension.",
+        "fixture": "semantic-environment/environment_dependent_chain.tsv",
+        "fixture_sha256": "6b7d0b36f1f231de139ce2cea2c433501f500ca65a3ad3db498a6632e6d00bb7",
+        "engines": [
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "goose-aot",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "dep",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "alias",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "atProp",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "copy",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "unrelated",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 5,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_dependent_chain.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"dep\",\"outcome\":\"observed_success\"},{\"name\":\"alias\",\"outcome\":\"observed_success\"},{\"name\":\"atProp\",\"outcome\":\"observed_success\"},{\"name\":\"copy\",\"outcome\":\"observed_success\"},{\"name\":\"unrelated\",\"outcome\":\"observed_success\"}],\"success_observations\":5,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "lean-kernel",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "dep",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "alias",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "atProp",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "copy",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "unrelated",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 5,
+              "acceptance_authority": false,
+              "trust_level": 0,
+              "checked_insertion": true
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_dependent_chain.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"acceptance_authority\":false,\"accepted\":5,\"checked_insertion\":true,\"engine\":\"lean-kernel\",\"outcomes\":[{\"name\":\"dep\",\"outcome\":\"accepted\"},{\"name\":\"alias\",\"outcome\":\"accepted\"},{\"name\":\"atProp\",\"outcome\":\"accepted\"},{\"name\":\"copy\",\"outcome\":\"accepted\"},{\"name\":\"unrelated\",\"outcome\":\"accepted\"}],\"status\":\"checked\",\"trust_level\":0}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "ocaml-bytecode",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "dep",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "alias",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "atProp",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "copy",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "unrelated",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 5,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_dependent_chain.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"engine\":\"ocaml-bytecode\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"dep\",\"outcome\":\"accepted\"},{\"name\":\"alias\",\"outcome\":\"accepted\"},{\"name\":\"atProp\",\"outcome\":\"accepted\"},{\"name\":\"copy\",\"outcome\":\"accepted\"},{\"name\":\"unrelated\",\"outcome\":\"accepted\"}],\"accepted\":5,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          }
+        ]
+      },
+      {
+        "case": "environment_erased_future_reference",
+        "purpose": "Original syntax must use already available constants even when beta or zeta would erase them.",
+        "fixture": "semantic-environment/environment_erased_future_reference.tsv",
+        "fixture_sha256": "82e7e55933257e2431a15fdc032e02efbd4b16fe4c496ee98853ea2bf9629db9",
+        "engines": [
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "goose-aot",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "prior",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "erasedBeta",
+                  "outcome": "Unknown_constant"
+                },
+                {
+                  "name": "erasedLet",
+                  "outcome": "Unknown_constant"
+                },
+                {
+                  "name": "later",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "erasedBeta",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "erasedLet",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "after",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 5,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_erased_future_reference.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"prior\",\"outcome\":\"observed_success\"},{\"name\":\"erasedBeta\",\"outcome\":\"Unknown_constant\"},{\"name\":\"erasedLet\",\"outcome\":\"Unknown_constant\"},{\"name\":\"later\",\"outcome\":\"observed_success\"},{\"name\":\"erasedBeta\",\"outcome\":\"observed_success\"},{\"name\":\"erasedLet\",\"outcome\":\"observed_success\"},{\"name\":\"after\",\"outcome\":\"observed_success\"}],\"success_observations\":5,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "lean-kernel",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "prior",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "erasedBeta",
+                  "outcome": "unknownConstant"
+                },
+                {
+                  "name": "erasedLet",
+                  "outcome": "unknownConstant"
+                },
+                {
+                  "name": "later",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "erasedBeta",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "erasedLet",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "after",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 5,
+              "acceptance_authority": false,
+              "trust_level": 0,
+              "checked_insertion": true
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_erased_future_reference.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"acceptance_authority\":false,\"accepted\":5,\"checked_insertion\":true,\"engine\":\"lean-kernel\",\"outcomes\":[{\"name\":\"prior\",\"outcome\":\"accepted\"},{\"name\":\"erasedBeta\",\"outcome\":\"unknownConstant\"},{\"name\":\"erasedLet\",\"outcome\":\"unknownConstant\"},{\"name\":\"later\",\"outcome\":\"accepted\"},{\"name\":\"erasedBeta\",\"outcome\":\"accepted\"},{\"name\":\"erasedLet\",\"outcome\":\"accepted\"},{\"name\":\"after\",\"outcome\":\"accepted\"}],\"status\":\"checked\",\"trust_level\":0}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "ocaml-bytecode",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "prior",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "erasedBeta",
+                  "outcome": "Unknown_constant"
+                },
+                {
+                  "name": "erasedLet",
+                  "outcome": "Unknown_constant"
+                },
+                {
+                  "name": "later",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "erasedBeta",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "erasedLet",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "after",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 5,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_erased_future_reference.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"engine\":\"ocaml-bytecode\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"prior\",\"outcome\":\"accepted\"},{\"name\":\"erasedBeta\",\"outcome\":\"Unknown_constant\"},{\"name\":\"erasedLet\",\"outcome\":\"Unknown_constant\"},{\"name\":\"later\",\"outcome\":\"accepted\"},{\"name\":\"erasedBeta\",\"outcome\":\"accepted\"},{\"name\":\"erasedLet\",\"outcome\":\"accepted\"},{\"name\":\"after\",\"outcome\":\"accepted\"}],\"accepted\":5,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          }
+        ]
+      },
+      {
+        "case": "environment_failed_annotation_retry",
+        "purpose": "Malformed type annotations leave no binding; corrected retry preserves the prior semantic history.",
+        "fixture": "semantic-environment/environment_failed_annotation_retry.tsv",
+        "fixture_sha256": "ed777ad0eea8be1ac183439510c48cf3c7a0c147bca0c5533d21bcaf049ce7be",
+        "engines": [
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "goose-aot",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "seed",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "retry",
+                  "outcome": "Type_mismatch"
+                },
+                {
+                  "name": "retry",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "use",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 3,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/goose/checker",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_failed_annotation_retry.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"schema\":\"lean-goose.definition-observations.v1\",\"engine\":\"goose-aot\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"seed\",\"outcome\":\"observed_success\"},{\"name\":\"retry\",\"outcome\":\"Type_mismatch\"},{\"name\":\"retry\",\"outcome\":\"observed_success\"},{\"name\":\"use\",\"outcome\":\"observed_success\"}],\"success_observations\":3,\"acceptance_authority\":false}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "lean-kernel",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "seed",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "retry",
+                  "outcome": "letTypeMismatch"
+                },
+                {
+                  "name": "retry",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "use",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 3,
+              "acceptance_authority": false,
+              "trust_level": 0,
+              "checked_insertion": true
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/lean/benchmark_kernel",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_failed_annotation_retry.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"acceptance_authority\":false,\"accepted\":3,\"checked_insertion\":true,\"engine\":\"lean-kernel\",\"outcomes\":[{\"name\":\"seed\",\"outcome\":\"accepted\"},{\"name\":\"retry\",\"outcome\":\"letTypeMismatch\"},{\"name\":\"retry\",\"outcome\":\"accepted\"},{\"name\":\"use\",\"outcome\":\"accepted\"}],\"status\":\"checked\",\"trust_level\":0}\n",
+            "raw_stderr": ""
+          },
+          {
+            "observation": {
+              "schema": "lean-goose.definition-observations.v1",
+              "engine": "ocaml-bytecode",
+              "status": "checked",
+              "outcomes": [
+                {
+                  "name": "seed",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "retry",
+                  "outcome": "Type_mismatch"
+                },
+                {
+                  "name": "retry",
+                  "outcome": "observed_success"
+                },
+                {
+                  "name": "use",
+                  "outcome": "observed_success"
+                }
+              ],
+              "success_observations": 3,
+              "acceptance_authority": false
+            },
+            "command": [
+              "/tmp/lean-goose-t25vpiyj/bytecode/migration_check",
+              "--check",
+              "/workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/check/fixtures/semantic-environment/environment_failed_annotation_retry.tsv"
+            ],
+            "exit_code": 0,
+            "raw_stdout": "{\"engine\":\"ocaml-bytecode\",\"status\":\"checked\",\"outcomes\":[{\"name\":\"seed\",\"outcome\":\"accepted\"},{\"name\":\"retry\",\"outcome\":\"Type_mismatch\"},{\"name\":\"retry\",\"outcome\":\"accepted\"},{\"name\":\"use\",\"outcome\":\"accepted\"}],\"accepted\":3,\"acceptance_authority\":false}\n",
             "raw_stderr": ""
           }
         ]

@@ -12,7 +12,7 @@
   {
     "path": ".github/workflows/conformance.yml",
     "bytes": 3997,
-    "sha256": "a7a3aaad9f60b3fd859c31b8bf9d22a4ae15b2edd0e1bf874ee7408ce88c0be8"
+    "sha256": "a1b6b1a6f349ff453ebdeb650bcfb5b5a3b31a282f347d3c9dbffa5efa82882f"
   },
   {
     "path": ".gitignore",
@@ -26,18 +26,18 @@
   },
   {
     "path": "ARCHITECTURE.md",
-    "bytes": 11716,
-    "sha256": "013dda27b3013d0b0aac20edb52b77bd43c7714265e622f37b4d174282654f1b"
+    "bytes": 12777,
+    "sha256": "dcf36445340d44c5b7cc2252e02e0165d40de1ed1092e0814b55e3421cc73abe"
   },
   {
     "path": "ESTATE.toml",
-    "bytes": 15741,
-    "sha256": "d1bdbed29fe8c555ac97f184ef42e96a0021138499e96dff1d1c7c942640b5de"
+    "bytes": 19408,
+    "sha256": "216b87e10579adc00ba2dc64cb44f298316d40a049ec7f5bd78d651346e57e4e"
   },
   {
     "path": "LANGUAGE_BOUNDARIES.md",
-    "bytes": 2719,
-    "sha256": "a4b6e059b13e81016d27d27cda1e403e06a54b511944d27bf0882ec3406d6098"
+    "bytes": 3125,
+    "sha256": "4f946c5b46368f58505466d0cbf47c72088fb3b3076324984c96e3e6a0ae8e16"
   },
   {
     "path": "Makefile",
@@ -46,8 +46,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 10446,
-    "sha256": "3c1d2f6ddfa46e24fbb8993cb397827dec68621366f19f5d2acdab2cf11e1647"
+    "bytes": 11384,
+    "sha256": "839799e8bc0775527579e4c1ffdf6c7af7e472441a6463e52b8219dac441d834"
   },
   {
     "path": "conformance/dependencies.json",
@@ -71,18 +71,23 @@
   },
   {
     "path": "docs/formalization.md",
-    "bytes": 34566,
-    "sha256": "29bdb8cbdd040569c6537a2c96ecf1b330b667162fc14c6c1b30261c177971bf"
+    "bytes": 35583,
+    "sha256": "0eae49c478b7909c000b2090fee7e886f0f2a73d039a2396acb8ec5dcfd37457"
   },
   {
     "path": "docs/roadmap.md",
-    "bytes": 4489,
-    "sha256": "217ca9c8982304c79b8040e59f3fff2ed2e3512c9113272285082d449a636897"
+    "bytes": 6542,
+    "sha256": "29c4ebd6c05d839f464218b4a353e560be8f9db6cb5f80978e75e96abffe20e6"
   },
   {
     "path": "docs/scaffold-sop.md",
     "bytes": 2473,
     "sha256": "aa7851a597b84a27095394a0f06c40e3aabeb3123e01edb6af3f8a019b3ad8a4"
+  },
+  {
+    "path": "docs/semantic-environment.md",
+    "bytes": 9451,
+    "sha256": "1e480292974b8646f33df9bfac5f0467aa878b482510bbef4171a05788b720ff"
   },
   {
     "path": "docs/substitution.md",
@@ -91,13 +96,13 @@
   },
   {
     "path": "docs/typing-conversion.md",
-    "bytes": 14160,
-    "sha256": "1d893b1e0cab75c1327dca9edb47ed181e142b45ed2a8393101a7116e4b7dc7c"
+    "bytes": 14379,
+    "sha256": "245ce18dcee832ac136eb5f3c4e0a3f4bfb3baeff0de08a1c00692d485059e04"
   },
   {
     "path": "docs/validation.md",
-    "bytes": 14517,
-    "sha256": "04b10c69a8b796fde773e3aaf77b6913b014a4e1039a7973be5f5370d0eb4895"
+    "bytes": 15487,
+    "sha256": "7918ffa1755496506cb2d22a01309d5c99891c7b63f9b4b1f6035a3f6784a956"
   },
   {
     "path": "formal/lean/Audit.lean",
@@ -128,6 +133,16 @@
     "path": "formal/lean/Replay.lean",
     "bytes": 2712,
     "sha256": "30c6efdf863baf002c5cd0d5faf9293ed9b0289c682660ac7cfbe8927f6f66f7"
+  },
+  {
+    "path": "formal/lean/SemanticEnvironment.lean",
+    "bytes": 24695,
+    "sha256": "87d9a3204cef9fad74c11053cee174a20a2d2cc87a08453e5f16217150e1b904"
+  },
+  {
+    "path": "formal/lean/SemanticEnvironmentAudit.lean",
+    "bytes": 3826,
+    "sha256": "194855748ca75ac1b703258de754f403c77fc6ec6639dc5e97f9f58dfcd81fc5"
   },
   {
     "path": "formal/lean/StoredBindings.lean",
@@ -188,6 +203,11 @@
     "path": "formal/quint/ExpressionDag.qnt",
     "bytes": 13149,
     "sha256": "1bdbdc1dc475eecdcdb2995469e3e506444c89e4ee51f0b2347d283043a86707"
+  },
+  {
+    "path": "formal/quint/SemanticEnvironment.qnt",
+    "bytes": 16648,
+    "sha256": "c9d4d1faf9e6e7644bcfcda03452dd2e0c471f484a0f470397b6862953d59cc7"
   },
   {
     "path": "formal/quint/StoredBindings.qnt",
@@ -300,6 +320,11 @@
     "sha256": "c80f912baf16257d72bd6a0d8c2a8f8188402d14d6702810bbd4a8806e788abb"
   },
   {
+    "path": "tests/test_semantic_environment_negative.py",
+    "bytes": 10733,
+    "sha256": "0728a85f4e13f658bd0108570b59b829b1ef839231b1091253233361fb072f8d"
+  },
+  {
     "path": "tests/test_stored_bindings.py",
     "bytes": 25244,
     "sha256": "db785473bd037ce6adc6b5d10db2cf7ac133725206bbbc72631bf657f4df22e1"
@@ -316,8 +341,8 @@
   },
   {
     "path": "tools/acceptance.py",
-    "bytes": 7179,
-    "sha256": "33a7d3ac0031ed4a26cd005abce22285fca7706087a17c34f22be1299cf74bbd"
+    "bytes": 7178,
+    "sha256": "255a0c0097add98b03248ba82c20fc043eef3dce9312853508bd4fe6bb69b49f"
   },
   {
     "path": "tools/binding_trace_controls.py",
@@ -341,8 +366,13 @@
   },
   {
     "path": "tools/check_formal.py",
-    "bytes": 21670,
-    "sha256": "072d36c573272309f74ea103d659f07b170a005a1d7209ab7144a827dfdff006"
+    "bytes": 22148,
+    "sha256": "bf89d3ec3fa044e549d8ce251214948b9b5b8485fe8ff00364a1864766437b99"
+  },
+  {
+    "path": "tools/check_semantic_environment.py",
+    "bytes": 12587,
+    "sha256": "c1821f1bcc482b4be0472c30f9c70b40416d8fc093bc09fe67df6a73714251dd"
   },
   {
     "path": "tools/check_stored_bindings.py",
@@ -371,13 +401,23 @@
   },
   {
     "path": "tools/run.py",
-    "bytes": 20220,
-    "sha256": "cf75f553135c80f1fb5808a6a2d4723fda9750c596433f0988b8f5b9a2fec5f9"
+    "bytes": 20376,
+    "sha256": "10f84f4630828efab9e960db4f557c69126987ab0fa35a15b99775345dfb1606"
   },
   {
     "path": "tools/runtime.py",
     "bytes": 13443,
     "sha256": "35ecfe542756fd6f65cbc4988dbd86499145e14a34f4dfeaa0f1e0ed49fee742"
+  },
+  {
+    "path": "tools/semantic_environment_negative.py",
+    "bytes": 4501,
+    "sha256": "d62129cc1f0d6489709eb386dcf7d6446c157d093abc1288c24f7f3de93e5fe9"
+  },
+  {
+    "path": "tools/semantic_environment_profile.py",
+    "bytes": 6495,
+    "sha256": "bc0e3fc2739d3afe1bc6c7286bd1b1cc9cda4107b046649ca3c02c64af59d7ef"
   },
   {
     "path": "tools/source_derivation.py",

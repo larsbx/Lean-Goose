@@ -221,5 +221,14 @@ typing-quint-reject-exponent-fuel: exit 1
 typing-lean-model-exhaustion: exit 0
 typing-quint-model-exhaustion: exit 0
 Typing/conversion: 48 full-field native/model cases passed.
+environment-lean-build: exit 0
+environment-lean-axiom-audit: exit 0
+environment-quint-typecheck: exit 0
+environment-quint-tests: exit 0
+environment-quint-bounded-run: exit 0
+environment-quint-negative-control: exit 1
+environment-lean-replay: exit 0
+environment-quint-replay: exit 0
+Semantic environments: 12 native/model histories passed.
 Native finite correspondence: 1110 traces passed.
 Formal verification passed: /workspace/scratch/54f19fd932d0/Lean-Goose/conformance/evidence/formal/results.json

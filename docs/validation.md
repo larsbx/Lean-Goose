@@ -44,7 +44,7 @@ in the local Goose source.
 | `make pins` | External checkout and local source-provenance verification |
 | `make test` | Full finite observation comparison against native Lean and OCaml |
 | `make formal-tests` | Formal-runner acceptance and rejection controls |
-| `make formal` | All five Lean proof inventories and axiom audits, independent Quint models, finite transaction/binding/DAG/substitution/typing comparisons, and native controls |
+| `make formal` | All six Lean proof inventories and axiom audits, independent Quint models, finite transaction/binding/DAG/substitution/typing comparisons, and native controls |
 | `make smoke` | Small fresh three-engine benchmark execution |
 | `make audit` | Pinned external estate v3 manifest audit |
 | `make acceptance` | All required gates, logs, source manifest, and verification receipt |
@@ -159,7 +159,7 @@ Quint replay uses sequential fresh invocations of at most 256 requests, bounding
 REPL source/history growth. Exact chunk offsets, counts, and input hashes link
 every command to the complete ordered inventory. Lean evaluates the same entire
 inventory, and each Quint chunk is compared with the corresponding Lean slice.
-The repository runner allows 2,400 seconds for the expanded five-scope formal gate and
+The repository runner allows 2,400 seconds for the expanded six-scope formal gate and
 records that timeout in its receipt. Individual formal commands retain their
 300-second limit and native probes retain their 15-second limit. This changes
 the orchestration budget, not the checker resource bounds or required cases.
@@ -221,6 +221,22 @@ input/output identities and complete compressed logs are described in the
 budgets is identified with native resource accounting. The theorem and finite
 execution scopes retain their different meanings.
 
+### Semantic-environment preservation
+
+The [sixth lane](semantic-environment.md) requires 37 Lean obligations and
+24 Quint tests, 1,000 samples of at most eight transitions with a four-snapshot
+cap, and the exact old-value corruption witness. Its independent semantic
+certificates and lookup-preserving weakening are model theorems. Quint checks
+component evaluation equations and frozen predecessor histories finitely.
+
+Twelve additional histories run through the unchanged actual Lean and Quint
+typing replay helpers and both native Goose modes: 62 definitions, 61 processed
+snapshots and 24 native commands. Ten common-reference histories add 52 ordered
+outcomes per engine, recorded separately from the older 964 and 59 outcomes.
+The native diagnostic interface exposes full records, not semantic proof
+certificates. Inferred-field scope, valid binder contexts, typed reduction and
+universal native refinement remain explicit next obligations.
+
 ### Timing smoke
 
 The smoke run uses all seven families with eight definitions, one sample, and
@@ -233,8 +249,9 @@ own source identity, and no speed threshold determines smoke success.
 The top-level receipt is `conformance/evidence/verification.json`. The formal
 gate writes `conformance/evidence/formal/results.json`. Their source inventories,
 logs, toolchain identities, outcomes, and before/after checks identify the
-execution being reported. The v5 formal receipt records all five scopes,
-including its `stored_bindings`, `expression_dag`, `substitution`, and `typing_conversion` sections,
+execution being reported. The v6 formal receipt records all six scopes,
+including its `stored_bindings`, `expression_dag`, `substitution`,
+`typing_conversion`, and `semantic_environment` sections,
 and the stated finite runtime comparisons; it
 does not certify full implementation
 refinement or estate-wide adoption.

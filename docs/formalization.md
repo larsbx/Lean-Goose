@@ -1,8 +1,9 @@
 # Required formalization scopes
 
-Lean-Goose requires five related formal scopes: ordered definition transactions,
+Lean-Goose requires six related formal scopes: ordered definition transactions,
 preservation of complete stored bindings, expression-DAG representation with
-binder scope, capture-avoiding lifting/substitution, and numeric-sort typing/conversion. All execute Lean proofs,
+binder scope, capture-avoiding lifting/substitution, numeric-sort typing/conversion, and
+semantic-environment preservation. All execute Lean proofs,
 Quint checks, and finite comparisons with
 the bounded Goose reference. The
 stored-binding scope adds declared-type, original-value, and inferred-type
@@ -15,6 +16,7 @@ payloads plus snapshots after each processed definition.
 | Expression DAG and scope | 30 | 21 | 2,163 topology-valid graphs of lengths 1–3 over seven leaves, each at four native binder depths; 45 additional model/control cases |
 | Lifting and substitution | 32 | 30 | 2,520 operations over 84 short graphs, 20 named compound/capture cases, six topology refusals; 30 additional native control commands |
 | Typing and conversion | 32 | 26 | 48 authored compound requests, 67 definitions and 66 processed snapshots; 44 common-fragment fixtures / 59 outcomes per external engine |
+| Semantic environments | 37 | 24 | 12 authored histories, 62 definitions and 61 processed snapshots; 10 common-reference histories / 52 outcomes per external engine |
 
 The [expression-DAG specification](expression-dag-scope.md) gives the third
 scope's representation relation, binder laws, exact finite profile, observed
@@ -26,7 +28,10 @@ and [operation replay contract](../schemas/substitution-replay-v1.md).
 The [typing/conversion specification](typing-conversion.md) gives the fifth scope's
 independent judgments, successful-evaluation soundness, compound stored-field
 comparisons and [replay contract](../schemas/typing-conversion-replay-v1.md).
-The complete required inventory is **144 Lean theorems and 105 Quint tests**,
+The [semantic-environment specification](semantic-environment.md) gives the sixth
+scope's independent certificates, relational weakening, record projection,
+bounded certificate checks, and additional history comparisons.
+The complete required inventory is **181 Lean theorems and 129 Quint tests**,
 plus one invariant and one designated negative control per Quint model.
 
 The inventories describe what the gate must execute. They are not a claim that
@@ -36,7 +41,10 @@ Hosted-CI results are assessed separately for the same revision. Each Quint
 scope requires 1,000 seeded simulated traces and a designated invariant-failure
 control. The original three models use at most 40 transitions; substitution
 uses at most eight. Typing/conversion also uses eight transitions, with at most
-four processed snapshots over two names and eight expression/checking forms. The DAG simulation caps its arena at eight nodes and the
+four processed snapshots over two names and eight expression/checking forms.
+Semantic environments use eight transitions with at most four snapshots,
+three names and nine input forms, with seed `20261123`; the earlier scopes keep
+their existing seed. The DAG simulation caps its arena at eight nodes and the
 substitution simulation at six; each stutters thereafter. Those exploration
 bounds are distinct from the unbounded Lean theorems and the finite native
 replay inventories.
@@ -232,7 +240,7 @@ assumption inside a first-match shortcut.
 | `tools/check_stored_bindings.py` | Execute the new proof/model inventories and both native modes for every case |
 | `tools/binding_trace_controls.py` | Required diagnostic contract and envelope controls |
 | `tools/source_derivation.py` | Reconstruct the exact reviewed diagnostic extension and verify the preserved checking/parser prefix |
-| `tools/check_formal.py` | Require all five formal scopes in one source-bound receipt |
+| `tools/check_formal.py` | Require all six formal scopes in one source-bound receipt |
 
 ### Stored-binding Lean obligations
 
@@ -438,12 +446,13 @@ make acceptance
 Quint installation is under `formal/quint/node_modules`. Tool reports and hashes
 belong to the actual run. Formal Lean commands use the recorded `--threads=1`
 flag for a fixed worker count, without changing the proof or axiom checks. The formal receipt is
-`conformance/evidence/formal/results.json`, schema `lean-goose.formal-evidence.v5`,
-with required `stored_bindings`, `expression_dag`, `substitution`, and `typing_conversion` sections in addition to the
+`conformance/evidence/formal/results.json`, schema `lean-goose.formal-evidence.v6`,
+with required `stored_bindings`, `expression_dag`, `substitution`,
+`typing_conversion`, and `semantic_environment` sections in addition to the
 retained ordered-name scope.
 The repository receipt is `conformance/evidence/verification.json`.
 
-The five-scope orchestration allowance remains 2,400 seconds, with 60 minutes for
+The six-scope orchestration allowance remains 2,400 seconds, with 60 minutes for
 the complete hosted workflow. Individual formal subprocesses remain limited
 to 300 seconds and native probes to 15 seconds. An earlier acceptance attempt
 under the 1,800-second allowance was explicitly interrupted after ten completed
@@ -456,7 +465,7 @@ That attempt is neither a completed pass nor an observed timeout. The allowance
 change retains every required case, comparison, and individual command limit;
 a subsequent fresh complete acceptance run must establish the new source's result.
 
-The gate requires all five formal scopes, their Lean and Quint lanes, actual finite
+The gate requires all six formal scopes, their Lean and Quint lanes, actual finite
 runtime comparisons, and unchanged source identities. Declared scope, implementation, model, gate, and profile files
 must occur in its source inventory. Logs and receipt outcomes are generated by
 execution. CI retains its own evidence, and local success is recorded separately
@@ -466,6 +475,9 @@ The fifth scope additionally retains `typing-inputs.jsonl.gz`,
 `typing-lean-replay.log.gz`, `typing-quint-replay.log.gz`,
 `typing-native-comparison.jsonl.gz`, and its malformed-input/budget controls.
 Its full contract and required counts are in [typing-conversion.md](typing-conversion.md).
+The sixth scope retains `environment-inputs.jsonl.gz`, both actual model replay
+logs, `environment-native-comparison.jsonl.gz`, its axiom audit and the exact
+old-value corruption witness. See [semantic-environment.md](semantic-environment.md).
 
 Full stored-binding replay and native-comparison logs are gzip-compressed:
 
@@ -530,9 +542,11 @@ adds finite correspondence for all node kinds. The substitution scope proves
 structural lifting, substitution, scope, and noncapture laws and adds finite
 actual-function correspondence. The fifth scope proves successful model typing
 and conversion executions derive independent operational judgments, and compares
-compound stored fields on its authored native profile. Well-formed-environment
-preservation, typed reduction metatheory, completeness and refinement of
-arbitrary concrete transformation and checker transitions remain open.
+compound stored fields on its authored native profile. The sixth scope proves
+semantic-environment certification, lookup-preserving relational weakening and
+complete-record projection. Inferred-field scope/availability, well-formed
+binder contexts, typed reduction metatheory, sufficient-budget completeness and
+refinement of arbitrary concrete checker transitions remain open.
 Runtime/tool authenticity,
 faithful diagnostic serialization, filesystem consistency, and source-hash
 assumptions remain in the execution boundary. Concrete work is listed in

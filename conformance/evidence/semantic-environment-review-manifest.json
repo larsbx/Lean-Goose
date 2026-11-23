@@ -1,0 +1,37 @@
+{
+  "schema": "lean-goose.semantic-environment-review.v1",
+  "source_revision": "92c9c07b3bcc4e408a1ce4bb81b7ba34ec355346",
+  "source_git_tree": "247c6c0c5caa9756f2eecdb2f1853b0f36375af1",
+  "source_tree_sha256": "0fa93f85941c64b99d1641bd19a374b599f1ec8d17a3c661e70f6b1f53af578b",
+  "publication_authorization": "User requested PR against main, merge, roadmap updates and beginning next obligations",
+  "files": [
+    {
+      "path": "semantic-environment-review.md",
+      "sha256": "8951d36023255652db1c9c624300bba5dcd7df5b31e1d88e7e26084caeb8565a"
+    },
+    {
+      "path": "semantic-environment-proposal.patch",
+      "sha256": "fe01f6b29226d0e544a1934610b1ff3147bf8a25fb3a037d496e5297e1421a46"
+    },
+    {
+      "path": "verification.json",
+      "sha256": "c8aba79e9f6bb25ab30b6d40311dbfcd816bb3c5d275625cb64880bee8e4b0de"
+    },
+    {
+      "path": "source-manifest.json",
+      "sha256": "b85f2f64fe1917e27f393f60b9e5f0440bf6ba28120a1a052792c1b7185523f5"
+    },
+    {
+      "path": "formal/results.json",
+      "sha256": "2f99b4bc0204c3907b2acecc38253ec4fe1e74e91a9866580c4c81bfb6a670f2"
+    },
+    {
+      "path": "check/results.json",
+      "sha256": "dd4c192ac7f41d16d5606df7603b8fde780b5eda868238e50b3f182546c2c45b"
+    },
+    {
+      "path": "smoke/results.json",
+      "sha256": "17d6750af8890339a37e74d9e3f980812c928738e16a1ebde51ec6d8ead63088"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+lean-ocaml-benchmark-dag-v1
+n	0	s	1
+n	1	s	0
+n	2	l	0	1
+n	3	c	later
+n	4	a	2	3
+n	5	t	0	3	1
+n	6	c	prior
+n	7	c	erasedLet
+d	prior	0	1
+d	erasedBeta	0	4
+d	erasedLet	0	5
+d	later	0	6
+d	erasedBeta	0	4
+d	erasedLet	0	5
+d	after	0	7

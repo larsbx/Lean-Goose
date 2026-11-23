@@ -7,9 +7,9 @@ and boundary level in `ESTATE.toml`.
 | Language | Location | Current role |
 | --- | --- | --- |
 | Goose | `reference/` | Locally owned bounded checker, binding diagnostics, and an appended transformation driver for temporary diagnostic builds |
-| Lean | `formal/lean/` | Transaction, complete binding, DAG/scope, substitution, and typing/conversion models, proofs, axiom audits, and executable replays |
+| Lean | `formal/lean/` | Transaction, complete binding, DAG/scope, substitution, typing/conversion, and semantic-environment models, proofs, axiom audits, and executable replays |
 | Lean | Pinned external comparison checkout | Native checked declaration insertion used for finite comparison |
-| Quint | `formal/quint/` | Independent transaction, stored-binding, DAG, substitution, and typing/conversion models, invariant checks, tests, and counterexample controls |
+| Quint | `formal/quint/` | Independent transaction, stored-binding, DAG, substitution, typing/conversion, and semantic-environment models, invariant checks, tests, and counterexample controls |
 | OCaml | Pinned external comparison checkout | Bytecode reference used for independent finite comparisons |
 | Python | `tools/`, `tests/` | Dependency checks, fixture orchestration, formal gates, and unsigned receipts |
 | Shell | `tools/*.sh`, CI | Compiler builds and pinned auditor execution |
@@ -28,6 +28,12 @@ models. Python constructs syntax, retains authored expected examples and checks
 framing/full stored fields; it does not implement inference or conversion.
 External Lean and OCaml expose ordered definition outcomes through their pinned
 drivers, with no stored-field trace from those engines.
+
+The semantic-environment lane adds Lean relational certificates and
+lookup-preserving environment weakening. Quint checks explicit component
+observations and frozen predecessor records. Its finite certificate checks do
+not replace the Lean proof or expose a native semantic certificate. Additional
+native histories reuse the unchanged typing replay interfaces.
 
 Source history from Lean-OCaml remains attributed by immutable repository,
 commit, path, Git blob, and SHA-256. Comparison code is consumed from its pinned
