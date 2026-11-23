@@ -1,4 +1,4 @@
-"""Sixth formal scope: semantic environment preservation and record projection."""
+"""Sixth formal scope: semantic environments, structural scope, and record projection."""
 from __future__ import annotations
 
 import json
@@ -13,7 +13,8 @@ import typing_conversion_profile as profile
 from check_expression_dag import compressed_input
 from semantic_environment_negative import counterexample
 
-LEAN_SOURCES = {"formal/lean/SemanticEnvironment.lean", "formal/lean/SemanticEnvironmentAudit.lean"}
+LEAN_SOURCES = {"formal/lean/EnvironmentScope.lean", "formal/lean/SemanticEnvironment.lean",
+                "formal/lean/SemanticEnvironmentAudit.lean"}
 QUINT_SOURCES = {"formal/quint/SemanticEnvironment.qnt"}
 IMPLEMENTATIONS = {"tools/check_semantic_environment.py", "tools/semantic_environment_profile.py",
                    "tools/semantic_environment_negative.py"}
@@ -31,6 +32,34 @@ LEAN_OBLIGATIONS = {"GooseSemanticEnvironment." + name for name in (
     "step_environment_prefix", "run_environment_prefix", "project_binding_fields", "project_append",
     "project_successful_insertion", "project_refusal_preserves_records", "projected_lookup_corresponds",
     "projected_trace_preserves_old_record", "projected_trace_preserves_lookup",
+)} | {"GooseEnvironmentScope." + name for name in (
+    "lookup_values_closed_of_certified",
+    "head_preserves_scope",
+    "normalization_preserves_scope",
+    "normalization_yields_normal_form",
+    "normalization_fixes_normal_form",
+    "normal_form_available",
+    "converted_normal_form_preserves_scope",
+    "binding_valid_inferred_closed_available",
+    "checked_success_inferred_scope_of_closed_values",
+    "checked_success_inferred_closed_available",
+    "ContextValid.scoped",
+    "lift_preserves_available",
+    "substitution_preserves_available",
+    "head_preserves_available",
+    "scoped_context_lifts_lookup",
+    "inference_preserves_scope_available",
+    "valid_context_inference_scope",
+    "certified_lookup_all_fields",
+    "certified_record_lookup",
+    "run_snapshots_all_fields",
+    "run_final_environment_all_fields",
+    "malformed_delta_value_escapes",
+    "closed_delta_values_allow_scope_of_normalized_field",
+    "dependent_context_valid_and_lifts",
+    "self_scoped_context_refused",
+    "scoped_context_can_lack_sort",
+    "conversion_refusal_does_not_insert",
 )}
 QUINT_TESTS = {
     "emptySemanticHistoryTest", "firstPredecessorIsEmptyTest", "compoundCertificateTest",
@@ -43,6 +72,13 @@ QUINT_TESTS = {
     "forwardReferenceCannotCertifyTest", "selfReferenceCannotCertifyTest",
     "fatalScopePreservesHistoryTest", "fatalBudgetPreservesHistoryTest",
     "haltedSuffixHasNoCertificateTest", "betaValueCertificateTest", "zetaValueCertificateTest",
+    "forgedDeltaValueProducesOpenFieldTest",
+    "closedDeltaSeparatesStoredFromRawInferenceTest",
+    "dependentBinderOuterTailScopeTest",
+    "malformedBinderCannotBeItsOwnTypeContextTest",
+    "scopedContextWithoutSortTest",
+    "conversionRefusalKeepsInferredFieldAndNameFreeTest",
+    "dependentNormalizationScopeOnExtensionTest",
 }
 QUINT_OBLIGATIONS = {"SemanticEnvironment." + name for name in QUINT_TESTS | {"safety"}}
 SAMPLES = 1000
@@ -53,11 +89,14 @@ SEED = "20261123"
 def execute(*, output: Path, receipt: dict, build: Path, lean_build: Path, lean: Path,
             lean_flags: list[str], quint: Path, binary: Path, env: dict, run: Callable) -> None:
     lane: dict = {"status": "running", "implementation_refinement": False,
-                  "scope": "predecessor-certified semantic environments, lookup-preserving relational weakening, and complete record projection"}
+                  "scope": "certified environments, inferred-field and context scope, lookup weakening, and complete records"}
     receipt["semantic_environment"] = lane
     model = lean_build / "SemanticEnvironment.olean"
     run([str(lean), *lean_flags, "-o", str(model), "SemanticEnvironment.lean"], lean_build,
         output, receipt, "environment-lean-build", env=env)
+    scope_model = lean_build / "EnvironmentScope.olean"
+    run([str(lean), *lean_flags, "-o", str(scope_model), "EnvironmentScope.lean"], lean_build,
+        output, receipt, "environment-scope-lean-build", env=env)
     audit = run([str(lean), *lean_flags, "SemanticEnvironmentAudit.lean"], lean_build,
                 output, receipt, "environment-lean-axiom-audit", env=env)
     if f"Semantic environment axiom audit passed: {len(LEAN_OBLIGATIONS)} required theorems without axioms;" not in audit:
@@ -65,6 +104,8 @@ def execute(*, output: Path, receipt: dict, build: Path, lean_build: Path, lean:
     lane["lean"] = {"status": "passed", "obligations": sorted(LEAN_OBLIGATIONS),
                     "required_theorem_axioms": [], "namespace_support_axiom_allowlist": ["propext"],
                     "compiled_model_sha256": runtime.sha256(model),
+                    "compiled_scope_model_sha256": runtime.sha256(scope_model),
+                    "inferred_field_scope_premise": "closed original values of bindings selected by lookup",
                     "semantic_predicate": "independent HasSort/Infers/Normalizes/Converts judgments and closed, available original syntax",
                     "record_bridge": "exact encoded payloads; lookup correspondence assumes injective name coding",
                     "old_four_action_checker_simulation": False}

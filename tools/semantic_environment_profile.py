@@ -8,11 +8,11 @@ from __future__ import annotations
 
 from typing_conversion_profile import Case, case
 
-CASE_COUNT = 12
-INPUT_DEFINITIONS = 62
-PROCESSED_SNAPSHOTS = 61
-REFERENCE_CASE_COUNT = 10
-REFERENCE_OUTCOMES = 52
+CASE_COUNT = 15
+INPUT_DEFINITIONS = 75
+PROCESSED_SNAPSHOTS = 73
+REFERENCE_CASE_COUNT = 12
+REFERENCE_OUTCOMES = 62
 
 
 def cases() -> list[Case]:
@@ -103,6 +103,26 @@ def cases() -> list[Case]:
             ("call", "s1", "a cid s0", 0, "s1"),
             ("use", "s1", "ccall", 0, "s1"),
         ], "Duplicate priority preserves a compound predecessor despite invalid replacement syntax.", references=False),
+        case("environment_deep_dependent_context", [
+            ("P", "s1", "s0", 0, "s1"),
+            ("first", "p s1 p s1 p v1 v2", "l s1 l s1 l v1 v0", 0, "p s1 p s1 p v1 v2"),
+            ("specialize", "p s1 p cP cP", "a cfirst cP", 0, "p s1 p s0 s0"),
+            ("atProp", "p cP cP", "a cspecialize s0", 0, "p s0 s0"),
+        ], "Lifting under three binders and specialization through delta preserve all original and normalized fields."),
+        case("environment_normalized_field_conversion_retry", [
+            ("U", "s2", "s1", 0, "s2"),
+            ("id", "t s2 cU p v0 v1", "l cU v0", 0, "p s1 s1"),
+            ("bad", "p s1 s2", "cid", 6, "declTypeMismatch"),
+            ("missing", "p s1 s1", "cbad", 2, "unknownConstant"),
+            ("bad", "p cU cU", "cid", 0, "p s1 s1"),
+            ("call", "s1", "a cbad s0", 0, "s1"),
+        ], "A refused conversion cannot bind its name or replace an existing normalized inferred field."),
+        case("environment_dependent_annotation_outside_outer_context", [
+            ("dep", "p s1 p v0 v1", "l s1 l v0 v0", 0, "p s1 p v0 v1"),
+            ("stop", "p s1 p v1 v1", "l s1 l v0 v0", 1, "Invalid_scope"),
+            ("unprocessed", "s1", "s0", 0, "s1"),
+        ], "An inner domain cannot borrow its own binder; fatal scope retains the dependent binding and stops insertion.",
+            references=False),
     ]
     common = [item for item in inventory if item.lean_outcomes is not None]
     if len(inventory) != CASE_COUNT or len({item.name for item in inventory}) != CASE_COUNT \

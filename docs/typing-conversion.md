@@ -223,8 +223,9 @@ to remain unchanged during execution. Hosted CI remains separate evidence.
 
 1. The [semantic-environment scope](semantic-environment.md) now proves
    predecessor certification, its preservation across traces, environment
-   weakening of the judgments and the complete-record bridge. Next prove
-   inferred-field closedness/availability and valid binder-context invariants.
+   weakening of the judgments and the complete-record bridge. The resulting
+   inferred field is closed and available, and inference preserves scope and
+   availability in structurally valid binder contexts.
 2. Prove suitable completeness with sufficient model budget, deterministic
    normal forms, typed beta/zeta preservation, and normalization/termination for
    a precisely stated admissible fragment. Successful-execution soundness is

@@ -107,15 +107,14 @@ The 44 common-fragment fixtures also compare 59 ordered outcomes per engine
 against the pinned native Lean and OCaml references. Model soundness and finite
 implementation correspondence remain separate claims.
 
-The [semantic-environment lane](docs/semantic-environment.md) adds 37 required
-Lean theorems. Each binding has independent typing/conversion derivations in
-its predecessor environment, and lookup-preserving weakening retains those
-derivations in the final environment. An explicit projection connects all three
-stored payloads and lookup to the earlier full-record model. Its 24 Quint tests
-check certificate histories and an exact old-value corruption witness. Twelve
-additional native/model histories cover 62 definitions and 61 snapshots; ten
-common-reference histories add 52 ordered outcomes per engine. The next proof
-targets inferred-field scope/availability and well-formed binder contexts.
+The [semantic-environment lane](docs/semantic-environment.md) requires 64 Lean
+theorems. Each binding has independent typing/conversion derivations in its
+predecessor environment, and every processed snapshot preserves scope and
+availability for all stored fields. Binder-context validity uses the outer
+tail of each entry. An explicit projection connects stored payloads and lookup
+to the earlier full-record model. The lane runs 31 Quint tests, an exact
+old-value corruption control, and 15 native/model histories. Twelve
+common-reference histories add 62 ordered outcomes per engine.
 
 All six Quint models run seeded, bounded invariant simulations and designated
 negative controls. The DAG simulation has an eight-node arena cap; substitution
@@ -134,7 +133,7 @@ implementation's refinement of these models remains unproved.
 
 `make acceptance` retains the broader 964 ordered outcomes per engine, six
 structural/resource controls, and seven-family benchmark smoke alongside all six
-formal scopes. The 59-outcome typing and 52-outcome semantic-environment
+formal scopes. The 59-outcome typing and 62-outcome semantic-environment
 comparisons are recorded separately from
 that retained 964-outcome inventory. Large replay and native-comparison logs are preserved as gzip
 files; [the reproduction notes](docs/formalization.md#reproduction-and-receipts)
@@ -156,7 +155,7 @@ must establish; they do not relabel an earlier receipt as a pass for new code.
 | [Substitution replay contract](schemas/substitution-replay-v1.md) | Operation inputs, transformed-root observations, and native diagnostic boundary |
 | [Typing/conversion scope](docs/typing-conversion.md) | Model soundness, compound stored fields, finite reference comparisons, and remaining semantic obligations |
 | [Typing/conversion replay](schemas/typing-conversion-replay-v1.md) | Strict requests, separate model budget, full-field observations, and diagnostic limits |
-| [Semantic environments](docs/semantic-environment.md) | Predecessor certificates, environment weakening, complete record projection, and remaining context obligations |
+| [Semantic environments](docs/semantic-environment.md) | Predecessor certificates, environment weakening, stored-field scope, valid binder contexts, and complete record projection |
 | [Dependency pins](conformance/dependencies.json) | Exact compiler/comparison revisions and archive hashes |
 | [Source provenance](conformance/source-provenance.json) | Original and locally adapted Goose bytes |
 | [Validation guide](docs/validation.md) | Gates, reproducibility, and evidence interpretation |

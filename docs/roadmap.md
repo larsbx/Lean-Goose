@@ -17,7 +17,7 @@ capture-avoiding lifting/substitution, and successful typing/conversion model
 soundness. Their finite native observations remain distinct from general
 implementation refinement or full Lean kernel compatibility.
 
-## Begun here: semantic environments and the record bridge
+## Semantic environments, stored-field scope, and the record bridge
 
 The [semantic-environment increment](semantic-environment.md) adds independent
 certificates for the original declared type/value and normalized inferred
@@ -32,47 +32,39 @@ and directly reuses the earlier indexed-record preservation theorem. Lookup
 correspondence has an explicit injective name-coding premise; this does not
 equate the earlier four-action checker with compound-expression typing.
 
-The required increment is 37 Lean obligations, 24 Quint tests, bounded invariant
-exploration and an exact old-record corruption witness. Twelve additional
-native/model histories cover 62 definitions and 61 processed snapshots; ten
-common-reference histories add 52 ordered outcomes per engine. These are gate
-requirements. Their executed status belongs to the matching new source-bound
-receipt, not to the earlier PR #6 result.
+[PR #7](https://github.com/larsbx/Lean-Goose/pull/7) merged those results through
+`8ded5c39faa52ad58743d7c5fdfe09049398ed62`. The extended sixth scope proves
+`checked_success_inferred_closed_available` from `Certified` and successful
+checking. Its weaker version requires closed original values from lookup.
+Every processed snapshot and the final environment preserve scope and constant
+availability for all three fields. Binder-context validity uses each entry's
+outer tail. The structural portion suffices for scoped inference.
 
 ## Ordered next proof work
 
-1. **Inferred-field scope and well-formed contexts.** Define binder-context
-   validity using the existing de Bruijn orientation: each entry must have a
-   sort in its preceding outer context. Prove that certified environments and
-   valid contexts preserve scope and constant availability through inference
-   and normalization. The first named target is a successful-check theorem
-   `checked_success_inferred_closed_available`: from `Certified E` and
-   `checked fuel E d = .ok A`, derive `Closed A ∧ Available E A`.
-   The present certificate proves these properties for the original
-   type/value, and gives derivations for the inferred field; it does not yet
-   independently prove its scope/availability. Add dependent-context and
-   rejected-context controls while retaining all six scopes.
-2. **Typed substitution and reduction preservation.** Build the context
-   weakening and substitution lemmas over the existing capture-avoiding
-   operations. State the type relation explicitly, including conversion where
-   required, before proving beta and zeta subject reduction for the admitted
-   fragment. Do not replace this obligation with structural substitution laws.
-3. **Determinacy, conversion and sufficient budgets.** Prove deterministic
+1. **Typed context weakening, substitution, and reduction preservation.**
+   First prove that inserting a well-formed binder into a context transports
+   the relevant `Infers` and `HasSort` judgments with the existing cutoff
+   lift. Use that result to prove typed substitution, a sort witness for
+   inferred types, and beta/zeta subject reduction. State where the transported
+   type needs conversion. Then relate delta preservation to the original stored
+   type and value.
+2. **Determinacy, conversion and sufficient budgets.** Prove deterministic
    normal forms and the required conversion laws, then connect derivations to
    executable inference/normalization with a sufficient budget. State the
-   admissible environment/context/term hypotheses. Termination of a function
-   for a supplied budget is already provided by Lean; normalization of all
-   well-typed inputs and existence of enough successful fuel remain open.
-4. **Concrete record and name representation.** Discharge injectivity for the
+   admissible environment, context, and term hypotheses. Prove normalization
+   for all inputs in the specified typed fragment and existence of enough
+   successful fuel.
+3. **Concrete record and name representation.** Discharge injectivity for the
    chosen concrete name encoding over its declared ASCII domain and connect
    structural encoded records to native DAG IDs and lookup. Keep exact record
    preservation separate from a simulation of the older abstract action model.
-5. **Native semantic refinement.** Relate the proved model transitions to the
+4. **Native semantic refinement.** Relate the proved model transitions to the
    actual Goose inference, validation, conversion, binding lookup, lifting and
    substitution implementations. Prove the concrete DAG/metadata relation and
    diagnostic serializer/snapshot timing. Present finite replay remains
    evidence about its selected inputs; it is not that refinement theorem.
-6. **Resources, caches and failure priority.** Model native work, height,
+5. **Resources, caches and failure priority.** Model native work, height,
    intermediate-node and context limits, and specify cache validity across
    insertion/refusal. Distinguish model recursion fuel, Quint's evaluator cap,
    native limits and diagnostic envelopes. Prove which error priorities hold

@@ -33,8 +33,9 @@ module SemanticEnvironment {
   // of the stored fields after a successful original insertion.
   pure def certificateValid(c: Certificate): bool = all {
     T::lookup(c.predecessor, c.stored.name).length() == 0,
-    T::closed(c.stored.ty), T::closed(c.stored.value),
+    T::closed(c.stored.ty), T::closed(c.stored.value), T::closed(c.stored.inferred),
     T::known(c.predecessor, c.stored.ty), T::known(c.predecessor, c.stored.value),
+    T::known(c.predecessor, c.stored.inferred),
     c.declaredSort == T::eval(c.predecessor, 3, c.stored.ty, List(), List(), c.fuel),
     c.declaredSort.code == 0,
     c.valueType == T::eval(c.predecessor, 2, c.stored.value, List(), List(), c.fuel),
@@ -44,6 +45,7 @@ module SemanticEnvironment {
     c.inferredNormal == T::eval(c.predecessor, 1, c.stored.inferred, List(), List(), c.fuel),
     c.declaredNormal == T::eval(c.predecessor, 1, c.stored.ty, List(), List(), c.fuel),
     c.inferredNormal.code == 0, c.declaredNormal.code == 0,
+    c.inferredNormal.value == c.stored.inferred,
     c.inferredNormal.value == c.declaredNormal.value,
   }
 
@@ -86,6 +88,7 @@ module SemanticEnvironment {
   }
   pure def remainsValidIn(c: Certificate, environment: List[T::Binding]): bool = all {
     T::known(environment, c.stored.ty), T::known(environment, c.stored.value),
+    T::known(environment, c.stored.inferred),
     T::eval(environment, 3, c.stored.ty, List(), List(), c.fuel) == c.declaredSort,
     T::eval(environment, 2, c.stored.value, List(), List(), c.fuel) == c.valueType,
     afterResult(environment, 1, c.valueType, c.fuel) == c.normalizedType,
@@ -251,4 +254,77 @@ module SemanticEnvironment {
     val corrupted = { ...valid, checked: { ...valid.checked, environment: wrongEnvironment, snapshots: snapshots } }
     all { s' = corrupted, previous' = negativeBase, last' = valueAlias, hasStep' = true }
   }
+
+  run forgedDeltaValueProducesOpenFieldTest = init.expect({
+    val name = List(65)
+    val domain = T::constant(name)
+    val ty = T::pair(5, domain, domain)
+    val value = T::pair(4, domain, T::variable(0))
+    val env = List({ name: name, ty: T::sort(1), value: T::variable(0), inferred: T::sort(1) })
+    val result = T::check(env, identityName, ty, value, 16)
+    val stored = { name: identityName, ty: ty, value: value, inferred: result.value }
+    all {
+      T::closed(ty), T::closed(value), T::known(env, ty), T::known(env, value),
+      result == { code: 0, value: T::pair(5, T::variable(0), T::variable(0)) },
+      not(T::closed(result.value)), not(certificateValid(certificate(env, stored, 16))),
+    }
+  })
+
+  run closedDeltaSeparatesStoredFromRawInferenceTest = init.expect({
+    val name = List(65)
+    val ty = T::letExpr(T::sort(2), T::variable(0), T::sort(1))
+    val env = List({ name: name, ty: ty, value: T::sort(0), inferred: T::variable(0) })
+    val value = T::constant(name)
+    val raw = T::eval(env, 2, value, List(), List(), 16)
+    all {
+      raw == { code: 0, value: ty }, not(T::closed(raw.value)),
+      T::check(env, List(66), T::sort(1), value, 16) == { code: 0, value: T::sort(1) },
+    }
+  })
+
+  run dependentBinderOuterTailScopeTest = init.expect(all {
+    T::eval(List(), 3, T::variable(0), List(), List(T::sort(1)), 16) == { code: 0, value: T::sort(1) },
+    T::eval(List(), 2, T::variable(0), List(), List(T::variable(0), T::sort(1)), 16)
+      == { code: 0, value: T::variable(1) },
+    T::closed(T::pair(5, T::sort(1), T::variable(0))),
+  })
+
+  run malformedBinderCannotBeItsOwnTypeContextTest = init.expect(all {
+    not(T::closed(T::variable(0))),
+    T::eval(List(), 2, T::variable(0), List(), List(T::variable(0)), 16)
+      == { code: 0, value: T::variable(1) },
+    not(T::closed(T::pair(5, T::sort(1), T::variable(1)))),
+  })
+
+  run scopedContextWithoutSortTest = init.expect({
+    val lambda = T::pair(4, T::sort(1), T::variable(0))
+    all { T::closed(lambda), T::eval(List(), 3, lambda, List(), List(), 16).code == 4 }
+  })
+
+  run conversionRefusalKeepsInferredFieldAndNameFreeTest =
+    init.then(perform(typeAlias)).then(perform(identityAlias))
+      .then(perform(T::input(aliasName, T::pair(5, T::sort(1), T::sort(2)), T::constant(identityName), 128)))
+      .expect(safety and s.checked.snapshots.nth(2).code == 6
+        and T::lookup(s.checked.environment, aliasName).length() == 0
+        and s.checked.environment.nth(1).inferred == T::pair(5, T::sort(1), T::sort(1)))
+      .then(perform(T::input(aliasName, identityAlias.ty, T::constant(identityName), 128)))
+      .expect(safety and s.checked.snapshots.nth(3).code == 0
+        and s.checked.environment.nth(2).inferred == s.checked.environment.nth(1).inferred)
+
+  run dependentNormalizationScopeOnExtensionTest = init.expect({
+    val name = List(80)
+    val p = T::input(name, T::sort(1), T::sort(0), 128)
+    val ty = T::pair(5, T::sort(1), T::pair(5, T::sort(1), T::pair(5, T::variable(1), T::variable(2))))
+    val value = T::pair(4, T::sort(1), T::pair(4, T::sort(1), T::pair(4, T::variable(1), T::variable(0))))
+    val dependent = T::input(identityName, ty, value, 128)
+    val specialized = T::input(aliasName,
+      T::pair(5, T::sort(1), T::pair(5, T::constant(name), T::constant(name))),
+      T::pair(3, T::constant(identityName), T::constant(name)), 128)
+    val trace = replay(List(p, dependent, specialized))
+    all {
+      semanticHistorySafety(trace), trace.checked.environment.length() == 3,
+      trace.checked.environment.nth(1).inferred == ty,
+      trace.checked.environment.nth(2).inferred == T::pair(5, T::sort(1), T::pair(5, T::sort(0), T::sort(0))),
+    }
+  })
 }
