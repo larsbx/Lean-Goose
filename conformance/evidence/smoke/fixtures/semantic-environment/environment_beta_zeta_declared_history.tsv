@@ -1,0 +1,15 @@
+lean-ocaml-benchmark-dag-v1
+n	0	s	2
+n	1	v	0
+n	2	l	0	1
+n	3	s	1
+n	4	a	2	3
+n	5	s	0
+n	6	t	0	3	1
+n	7	c	beta
+n	8	c	zeta
+n	9	c	copy
+d	beta	4	5
+d	zeta	6	7
+d	copy	3	8
+d	tail	3	9

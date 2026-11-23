@@ -1,0 +1,2324 @@
+From 92c9c07b3bcc4e408a1ce4bb81b7ba34ec355346 Mon Sep 17 00:00:00 2001
+From: OpenAI Codex <noreply@openai.com>
+Date: Mon, 23 Nov 2026 11:15:41 +0000
+Subject: [PATCH] Prove semantic environment preservation and record next
+ typing obligations
+
+---
+ .github/workflows/conformance.yml           |   2 +-
+ ARCHITECTURE.md                             |  22 +-
+ ESTATE.toml                                 |  68 +++
+ LANGUAGE_BOUNDARIES.md                      |  10 +-
+ README.md                                   |  21 +-
+ docs/formalization.md                       |  38 +-
+ docs/roadmap.md                             | 161 ++++---
+ docs/semantic-environment.md                | 161 +++++++
+ docs/typing-conversion.md                   |  19 +-
+ docs/validation.md                          |  25 +-
+ formal/lean/SemanticEnvironment.lean        | 445 ++++++++++++++++++++
+ formal/lean/SemanticEnvironmentAudit.lean   |  74 ++++
+ formal/quint/SemanticEnvironment.qnt        | 254 +++++++++++
+ tests/test_semantic_environment_negative.py | 190 +++++++++
+ tools/acceptance.py                         |   2 +-
+ tools/check_formal.py                       |  20 +-
+ tools/check_semantic_environment.py         | 177 ++++++++
+ tools/run.py                                |   4 +-
+ tools/semantic_environment_negative.py      |  85 ++++
+ tools/semantic_environment_profile.py       | 114 +++++
+ 20 files changed, 1788 insertions(+), 104 deletions(-)
+ create mode 100644 docs/semantic-environment.md
+ create mode 100644 formal/lean/SemanticEnvironment.lean
+ create mode 100644 formal/lean/SemanticEnvironmentAudit.lean
+ create mode 100644 formal/quint/SemanticEnvironment.qnt
+ create mode 100644 tests/test_semantic_environment_negative.py
+ create mode 100644 tools/check_semantic_environment.py
+ create mode 100644 tools/semantic_environment_negative.py
+ create mode 100644 tools/semantic_environment_profile.py
+
+diff --git a/.github/workflows/conformance.yml b/.github/workflows/conformance.yml
+index 094e180..c0a2fc2 100644
+--- a/.github/workflows/conformance.yml
++++ b/.github/workflows/conformance.yml
+@@ -20,7 +20,7 @@ jobs:
+           import json
+           from pathlib import Path
+           for name, schema in (("verification.json", "lean-goose.local-verification.v1"),
+-                               ("formal/results.json", "lean-goose.formal-evidence.v5")):
++                               ("formal/results.json", "lean-goose.formal-evidence.v6")):
+               path = Path("conformance/evidence") / name
+               path.parent.mkdir(parents=True, exist_ok=True)
+               path.write_text(json.dumps({"schema": schema, "status": "running",
+diff --git a/ARCHITECTURE.md b/ARCHITECTURE.md
+index d771fbe..609e6b8 100644
+--- a/ARCHITECTURE.md
++++ b/ARCHITECTURE.md
+@@ -12,7 +12,7 @@ inventory describes the implementation rather than assigning authority.
+ | --- | --- |
+ | `policy/` | Governance, evidence, and publication policy |
+ | `reference/` | Locally owned, bounded Goose checking observations |
+-| `formal/` | Lean transaction, full-record binding, DAG/scope, substitution, and typing/conversion proofs with independent Quint checks |
++| `formal/` | Lean transaction, full-record binding, DAG/scope, substitution, typing/conversion, and semantic-environment proofs with independent Quint checks |
+ | `oracles/` | Contract for pinned external Lean and OCaml comparisons |
+ | `schemas/` | Versioned input and observation contracts |
+ | `conformance/` | Source identities, dependency pins, and generated observations |
+@@ -126,8 +126,24 @@ produce 59 ordered outcomes per external engine in the conformance gate.
+ Those external drivers observe success/refusal, while the native diagnostic
+ interface exposes full stored fields. See [typing/conversion](docs/typing-conversion.md).
+ This proves successful model evaluation satisfies its rules and supplies finite
+-implementation evidence. General environment invariants, typed reduction
+-preservation, totality, completeness and native refinement remain open.
++implementation evidence. Typed reduction preservation, sufficient-budget
++completeness and native refinement remain open.
++
++The sixth lane proves semantic-environment preservation for the existing typing
++model. Independent predecessor certificates contain closed/available original
++syntax and `HasSort`, `Infers`, `Normalizes`, and `Converts` derivations.
++Lookup-preserving extension weakens these judgments into the current environment;
++all processed snapshots and the final environment preserve certification.
++A projection retains complete encoded records and reuses the earlier
++stored-binding preservation theorem. Lookup correspondence explicitly assumes
++an injective name coding; the older four-action checker is not simulated.
++
++The gate requires 37 new Lean theorems, 24 Quint tests, bounded exploration,
++an exact old-value corruption witness, and 12 additional native/model histories.
++Ten common-reference histories add 52 outcomes per engine. The native interface
++does not expose semantic certificates. Inferred-field closedness/availability,
++well-formed binder contexts and typed substitution remain next obligations.
++See [semantic environments](docs/semantic-environment.md).
+ 
+ ### Observable diagnostic interface
+ 
+diff --git a/ESTATE.toml b/ESTATE.toml
+index 4b5e0de..4f6659f 100644
+--- a/ESTATE.toml
++++ b/ESTATE.toml
+@@ -127,12 +127,15 @@ implementation_paths = [
+   "tools/binding_trace_controls.py",
+   "tools/check_expression_dag.py",
+   "tools/check_formal.py",
++  "tools/check_semantic_environment.py",
+   "tools/check_stored_bindings.py",
+   "tools/check_substitution.py",
+   "tools/check_typing_conversion.py",
+   "tools/expression_dag_profile.py",
+   "tools/run.py",
+   "tools/runtime.py",
++  "tools/semantic_environment_negative.py",
++  "tools/semantic_environment_profile.py",
+   "tools/source_derivation.py",
+   "tools/stored_binding_profile.py",
+   "tools/substitution_harness.py",
+@@ -149,6 +152,8 @@ sources = [
+   "formal/lean/ExpressionDagAudit.lean",
+   "formal/lean/ExpressionDagReplay.lean",
+   "formal/lean/Replay.lean",
++  "formal/lean/SemanticEnvironment.lean",
++  "formal/lean/SemanticEnvironmentAudit.lean",
+   "formal/lean/StoredBindings.lean",
+   "formal/lean/StoredBindingsAudit.lean",
+   "formal/lean/StoredBindingsReplay.lean",
+@@ -191,6 +196,43 @@ obligations = [
+   "GooseExpressionDag.shared_application_decodes",
+   "GooseExpressionDag.topological_edges_decrease",
+   "GooseExpressionDag.variable_requires_exact_depth",
++  "GooseSemanticEnvironment.available_monotone",
++  "GooseSemanticEnvironment.binding_valid_weaken",
++  "GooseSemanticEnvironment.certified_lookup_conversion",
++  "GooseSemanticEnvironment.certified_lookup_has_closed_originals",
++  "GooseSemanticEnvironment.certified_lookup_valid",
++  "GooseSemanticEnvironment.certified_snapshots_end",
++  "GooseSemanticEnvironment.checked_success_certifies_binding",
++  "GooseSemanticEnvironment.checked_success_preconditions",
++  "GooseSemanticEnvironment.conversion_weaken",
++  "GooseSemanticEnvironment.empty_run_has_semantic_environment",
++  "GooseSemanticEnvironment.find_latest",
++  "GooseSemanticEnvironment.find_snoc",
++  "GooseSemanticEnvironment.fresh_append_extends",
++  "GooseSemanticEnvironment.head_reduction_weaken",
++  "GooseSemanticEnvironment.inference_weaken",
++  "GooseSemanticEnvironment.lookup_extends_reflexive",
++  "GooseSemanticEnvironment.lookup_extends_transitive",
++  "GooseSemanticEnvironment.normalization_weaken",
++  "GooseSemanticEnvironment.project_append",
++  "GooseSemanticEnvironment.project_binding_fields",
++  "GooseSemanticEnvironment.project_refusal_preserves_records",
++  "GooseSemanticEnvironment.project_successful_insertion",
++  "GooseSemanticEnvironment.projected_lookup_corresponds",
++  "GooseSemanticEnvironment.projected_trace_preserves_lookup",
++  "GooseSemanticEnvironment.projected_trace_preserves_old_record",
++  "GooseSemanticEnvironment.refusal_retains_certificate",
++  "GooseSemanticEnvironment.run_environment_prefix",
++  "GooseSemanticEnvironment.run_final_environment_certified",
++  "GooseSemanticEnvironment.run_preserves_lookup",
++  "GooseSemanticEnvironment.run_preserves_semantic_judgments",
++  "GooseSemanticEnvironment.run_snapshots_certified",
++  "GooseSemanticEnvironment.sort_weaken",
++  "GooseSemanticEnvironment.step_environment_prefix",
++  "GooseSemanticEnvironment.step_preserves_certification",
++  "GooseSemanticEnvironment.step_preserves_lookup",
++  "GooseSemanticEnvironment.successful_insertion_certified",
++  "GooseSemanticEnvironment.validate_implies_available",
+   "GooseStoredBindings.completed_receipt_has_no_authority",
+   "GooseStoredBindings.duplicate_precedes_checks",
+   "GooseStoredBindings.duplicate_preserves_environment",
+@@ -311,6 +353,7 @@ obligations = [
+ sources = [
+   "formal/quint/DefinitionTransactions.qnt",
+   "formal/quint/ExpressionDag.qnt",
++  "formal/quint/SemanticEnvironment.qnt",
+   "formal/quint/StoredBindings.qnt",
+   "formal/quint/Substitution.qnt",
+   "formal/quint/TypingConversion.qnt",
+@@ -339,6 +382,31 @@ obligations = [
+   "ExpressionDag.sharedOpenSubtreeDepthTest",
+   "ExpressionDag.simulationBoundStuttersTest",
+   "ExpressionDag.snapshotPrefixPreservedTest",
++  "SemanticEnvironment.betaValueCertificateTest",
++  "SemanticEnvironment.compoundCertificateTest",
++  "SemanticEnvironment.duplicateBeforeScopeAndBudgetTest",
++  "SemanticEnvironment.duplicatePreservesSemanticHistoryTest",
++  "SemanticEnvironment.emptySemanticHistoryTest",
++  "SemanticEnvironment.fatalBudgetPreservesHistoryTest",
++  "SemanticEnvironment.fatalScopePreservesHistoryTest",
++  "SemanticEnvironment.firstPredecessorIsEmptyTest",
++  "SemanticEnvironment.forwardReferenceCannotCertifyTest",
++  "SemanticEnvironment.haltedSuffixHasNoCertificateTest",
++  "SemanticEnvironment.mismatchPreservesSemanticHistoryTest",
++  "SemanticEnvironment.predecessorMatchesExactPrefixTest",
++  "SemanticEnvironment.previousLookupPreservedTest",
++  "SemanticEnvironment.previousSemanticRecordPreservedTest",
++  "SemanticEnvironment.projectedLookupExactTest",
++  "SemanticEnvironment.projectedNameLengthDistinctTest",
++  "SemanticEnvironment.projectedPayloadsExactTest",
++  "SemanticEnvironment.projectedUnknownLookupTest",
++  "SemanticEnvironment.rejectedNameCanBeRetriedTest",
++  "SemanticEnvironment.safety",
++  "SemanticEnvironment.selfReferenceCannotCertifyTest",
++  "SemanticEnvironment.semanticWeakeningObservedTest",
++  "SemanticEnvironment.threeSuccessfulSemanticRecordsTest",
++  "SemanticEnvironment.unknownPreservesSemanticHistoryTest",
++  "SemanticEnvironment.zetaValueCertificateTest",
+   "StoredBindings.crossLevelDuplicateAliasTest",
+   "StoredBindings.duplicatePreemptsScopeSnapshotTest",
+   "StoredBindings.duplicatePreservesAllFieldsTest",
+diff --git a/LANGUAGE_BOUNDARIES.md b/LANGUAGE_BOUNDARIES.md
+index 01d63e2..5b05c95 100644
+--- a/LANGUAGE_BOUNDARIES.md
++++ b/LANGUAGE_BOUNDARIES.md
+@@ -7,9 +7,9 @@ and boundary level in `ESTATE.toml`.
+ | Language | Location | Current role |
+ | --- | --- | --- |
+ | Goose | `reference/` | Locally owned bounded checker, binding diagnostics, and an appended transformation driver for temporary diagnostic builds |
+-| Lean | `formal/lean/` | Transaction, complete binding, DAG/scope, substitution, and typing/conversion models, proofs, axiom audits, and executable replays |
++| Lean | `formal/lean/` | Transaction, complete binding, DAG/scope, substitution, typing/conversion, and semantic-environment models, proofs, axiom audits, and executable replays |
+ | Lean | Pinned external comparison checkout | Native checked declaration insertion used for finite comparison |
+-| Quint | `formal/quint/` | Independent transaction, stored-binding, DAG, substitution, and typing/conversion models, invariant checks, tests, and counterexample controls |
++| Quint | `formal/quint/` | Independent transaction, stored-binding, DAG, substitution, typing/conversion, and semantic-environment models, invariant checks, tests, and counterexample controls |
+ | OCaml | Pinned external comparison checkout | Bytecode reference used for independent finite comparisons |
+ | Python | `tools/`, `tests/` | Dependency checks, fixture orchestration, formal gates, and unsigned receipts |
+ | Shell | `tools/*.sh`, CI | Compiler builds and pinned auditor execution |
+@@ -29,6 +29,12 @@ framing/full stored fields; it does not implement inference or conversion.
+ External Lean and OCaml expose ordered definition outcomes through their pinned
+ drivers, with no stored-field trace from those engines.
+ 
++The semantic-environment lane adds Lean relational certificates and
++lookup-preserving environment weakening. Quint checks explicit component
++observations and frozen predecessor records. Its finite certificate checks do
++not replace the Lean proof or expose a native semantic certificate. Additional
++native histories reuse the unchanged typing replay interfaces.
++
+ Source history from Lean-OCaml remains attributed by immutable repository,
+ commit, path, Git blob, and SHA-256. Comparison code is consumed from its pinned
+ external checkout. The local formal sources are separately owned artifacts
+diff --git a/README.md b/README.md
+index cdfeefb..5151de7 100644
+--- a/README.md
++++ b/README.md
+@@ -10,7 +10,8 @@ The repository adopts **estate-repository-v3** with unrestricted implementation
+ languages and required **Lean and Quint formalization**. The required formal
+ scopes cover ordered definition transactions, preservation of complete stored
+ bindings, structural expression DAGs with binder scope, capture-avoiding
+-lifting/substitution, and numeric-sort typing with beta/zeta/delta conversion. Stored records retain
++lifting/substitution, numeric-sort typing with beta/zeta/delta conversion, and
++semantic-environment preservation. Stored records retain
+ names, declared types, original values, and inferred types. The
+ [formalization document](docs/formalization.md) identifies the claims,
+ implementation mapping, required checks, and remaining correspondence work.
+@@ -106,7 +107,17 @@ The 44 common-fragment fixtures also compare 59 ordered outcomes per engine
+ against the pinned native Lean and OCaml references. Model soundness and finite
+ implementation correspondence remain separate claims.
+ 
+-All five Quint models run seeded, bounded invariant simulations and designated
++The [semantic-environment lane](docs/semantic-environment.md) adds 37 required
++Lean theorems. Each binding has independent typing/conversion derivations in
++its predecessor environment, and lookup-preserving weakening retains those
++derivations in the final environment. An explicit projection connects all three
++stored payloads and lookup to the earlier full-record model. Its 24 Quint tests
++check certificate histories and an exact old-value corruption witness. Twelve
++additional native/model histories cover 62 definitions and 61 snapshots; ten
++common-reference histories add 52 ordered outcomes per engine. The next proof
++targets inferred-field scope/availability and well-formed binder contexts.
++
++All six Quint models run seeded, bounded invariant simulations and designated
+ negative controls. The DAG simulation has an eight-node arena cap; substitution
+ has a six-node cap. Both stutter at their bounds. Their replay inventories and
+ the unbounded Lean theorems have separate coverage meanings.
+@@ -122,8 +133,9 @@ correctness of Goose inference, substitution, normalization, caches, and the
+ implementation's refinement of these models remains unproved.
+ 
+ `make acceptance` retains the broader 964 ordered outcomes per engine, six
+-structural/resource controls, and seven-family benchmark smoke alongside all five
+-formal scopes. The new 59-outcome typing comparison is recorded separately from
++structural/resource controls, and seven-family benchmark smoke alongside all six
++formal scopes. The 59-outcome typing and 52-outcome semantic-environment
++comparisons are recorded separately from
+ that retained 964-outcome inventory. Large replay and native-comparison logs are preserved as gzip
+ files; [the reproduction notes](docs/formalization.md#reproduction-and-receipts)
+ explain how to inspect them. Required inventories describe what a successful run
+@@ -144,6 +156,7 @@ must establish; they do not relabel an earlier receipt as a pass for new code.
+ | [Substitution replay contract](schemas/substitution-replay-v1.md) | Operation inputs, transformed-root observations, and native diagnostic boundary |
+ | [Typing/conversion scope](docs/typing-conversion.md) | Model soundness, compound stored fields, finite reference comparisons, and remaining semantic obligations |
+ | [Typing/conversion replay](schemas/typing-conversion-replay-v1.md) | Strict requests, separate model budget, full-field observations, and diagnostic limits |
++| [Semantic environments](docs/semantic-environment.md) | Predecessor certificates, environment weakening, complete record projection, and remaining context obligations |
+ | [Dependency pins](conformance/dependencies.json) | Exact compiler/comparison revisions and archive hashes |
+ | [Source provenance](conformance/source-provenance.json) | Original and locally adapted Goose bytes |
+ | [Validation guide](docs/validation.md) | Gates, reproducibility, and evidence interpretation |
+diff --git a/docs/formalization.md b/docs/formalization.md
+index 5476c81..b03a6f5 100644
+--- a/docs/formalization.md
++++ b/docs/formalization.md
+@@ -1,8 +1,9 @@
+ # Required formalization scopes
+ 
+-Lean-Goose requires five related formal scopes: ordered definition transactions,
++Lean-Goose requires six related formal scopes: ordered definition transactions,
+ preservation of complete stored bindings, expression-DAG representation with
+-binder scope, capture-avoiding lifting/substitution, and numeric-sort typing/conversion. All execute Lean proofs,
++binder scope, capture-avoiding lifting/substitution, numeric-sort typing/conversion, and
++semantic-environment preservation. All execute Lean proofs,
+ Quint checks, and finite comparisons with
+ the bounded Goose reference. The
+ stored-binding scope adds declared-type, original-value, and inferred-type
+@@ -15,6 +16,7 @@ payloads plus snapshots after each processed definition.
+ | Expression DAG and scope | 30 | 21 | 2,163 topology-valid graphs of lengths 1–3 over seven leaves, each at four native binder depths; 45 additional model/control cases |
+ | Lifting and substitution | 32 | 30 | 2,520 operations over 84 short graphs, 20 named compound/capture cases, six topology refusals; 30 additional native control commands |
+ | Typing and conversion | 32 | 26 | 48 authored compound requests, 67 definitions and 66 processed snapshots; 44 common-fragment fixtures / 59 outcomes per external engine |
++| Semantic environments | 37 | 24 | 12 authored histories, 62 definitions and 61 processed snapshots; 10 common-reference histories / 52 outcomes per external engine |
+ 
+ The [expression-DAG specification](expression-dag-scope.md) gives the third
+ scope's representation relation, binder laws, exact finite profile, observed
+@@ -26,7 +28,10 @@ and [operation replay contract](../schemas/substitution-replay-v1.md).
+ The [typing/conversion specification](typing-conversion.md) gives the fifth scope's
+ independent judgments, successful-evaluation soundness, compound stored-field
+ comparisons and [replay contract](../schemas/typing-conversion-replay-v1.md).
+-The complete required inventory is **144 Lean theorems and 105 Quint tests**,
++The [semantic-environment specification](semantic-environment.md) gives the sixth
++scope's independent certificates, relational weakening, record projection,
++bounded certificate checks, and additional history comparisons.
++The complete required inventory is **181 Lean theorems and 129 Quint tests**,
+ plus one invariant and one designated negative control per Quint model.
+ 
+ The inventories describe what the gate must execute. They are not a claim that
+@@ -36,7 +41,10 @@ Hosted-CI results are assessed separately for the same revision. Each Quint
+ scope requires 1,000 seeded simulated traces and a designated invariant-failure
+ control. The original three models use at most 40 transitions; substitution
+ uses at most eight. Typing/conversion also uses eight transitions, with at most
+-four processed snapshots over two names and eight expression/checking forms. The DAG simulation caps its arena at eight nodes and the
++four processed snapshots over two names and eight expression/checking forms.
++Semantic environments use eight transitions with at most four snapshots,
++three names and nine input forms, with seed `20261123`; the earlier scopes keep
++their existing seed. The DAG simulation caps its arena at eight nodes and the
+ substitution simulation at six; each stutters thereafter. Those exploration
+ bounds are distinct from the unbounded Lean theorems and the finite native
+ replay inventories.
+@@ -232,7 +240,7 @@ assumption inside a first-match shortcut.
+ | `tools/check_stored_bindings.py` | Execute the new proof/model inventories and both native modes for every case |
+ | `tools/binding_trace_controls.py` | Required diagnostic contract and envelope controls |
+ | `tools/source_derivation.py` | Reconstruct the exact reviewed diagnostic extension and verify the preserved checking/parser prefix |
+-| `tools/check_formal.py` | Require all five formal scopes in one source-bound receipt |
++| `tools/check_formal.py` | Require all six formal scopes in one source-bound receipt |
+ 
+ ### Stored-binding Lean obligations
+ 
+@@ -438,12 +446,13 @@ make acceptance
+ Quint installation is under `formal/quint/node_modules`. Tool reports and hashes
+ belong to the actual run. Formal Lean commands use the recorded `--threads=1`
+ flag for a fixed worker count, without changing the proof or axiom checks. The formal receipt is
+-`conformance/evidence/formal/results.json`, schema `lean-goose.formal-evidence.v5`,
+-with required `stored_bindings`, `expression_dag`, `substitution`, and `typing_conversion` sections in addition to the
++`conformance/evidence/formal/results.json`, schema `lean-goose.formal-evidence.v6`,
++with required `stored_bindings`, `expression_dag`, `substitution`,
++`typing_conversion`, and `semantic_environment` sections in addition to the
+ retained ordered-name scope.
+ The repository receipt is `conformance/evidence/verification.json`.
+ 
+-The five-scope orchestration allowance remains 2,400 seconds, with 60 minutes for
++The six-scope orchestration allowance remains 2,400 seconds, with 60 minutes for
+ the complete hosted workflow. Individual formal subprocesses remain limited
+ to 300 seconds and native probes to 15 seconds. An earlier acceptance attempt
+ under the 1,800-second allowance was explicitly interrupted after ten completed
+@@ -456,7 +465,7 @@ That attempt is neither a completed pass nor an observed timeout. The allowance
+ change retains every required case, comparison, and individual command limit;
+ a subsequent fresh complete acceptance run must establish the new source's result.
+ 
+-The gate requires all five formal scopes, their Lean and Quint lanes, actual finite
++The gate requires all six formal scopes, their Lean and Quint lanes, actual finite
+ runtime comparisons, and unchanged source identities. Declared scope, implementation, model, gate, and profile files
+ must occur in its source inventory. Logs and receipt outcomes are generated by
+ execution. CI retains its own evidence, and local success is recorded separately
+@@ -466,6 +475,9 @@ The fifth scope additionally retains `typing-inputs.jsonl.gz`,
+ `typing-lean-replay.log.gz`, `typing-quint-replay.log.gz`,
+ `typing-native-comparison.jsonl.gz`, and its malformed-input/budget controls.
+ Its full contract and required counts are in [typing-conversion.md](typing-conversion.md).
++The sixth scope retains `environment-inputs.jsonl.gz`, both actual model replay
++logs, `environment-native-comparison.jsonl.gz`, its axiom audit and the exact
++old-value corruption witness. See [semantic-environment.md](semantic-environment.md).
+ 
+ Full stored-binding replay and native-comparison logs are gzip-compressed:
+ 
+@@ -530,9 +542,11 @@ adds finite correspondence for all node kinds. The substitution scope proves
+ structural lifting, substitution, scope, and noncapture laws and adds finite
+ actual-function correspondence. The fifth scope proves successful model typing
+ and conversion executions derive independent operational judgments, and compares
+-compound stored fields on its authored native profile. Well-formed-environment
+-preservation, typed reduction metatheory, completeness and refinement of
+-arbitrary concrete transformation and checker transitions remain open.
++compound stored fields on its authored native profile. The sixth scope proves
++semantic-environment certification, lookup-preserving relational weakening and
++complete-record projection. Inferred-field scope/availability, well-formed
++binder contexts, typed reduction metatheory, sufficient-budget completeness and
++refinement of arbitrary concrete checker transitions remain open.
+ Runtime/tool authenticity,
+ faithful diagnostic serialization, filesystem consistency, and source-hash
+ assumptions remain in the execution boundary. Concrete work is listed in
+diff --git a/docs/roadmap.md b/docs/roadmap.md
+index d251e51..fea7d96 100644
+--- a/docs/roadmap.md
++++ b/docs/roadmap.md
+@@ -1,64 +1,105 @@
+ # Next concrete obligations
+ 
+-The required formal scope includes ordered-name transactions, complete
+-stored-binding preservation, structural expression DAGs with binder scope,
+-capture-avoiding lifting/substitution, and numeric-sort typing with beta/zeta/delta conversion.
+-The original 1,110-case and 2,954-case lanes remain. The
+-[DAG lane](expression-dag-scope.md) connects all seven raw node kinds to
+-structural expressions, proves recursive scope laws, and adds native probes at
+-four binder depths plus malformed topology and context controls.
+-The [substitution lane](substitution.md) adds scope and index laws, arbitrary
+-nested-lambda noncapture, and direct comparisons with actual Goose `lift` and
+-`substitute`, including capture, malformed-scope, and resource controls.
+-The [typing/conversion lane](typing-conversion.md) connects successful model
+-evaluation to independent typing/reduction judgments, compares compound stored
+-fields and refusals against native Goose, and adds common-fragment outcome
+-comparisons with pinned Lean and OCaml. General implementation refinement is
+-still separate from this model soundness and finite evidence.
+-The proof scope and required execution inventories are in
+-[formalization.md](formalization.md). A particular revision is verified only when
+-its matching execution receipt records the required gates as passed.
++## Accepted starting point
+ 
+-1. **Typing metatheory and semantic environments:** define well-formed bindings
+-   and contexts, prove their preservation across successful traces, and connect
+-   this semantic environment to the earlier full-record model. Then establish
+-   sufficient-budget completeness, deterministic normal forms and typed
+-   beta/zeta preservation for a precisely stated admissible fragment.
+-   Successful model inference already derives the independent rules; general
+-   completeness and native correspondence are not consequences of that result.
+-   Eta, proof irrelevance and unsupported Lean features retain their boundaries.
+-2. **Implementation refinement:** prove the relation between model transitions,
+-   concrete binding lookup, DAG decoding, and the native checker. The present
+-   Lean statements preserve arbitrary model records and define structural DAG
+-   decoding, scope, lifting, substitution, and typing/reduction soundness;
+-   native comparison remains finite. Refine concrete inference, validation,
+-   conversion and error behavior as well as transformations.
+-   Prove refinement of the actual transformation functions and their metadata
+-   optimizations. Add evidence for the diagnostic
+-   serializer and its snapshot timing without treating diagnostic output alone
+-   as a proof of the implementation.
+-3. **Resource and cache behavior:** model work, height, intermediate-node, and
+-   context limits, including failure priority around duplicate and semantic
+-   checks. Specify which caches remain valid across insertion or refusal.
+-   Diagnostic trace bounds and checker resource limits are separate contracts;
+-   existing cache state, contexts, and fuel are outside the stored-binding model.
+-4. **Fresh unshared syntax:** profile arena import, metadata construction, and
+-   inference on `unshared_trees`. Preserve all five formal scopes, full positive and
+-   refusal conformance, and trace compatibility when optimizing representations
+-   or caches. Re-run the full performance experiment on the new source revision
+-   before making a new speed claim.
+-5. **Module separation:** split checking semantics from observation, diagnostic,
+-   and timing adapters under source-bound replay. Preserve both the original
+-   checking/parser source relationship and the explicit formal implementation
+-   mappings, or document and verify any intended semantic change.
+-6. **Accepting-boundary proposal:** before introducing an authoritative entrypoint,
+-   name its exact contract and implementation files, trusted base, supported
+-   semantics, rejection evidence, and formal obligations. Review the manifest
+-   authority change explicitly. Implementation languages remain unrestricted;
+-   proofs, comparisons, diagnostics, and performance measurements do not grant
+-   declaration, theorem, operational, or deployment admission authority.
++[PR #6](https://github.com/larsbx/Lean-Goose/pull/6) merged the numeric-sort
++typing and beta/zeta/delta conversion increment into `main` through
++`c79bafddb6372decf1a373c14c4c8eb7ec4eea3e`. Its published source revision
++`f45bb43d5c5ce15dd335a5f7ae2915fb581cc3ca` has the exact Git tree of locally
++tested source `3718d12fbe977ed322faa10fe81143b3ddbcb0f3`. The
++[hosted main run](https://github.com/larsbx/Lean-Goose/actions/runs/45079151056)
++completed successfully on the merge revision. The original local receipts
++retain their own source identity.
+ 
+-General universes, inductives, recursors, quotients, `.olean` ingestion, and full
+-Lean theorem admission remain outside the reference. The retained 964-outcome
+-comparison, structural/resource controls, and benchmark smoke continue to serve
+-their stated finite validation roles alongside the formal work.
++The five retained scopes establish ordered-name transactions, complete
++stored-record preservation, expression-DAG representation and binder scope,
++capture-avoiding lifting/substitution, and successful typing/conversion model
++soundness. Their finite native observations remain distinct from general
++implementation refinement or full Lean kernel compatibility.
++
++## Begun here: semantic environments and the record bridge
++
++The [semantic-environment increment](semantic-environment.md) adds independent
++certificates for the original declared type/value and normalized inferred
++field in each binding's exact predecessor environment. It proves that fresh
++insertion and refusal preserve certification across arbitrary finite traces.
++Lookup-preserving environment weakening transports the relational typing and
++reduction judgments into the final environment, so old certificates remain
++valid after later insertions.
++
++The projection to `GooseStoredBindings.Binding` retains every encoded payload
++and directly reuses the earlier indexed-record preservation theorem. Lookup
++correspondence has an explicit injective name-coding premise; this does not
++equate the earlier four-action checker with compound-expression typing.
++
++The required increment is 37 Lean obligations, 24 Quint tests, bounded invariant
++exploration and an exact old-record corruption witness. Twelve additional
++native/model histories cover 62 definitions and 61 processed snapshots; ten
++common-reference histories add 52 ordered outcomes per engine. These are gate
++requirements. Their executed status belongs to the matching new source-bound
++receipt, not to the earlier PR #6 result.
++
++## Ordered next proof work
++
++1. **Inferred-field scope and well-formed contexts.** Define binder-context
++   validity using the existing de Bruijn orientation: each entry must have a
++   sort in its preceding outer context. Prove that certified environments and
++   valid contexts preserve scope and constant availability through inference
++   and normalization. The first named target is a successful-check theorem
++   `checked_success_inferred_closed_available`: from `Certified E` and
++   `checked fuel E d = .ok A`, derive `Closed A ∧ Available E A`.
++   The present certificate proves these properties for the original
++   type/value, and gives derivations for the inferred field; it does not yet
++   independently prove its scope/availability. Add dependent-context and
++   rejected-context controls while retaining all six scopes.
++2. **Typed substitution and reduction preservation.** Build the context
++   weakening and substitution lemmas over the existing capture-avoiding
++   operations. State the type relation explicitly, including conversion where
++   required, before proving beta and zeta subject reduction for the admitted
++   fragment. Do not replace this obligation with structural substitution laws.
++3. **Determinacy, conversion and sufficient budgets.** Prove deterministic
++   normal forms and the required conversion laws, then connect derivations to
++   executable inference/normalization with a sufficient budget. State the
++   admissible environment/context/term hypotheses. Termination of a function
++   for a supplied budget is already provided by Lean; normalization of all
++   well-typed inputs and existence of enough successful fuel remain open.
++4. **Concrete record and name representation.** Discharge injectivity for the
++   chosen concrete name encoding over its declared ASCII domain and connect
++   structural encoded records to native DAG IDs and lookup. Keep exact record
++   preservation separate from a simulation of the older abstract action model.
++5. **Native semantic refinement.** Relate the proved model transitions to the
++   actual Goose inference, validation, conversion, binding lookup, lifting and
++   substitution implementations. Prove the concrete DAG/metadata relation and
++   diagnostic serializer/snapshot timing. Present finite replay remains
++   evidence about its selected inputs; it is not that refinement theorem.
++6. **Resources, caches and failure priority.** Model native work, height,
++   intermediate-node and context limits, and specify cache validity across
++   insertion/refusal. Distinguish model recursion fuel, Quint's evaluator cap,
++   native limits and diagnostic envelopes. Prove which error priorities hold
++   under which resource assumptions.
++
++## Later engineering and authority decisions
++
++- **Fresh unshared syntax:** profile arena import, metadata construction and
++  inference on `unshared_trees`. Preserve all six formal scopes, positive and
++  refusal conformance, and trace compatibility when optimizing. Rerun the full
++  performance experiment on its exact source before making a new speed claim.
++- **Module separation:** split checking semantics from observation, diagnostic
++  and timing adapters under source-bound replay. Preserve the checking/parser
++  provenance and explicit formal implementation mapping, or document and
++  verify an intended semantic change.
++- **Accepting-boundary proposal:** before introducing an authoritative
++  entrypoint, name its contract, implementation, trusted base, supported
++  semantics and rejection evidence; review the manifest authority change
++  explicitly. Implementation languages remain unrestricted. Proofs, diagnostic
++  observations and performance measurements grant no admission authority.
++
++The required inventories are in [formalization.md](formalization.md). The
++original 1,110-case and 2,954-case lanes, all DAG/scope and 2,546 substitution
++comparisons, previous typing cases, 964 ordered outcomes, existing
++eta/proof-irrelevance differences, resource controls and benchmark smoke remain
++required. Local and hosted results must each identify the exact source tested.
++
++General universes, eta, proof irrelevance, inductives, recursors, quotients,
++`.olean` ingestion, and full Lean theorem admission remain outside the reference.
++The repository continues to have `acceptance_authority = false`.
+diff --git a/docs/semantic-environment.md b/docs/semantic-environment.md
+new file mode 100644
+index 0000000..d84af8f
+--- /dev/null
++++ b/docs/semantic-environment.md
+@@ -0,0 +1,161 @@
++# Semantic environment preservation
++
++This sixth formal scope begins the metatheory obligation recorded after
++[PR #6](https://github.com/larsbx/Lean-Goose/pull/6). It proves that the existing
++typing model builds environments whose stored bindings have independent
++semantic derivations, and that later successful or refused checks preserve
++those derivations. It also connects the resulting records to the earlier
++full-record preservation model.
++
++The starting revision is PR #6's merge
++`c79bafddb6372decf1a373c14c4c8eb7ec4eea3e`. Its
++[hosted main workflow](https://github.com/larsbx/Lean-Goose/actions/runs/45079151056)
++completed successfully on that exact revision. That historical result does not
++verify this increment. The matching new source-bound acceptance receipt supplies
++its execution status. The owned checker, dependency pins, and all five preceding
++Lean and Quint models retain their sources.
++
++## Independent semantic predicate
++
++`BindingValidIn environment binding` requires all of the following:
++
++1. The **original declared type and value** are closed expressions.
++2. Every constant occurring in either original expression resolves in the
++   specified environment. This includes branches that beta or zeta would erase.
++3. The declared type has a sort, witnessed by the independent `HasSort` judgment.
++4. Some actual type is derived for the original value by `Infers`, and that
++   actual type `Normalizes` to the stored inferred field.
++5. The stored inferred field `Converts` to the original declared type.
++
++These are the existing relational judgments from `TypingConversion.lean`.
++The predicate is not defined as successful executable checking. The theorem
++`checked_success_certifies_binding` connects actual successful model checking
++to this independent predicate.
++
++`Certified` is an inductive ordered-environment predicate. Its empty case is
++the empty environment. Its append case requires a certified predecessor, a
++fresh name, and `BindingValidIn` **in that exact predecessor**. A binding cannot
++justify itself or rely on a later declaration.
++
++## Preservation beyond historical certificates
++
++`LookupExtends before after` preserves the complete binding selected by every
++previously successful lookup. Fresh append satisfies this relation; refusals
++retain the same environment. The Lean development proves weakening along it
++for `HeadReduces`, `Normalizes`, `Converts`, `Infers`, and `HasSort`. It transports
++derivations without assuming an executable checker equation or enumerating
++expressions.
++
++| Required theorem | Claim |
++| --- | --- |
++| `checked_success_certifies_binding` | Successful checking establishes the independent certificate in the predecessor environment |
++| `step_preserves_certification` | Success appends a certified binding; refusal preserves the old certification |
++| `certified_lookup_valid` | A selected binding has the required derivations in the **current** certified environment |
++| `run_snapshots_certified` | Every processed snapshot of an arbitrary finite definition trace is certified |
++| `run_final_environment_certified` | A trace from a certified start ends in a certified environment |
++| `run_preserves_lookup` | Every earlier successful full-record lookup survives the trace |
++| `run_preserves_semantic_judgments` | Earlier binding certificates remain valid in the final environment |
++| `empty_run_has_semantic_environment` | Empty-start endpoint, including refusal and fatal-prefix behavior |
++
++These statements quantify over arbitrary finite expressions, definition lists,
++and model budgets. An arbitrary initial environment must satisfy `Certified`
++where that premise is stated. Lookup and record-preservation lemmas that do not
++need this premise are formulated without it. Fatal scope or model budget
++exhaustion stops the suffix according to the unchanged typing model. No native
++resource accounting is inferred from the model budget.
++
++The required inventory is **37 named Lean theorems**, audited for empty
++transitive axiom closures. The complete new namespace is also audited. Its
++permitted generated-support allowlist is `propext`, recorded separately from
++the required theorem closures. See
++[`SemanticEnvironmentAudit.lean`](../formal/lean/SemanticEnvironmentAudit.lean).
++
++## Bridge to complete stored records
++
++`projectBinding` constructs a `GooseStoredBindings.Binding`. It applies the
++existing structural expression encoder independently to the declared type,
++original value, and stored inferred type. Payload and append preservation are
++exact equalities.
++
++The old model names bindings by natural numbers; the typing model uses lists
++of name bytes. The bridge takes `nameCode : List Nat → Nat`. Lookup correspondence
++explicitly requires this function to be injective. Payload and indexed-prefix
++preservation do not need that assumption. This increment does not prove a
++particular wire name encoder injective for every input.
++
++`projected_trace_preserves_old_record` directly applies the earlier
++`GooseStoredBindings.bindingAt_append_preserves` theorem to the exact projected
++suffix. `projected_lookup_corresponds` and `projected_trace_preserves_lookup`
++connect both lookup interfaces under the stated name-coding premise.
++
++The target model permits arbitrary payload vectors. This bridge uses the full
++expression encoder, including length-framed constant names. It does not identify
++that wire with the older small Sort/Const fixture convention, and does not
++simulate the older model's four abstract checking actions.
++
++## Quint checks and exact negative control
++
++[`SemanticEnvironment.qnt`](../formal/quint/SemanticEnvironment.qnt) imports the
++unchanged typing and stored-binding models. Each insertion freezes its complete
++predecessor, stored binding, and separate observations of declared-sort checking,
++value inference, normalization into the inferred field, and the two normal
++forms witnessing conversion. Certificate validity checks these component
++equations, original closedness and constant availability. It is not equality
++with the overall `check` or `advance` function.
++
++The state invariant checks ordered certificate/record correspondence, exact
++predecessor prefixes, distinct names, old records and lookups, refusal atomicity,
++fatal stopping, and the same semantic observations in the final environment.
++It also checks payload and lookup projection into `StoredBindings`. Sampled
++name coding uses radix 257 with a nonzero leading sentinel; finite checks do
++not discharge the generic Lean injectivity premise.
++
++The gate requires **24 deterministic tests** and **1,000 sampled traces of at
++most eight transitions**, seed `20261123`, on the TypeScript backend. Simulation
++uses three destination names and nine input forms, processes at most four
++snapshots, and stutters thereafter. These finite checks are not an unbounded
++Quint theorem or an independent proof of the imported semantic evaluator.
++
++The negative control starts with valid `U : Sort 2 := Sort 1` and an identity
++over `U`. It successfully adds `V : Sort 2 := U`, then corrupts the **old**
++`U.value` to `Sort 0`. Frozen certificates and earlier snapshots stay intact.
++The gate requires the exact two-state ITF witness, complete predecessor and
++certificate fields, the expected violation diagnostic, and exit code 1.
++An unrelated failure or different mutation cannot satisfy the control.
++
++## Finite implementation observations
++
++The authored profile adds **12 histories, 62 input definitions, and 61 processed
++snapshots**. It includes compound aliases, aliases in declared types, dependent
++applications, beta/zeta declarations, forward and self references, refusal/retry
++sequences, duplicate replacement attempts, and fatal stopping.
++
++The unchanged actual Lean and Quint typing replay helpers evaluate these
++histories through the existing
++[typing replay contract](../schemas/typing-conversion-replay-v1.md). Native Goose
++executes `--trace` and `--check` for each: **24 native commands**. Comparison
++requires all stored fields, original type/value IDs, immutable binding and
++raw-node prefixes, ordered outcomes, and exact fatal process status. The native
++interface exposes stored records, not semantic proof certificates.
++
++Ten common-reference histories additionally produce **52 ordered outcomes per
++engine** for actual Goose, pinned Lean, and pinned OCaml. Fatal scope and
++duplicate-before-invalid-scope histories remain native/model-only controls.
++No new semantic disagreement is allowed. This profile is recorded separately
++from the prior 964 outcomes and the fifth scope's 59 outcomes per engine.
++
++## Remaining obligations
++
++This closes semantic-environment certification, relational weakening along
++lookup-preserving extension, and the stated record projection for the model.
++It does not establish independent closedness or constant availability of the
++**stored inferred type**, well-formed binder contexts, typed substitution,
++subject reduction, sufficient-budget completeness, or normalization of every
++well-typed term. The fuelled Lean functions already terminate for their supplied
++budget; existence of a sufficient successful budget is a different claim.
++
++General native inference/reduction/lookup refinement, serializer correctness,
++cache/resource semantics, parser/compiler trust, and full Lean kernel
++compatibility remain separate obligations. Eta, proof irrelevance, general
++universes, inductives, recursors, quotients, and other unsupported features keep
++their boundaries. `acceptance_authority` remains `false`.
+diff --git a/docs/typing-conversion.md b/docs/typing-conversion.md
+index 0ab4f72..b6b8832 100644
+--- a/docs/typing-conversion.md
++++ b/docs/typing-conversion.md
+@@ -1,4 +1,4 @@
+-# Typing and conversion: proposed semantic increment
++# Typing and conversion: semantic scope
+ 
+ This fifth required scope connects successful execution of the Lean **model**
+ to independent typing and beta/zeta/delta reduction judgments. It compares both
+@@ -7,12 +7,14 @@ Goose checker. A separate comparison uses the pinned native Lean and OCaml
+ engines. These are distinct forms of evidence: the model soundness theorems do
+ not establish arbitrary native implementation refinement.
+ 
+-The proposal builds on `main` at
++The original increment built on `main` at
+ `632ab16805830aaf8ee94a4647dc948901e09423`, whose PR #5 source was
+ `de66c4198cdc01371d5593684bfdf07b7e1bef8c`. The owned checker, its derivation,
+ external pins, and four preceding model scopes retain their existing sources.
+-Publication requires the user's review and approval. Execution results belong
+-to the matching source-bound receipt, not to this scope declaration.
++It was merged through [PR #6](https://github.com/larsbx/Lean-Goose/pull/6).
++Execution results belong to the matching source-bound receipt, not to this scope
++declaration. [Semantic environments](semantic-environment.md) now adds the
++predecessor-certificate and record-preservation bridge as a sixth scope.
+ 
+ ## Smallest useful fragment
+ 
+@@ -203,7 +205,7 @@ Use the existing pinned setup from [validation.md](validation.md), then run:
+ make acceptance
+ ```
+ 
+-`tools/check_formal.py` executes all five scopes and writes formal evidence v5.
++`tools/check_formal.py` executes all six scopes and writes formal evidence v6.
+ `tools/run.py check` retains the existing **964 ordered outcomes per engine**,
+ 16 fixtures and six parser/resource controls, and records the new 44-fixture
+ comparison separately as `typing_conversion`. Benchmark smoke retains its
+@@ -219,9 +221,10 @@ to remain unchanged during execution. Hosted CI remains separate evidence.
+ 
+ ## Remaining semantic obligations
+ 
+-1. Define well-formed environments and contexts, and prove that successful
+-   traces preserve their semantic invariants. Connect the new semantic records
+-   explicitly to the earlier generic stored-binding preservation development.
++1. The [semantic-environment scope](semantic-environment.md) now proves
++   predecessor certification, its preservation across traces, environment
++   weakening of the judgments and the complete-record bridge. Next prove
++   inferred-field closedness/availability and valid binder-context invariants.
+ 2. Prove suitable completeness with sufficient model budget, deterministic
+    normal forms, typed beta/zeta preservation, and normalization/termination for
+    a precisely stated admissible fragment. Successful-execution soundness is
+diff --git a/docs/validation.md b/docs/validation.md
+index f1461c2..2a74a9c 100644
+--- a/docs/validation.md
++++ b/docs/validation.md
+@@ -44,7 +44,7 @@ in the local Goose source.
+ | `make pins` | External checkout and local source-provenance verification |
+ | `make test` | Full finite observation comparison against native Lean and OCaml |
+ | `make formal-tests` | Formal-runner acceptance and rejection controls |
+-| `make formal` | All five Lean proof inventories and axiom audits, independent Quint models, finite transaction/binding/DAG/substitution/typing comparisons, and native controls |
++| `make formal` | All six Lean proof inventories and axiom audits, independent Quint models, finite transaction/binding/DAG/substitution/typing comparisons, and native controls |
+ | `make smoke` | Small fresh three-engine benchmark execution |
+ | `make audit` | Pinned external estate v3 manifest audit |
+ | `make acceptance` | All required gates, logs, source manifest, and verification receipt |
+@@ -159,7 +159,7 @@ Quint replay uses sequential fresh invocations of at most 256 requests, bounding
+ REPL source/history growth. Exact chunk offsets, counts, and input hashes link
+ every command to the complete ordered inventory. Lean evaluates the same entire
+ inventory, and each Quint chunk is compared with the corresponding Lean slice.
+-The repository runner allows 2,400 seconds for the expanded five-scope formal gate and
++The repository runner allows 2,400 seconds for the expanded six-scope formal gate and
+ records that timeout in its receipt. Individual formal commands retain their
+ 300-second limit and native probes retain their 15-second limit. This changes
+ the orchestration budget, not the checker resource bounds or required cases.
+@@ -221,6 +221,22 @@ input/output identities and complete compressed logs are described in the
+ budgets is identified with native resource accounting. The theorem and finite
+ execution scopes retain their different meanings.
+ 
++### Semantic-environment preservation
++
++The [sixth lane](semantic-environment.md) requires 37 Lean obligations and
++24 Quint tests, 1,000 samples of at most eight transitions with a four-snapshot
++cap, and the exact old-value corruption witness. Its independent semantic
++certificates and lookup-preserving weakening are model theorems. Quint checks
++component evaluation equations and frozen predecessor histories finitely.
++
++Twelve additional histories run through the unchanged actual Lean and Quint
++typing replay helpers and both native Goose modes: 62 definitions, 61 processed
++snapshots and 24 native commands. Ten common-reference histories add 52 ordered
++outcomes per engine, recorded separately from the older 964 and 59 outcomes.
++The native diagnostic interface exposes full records, not semantic proof
++certificates. Inferred-field scope, valid binder contexts, typed reduction and
++universal native refinement remain explicit next obligations.
++
+ ### Timing smoke
+ 
+ The smoke run uses all seven families with eight definitions, one sample, and
+@@ -233,8 +249,9 @@ own source identity, and no speed threshold determines smoke success.
+ The top-level receipt is `conformance/evidence/verification.json`. The formal
+ gate writes `conformance/evidence/formal/results.json`. Their source inventories,
+ logs, toolchain identities, outcomes, and before/after checks identify the
+-execution being reported. The v5 formal receipt records all five scopes,
+-including its `stored_bindings`, `expression_dag`, `substitution`, and `typing_conversion` sections,
++execution being reported. The v6 formal receipt records all six scopes,
++including its `stored_bindings`, `expression_dag`, `substitution`,
++`typing_conversion`, and `semantic_environment` sections,
+ and the stated finite runtime comparisons; it
+ does not certify full implementation
+ refinement or estate-wide adoption.
+diff --git a/formal/lean/SemanticEnvironment.lean b/formal/lean/SemanticEnvironment.lean
+new file mode 100644
+index 0000000..44a9105
+--- /dev/null
++++ b/formal/lean/SemanticEnvironment.lean
+@@ -0,0 +1,445 @@
++import TypingConversion
++import StoredBindings
++
++/-!
++Semantic environments for the numeric-sort reference fragment.
++
++Certificates use independent typing/reduction judgments in the actual predecessor
++environment, rather than successful-check equations. Lookup-preserving extension
++transports those judgments to later environments. The bridge to the earlier
++stored-binding scope preserves all three structural payloads and assumes an
++injective coding of names; it does not equate the earlier four-action checker
++with the compound-expression checker. Context well-formedness, typed subject
++reduction, totality, and universal native refinement remain separate obligations.
++-/
++namespace GooseSemanticEnvironment
++open GooseExpressionDag GooseTypingConversion
++
++/-- Every syntactically occurring constant already has a stored binding. -/
++def Available (environment : Environment) : Expr → Prop
++  | .sort _ | .var _ => True
++  | .const name => ∃ binding, find environment name = some binding
++  | .app a b | .lam a b | .pi a b => Available environment a ∧ Available environment b
++  | .letE a b c => Available environment a ∧ Available environment b ∧ Available environment c
++
++/-- Preserve the complete selected binding, including type/value/inferred. -/
++def LookupExtends (before after : Environment) : Prop :=
++  ∀ name binding, find before name = some binding → find after name = some binding
++
++structure BindingValidIn (environment : Environment) (binding : Binding) : Prop where
++  typeClosed : Closed binding.ty
++  valueClosed : Closed binding.value
++  typeAvailable : Available environment binding.ty
++  valueAvailable : Available environment binding.value
++  declaredSort : ∃ level, HasSort environment [] binding.ty level
++  valueDerivation : ∃ actual, Infers environment [] binding.value actual ∧
++    Normalizes environment actual binding.inferred
++  conversion : Converts environment binding.inferred binding.ty
++
++/-- Each entry is justified against precisely the prefix preceding insertion. -/
++inductive Certified : Environment → Prop where
++  | empty : Certified []
++  | append {environment binding} : Certified environment →
++      find environment binding.name = none → BindingValidIn environment binding →
++      Certified (environment ++ [binding])
++
++def SnapshotsCertified : List Step → Prop
++  | [] => True
++  | snapshot :: rest => Certified snapshot.environment ∧ SnapshotsCertified rest
++
++def finalEnvironment (initial : Environment) : List Step → Environment
++  | [] => initial
++  | snapshot :: rest => finalEnvironment snapshot.environment rest
++
++def projectBinding (nameCode : List Nat → Nat) (binding : Binding) : GooseStoredBindings.Binding :=
++  ⟨nameCode binding.name, encode binding.ty, encode binding.value, encode binding.inferred⟩
++
++def projectEnvironment (nameCode : List Nat → Nat) (environment : Environment) :
++    List GooseStoredBindings.Binding := environment.map (projectBinding nameCode)
++
++theorem validate_implies_available (environment : Environment) (expression : Expr)
++    (valid : validate environment expression = .ok ()) : Available environment expression := by
++  induction expression with
++  | sort => trivial
++  | var => trivial
++  | const name =>
++    cases found : find environment name with
++    | none => simp only [validate, found] at valid; cases valid
++    | some binding => exact ⟨binding, found⟩
++  | app a b iha ihb | lam a b iha ihb | pi a b iha ihb =>
++    cases first : validate environment a with
++    | error code => simp only [validate, first, bind, Except.bind] at valid; cases valid
++    | ok token =>
++      cases token
++      simp only [validate, first, bind, Except.bind] at valid
++      exact ⟨iha first, ihb valid⟩
++  | letE a b c iha ihb ihc =>
++    cases first : validate environment a with
++    | error code => simp only [validate, first, bind, Except.bind] at valid; cases valid
++    | ok token =>
++      cases token
++      cases second : validate environment b with
++      | error code => simp only [validate, first, second, bind, Except.bind] at valid; cases valid
++      | ok token =>
++        cases token
++        simp only [validate, first, second, bind, Except.bind] at valid
++        exact ⟨iha first, ihb second, ihc valid⟩
++
++theorem available_monotone (before after : Environment) (extension : LookupExtends before after)
++    (expression : Expr) (available : Available before expression) : Available after expression := by
++  induction expression with
++  | sort => trivial
++  | var => trivial
++  | const name =>
++    obtain ⟨binding, found⟩ := available
++    exact ⟨binding, extension name binding found⟩
++  | app a b iha ihb | lam a b iha ihb | pi a b iha ihb => exact ⟨iha available.1, ihb available.2⟩
++  | letE a b c iha ihb ihc => exact ⟨iha available.1, ihb available.2.1, ihc available.2.2⟩
++
++theorem lookup_extends_reflexive (environment : Environment) : LookupExtends environment environment :=
++  fun _ _ found => found
++
++theorem lookup_extends_transitive (a b c : Environment)
++    (ab : LookupExtends a b) (bc : LookupExtends b c) : LookupExtends a c :=
++  fun name binding found => bc name binding (ab name binding found)
++
++theorem find_snoc (environment : Environment) (binding : Binding) (name : List Nat) :
++    find (environment ++ [binding]) name =
++      if binding.name = name then some binding else find environment name := by
++  induction environment with
++  | nil => rfl
++  | cons first rest ih =>
++    change (match find (rest ++ [binding]) name with
++      | some found => some found
++      | none => if first.name = name then some first else none) = _
++    rw [ih]
++    by_cases equal : binding.name = name
++    · rw [ite_eq_left equal, ite_eq_left equal]
++    · rw [ite_eq_right equal, ite_eq_right equal]
++      rfl
++
++theorem fresh_append_extends (environment : Environment) (binding : Binding)
++    (fresh : find environment binding.name = none) : LookupExtends environment (environment ++ [binding]) := by
++  intro name previous found
++  have different : binding.name ≠ name := by
++    intro equal
++    rw [equal, found] at fresh
++    cases fresh
++  rw [find_snoc, ite_eq_right different]
++  exact found
++
++theorem find_latest (environment : Environment) (binding : Binding) :
++    find (environment ++ [binding]) binding.name = some binding := by
++  rw [find_snoc, ite_eq_left rfl]
++
++theorem head_reduction_weaken {before after : Environment} (extension : LookupExtends before after)
++    {expression result : Expr} (derivation : HeadReduces before expression result) :
++    HeadReduces after expression result := by
++  induction derivation with
++  | sort level => exact .sort level
++  | var index => exact .var index
++  | lam domain body => exact .lam domain body
++  | pi domain body => exact .pi domain body
++  | delta found reduced ih => exact .delta (extension _ _ found) ih
++  | zeta reduced ih => exact .zeta ih
++  | beta first second ihFirst ihSecond => exact .beta ihFirst ihSecond
++  | app first neutral ih => exact .app ih neutral
++
++theorem normalization_weaken {before after : Environment} (extension : LookupExtends before after)
++    {expression result : Expr} (derivation : Normalizes before expression result) :
++    Normalizes after expression result := by
++  induction derivation with
++  | sort first => exact .sort (head_reduction_weaken extension first)
++  | var first => exact .var (head_reduction_weaken extension first)
++  | app first a b iha ihb => exact .app (head_reduction_weaken extension first) iha ihb
++  | lam first a b iha ihb => exact .lam (head_reduction_weaken extension first) iha ihb
++  | pi first a b iha ihb => exact .pi (head_reduction_weaken extension first) iha ihb
++
++theorem conversion_weaken {before after : Environment} (extension : LookupExtends before after)
++    {left right : Expr} (conversion : Converts before left right) : Converts after left right := by
++  obtain ⟨result, first, second⟩ := conversion
++  exact ⟨result, normalization_weaken extension first, normalization_weaken extension second⟩
++
++theorem inference_weaken {before after : Environment} (extension : LookupExtends before after)
++    {context : Context} {expression type : Expr} (derivation : Infers before context expression type) :
++    Infers after context expression type := by
++  induction derivation using Infers.rec
++      (motive_2 := fun context expression level _ => HasSort after context expression level) with
++  | sort context level => exact .sort context level
++  | var found => exact .var found
++  | const found => exact .const (extension _ _ found)
++  | lam domain body ihDomain ihBody => exact .lam ihDomain ihBody
++  | pi domain codomain ihDomain ihCodomain => exact .pi ihDomain ihCodomain
++  | app fn reduced arg conversion ihFn ihArg =>
++    exact .app ihFn (head_reduction_weaken extension reduced) ihArg (conversion_weaken extension conversion)
++  | letE type value conversion result ihType ihValue ihResult =>
++    exact .letE ihType ihValue (conversion_weaken extension conversion) ihResult
++  | intro type reduced ihType => exact .intro ihType (head_reduction_weaken extension reduced)
++
++theorem sort_weaken {before after : Environment} (extension : LookupExtends before after)
++    {context : Context} {expression : Expr} {level : Nat}
++    (derivation : HasSort before context expression level) : HasSort after context expression level := by
++  cases derivation with
++  | intro type reduced => exact .intro (inference_weaken extension type) (head_reduction_weaken extension reduced)
++
++theorem binding_valid_weaken {before after : Environment} (extension : LookupExtends before after)
++    {binding : Binding} (valid : BindingValidIn before binding) : BindingValidIn after binding := by
++  obtain ⟨level, sort⟩ := valid.declaredSort
++  obtain ⟨actual, typing, normalized⟩ := valid.valueDerivation
++  exact ⟨valid.typeClosed, valid.valueClosed,
++    available_monotone before after extension binding.ty valid.typeAvailable,
++    available_monotone before after extension binding.value valid.valueAvailable,
++    ⟨level, sort_weaken extension sort⟩,
++    ⟨actual, inference_weaken extension typing, normalization_weaken extension normalized⟩,
++    conversion_weaken extension valid.conversion⟩
++
++theorem checked_success_preconditions (fuel : Nat) (environment : Environment) (definition : Definition)
++    (stored : Expr) (success : checked fuel environment definition = .ok stored) :
++    find environment definition.name = none ∧ Closed definition.ty ∧ Closed definition.value ∧
++    Available environment definition.ty ∧ Available environment definition.value := by
++  cases found : find environment definition.name with
++  | some binding => simp only [checked, found] at success; cases success
++  | none =>
++    cases scope : scopeCheck definition.ty 0 && scopeCheck definition.value 0 with
++    | false => simp only [checked, found, scope] at success; cases success
++    | true =>
++      cases typeValid : validate environment definition.ty with
++      | error code => simp only [checked, found, scope, typeValid, bind, Except.bind] at success; cases success
++      | ok token =>
++        cases token
++        cases valueValid : validate environment definition.value with
++        | error code => simp only [checked, found, scope, typeValid, valueValid, bind, Except.bind] at success; cases success
++        | ok token =>
++          cases token
++          have scopes : scopeCheck definition.ty 0 = true ∧ scopeCheck definition.value 0 = true := by
++            cases left : scopeCheck definition.ty 0 with
++            | false => rw [left] at scope; cases scope
++            | true =>
++              cases right : scopeCheck definition.value 0 with
++              | false => rw [left, right] at scope; cases scope
++              | true => exact ⟨rfl, rfl⟩
++          exact ⟨rfl, (scopeCheck_correct definition.ty 0).1 scopes.1,
++            (scopeCheck_correct definition.value 0).1 scopes.2,
++            validate_implies_available environment definition.ty typeValid,
++            validate_implies_available environment definition.value valueValid⟩
++
++theorem checked_success_certifies_binding (fuel : Nat) (environment : Environment) (definition : Definition)
++    (stored : Expr) (success : checked fuel environment definition = .ok stored) :
++    BindingValidIn environment ⟨definition.name, definition.ty, definition.value, stored⟩ := by
++  have pre := checked_success_preconditions fuel environment definition stored success
++  have semantic := checkValue_sound fuel environment definition stored
++    (checked_success_has_semantics fuel environment definition stored success)
++  exact ⟨pre.2.1, pre.2.2.1, pre.2.2.2.1, pre.2.2.2.2,
++    semantic.1, semantic.2.1, semantic.2.2⟩
++
++theorem successful_insertion_certified (fuel : Nat) (environment : Environment) (definition : Definition)
++    (stored : Expr) (certified : Certified environment)
++    (success : checked fuel environment definition = .ok stored) :
++    Certified (insert environment definition stored) :=
++  .append certified (checked_success_preconditions fuel environment definition stored success).1
++    (checked_success_certifies_binding fuel environment definition stored success)
++
++theorem refusal_retains_certificate (fuel : Nat) (environment : Environment) (definition : Definition)
++    (code : Nat) (certified : Certified environment)
++    (refusal : checked fuel environment definition = .error code) :
++    Certified (step fuel environment definition).environment := by
++  rw [refusal_preserves_all_bindings fuel environment definition code refusal]
++  exact certified
++
++theorem step_preserves_certification (fuel : Nat) (environment : Environment) (definition : Definition)
++    (certified : Certified environment) : Certified (step fuel environment definition).environment := by
++  cases result : checked fuel environment definition with
++  | error code => exact refusal_retains_certificate fuel environment definition code certified result
++  | ok stored =>
++    rw [success_stores_exact_fields fuel environment definition stored result]
++    exact successful_insertion_certified fuel environment definition stored certified result
++
++theorem step_preserves_lookup (fuel : Nat) (environment : Environment) (definition : Definition) :
++    LookupExtends environment (step fuel environment definition).environment := by
++  cases result : checked fuel environment definition with
++  | error code =>
++    rw [refusal_preserves_all_bindings fuel environment definition code result]
++    exact lookup_extends_reflexive environment
++  | ok stored =>
++    rw [success_stores_exact_fields fuel environment definition stored result]
++    exact fresh_append_extends environment ⟨definition.name, definition.ty, definition.value, stored⟩
++      (checked_success_preconditions fuel environment definition stored result).1
++
++theorem certified_lookup_valid {environment : Environment} (certified : Certified environment)
++    (name : List Nat) (binding : Binding) (found : find environment name = some binding) :
++    BindingValidIn environment binding := by
++  induction certified with
++  | empty => cases found
++  | @append previous newest prior fresh valid ih =>
++    have extension := fresh_append_extends previous newest fresh
++    rw [find_snoc] at found
++    by_cases same : newest.name = name
++    · rw [ite_eq_left same] at found
++      cases found
++      exact binding_valid_weaken extension valid
++    · rw [ite_eq_right same] at found
++      exact binding_valid_weaken extension (ih found)
++
++theorem certified_lookup_has_closed_originals {environment : Environment} (certified : Certified environment)
++    (name : List Nat) (binding : Binding) (found : find environment name = some binding) :
++    Closed binding.ty ∧ Closed binding.value := by
++  have valid := certified_lookup_valid certified name binding found
++  exact ⟨valid.typeClosed, valid.valueClosed⟩
++
++theorem certified_lookup_conversion {environment : Environment} (certified : Certified environment)
++    (name : List Nat) (binding : Binding) (found : find environment name = some binding) :
++    Converts environment binding.inferred binding.ty :=
++  (certified_lookup_valid certified name binding found).conversion
++
++theorem run_snapshots_certified (fuel : Nat) (environment : Environment) (definitions : List Definition)
++    (certified : Certified environment) : SnapshotsCertified (runFrom fuel environment definitions).steps := by
++  induction definitions generalizing environment with
++  | nil => trivial
++  | cons definition rest ih =>
++    have next := step_preserves_certification fuel environment definition certified
++    unfold runFrom
++    dsimp only
++    cases stops : fatal (step fuel environment definition).outcome with
++    | true => exact ⟨next, True.intro⟩
++    | false => exact ⟨next, ih _ next⟩
++
++theorem certified_snapshots_end (environment : Environment) (steps : List Step)
++    (initial : Certified environment) (snapshots : SnapshotsCertified steps) :
++    Certified (finalEnvironment environment steps) := by
++  induction steps generalizing environment with
++  | nil => exact initial
++  | cons snapshot rest ih => exact ih snapshot.environment snapshots.1 snapshots.2
++
++theorem run_final_environment_certified (fuel : Nat) (environment : Environment) (definitions : List Definition)
++    (certified : Certified environment) : Certified (finalEnvironment environment (runFrom fuel environment definitions).steps) :=
++  certified_snapshots_end environment _ certified (run_snapshots_certified fuel environment definitions certified)
++
++theorem empty_run_has_semantic_environment (fuel : Nat) (definitions : List Definition) :
++    Certified (finalEnvironment [] (observe fuel definitions).steps) :=
++  run_final_environment_certified fuel [] definitions .empty
++
++theorem run_preserves_lookup (fuel : Nat) (environment : Environment) (definitions : List Definition) :
++    LookupExtends environment (finalEnvironment environment (runFrom fuel environment definitions).steps) := by
++  induction definitions generalizing environment with
++  | nil => exact lookup_extends_reflexive environment
++  | cons definition rest ih =>
++    have next := step_preserves_lookup fuel environment definition
++    unfold runFrom
++    dsimp only
++    cases stops : fatal (step fuel environment definition).outcome with
++    | true => exact next
++    | false => exact lookup_extends_transitive environment _ _ next (ih _)
++
++theorem run_preserves_semantic_judgments (fuel : Nat) (environment : Environment) (definitions : List Definition)
++    (binding : Binding) (valid : BindingValidIn environment binding) :
++    BindingValidIn (finalEnvironment environment (runFrom fuel environment definitions).steps) binding :=
++  binding_valid_weaken (run_preserves_lookup fuel environment definitions) valid
++
++theorem step_environment_prefix (fuel : Nat) (environment : Environment) (definition : Definition) :
++    ∃ suffix, (step fuel environment definition).environment = environment ++ suffix := by
++  cases result : checked fuel environment definition with
++  | error code =>
++    refine ⟨[], ?_⟩
++    rw [refusal_preserves_all_bindings fuel environment definition code result]
++    exact (append_nil_exact environment).symm
++  | ok stored => exact success_preserves_existing_prefix fuel environment definition stored result
++
++theorem run_environment_prefix (fuel : Nat) (environment : Environment) (definitions : List Definition) :
++    ∃ suffix, finalEnvironment environment (runFrom fuel environment definitions).steps = environment ++ suffix := by
++  induction definitions generalizing environment with
++  | nil => exact ⟨[], (append_nil_exact environment).symm⟩
++  | cons definition rest ih =>
++    obtain ⟨first, stepEqual⟩ := step_environment_prefix fuel environment definition
++    cases stops : fatal (step fuel environment definition).outcome with
++    | true =>
++      refine ⟨first, ?_⟩
++      unfold runFrom
++      dsimp only
++      rw [stops]
++      exact stepEqual
++    | false =>
++      obtain ⟨remaining, finalEqual⟩ := ih (step fuel environment definition).environment
++      refine ⟨first ++ remaining, ?_⟩
++      unfold runFrom
++      dsimp only
++      rw [stops]
++      change finalEnvironment (step fuel environment definition).environment
++        (runFrom fuel (step fuel environment definition).environment rest).steps = _
++      rw [finalEqual, stepEqual]
++      exact append_assoc_exact environment first remaining
++
++theorem project_binding_fields (nameCode : List Nat → Nat) (binding : Binding) :
++    (projectBinding nameCode binding).name = nameCode binding.name ∧
++    (projectBinding nameCode binding).type = encode binding.ty ∧
++    (projectBinding nameCode binding).value = encode binding.value ∧
++    (projectBinding nameCode binding).inferred = encode binding.inferred := ⟨rfl, rfl, rfl, rfl⟩
++
++theorem project_append (nameCode : List Nat → Nat) (left right : Environment) :
++    projectEnvironment nameCode (left ++ right) =
++      projectEnvironment nameCode left ++ projectEnvironment nameCode right := by
++  induction left with
++  | nil => rfl
++  | cons binding rest ih => exact congrArg (List.cons (projectBinding nameCode binding)) ih
++
++theorem project_successful_insertion (nameCode : List Nat → Nat) (fuel : Nat)
++    (environment : Environment) (definition : Definition) (stored : Expr)
++    (success : checked fuel environment definition = .ok stored) :
++    projectEnvironment nameCode (step fuel environment definition).environment =
++      projectEnvironment nameCode environment ++
++      [⟨nameCode definition.name, encode definition.ty, encode definition.value, encode stored⟩] := by
++  rw [success_stores_exact_fields fuel environment definition stored success, project_append]
++  rfl
++
++theorem project_refusal_preserves_records (nameCode : List Nat → Nat) (fuel : Nat)
++    (environment : Environment) (definition : Definition) (code : Nat)
++    (refusal : checked fuel environment definition = .error code) :
++    projectEnvironment nameCode (step fuel environment definition).environment = projectEnvironment nameCode environment := by
++  rw [refusal_preserves_all_bindings fuel environment definition code refusal]
++
++theorem projected_lookup_corresponds (nameCode : List Nat → Nat)
++    (injective : ∀ a b, nameCode a = nameCode b → a = b)
++    {environment : Environment} (certified : Certified environment) (name : List Nat) :
++    GooseStoredBindings.lookup (nameCode name) (projectEnvironment nameCode environment) =
++      (find environment name).map (projectBinding nameCode) := by
++  induction certified with
++  | empty => rfl
++  | @append previous binding prior fresh valid ih =>
++    rw [project_append]
++    change GooseStoredBindings.lookup (nameCode name)
++      (projectEnvironment nameCode previous ++ [projectBinding nameCode binding]) = _
++    rw [GooseStoredBindings.lookup_snoc, find_snoc]
++    change (if nameCode name = nameCode binding.name then some (projectBinding nameCode binding)
++      else GooseStoredBindings.lookup (nameCode name) (projectEnvironment nameCode previous)) = _
++    by_cases same : binding.name = name
++    · rw [ite_eq_left (congrArg nameCode same.symm), ite_eq_left same]
++      rfl
++    · have different : nameCode name ≠ nameCode binding.name :=
++        fun equal => same (injective _ _ equal).symm
++      rw [ite_eq_right different, ite_eq_right same]
++      exact ih
++
++/-- Reuses the old full-record theorem on the exact projected append suffix. -/
++theorem projected_trace_preserves_old_record (nameCode : List Nat → Nat) (fuel : Nat)
++    (environment : Environment) (definitions : List Definition) (index : Nat)
++    (binding : GooseStoredBindings.Binding)
++    (old : GooseStoredBindings.bindingAt (projectEnvironment nameCode environment) index = some binding) :
++    GooseStoredBindings.bindingAt
++      (projectEnvironment nameCode (finalEnvironment environment (runFrom fuel environment definitions).steps))
++      index = some binding := by
++  obtain ⟨suffix, append⟩ := run_environment_prefix fuel environment definitions
++  rw [append, project_append]
++  exact GooseStoredBindings.bindingAt_append_preserves _ _ index binding old
++
++theorem projected_trace_preserves_lookup (nameCode : List Nat → Nat)
++    (injective : ∀ a b, nameCode a = nameCode b → a = b) (fuel : Nat)
++    (environment : Environment) (definitions : List Definition) (certified : Certified environment)
++    (name : List Nat) (binding : Binding) (old : find environment name = some binding) :
++    GooseStoredBindings.lookup (nameCode name)
++      (projectEnvironment nameCode (finalEnvironment environment (runFrom fuel environment definitions).steps)) =
++      some (projectBinding nameCode binding) := by
++  rw [projected_lookup_corresponds nameCode injective
++    (run_final_environment_certified fuel environment definitions certified) name]
++  rw [run_preserves_lookup fuel environment definitions name binding old]
++  rfl
++
++end GooseSemanticEnvironment
+diff --git a/formal/lean/SemanticEnvironmentAudit.lean b/formal/lean/SemanticEnvironmentAudit.lean
+new file mode 100644
+index 0000000..792fac9
+--- /dev/null
++++ b/formal/lean/SemanticEnvironmentAudit.lean
+@@ -0,0 +1,74 @@
++import Lean.Elab.Command
++import Lean.Util.CollectAxioms
++import SemanticEnvironment
++
++open Lean Elab Command
++
++/- Audit every declaration in the new namespace, not just a sample. The named
++obligations must have empty transitive axiom closures. Generated support alone
++may use the explicitly allowed proposition-extensionality axiom. -/
++elab "audit_goose_semantic_environment" : command => do
++  let env ← getEnv
++  let required : Array Name := #[
++    ``GooseSemanticEnvironment.validate_implies_available,
++    ``GooseSemanticEnvironment.available_monotone,
++    ``GooseSemanticEnvironment.lookup_extends_reflexive,
++    ``GooseSemanticEnvironment.lookup_extends_transitive,
++    ``GooseSemanticEnvironment.find_snoc,
++    ``GooseSemanticEnvironment.fresh_append_extends,
++    ``GooseSemanticEnvironment.find_latest,
++    ``GooseSemanticEnvironment.head_reduction_weaken,
++    ``GooseSemanticEnvironment.normalization_weaken,
++    ``GooseSemanticEnvironment.conversion_weaken,
++    ``GooseSemanticEnvironment.inference_weaken,
++    ``GooseSemanticEnvironment.sort_weaken,
++    ``GooseSemanticEnvironment.binding_valid_weaken,
++    ``GooseSemanticEnvironment.checked_success_preconditions,
++    ``GooseSemanticEnvironment.checked_success_certifies_binding,
++    ``GooseSemanticEnvironment.successful_insertion_certified,
++    ``GooseSemanticEnvironment.refusal_retains_certificate,
++    ``GooseSemanticEnvironment.step_preserves_certification,
++    ``GooseSemanticEnvironment.step_preserves_lookup,
++    ``GooseSemanticEnvironment.certified_lookup_valid,
++    ``GooseSemanticEnvironment.certified_lookup_has_closed_originals,
++    ``GooseSemanticEnvironment.certified_lookup_conversion,
++    ``GooseSemanticEnvironment.run_snapshots_certified,
++    ``GooseSemanticEnvironment.certified_snapshots_end,
++    ``GooseSemanticEnvironment.run_final_environment_certified,
++    ``GooseSemanticEnvironment.empty_run_has_semantic_environment,
++    ``GooseSemanticEnvironment.run_preserves_lookup,
++    ``GooseSemanticEnvironment.run_preserves_semantic_judgments,
++    ``GooseSemanticEnvironment.step_environment_prefix,
++    ``GooseSemanticEnvironment.run_environment_prefix,
++    ``GooseSemanticEnvironment.project_binding_fields,
++    ``GooseSemanticEnvironment.project_append,
++    ``GooseSemanticEnvironment.project_successful_insertion,
++    ``GooseSemanticEnvironment.project_refusal_preserves_records,
++    ``GooseSemanticEnvironment.projected_lookup_corresponds,
++    ``GooseSemanticEnvironment.projected_trace_preserves_old_record,
++    ``GooseSemanticEnvironment.projected_trace_preserves_lookup]
++  for name in required do
++    match env.find? name with
++    | none => throwError "missing semantic_environment obligation: {name}"
++    | some info =>
++      unless info.isTheorem do
++        throwError "semantic_environment obligation is not a theorem: {name}"
++      let axioms ← collectAxioms name
++      unless axioms.isEmpty do
++        throwError "required semantic environment theorem depends on axioms: {name}: {axioms}"
++  let allowed : Array Name := #[``propext]
++  let mut used : Array Name := #[]
++  let mut declarations : Nat := 0
++  let mut theorems : Nat := 0
++  for (name, info) in env.constants.toList do
++    if (`GooseSemanticEnvironment).isPrefixOf name then
++      declarations := declarations + 1
++      if info.isTheorem then theorems := theorems + 1
++      let axioms ← collectAxioms name
++      for axiomName in axioms do
++        if !used.contains axiomName then used := used.push axiomName
++        unless allowed.contains axiomName do
++          throwError "semantic_environment namespace axiom audit rejected {name}: {axiomName}"
++  logInfo m!"Semantic environment axiom audit passed: {required.size} required theorems without axioms; {declarations} declarations; {theorems} theorem declarations; support axioms: {used}"
++
++audit_goose_semantic_environment
+diff --git a/formal/quint/SemanticEnvironment.qnt b/formal/quint/SemanticEnvironment.qnt
+new file mode 100644
+index 0000000..10ee456
+--- /dev/null
++++ b/formal/quint/SemanticEnvironment.qnt
+@@ -0,0 +1,254 @@
++// Bounded checks for the semantic history of a transparent environment.
++// Each insertion retains its exact predecessor and original stored fields.
++// These finite witnesses use the existing Quint semantic operators separately;
++// neither T::check nor equality with T::advance defines certificate validity.
++// The arbitrary-environment theorems and relational evidence belong to Lean.
++module SemanticEnvironment {
++  import TypingConversion as T from "./TypingConversion"
++  import StoredBindings as B from "./StoredBindings"
++
++  type Certificate = {
++    predecessor: List[T::Binding], stored: T::Binding, fuel: int,
++    declaredSort: T::Result, valueType: T::Result, normalizedType: T::Result,
++    inferredNormal: T::Result, declaredNormal: T::Result,
++  }
++  type State = { checked: T::State, certificates: List[Certificate] }
++
++  pure def afterResult(env: List[T::Binding], op: int, input: T::Result, fuel: int): T::Result =
++    if (input.code != 0) input else T::eval(env, op, input.value, List(), List(), fuel)
++  pure def certificate(env: List[T::Binding], binding: T::Binding, fuel: int): Certificate = {
++    val declaredSort = T::eval(env, 3, binding.ty, List(), List(), fuel)
++    val valueType = T::eval(env, 2, binding.value, List(), List(), fuel)
++    {
++      predecessor: env, stored: binding, fuel: fuel,
++      declaredSort: declaredSort, valueType: valueType,
++      normalizedType: afterResult(env, 1, valueType, fuel),
++      inferredNormal: T::eval(env, 1, binding.inferred, List(), List(), fuel),
++      declaredNormal: T::eval(env, 1, binding.ty, List(), List(), fuel),
++    }
++  }
++
++  // The witness equations are evaluated in the PREDECESSOR, before this
++  // binding exists. This rejects self-support, forward support, and replacement
++  // of the stored fields after a successful original insertion.
++  pure def certificateValid(c: Certificate): bool = all {
++    T::lookup(c.predecessor, c.stored.name).length() == 0,
++    T::closed(c.stored.ty), T::closed(c.stored.value),
++    T::known(c.predecessor, c.stored.ty), T::known(c.predecessor, c.stored.value),
++    c.declaredSort == T::eval(c.predecessor, 3, c.stored.ty, List(), List(), c.fuel),
++    c.declaredSort.code == 0,
++    c.valueType == T::eval(c.predecessor, 2, c.stored.value, List(), List(), c.fuel),
++    c.valueType.code == 0,
++    c.normalizedType == afterResult(c.predecessor, 1, c.valueType, c.fuel),
++    c.normalizedType.code == 0, c.normalizedType.value == c.stored.inferred,
++    c.inferredNormal == T::eval(c.predecessor, 1, c.stored.inferred, List(), List(), c.fuel),
++    c.declaredNormal == T::eval(c.predecessor, 1, c.stored.ty, List(), List(), c.fuel),
++    c.inferredNormal.code == 0, c.declaredNormal.code == 0,
++    c.inferredNormal.value == c.declaredNormal.value,
++  }
++
++  // A concrete diagnostic name projection. Starting with a nonzero sentinel
++  // avoids leading-zero ambiguity. The finite tests use only ASCII name bytes.
++  // Lean's generic projection theorem assumes an injective naming function;
++  // this Quint sample is not a proof of that assumption for every byte vector.
++  pure def nameKey(name: List[int]): int = name.foldl(1, (key, byte) => 257 * key + byte)
++  pure def project(binding: T::Binding): B::Binding = {
++    name: nameKey(binding.name), ty: binding.ty, value: binding.value, inferred: binding.inferred,
++  }
++  pure def projectEnvironment(environment: List[T::Binding]): List[B::Binding] =
++    environment.foldl(List(), (result, binding) => result.append(project(binding)))
++  pure def lookupProjects(environment: List[T::Binding], name: List[int]): bool =
++    B::lookup(projectEnvironment(environment), nameKey(name))
++      == projectEnvironment(T::lookup(environment, name))
++  pure def recordsMatch(state: State): bool =
++    state.certificates.length() == state.checked.environment.length() and
++    state.certificates.indices().forall(i => {
++      val c = state.certificates.nth(i)
++      all {
++        c.predecessor == state.checked.environment.slice(0, i),
++        c.stored == state.checked.environment.nth(i),
++        certificateValid(c),
++      }
++    })
++  pure def uniqueNames(environment: List[T::Binding]): bool =
++    environment.indices().forall(i => environment.indices().forall(j =>
++      i == j or environment.nth(i).name != environment.nth(j).name))
++  pure def projectionSafety(environment: List[T::Binding]): bool = all {
++    projectEnvironment(environment).length() == environment.length(),
++    environment.indices().forall(i => {
++      val b = environment.nth(i)
++      val p = projectEnvironment(environment).nth(i)
++      all { p.name == nameKey(b.name), p.ty == b.ty, p.value == b.value, p.inferred == b.inferred,
++        lookupProjects(environment, b.name) }
++    }),
++    environment.indices().forall(i => environment.indices().forall(j =>
++      i == j or nameKey(environment.nth(i).name) != nameKey(environment.nth(j).name))),
++  }
++  pure def remainsValidIn(c: Certificate, environment: List[T::Binding]): bool = all {
++    T::known(environment, c.stored.ty), T::known(environment, c.stored.value),
++    T::eval(environment, 3, c.stored.ty, List(), List(), c.fuel) == c.declaredSort,
++    T::eval(environment, 2, c.stored.value, List(), List(), c.fuel) == c.valueType,
++    afterResult(environment, 1, c.valueType, c.fuel) == c.normalizedType,
++    T::eval(environment, 1, c.stored.inferred, List(), List(), c.fuel) == c.inferredNormal,
++    T::eval(environment, 1, c.stored.ty, List(), List(), c.fuel) == c.declaredNormal,
++  }
++  pure def semanticHistorySafety(state: State): bool = all {
++    T::stateSafety(state.checked), uniqueNames(state.checked.environment), recordsMatch(state),
++    projectionSafety(state.checked.environment),
++    state.certificates.indices().forall(i => remainsValidIn(state.certificates.nth(i), state.checked.environment)),
++  }
++
++  pure val initial: State = { checked: T::initial, certificates: List() }
++  pure def advance(state: State, query: T::Input): State =
++    if (state.checked.halted) state else {
++      val checkedNext = T::advance(state.checked, query.name, query.ty, query.value, query.fuel)
++      val appended = checkedNext.environment.length() == state.checked.environment.length() + 1
++      {
++        checked: checkedNext,
++        certificates: if (appended) state.certificates.append(certificate(state.checked.environment,
++          checkedNext.environment.nth(checkedNext.environment.length() - 1), query.fuel)) else state.certificates,
++      }
++    }
++  pure def replay(queries: List[T::Input]): State = queries.foldl(initial, (state, query) => advance(state, query))
++
++  pure val U = List(85)
++  pure val identityName = List(105, 100)
++  pure val aliasName = List(86)
++  pure val typeAlias = T::input(U, T::sort(2), T::sort(1), 128)
++  pure val identityAlias = T::input(identityName,
++    T::pair(5, T::constant(U), T::constant(U)), T::pair(4, T::constant(U), T::variable(0)), 128)
++  pure val valueAlias = T::input(aliasName, T::sort(2), T::constant(U), 128)
++  pure val sampleNames = List(U, identityName, aliasName, List(120), List(122), List(65), List(65, 65))
++
++  var s: State
++  var previous: State
++  var last: T::Input
++  var hasStep: bool
++  action init = all { s' = initial, previous' = initial, last' = typeAlias, hasStep' = false }
++  action perform(query: T::Input): bool = all {
++    s' = advance(s, query), previous' = s, last' = query, hasStep' = true,
++  }
++  val oldRecordsPreserved = if (not(hasStep)) true else all {
++    T::prefix(previous.checked.environment, s.checked.environment),
++    previous.certificates.length() <= s.certificates.length(),
++    previous.certificates.indices().forall(i => previous.certificates.nth(i) == s.certificates.nth(i)),
++    previous.checked.environment.indices().forall(i => {
++      val name = previous.checked.environment.nth(i).name
++      T::lookup(previous.checked.environment, name) == T::lookup(s.checked.environment, name)
++    }),
++    B::prefix(projectEnvironment(previous.checked.environment), projectEnvironment(s.checked.environment)),
++  }
++  val refusalPreservesHistory = if (not(hasStep) or previous.checked.halted) true
++    else {
++      val latest = s.checked.snapshots.nth(s.checked.snapshots.length() - 1)
++      latest.code != 0 implies all {
++        s.checked.environment == previous.checked.environment,
++        s.certificates == previous.certificates,
++      }
++    }
++  val exactInsertion = if (not(hasStep) or previous.checked.halted) true else {
++    val latest = s.checked.snapshots.nth(s.checked.snapshots.length() - 1)
++    latest.code == 0 implies all {
++      s.checked.environment.length() == previous.checked.environment.length() + 1,
++      latest.name == last.name,
++      s.checked.environment.nth(previous.checked.environment.length()).name == last.name,
++      s.checked.environment.nth(previous.checked.environment.length()).ty == last.ty,
++      s.checked.environment.nth(previous.checked.environment.length()).value == last.value,
++    }
++  }
++  val haltedAbsorbing = (hasStep and previous.checked.halted) implies s == previous
++  val safety = semanticHistorySafety(s) and oldRecordsPreserved and refusalPreservesHistory
++    and exactInsertion and haltedAbsorbing and sampleNames.indices().forall(i => lookupProjects(s.checked.environment, sampleNames.nth(i)))
++
++  pure val simulationSnapshotBound = 4
++  action stutter = all { s' = s, previous' = previous, last' = last, hasStep' = hasStep }
++  action step = if (s.checked.snapshots.length() >= simulationSnapshotBound) stutter else {
++    nondet kind = 0.to(8).oneOf()
++    nondet name = Set(U, identityName, aliasName).oneOf()
++    val query = if (kind == 0) T::input(name, T::sort(2), T::sort(1), 128)
++      else if (kind == 1) T::input(name, T::sort(2), T::constant(U), 128)
++      else if (kind == 2) T::input(name, identityAlias.ty, identityAlias.value, 128)
++      else if (kind == 3) T::input(name, T::sort(2), T::sort(0), 128)
++      else if (kind == 4) T::input(name, T::sort(2), T::constant(List(122)), 128)
++      else if (kind == 5) T::input(name, T::sort(2), T::variable(0), 128)
++      else if (kind == 6) T::input(name, T::sort(1), T::letExpr(T::sort(1), T::sort(0), T::variable(0)), 128)
++      else if (kind == 7) T::input(name, T::identityType, T::identity, 128)
++      else T::input(name, T::sort(1), T::pair(3, T::identity, T::sort(0)), 128)
++    perform(query)
++  }
++
++  run emptySemanticHistoryTest = init.expect(safety and s.certificates == List())
++  run firstPredecessorIsEmptyTest = init.then(perform(typeAlias))
++    .expect(safety and s.certificates.nth(0).predecessor == List())
++  run compoundCertificateTest = init.then(perform(typeAlias)).then(perform(identityAlias))
++    .expect(safety and s.certificates.nth(1).stored.ty == identityAlias.ty
++      and s.certificates.nth(1).valueType.value == identityAlias.ty
++      and s.certificates.nth(1).normalizedType.value == T::identityType)
++  run predecessorMatchesExactPrefixTest = init.then(perform(typeAlias)).then(perform(identityAlias)).then(perform(valueAlias))
++    .expect(safety and s.certificates.nth(2).predecessor == previous.checked.environment)
++  run threeSuccessfulSemanticRecordsTest = init.then(perform(typeAlias)).then(perform(identityAlias)).then(perform(valueAlias))
++    .expect(safety and s.certificates.length() == 3 and s.checked.environment.length() == 3)
++  run previousSemanticRecordPreservedTest = init.then(perform(typeAlias)).then(perform(identityAlias))
++    .expect(safety and s.certificates.nth(0) == previous.certificates.nth(0))
++  run previousLookupPreservedTest = init.then(perform(typeAlias)).then(perform(identityAlias)).then(perform(valueAlias))
++    .expect(safety and T::lookup(s.checked.environment, U) == T::lookup(previous.checked.environment, U))
++  run semanticWeakeningObservedTest = init.then(perform(typeAlias)).then(perform(identityAlias)).then(perform(valueAlias))
++    .expect(safety and s.certificates.indices().forall(i => remainsValidIn(s.certificates.nth(i), s.checked.environment)))
++  run projectedPayloadsExactTest = init.then(perform(typeAlias)).then(perform(identityAlias))
++    .expect(safety and project(s.checked.environment.nth(1)).ty == identityAlias.ty
++      and project(s.checked.environment.nth(1)).value == identityAlias.value
++      and project(s.checked.environment.nth(1)).inferred == T::identityType)
++  run projectedLookupExactTest = init.then(perform(typeAlias)).then(perform(identityAlias)).then(perform(valueAlias))
++    .expect(safety and B::lookup(projectEnvironment(s.checked.environment), nameKey(identityName))
++      == List(project(s.checked.environment.nth(1))))
++  run projectedUnknownLookupTest = init.then(perform(typeAlias))
++    .expect(safety and B::lookup(projectEnvironment(s.checked.environment), nameKey(List(122))) == List())
++  run projectedNameLengthDistinctTest = init.expect(safety and nameKey(List(65)) != nameKey(List(65, 65)))
++  run mismatchPreservesSemanticHistoryTest = init.then(perform(typeAlias))
++    .then(perform(T::input(aliasName, T::sort(2), T::sort(0), 128)))
++    .expect(safety and s.certificates == previous.certificates and s.checked.snapshots.nth(1).code == 6)
++  run unknownPreservesSemanticHistoryTest = init.then(perform(typeAlias))
++    .then(perform(T::input(aliasName, T::sort(2), T::constant(List(122)), 128)))
++    .expect(safety and s.certificates == previous.certificates and s.checked.snapshots.nth(1).code == 2)
++  run duplicatePreservesSemanticHistoryTest = init.then(perform(typeAlias)).then(perform(typeAlias))
++    .expect(safety and s.certificates == previous.certificates and s.checked.snapshots.nth(1).code == 3)
++  run duplicateBeforeScopeAndBudgetTest = init.then(perform(typeAlias))
++    .then(perform(T::input(U, T::constant(List(122)), T::variable(0), 0)))
++    .expect(safety and not(s.checked.halted) and s.checked.snapshots.nth(1).code == 3)
++  run rejectedNameCanBeRetriedTest = init.then(perform(T::input(U, T::sort(2), T::sort(0), 128)))
++    .then(perform(typeAlias)).then(perform(identityAlias))
++    .expect(safety and s.certificates.length() == 2 and s.certificates.nth(0).predecessor == List())
++  run forwardReferenceCannotCertifyTest = init.then(perform(valueAlias)).then(perform(typeAlias)).then(perform(valueAlias))
++    .expect(safety and s.checked.snapshots.nth(0).code == 2 and s.certificates.length() == 2
++      and s.certificates.nth(1).predecessor == List(s.certificates.nth(0).stored))
++  run selfReferenceCannotCertifyTest = init.then(perform(T::input(U, T::sort(2), T::constant(U), 128)))
++    .expect(safety and s.checked.snapshots.nth(0).code == 2 and s.certificates == List())
++  run fatalScopePreservesHistoryTest = init.then(perform(typeAlias))
++    .then(perform(T::input(aliasName, T::sort(2), T::variable(0), 128)))
++    .expect(safety and s.checked.halted and s.certificates == previous.certificates)
++  run fatalBudgetPreservesHistoryTest = init.then(perform(typeAlias))
++    .then(perform(T::input(aliasName, T::sort(1), T::sort(0), 0)))
++    .expect(safety and s.checked.halted and s.checked.snapshots.nth(1).code == 9 and s.certificates == previous.certificates)
++  run haltedSuffixHasNoCertificateTest = init.then(perform(typeAlias))
++    .then(perform(T::input(aliasName, T::sort(2), T::variable(0), 128))).then(perform(identityAlias))
++    .expect(safety and s == previous and s.certificates.length() == 1)
++  run betaValueCertificateTest = init.then(perform(T::input(U, T::sort(1), T::pair(3, T::identity, T::sort(0)), 128)))
++    .expect(safety and s.certificates.nth(0).stored.value == T::pair(3, T::identity, T::sort(0)))
++  run zetaValueCertificateTest = init.then(perform(T::input(U, T::sort(1), T::letExpr(T::sort(1), T::sort(0), T::variable(0)), 128)))
++    .expect(safety and s.certificates.nth(0).stored.value.nth(0) == 6)
++
++  // Begin with two genuinely certified bindings. A legitimate third insertion
++  // succeeds, but the unsafe transition also changes the FIRST stored value
++  // from Sort 1 to Sort 0. Frozen predecessor evidence is not rewritten.
++  pure val negativeBase = replay(List(typeAlias, identityAlias))
++  action negativeInit = all { s' = negativeBase, previous' = negativeBase, last' = typeAlias, hasStep' = false }
++  action unsafeStep = {
++    val valid = advance(negativeBase, valueAlias)
++    val wrongOld = { ...valid.checked.environment.nth(0), value: T::sort(0) }
++    val wrongEnvironment = List(wrongOld).concat(valid.checked.environment.tail())
++    val snapshots = valid.checked.snapshots.slice(0, valid.checked.snapshots.length() - 1)
++      .append({ ...valid.checked.snapshots.nth(valid.checked.snapshots.length() - 1), bindings: wrongEnvironment })
++    val corrupted = { ...valid, checked: { ...valid.checked, environment: wrongEnvironment, snapshots: snapshots } }
++    all { s' = corrupted, previous' = negativeBase, last' = valueAlias, hasStep' = true }
++  }
++}
+diff --git a/tests/test_semantic_environment_negative.py b/tests/test_semantic_environment_negative.py
+new file mode 100644
+index 0000000..8f268dc
+--- /dev/null
++++ b/tests/test_semantic_environment_negative.py
+@@ -0,0 +1,190 @@
++"""Adversarial framing controls for the authored semantic-history counterexample.
++
++This independent specimen contains explicit two/three-binding histories and
++expected certificate fields; it does not import the validator's expectations or
++derive them from a Quint trace. Actual Quint execution belongs to the formal gate.
++"""
++from copy import deepcopy
++import json
++from pathlib import Path
++import sys
++import tempfile
++import unittest
++
++ROOT = Path(__file__).resolve().parents[1]
++sys.path.insert(0, str(ROOT / "tools"))
++from semantic_environment_negative import counterexample
++
++VIOLATION = "[violation] Found an issue (1ms).\nerror: Invariant violated\n"
++
++
++def specimen():
++    bindings = [
++        {"name": [85], "ty": [0, 2], "value": [0, 1], "inferred": [0, 2]},
++        {"name": [105, 100], "ty": [5, 2, 1, 85, 2, 1, 85],
++         "value": [4, 2, 1, 85, 1, 0], "inferred": [5, 0, 1, 0, 1]},
++        {"name": [86], "ty": [0, 2], "value": [2, 1, 85], "inferred": [0, 2]},
++    ]
++    semantic_fields = [
++        ([0, 3], [0, 2], [0, 2], [0, 2], [0, 2]),
++        ([0, 2], [5, 2, 1, 85, 2, 1, 85], [5, 0, 1, 0, 1], [5, 0, 1, 0, 1], [5, 0, 1, 0, 1]),
++        ([0, 3], [0, 2], [0, 2], [0, 2], [0, 2]),
++    ]
++    certificates = []
++    snapshots = []
++    for index, binding in enumerate(bindings):
++        certificate = {"predecessor": deepcopy(bindings[:index]), "stored": deepcopy(binding), "fuel": 128}
++        for name, value in zip(("declaredSort", "valueType", "normalizedType", "inferredNormal", "declaredNormal"),
++                               semantic_fields[index]):
++            certificate[name] = {"value": value, "code": 0}
++        certificates.append(certificate)
++        snapshots.append({"name": binding["name"], "code": 0, "bindings": deepcopy(bindings[:index + 1])})
++    before = {"checked": {"environment": deepcopy(bindings[:2]), "snapshots": deepcopy(snapshots[:2]),
++                          "halted": False, "acceptance_authority": False},
++              "certificates": deepcopy(certificates[:2])}
++    after = {"checked": {"environment": deepcopy(bindings), "snapshots": snapshots,
++                         "halted": False, "acceptance_authority": False}, "certificates": certificates}
++    after["checked"]["environment"][0]["value"] = [0, 0]
++    after["checked"]["snapshots"][2]["bindings"][0]["value"] = [0, 0]
++    return {
++        "#meta": {"source": "SemanticEnvironment.qnt", "status": "violation", "format": "ITF"},
++        "vars": ["s", "previous", "last", "hasStep"],
++        "states": [
++            {"#meta": {"index": 0}, "s": deepcopy(before), "previous": deepcopy(before),
++             "last": {"name": [85], "ty": [0, 2], "value": [0, 1], "fuel": 128}, "hasStep": False},
++            {"#meta": {"index": 1}, "s": after, "previous": deepcopy(before),
++             "last": {"name": [86], "ty": [0, 2], "value": [2, 1, 85], "fuel": 128}, "hasStep": True},
++        ],
++    }
++
++
++def encode_itf(value):
++    if type(value) is int:
++        return {"#bigint": str(value)}
++    if isinstance(value, list):
++        return [encode_itf(item) for item in value]
++    if isinstance(value, dict):
++        return {key: encode_itf(item) for key, item in value.items()}
++    return value
++
++
++class SemanticEnvironmentNegativeControls(unittest.TestCase):
++    def check(self, witness, *, exit_code=1, text=VIOLATION, raw=None):
++        with tempfile.TemporaryDirectory() as directory:
++            path = Path(directory) / "negative.itf.json"
++            path.write_text(json.dumps(encode_itf(witness)) if raw is None else raw, encoding="utf-8")
++            counterexample(exit_code, text, path)
++
++    def rejects(self, mutate):
++        witness = specimen()
++        mutate(witness)
++        with self.assertRaises(ValueError):
++            self.check(witness)
++
++    def test_exact_authored_negative_witness_is_accepted(self):
++        self.check(specimen())
++
++    def test_process_must_report_designated_invariant_failure(self):
++        for code in (0, 2, -1, True, 1.0, "1"):
++            with self.subTest(exit_code=code), self.assertRaises(ValueError):
++                self.check(specimen(), exit_code=code)
++        for text in ("", "error: Invariant violated", "[violation] Found an issue",
++                     "error: Type error", "[ok] No violation found", None):
++            with self.subTest(text=text), self.assertRaises(ValueError):
++                self.check(specimen(), text=text)
++
++    def test_source_and_state_inventory_are_exact(self):
++        mutations = [lambda w: w["#meta"].update(source="TypingConversion.qnt"),
++                     lambda w: w["#meta"].update(source="formal/quint/SemanticEnvironment.qnt"),
++                     lambda w: w["#meta"].update(status="ok"), lambda w: w["#meta"].update(format="JSON"),
++                     lambda w: w.update(extra=True), lambda w: w.update(**{"#meta": []}),
++                     lambda w: w["vars"].reverse(), lambda w: w["states"].reverse(),
++                     lambda w: w["states"].pop(), lambda w: w["states"].append(deepcopy(w["states"][1])),
++                     lambda w: w["states"][0].update(extra=False),
++                     lambda w: w["states"][1]["#meta"].update(index=0)]
++        for index, mutate in enumerate(mutations):
++            with self.subTest(mutation=index):
++                self.rejects(mutate)
++
++    def test_generic_corruption_or_no_corruption_is_not_this_witness(self):
++        for value in ([0, 1], [0, 999], [1, 0], [0, -1]):
++            with self.subTest(value=value):
++                def mutate(w):
++                    state = w["states"][1]["s"]["checked"]
++                    state["environment"][0]["value"] = value
++                    state["snapshots"][2]["bindings"][0]["value"] = value
++                self.rejects(mutate)
++        self.rejects(lambda w: w["states"][1]["s"]["checked"]["environment"][0].update(inferred=[0, 0]))
++        self.rejects(lambda w: w["states"][1]["s"]["checked"]["environment"][1].update(value=[0, 0]))
++
++    def test_old_certificates_cannot_be_repaired_rewritten_or_dropped(self):
++        mutations = [lambda w: w["states"][1]["s"]["certificates"][0]["stored"].update(value=[0, 0]),
++                     lambda w: w["states"][1]["s"]["certificates"][1]["predecessor"][0].update(value=[0, 0]),
++                     lambda w: w["states"][1]["s"]["certificates"][0].update(fuel=127),
++                     lambda w: w["states"][1]["s"]["certificates"].pop(0),
++                     lambda w: w["states"][1]["s"]["certificates"].reverse()]
++        for index, mutate in enumerate(mutations):
++            with self.subTest(mutation=index):
++                self.rejects(mutate)
++
++    def test_each_semantic_certificate_result_is_checked(self):
++        for field in ("declaredSort", "valueType", "normalizedType", "inferredNormal", "declaredNormal"):
++            for index in range(3):
++                with self.subTest(certificate=index, field=field):
++                    self.rejects(lambda w: w["states"][1]["s"]["certificates"][index][field].update(value=[0, 42]))
++                    self.rejects(lambda w: w["states"][1]["s"]["certificates"][index][field].update(code=9))
++
++    def test_predecessors_and_old_snapshots_are_frozen(self):
++        mutations = [lambda w: w["states"][1]["previous"]["checked"]["environment"][0].update(value=[0, 0]),
++                     lambda w: w["states"][0]["s"]["checked"]["environment"].clear(),
++                     lambda w: w["states"][1]["s"]["checked"]["snapshots"][0]["bindings"][0].update(value=[0, 0]),
++                     lambda w: w["states"][1]["s"]["checked"]["snapshots"][1]["bindings"][0].update(value=[0, 0]),
++                     lambda w: w["states"][1]["s"]["certificates"][2]["predecessor"][0].update(value=[0, 0]),
++                     lambda w: w["states"][1]["s"]["certificates"][2]["predecessor"].reverse()]
++        for index, mutate in enumerate(mutations):
++            with self.subTest(mutation=index):
++                self.rejects(mutate)
++
++    def test_third_insertion_and_latest_snapshot_cannot_be_forged(self):
++        mutations = [lambda w: w["states"][1]["s"]["checked"]["environment"].pop(),
++                     lambda w: w["states"][1]["s"]["certificates"].pop(),
++                     lambda w: w["states"][1]["s"]["checked"]["snapshots"].pop(),
++                     lambda w: w["states"][1]["s"]["checked"]["snapshots"][2].update(code=6),
++                     lambda w: w["states"][1]["s"]["checked"]["snapshots"][2]["bindings"][0].update(value=[0, 1]),
++                     lambda w: w["states"][1]["s"]["checked"]["environment"][2].update(value=[0, 1]),
++                     lambda w: w["states"][1]["last"].update(name=[85]),
++                     lambda w: w["states"][1]["s"]["checked"].update(halted=True),
++                     lambda w: w["states"][1]["s"]["checked"].update(acceptance_authority=True)]
++        for index, mutate in enumerate(mutations):
++            with self.subTest(mutation=index):
++                self.rejects(mutate)
++
++    def test_booleans_floats_and_naturals_cannot_coerce_equal(self):
++        mutations = [lambda w: w["states"][0].update(hasStep=0),
++                     lambda w: w["states"][1].update(hasStep=1),
++                     lambda w: w["states"][1]["#meta"].update(index=True),
++                     lambda w: w["states"][1]["s"]["checked"].update(halted=0),
++                     lambda w: w["states"][1]["s"]["checked"]["environment"][0].update(value=[False, 0]),
++                     lambda w: w["states"][1]["s"]["checked"]["environment"][0].update(value=[0, 0.0]),
++                     lambda w: w["states"][1]["s"]["certificates"][0]["declaredSort"].update(code=False),
++                     lambda w: w["states"][1]["s"]["certificates"][0].update(fuel=128.0)]
++        for index, mutate in enumerate(mutations):
++            with self.subTest(mutation=index):
++                self.rejects(mutate)
++
++    def test_malformed_json_and_bigints_fail_closed(self):
++        good = json.dumps(encode_itf(specimen()))
++        malformed = ["", "{", "[]", '{"#bigint":"1"}', good + good,
++                     good.replace('"status": "violation"', '"status": "violation", "status": "violation"', 1),
++                     good.replace('"#bigint": "128"', '"#bigint": "0128"', 1),
++                     good.replace('"#bigint": "128"', '"#bigint": "-1"', 1),
++                     good.replace('"#bigint": "128"', '"#bigint": true', 1),
++                     good.replace('"#bigint": "128"', '"#bigint": NaN', 1),
++                     good.replace('"#bigint": "128"', '"#bigint": "128.0"', 1)]
++        for index, raw in enumerate(malformed):
++            with self.subTest(mutation=index), self.assertRaises(ValueError):
++                self.check(specimen(), raw=raw)
++
++
++if __name__ == "__main__":
++    unittest.main()
+diff --git a/tools/acceptance.py b/tools/acceptance.py
+index 2825b71..224d808 100644
+--- a/tools/acceptance.py
++++ b/tools/acceptance.py
+@@ -118,7 +118,7 @@ def main() -> int:
+                                  "--output", "conformance/evidence/smoke"]),
+         ]
+         for name, command in commands:
+-            # Five required formal scopes include replay of every observed
++            # Six required formal scopes include replay of every observed
+             # native arena. Keep individual model/native command limits intact;
+             # allow the expanded sequential orchestration forty minutes.
+             record = run(name, command, timeout=2400 if name == "formal" else 600)
+diff --git a/tools/check_formal.py b/tools/check_formal.py
+index a7190ce..4189108 100644
+--- a/tools/check_formal.py
++++ b/tools/check_formal.py
+@@ -19,6 +19,7 @@ import check_expression_dag as dag
+ import check_stored_bindings as stored
+ import check_substitution as substitution
+ import check_typing_conversion as typing
++import check_semantic_environment as semantic
+ import runtime
+ import transaction_profile as profile
+ 
+@@ -29,10 +30,10 @@ LEAN_FLAGS = ["--threads=1"]
+ QUINT_TOOLCHAIN = "@informalsystems/quint@0.33.1"
+ NODE_VERSION = "v24.22.3"
+ SEED = "20261120"
+-LEAN_SOURCES = {"formal/lean/DefinitionTransactions.lean", "formal/lean/Audit.lean", "formal/lean/Replay.lean"} | stored.LEAN_SOURCES | dag.LEAN_SOURCES | substitution.LEAN_SOURCES | typing.LEAN_SOURCES
+-QUINT_SOURCES = {"formal/quint/DefinitionTransactions.qnt"} | stored.QUINT_SOURCES | dag.QUINT_SOURCES | substitution.QUINT_SOURCES | typing.QUINT_SOURCES
++LEAN_SOURCES = {"formal/lean/DefinitionTransactions.lean", "formal/lean/Audit.lean", "formal/lean/Replay.lean"} | stored.LEAN_SOURCES | dag.LEAN_SOURCES | substitution.LEAN_SOURCES | typing.LEAN_SOURCES | semantic.LEAN_SOURCES
++QUINT_SOURCES = {"formal/quint/DefinitionTransactions.qnt"} | stored.QUINT_SOURCES | dag.QUINT_SOURCES | substitution.QUINT_SOURCES | typing.QUINT_SOURCES | semantic.QUINT_SOURCES
+ IMPLEMENTATIONS = {"reference/checker.goose", "tools/run.py", "tools/runtime.py", "tools/acceptance.py",
+-                   "tools/check_formal.py", "tools/transaction_profile.py", "formal/quint/replay.py"} | stored.IMPLEMENTATIONS | dag.IMPLEMENTATIONS | substitution.IMPLEMENTATIONS | typing.IMPLEMENTATIONS
++                   "tools/check_formal.py", "tools/transaction_profile.py", "formal/quint/replay.py"} | stored.IMPLEMENTATIONS | dag.IMPLEMENTATIONS | substitution.IMPLEMENTATIONS | typing.IMPLEMENTATIONS | semantic.IMPLEMENTATIONS
+ LEAN_OBLIGATIONS = {"GooseTransactions." + name for name in (
+     "initial_invariant", "step_preserves_invariant", "run_preserves_invariant",
+     "run_environment_exact", "run_environment_unique", "run_success_count_exact",
+@@ -75,8 +76,8 @@ def configuration(root: Path) -> tuple[dict, list[str]]:
+     if spec["gate"] != "tools/check_formal.py" or set(spec["implementation_paths"]) != IMPLEMENTATIONS:
+         raise ValueError("manifest implementation scope differs from the executed formal profile")
+     for lane, sources, pin, obligations in (
+-        ("lean", LEAN_SOURCES, LEAN_TOOLCHAIN, LEAN_OBLIGATIONS | stored.LEAN_OBLIGATIONS | dag.LEAN_OBLIGATIONS | substitution.LEAN_OBLIGATIONS | typing.LEAN_OBLIGATIONS),
+-        ("quint", QUINT_SOURCES, QUINT_TOOLCHAIN, QUINT_TESTS | {"safety"} | stored.QUINT_OBLIGATIONS | dag.QUINT_OBLIGATIONS | substitution.QUINT_OBLIGATIONS | typing.QUINT_OBLIGATIONS),
++        ("lean", LEAN_SOURCES, LEAN_TOOLCHAIN, LEAN_OBLIGATIONS | stored.LEAN_OBLIGATIONS | dag.LEAN_OBLIGATIONS | substitution.LEAN_OBLIGATIONS | typing.LEAN_OBLIGATIONS | semantic.LEAN_OBLIGATIONS),
++        ("quint", QUINT_SOURCES, QUINT_TOOLCHAIN, QUINT_TESTS | {"safety"} | stored.QUINT_OBLIGATIONS | dag.QUINT_OBLIGATIONS | substitution.QUINT_OBLIGATIONS | typing.QUINT_OBLIGATIONS | semantic.QUINT_OBLIGATIONS),
+     ):
+         row = spec[lane]
+         if set(row) != {"toolchain", "sources", "obligations"} \
+@@ -91,7 +92,7 @@ def configuration(root: Path) -> tuple[dict, list[str]]:
+     if package["dependencies"].get("@informalsystems/quint") != "0.33.1" \
+             or lock["packages"]["node_modules/@informalsystems/quint"]["version"] != "0.33.1":
+         raise ValueError("Quint package or lock differs from its declared pin")
+-    paths = sorted(LEAN_SOURCES | QUINT_SOURCES | IMPLEMENTATIONS | dag.DOCUMENTS | substitution.DOCUMENTS | typing.DOCUMENTS | {
++    paths = sorted(LEAN_SOURCES | QUINT_SOURCES | IMPLEMENTATIONS | dag.DOCUMENTS | substitution.DOCUMENTS | typing.DOCUMENTS | semantic.DOCUMENTS | {
+         "ESTATE.toml", spec["scope"], "formal/lean/lean-toolchain", "formal/quint/package.json",
+         "formal/quint/package-lock.json", "conformance/dependencies.json", "conformance/source-provenance.json",
+         "schemas/binding-trace-v1.md",
+@@ -285,6 +286,9 @@ def execute(output: Path, receipt: dict) -> None:
+         typing.execute(output=output, receipt=receipt, build=build, lean_build=lean_build,
+                        lean=lean, lean_flags=LEAN_FLAGS, quint=quint, binary=binary,
+                        env=env, seed=SEED, run=run)
++        semantic.execute(output=output, receipt=receipt, build=build, lean_build=lean_build,
++                         lean=lean, lean_flags=LEAN_FLAGS, quint=quint, binary=binary,
++                         env=env, run=run)
+         receipt["dependencies_after"] = runtime.verify_dependencies(context)
+         if receipt["dependencies_before"] != receipt["dependencies_after"]:
+             raise ValueError("external dependency source changed during formal verification")
+@@ -299,10 +303,10 @@ def verify(output: Path) -> int:
+     if output.is_relative_to(ROOT) and not output.is_relative_to(acceptance.EVIDENCE):
+         raise ValueError("formal output must be under conformance/evidence or outside the repository")
+     output.mkdir(parents=True, exist_ok=True)
+-    receipt = {"schema": "lean-goose.formal-evidence.v5", "status": "running",
++    receipt = {"schema": "lean-goose.formal-evidence.v6", "status": "running",
+         "started_at_utc": acceptance.now(), "evidence_only": True, "acceptance_authority": False,
+         "hosted_results_included": False, "implementation_correspondence": "finite_profile_only",
+-        "scope": "ordered transactions, complete stored bindings, immutable expression DAGs, binder scope, lifting, capture-avoiding substitution, numeric-sort typing and beta/zeta/delta conversion; no full kernel refinement",
++        "scope": "ordered transactions, complete stored bindings, immutable expression DAGs, binder scope, lifting, capture-avoiding substitution, numeric-sort typing and beta/zeta/delta conversion, certified semantic environments and record projection; no full kernel refinement",
+         "commands": [], "excluded_build_directories": sorted(acceptance.SKIP_DIRS),
+         "excluded_build_suffixes": sorted(acceptance.SKIP_SUFFIXES),
+         "excluded_evidence_directory": "conformance/evidence/"}
+diff --git a/tools/check_semantic_environment.py b/tools/check_semantic_environment.py
+new file mode 100644
+index 0000000..9d99917
+--- /dev/null
++++ b/tools/check_semantic_environment.py
+@@ -0,0 +1,177 @@
++"""Sixth formal scope: semantic environment preservation and record projection."""
++from __future__ import annotations
++
++import json
++from pathlib import Path
++import subprocess
++import sys
++from typing import Callable
++
++import runtime
++import semantic_environment_profile as histories
++import typing_conversion_profile as profile
++from check_expression_dag import compressed_input
++from semantic_environment_negative import counterexample
++
++LEAN_SOURCES = {"formal/lean/SemanticEnvironment.lean", "formal/lean/SemanticEnvironmentAudit.lean"}
++QUINT_SOURCES = {"formal/quint/SemanticEnvironment.qnt"}
++IMPLEMENTATIONS = {"tools/check_semantic_environment.py", "tools/semantic_environment_profile.py",
++                   "tools/semantic_environment_negative.py"}
++DOCUMENTS = {"docs/semantic-environment.md"}
++LEAN_OBLIGATIONS = {"GooseSemanticEnvironment." + name for name in (
++    "validate_implies_available", "available_monotone", "lookup_extends_reflexive",
++    "lookup_extends_transitive", "find_snoc", "fresh_append_extends", "find_latest",
++    "head_reduction_weaken", "normalization_weaken", "conversion_weaken", "inference_weaken",
++    "sort_weaken", "binding_valid_weaken", "checked_success_preconditions",
++    "checked_success_certifies_binding", "successful_insertion_certified",
++    "refusal_retains_certificate", "step_preserves_certification", "step_preserves_lookup",
++    "certified_lookup_valid", "certified_lookup_has_closed_originals", "certified_lookup_conversion",
++    "run_snapshots_certified", "certified_snapshots_end", "run_final_environment_certified",
++    "empty_run_has_semantic_environment", "run_preserves_lookup", "run_preserves_semantic_judgments",
++    "step_environment_prefix", "run_environment_prefix", "project_binding_fields", "project_append",
++    "project_successful_insertion", "project_refusal_preserves_records", "projected_lookup_corresponds",
++    "projected_trace_preserves_old_record", "projected_trace_preserves_lookup",
++)}
++QUINT_TESTS = {
++    "emptySemanticHistoryTest", "firstPredecessorIsEmptyTest", "compoundCertificateTest",
++    "predecessorMatchesExactPrefixTest", "threeSuccessfulSemanticRecordsTest",
++    "previousSemanticRecordPreservedTest", "previousLookupPreservedTest", "semanticWeakeningObservedTest",
++    "projectedPayloadsExactTest", "projectedLookupExactTest", "projectedUnknownLookupTest",
++    "projectedNameLengthDistinctTest", "mismatchPreservesSemanticHistoryTest",
++    "unknownPreservesSemanticHistoryTest", "duplicatePreservesSemanticHistoryTest",
++    "duplicateBeforeScopeAndBudgetTest", "rejectedNameCanBeRetriedTest",
++    "forwardReferenceCannotCertifyTest", "selfReferenceCannotCertifyTest",
++    "fatalScopePreservesHistoryTest", "fatalBudgetPreservesHistoryTest",
++    "haltedSuffixHasNoCertificateTest", "betaValueCertificateTest", "zetaValueCertificateTest",
++}
++QUINT_OBLIGATIONS = {"SemanticEnvironment." + name for name in QUINT_TESTS | {"safety"}}
++SAMPLES = 1000
++STEPS = 8
++SEED = "20261123"
++
++
++def execute(*, output: Path, receipt: dict, build: Path, lean_build: Path, lean: Path,
++            lean_flags: list[str], quint: Path, binary: Path, env: dict, run: Callable) -> None:
++    lane: dict = {"status": "running", "implementation_refinement": False,
++                  "scope": "predecessor-certified semantic environments, lookup-preserving relational weakening, and complete record projection"}
++    receipt["semantic_environment"] = lane
++    model = lean_build / "SemanticEnvironment.olean"
++    run([str(lean), *lean_flags, "-o", str(model), "SemanticEnvironment.lean"], lean_build,
++        output, receipt, "environment-lean-build", env=env)
++    audit = run([str(lean), *lean_flags, "SemanticEnvironmentAudit.lean"], lean_build,
++                output, receipt, "environment-lean-axiom-audit", env=env)
++    if f"Semantic environment axiom audit passed: {len(LEAN_OBLIGATIONS)} required theorems without axioms;" not in audit:
++        raise ValueError("semantic environment Lean audit did not confirm its required inventory")
++    lane["lean"] = {"status": "passed", "obligations": sorted(LEAN_OBLIGATIONS),
++                    "required_theorem_axioms": [], "namespace_support_axiom_allowlist": ["propext"],
++                    "compiled_model_sha256": runtime.sha256(model),
++                    "semantic_predicate": "independent HasSort/Infers/Normalizes/Converts judgments and closed, available original syntax",
++                    "record_bridge": "exact encoded payloads; lookup correspondence assumes injective name coding",
++                    "old_four_action_checker_simulation": False}
++    quint_root = runtime.ROOT / "formal/quint"
++    run([str(quint), "typecheck", "SemanticEnvironment.qnt"], quint_root,
++        output, receipt, "environment-quint-typecheck")
++    tests = run([str(quint), "test", "SemanticEnvironment.qnt", "--backend=typescript", "--max-samples=1",
++                 "--match=^(" + "|".join(sorted(QUINT_TESTS)) + ")$", f"--seed={SEED}"],
++                quint_root, output, receipt, "environment-quint-tests")
++    if f"{len(QUINT_TESTS)} passing" not in tests \
++            or any(f"ok {name} passed 1 test(s)" not in tests for name in QUINT_TESTS):
++        raise ValueError("Quint did not execute the complete semantic environment test inventory")
++    simulation = run([str(quint), "run", "SemanticEnvironment.qnt", "--backend=typescript",
++                      "--invariant=safety", f"--max-samples={SAMPLES}", f"--max-steps={STEPS}",
++                      f"--seed={SEED}", "--verbosity=1"], quint_root, output, receipt,
++                     "environment-quint-bounded-run")
++    if "[ok] No violation found" not in simulation:
++        raise ValueError("Quint did not complete bounded semantic environment exploration")
++    trace = output / "environment-quint-negative.itf.json"
++    trace.unlink(missing_ok=True)
++    run([str(quint), "run", "SemanticEnvironment.qnt", "--backend=typescript",
++         "--init=negativeInit", "--step=unsafeStep", "--invariant=safety", "--max-samples=1",
++         "--max-steps=1", f"--seed={SEED}", "--verbosity=2", "--out-itf", str(trace)],
++        quint_root, output, receipt, "environment-quint-negative-control", expected_exit=1)
++    counterexample(1, (output / "environment-quint-negative-control.log").read_text(), trace)
++    lane["quint"] = {"status": "passed", "tests": sorted(QUINT_TESTS), "invariant": "safety",
++        "backend": "typescript", "seed": SEED, "max_samples": SAMPLES, "max_steps": STEPS,
++        "maximum_processed_definitions": 4, "names": 3, "input_forms": 9,
++        "unbounded_proof": False, "independent_semantic_correctness_proof": False,
++        "certificate_checks": "frozen predecessor and fields plus separately evaluated semantic witness equations",
++        "negative_control": {"witnessed": True, "trace": trace.name, "sha256": runtime.sha256(trace)}}
++
++    inventory = histories.cases()
++    inputs = "\n".join(profile.encode(item.request) for item in inventory) + "\n"
++    inputs_record = compressed_input(output / "environment-inputs.jsonl.gz", inputs)
++    lean_results = profile.decode_models(run(
++        [str(lean), *lean_flags, "--run", "TypingConversionReplay.lean"], lean_build,
++        output, receipt, "environment-lean-replay", env=env, stdin=inputs, compress_log=True), inventory)
++    quint_results = profile.decode_models(run(
++        [sys.executable, str(quint_root / "typing_replay.py")], runtime.ROOT,
++        output, receipt, "environment-quint-replay", env=env, stdin=inputs, compress_log=True), inventory)
++    if not profile.exact(lean_results, quint_results):
++        raise ValueError("Lean and Quint disagree on semantic environment history observations")
++    native_rows = []
++    fixture = build / "semantic-environment.tsv"
++    for item, expected in zip(inventory, lean_results):
++        fixture.write_text(profile.fixture(item.request))
++        observations = {}
++        for mode in ("--trace", "--check"):
++            command = [str(binary), mode, str(fixture)]
++            result = subprocess.run(command, cwd=runtime.ROOT, capture_output=True, text=True, timeout=15)
++            if mode == "--trace":
++                profile.check_trace(item, expected, result.returncode, result.stdout, result.stderr)
++            elif expected["halted"]:
++                if result.returncode != 2 or result.stdout or result.stderr != "goose bounded checker: Invalid_scope\n":
++                    raise ValueError("fatal environment history emitted a completed receipt or wrong exit")
++            else:
++                if result.returncode or result.stderr:
++                    raise ValueError("environment history check exited instead of producing observations")
++                outcomes = [{"name": bytes(s["name"]).decode("ascii"), "outcome": profile.OUTCOMES[s["outcome"]]}
++                            for s in expected["steps"]]
++                profile.observations.definition_observation("goose-aot", profile.observations.json_object(result.stdout), outcomes)
++            observations[mode] = {"command": command, "exit_code": result.returncode,
++                                  "stdout": result.stdout, "stderr": result.stderr}
++        native_rows.append({"case": item.name, "purpose": item.purpose, "request": item.request,
++                            "fixture": fixture.read_text(), "fixture_sha256": runtime.sha256(fixture),
++                            "model": expected, "observations": observations})
++    native_record = compressed_input(output / "environment-native-comparison.jsonl.gz",
++        "\n".join(json.dumps(row, separators=(",", ":")) for row in native_rows) + "\n")
++    lane["finite_correspondence"] = {"status": "passed", "cases": histories.CASE_COUNT,
++        "input_definitions": histories.INPUT_DEFINITIONS, "processed_snapshots": histories.PROCESSED_SNAPSHOTS,
++        "native_commands": 2 * histories.CASE_COUNT, "model_recursion_budget": 128,
++        "lean_quint_authored_full_field_agreement": True,
++        "replay_semantics": "unchanged actual typing/conversion evaluators",
++        "native_projection": "ordered full records, original type/value IDs, inferred structures, immutable prefixes, fatal status",
++        "semantic_certificates_observed_from_native": False,
++        "inputs": inputs_record, "log": native_record, "case_names": [item.name for item in inventory],
++        "reference_engine_comparison_gate": "conformance.semantic_environment",
++        "universal_implementation_refinement": False}
++    lane["status"] = "passed"
++    print(f"Semantic environments: {histories.CASE_COUNT} native/model histories passed.", flush=True)
++
++
++def check_reference_engines(binaries: dict, output: Path) -> dict:
++    """Add separate ordered outcomes without changing the earlier finite lanes."""
++    all_cases = histories.cases()
++    inventory = [item for item in all_cases if item.lean_outcomes is not None]
++    folder = output / "semantic-environment"
++    folder.mkdir(exist_ok=True)
++    rows = []
++    for item in inventory:
++        path = folder / (item.name + ".tsv")
++        path.write_text(profile.fixture(item.request))
++        engines = []
++        for engine, key in (("goose-aot", "goose-aot"), ("lean-kernel", "lean-kernel"), ("ocaml-bytecode", "ocaml-check")):
++            command = [str(binaries[key]), "--check", str(path)]
++            result = subprocess.run(command, cwd=runtime.ROOT, capture_output=True, text=True, timeout=15)
++            if result.returncode or result.stderr:
++                raise ValueError(f"{engine} semantic environment probe failed: {item.name}: {result.stderr}")
++            observed = profile.observations.definition_observation(engine,
++                profile.observations.json_object(result.stdout), profile.semantic_expectations(item, engine))
++            engines.append({"observation": observed, "command": command, "exit_code": result.returncode,
++                            "raw_stdout": result.stdout, "raw_stderr": result.stderr})
++        rows.append({"case": item.name, "purpose": item.purpose, "fixture": path.relative_to(output).as_posix(),
++                     "fixture_sha256": runtime.sha256(path), "engines": engines})
++    return {"status": "passed", "cases": len(rows), "ordered_outcomes_per_engine": histories.REFERENCE_OUTCOMES,
++            "registered_semantic_disagreements": [],
++            "comparison_scope": "ordered success/refusal histories; external drivers expose no stored fields or semantic certificates",
++            "excluded_native_priority_and_fatal_cases": [item.name for item in all_cases if item.lean_outcomes is None],
++            "observations": rows, "universal_implementation_refinement": False}
+diff --git a/tools/run.py b/tools/run.py
+index b295562..65b816d 100644
+--- a/tools/run.py
++++ b/tools/run.py
+@@ -158,12 +158,14 @@ def check_all(binaries: dict[str, Path], modules: dict[str, Any],
+         raise RuntimeError("external structural-control inventory differs from local contract")
+     import check_typing_conversion
+     typing = check_typing_conversion.check_reference_engines(binaries, output)
++    import check_semantic_environment
++    semantic = check_semantic_environment.check_reference_engines(binaries, output)
+     result = {"schema": "lean-goose.conformance-observations.v1", "status": "passed",
+               "evidence_only": True, "acceptance_authority": False, "fixtures": len(cases),
+               "ordered_outcomes_per_engine": sum(len(graph.definitions) for _, graph, _, _ in cases),
+               "registered_disagreements": BOUNDARIES,
+               "structural_and_resource_controls": invalid, "observations": observations,
+-              "typing_conversion": typing}
++              "typing_conversion": typing, "semantic_environment": semantic}
+     save(output / "results.json", result)
+     return result
+ 
+diff --git a/tools/semantic_environment_negative.py b/tools/semantic_environment_negative.py
+new file mode 100644
+index 0000000..e516d49
+--- /dev/null
++++ b/tools/semantic_environment_negative.py
+@@ -0,0 +1,85 @@
++"""Validate the designated old-record corruption, not a generic failed run.
++
++The expected history is authored from U : Sort 2 := Sort 1, an identity whose
++domain is U, and V : Sort 2 := U. No checker or generated witness supplies these
++expected semantic fields. The unsafe step changes only U's current stored value
++to Sort 0; the two previous snapshots and all predecessor certificates stay
++frozen. This is a negative-control contract, not another semantic evaluator.
++"""
++from __future__ import annotations
++
++from copy import deepcopy
++from pathlib import Path
++
++from check_stored_bindings import itf_value
++import typing_conversion_profile as profile
++
++
++def _expected_states() -> list[dict]:
++    universe = {"name": [85], "ty": [0, 2], "value": [0, 1], "inferred": [0, 2]}
++    identity = {"name": [105, 100], "ty": [5, 2, 1, 85, 2, 1, 85],
++                "value": [4, 2, 1, 85, 1, 0], "inferred": [5, 0, 1, 0, 1]}
++    alias = {"name": [86], "ty": [0, 2], "value": [2, 1, 85], "inferred": [0, 2]}
++
++    def result(value: list[int]) -> dict:
++        return {"value": value, "code": 0}
++
++    universe_certificate = {
++        "predecessor": [], "stored": universe, "fuel": 128,
++        "declaredSort": result([0, 3]), "valueType": result([0, 2]),
++        "normalizedType": result([0, 2]), "inferredNormal": result([0, 2]),
++        "declaredNormal": result([0, 2]),
++    }
++    identity_certificate = {
++        "predecessor": [universe], "stored": identity, "fuel": 128,
++        "declaredSort": result([0, 2]), "valueType": result([5, 2, 1, 85, 2, 1, 85]),
++        "normalizedType": result([5, 0, 1, 0, 1]), "inferredNormal": result([5, 0, 1, 0, 1]),
++        "declaredNormal": result([5, 0, 1, 0, 1]),
++    }
++    alias_certificate = {
++        "predecessor": [universe, identity], "stored": alias, "fuel": 128,
++        "declaredSort": result([0, 3]), "valueType": result([0, 2]),
++        "normalizedType": result([0, 2]), "inferredNormal": result([0, 2]),
++        "declaredNormal": result([0, 2]),
++    }
++    before = {
++        "checked": {
++            "environment": [universe, identity],
++            "snapshots": [{"name": [85], "code": 0, "bindings": [universe]},
++                          {"name": [105, 100], "code": 0, "bindings": [universe, identity]}],
++            "halted": False, "acceptance_authority": False,
++        },
++        "certificates": [universe_certificate, identity_certificate],
++    }
++    wrong_universe = dict(universe, value=[0, 0])
++    wrong_environment = [wrong_universe, identity, alias]
++    after = deepcopy(before)
++    after["checked"]["environment"] = wrong_environment
++    after["checked"]["snapshots"].append({"name": [86], "code": 0, "bindings": wrong_environment})
++    after["certificates"].append(alias_certificate)
++    return [
++        {"#meta": {"index": 0}, "s": before, "previous": before,
++         "last": {"name": [85], "ty": [0, 2], "value": [0, 1], "fuel": 128}, "hasStep": False},
++        {"#meta": {"index": 1}, "s": after, "previous": before,
++         "last": {"name": [86], "ty": [0, 2], "value": [2, 1, 85], "fuel": 128}, "hasStep": True},
++    ]
++
++
++def counterexample(exit_code: int, text: str, path: Path) -> None:
++    if type(exit_code) is not int or exit_code != 1 or not isinstance(text, str) \
++            or "[violation] Found an issue" not in text or "error: Invariant violated" not in text:
++        raise ValueError("old-record corruption did not produce the designated invariant failure")
++    try:
++        witness = itf_value(profile.observations.json_object(path.read_text(encoding="utf-8")))
++    except (RecursionError, OverflowError) as error:
++        raise ValueError("semantic-environment counterexample is not a bounded JSON witness") from error
++    if not isinstance(witness, dict) or set(witness) != {"#meta", "vars", "states"} \
++            or not isinstance(witness["#meta"], dict) \
++            or not profile.exact(witness["vars"], ["s", "previous", "last", "hasStep"]) \
++            or witness["#meta"].get("source") != "SemanticEnvironment.qnt" \
++            or witness["#meta"].get("status") != "violation" \
++            or witness["#meta"].get("format") != "ITF" \
++            or not isinstance(witness["states"], list) or len(witness["states"]) != 2:
++        raise ValueError("semantic-environment counterexample has an unexpected source or state inventory")
++    if not profile.exact(witness["states"], _expected_states()):
++        raise ValueError("counterexample differs from exact old-value corruption with frozen semantic certificates")
+diff --git a/tools/semantic_environment_profile.py b/tools/semantic_environment_profile.py
+new file mode 100644
+index 0000000..c4774b1
+--- /dev/null
++++ b/tools/semantic_environment_profile.py
+@@ -0,0 +1,114 @@
++"""Authored compound histories for semantic-environment preservation.
++
++This module supplies syntax and explicit expected full records. It performs no
++inference, normalization, conversion, or proof search. The actual Lean/Quint
++typing evaluators and pinned native engines execute these histories.
++"""
++from __future__ import annotations
++
++from typing_conversion_profile import Case, case
++
++CASE_COUNT = 12
++INPUT_DEFINITIONS = 62
++PROCESSED_SNAPSHOTS = 61
++REFERENCE_CASE_COUNT = 10
++REFERENCE_OUTCOMES = 52
++
++
++def cases() -> list[Case]:
++    inventory = [
++        case("environment_compound_alias_chain", [
++            ("U", "s2", "s1", 0, "s2"),
++            ("id", "p cU cU", "l cU v0", 0, "p s1 s1"),
++            ("alias", "p cU cU", "cid", 0, "p s1 s1"),
++            ("aliasAgain", "p cU cU", "calias", 0, "p s1 s1"),
++            ("call", "cU", "a caliasAgain s0", 0, "s1"),
++            ("use", "s1", "ccall", 0, "s1"),
++        ], "Six insertions preserve earlier original fields while inference and conversion follow predecessor aliases."),
++        case("environment_declared_type_alias_chain", [
++            ("F", "s2", "p s1 s1", 0, "s2"),
++            ("G", "s2", "cF", 0, "s2"),
++            ("H", "s2", "cG", 0, "s2"),
++            ("id", "cH", "l s1 v0", 0, "p s1 s1"),
++            ("copy", "cH", "cid", 0, "p s1 s1"),
++            ("call", "s1", "a ccopy s0", 0, "s1"),
++        ], "Declared type aliases remain original constants while stored inferred fields normalize to Pi."),
++        case("environment_forward_reference_recovery", [
++            ("early", "s1", "clate", 2, "unknownConstant"),
++            ("late", "s1", "s0", 0, "s1"),
++            ("early", "s1", "clate", 0, "s1"),
++            ("use", "s1", "cearly", 0, "s1"),
++        ], "A future declaration cannot justify an earlier refusal; retry succeeds only after its predecessor exists."),
++        case("environment_self_reference_refusal", [
++            ("seed", "s1", "s0", 0, "s1"),
++            ("self", "s1", "cself", 2, "unknownConstant"),
++            ("self", "s1", "cseed", 0, "s1"),
++        ], "An insertion cannot use itself as a predecessor, and refusal leaves its name available."),
++        case("environment_refusals_do_not_bind", [
++            ("id", "p s1 s1", "l s1 v0", 0, "p s1 s1"),
++            ("blocked", "s1", "s1", 6, "declTypeMismatch"),
++            ("missing", "s1", "cblocked", 2, "unknownConstant"),
++            ("blocked", "p s1 s1", "cid", 0, "p s1 s1"),
++            ("notfn", "s1", "a s0 s0", 5, "funExpected"),
++            ("notfn", "s1", "a cblocked s0", 0, "s1"),
++            ("use", "s1", "cnotfn", 0, "s1"),
++            ("id", "s2", "s1", 3, "alreadyDeclared"),
++        ], "Multiple semantic refusals and retries preserve the ordered successful-record history and lookup targets."),
++        case("environment_duplicate_full_record", [
++            ("id", "p s1 s1", "l s1 v0", 0, "p s1 s1"),
++            ("id", "s1", "s0", 3, "alreadyDeclared"),
++            ("alias", "p s1 s1", "cid", 0, "p s1 s1"),
++            ("id", "p s1 s1", "l s1 s0", 3, "alreadyDeclared"),
++            ("call", "s1", "a calias s0", 0, "s1"),
++        ], "Duplicate proposals with different types or values cannot replace the record used by later lookup."),
++        case("environment_beta_zeta_declared_history", [
++            ("beta", "a l s2 v0 s1", "s0", 0, "s1"),
++            ("zeta", "t s2 s1 v0", "cbeta", 0, "s1"),
++            ("copy", "s1", "czeta", 0, "s1"),
++            ("tail", "s1", "ccopy", 0, "s1"),
++        ], "Original reducible declarations stay stored while later aliases reuse normalized inferred types."),
++        case("environment_dependent_chain", [
++            ("dep", "p s1 p v0 v1", "l s1 l v0 v0", 0, "p s1 p v0 v1"),
++            ("alias", "p s1 p v0 v1", "cdep", 0, "p s1 p v0 v1"),
++            ("atProp", "p s0 s0", "a calias s0", 0, "p s0 s0"),
++            ("copy", "p s0 s0", "catProp", 0, "p s0 s0"),
++            ("unrelated", "s1", "s0", 0, "s1"),
++        ], "A dependent inferred type and its exact stored fields survive aliases, specialization, and unrelated extension."),
++        case("environment_erased_future_reference", [
++            ("prior", "s1", "s0", 0, "s1"),
++            ("erasedBeta", "s1", "a l s1 s0 clater", 2, "unknownConstant"),
++            ("erasedLet", "s1", "t s1 clater s0", 2, "unknownConstant"),
++            ("later", "s1", "cprior", 0, "s1"),
++            ("erasedBeta", "s1", "a l s1 s0 clater", 0, "s1"),
++            ("erasedLet", "s1", "t s1 clater s0", 0, "s1"),
++            ("after", "s1", "cerasedLet", 0, "s1"),
++        ], "Original syntax must use already available constants even when beta or zeta would erase them."),
++        case("environment_failed_annotation_retry", [
++            ("seed", "s1", "s0", 0, "s1"),
++            ("retry", "t s2 s0 s1", "cseed", 6, "letTypeMismatch"),
++            ("retry", "t s2 s1 v0", "cseed", 0, "s1"),
++            ("use", "s1", "cretry", 0, "s1"),
++        ], "Malformed type annotations leave no binding; corrected retry preserves the prior semantic history."),
++        case("environment_scope_after_history", [
++            ("U", "s2", "s1", 0, "s2"),
++            ("id", "p cU cU", "l cU v0", 0, "p s1 s1"),
++            ("alias", "p cU cU", "cid", 0, "p s1 s1"),
++            ("stop", "s1", "v0", 1, "Invalid_scope"),
++            ("unprocessed", "s1", "s0", 0, "s1"),
++        ], "Fatal scope preserves three semantic bindings and prevents every later insertion.", references=False),
++        case("environment_duplicate_priority_after_history", [
++            ("U", "s2", "s1", 0, "s2"),
++            ("id", "p cU cU", "l cU v0", 0, "p s1 s1"),
++            ("id", "v0", "cmissing", 3, "alreadyDeclared"),
++            ("call", "s1", "a cid s0", 0, "s1"),
++            ("use", "s1", "ccall", 0, "s1"),
++        ], "Duplicate priority preserves a compound predecessor despite invalid replacement syntax.", references=False),
++    ]
++    common = [item for item in inventory if item.lean_outcomes is not None]
++    if len(inventory) != CASE_COUNT or len({item.name for item in inventory}) != CASE_COUNT \
++            or sum(len(item.request["definitions"]) for item in inventory) != INPUT_DEFINITIONS \
++            or sum(len(item.expected["steps"]) for item in inventory) != PROCESSED_SNAPSHOTS \
++            or len(common) != REFERENCE_CASE_COUNT \
++            or sum(len(item.expected["steps"]) for item in common) != REFERENCE_OUTCOMES:
++        raise ValueError("semantic-environment history inventory changed")
++    return inventory
+-- 
+2.56.1
+

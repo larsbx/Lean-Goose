@@ -1,10 +1,10 @@
 {
   "schema": "lean-goose.stored-native-controls.v1",
   "status": "passed",
-  "started_at_utc": "2026-11-22T22:17:48+00:00",
+  "started_at_utc": "2026-11-23T11:16:18+00:00",
   "acceptance_authority": false,
   "binary": {
-    "path": "/tmp/lean-goose-formal-qm9qoqr3/checker",
+    "path": "/tmp/lean-goose-formal-xo_w6tmo/checker",
     "sha256": "25ef59c9260f6537894e2fc0cdf34e3cca30713652e5f6bed6c503503fd4314d"
   },
   "generator_sha256": "4613cc8c55bfd77bb0d09f807f31ba8999969fa753cd02d19df7287108007e46",
@@ -31,7 +31,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/good_alias.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/good_alias.dag",
         "bytes": 116,
         "sha256": "1c4cc572fd70490561f8210e1bf40ce6d2d12018a67df76f799bdf8a43ec6747"
       },
@@ -39,12 +39,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/good_alias.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/good_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -61,18 +61,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008741309993638424
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0010464979995958856
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/good_alias.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/good_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -89,8 +89,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.001172320999103249
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0008790349993432756
         }
       ],
       "observed": {
@@ -113,7 +113,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/duplicate_preempts_scope.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/duplicate_preempts_scope.dag",
         "bytes": 116,
         "sha256": "d8f8f99d3b8a683bb8eb305a53588285e9ab11731cbc88aa6c13e62befa4389b"
       },
@@ -121,12 +121,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/duplicate_preempts_scope.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/duplicate_preempts_scope.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -143,18 +143,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0010443320006743306
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0009291899996242137
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/duplicate_preempts_scope.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/duplicate_preempts_scope.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -171,8 +171,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0009243449985660845
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0010068269994008006
         }
       ],
       "observed": {
@@ -195,7 +195,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/mismatch_then_retry.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/mismatch_then_retry.dag",
         "bytes": 116,
         "sha256": "59fded290a64258ec761f926b49c0dce46ae342b5aeaa7d2c0028aa6d42db1d5"
       },
@@ -203,12 +203,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/mismatch_then_retry.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/mismatch_then_retry.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -225,18 +225,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008893739995983196
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.000810812000054284
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/mismatch_then_retry.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/mismatch_then_retry.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -253,8 +253,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008097350000753067
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0009511739999652491
         }
       ],
       "observed": {
@@ -278,7 +278,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/unknown_then_good_then_alias.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/unknown_then_good_then_alias.dag",
         "bytes": 130,
         "sha256": "d62943432465bec2b3670b54adb9389f0f6469c5747587d8f9b8fdeb93f45798"
       },
@@ -286,12 +286,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/unknown_then_good_then_alias.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/unknown_then_good_then_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -308,18 +308,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008340910007973434
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0012062989999321871
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/unknown_then_good_then_alias.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/unknown_then_good_then_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -336,8 +336,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0009084110006369883
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0008146680002028006
         }
       ],
       "observed": {
@@ -360,7 +360,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/wrong_level_alias.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/wrong_level_alias.dag",
         "bytes": 116,
         "sha256": "3bec757c7f09f8a9d3881c05cc9ae3320fa4420b01d656aeb16670b786057e3f"
       },
@@ -368,12 +368,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/wrong_level_alias.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/wrong_level_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -390,18 +390,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.000905296999917482
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0007765999998810003
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/wrong_level_alias.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/wrong_level_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -418,8 +418,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008418629986408632
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0009224409996022587
         }
       ],
       "observed": {
@@ -442,7 +442,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/typed_alias.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/typed_alias.dag",
         "bytes": 116,
         "sha256": "8a7f7c508f1eb8ad480806bc439f1064aae19f054954eed888217d48d35ad87f"
       },
@@ -450,12 +450,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/typed_alias.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/typed_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -472,18 +472,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008230250004999107
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0008219589999498567
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/typed_alias.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/typed_alias.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -500,8 +500,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008725280004000524
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0009786350001377286
         }
       ],
       "observed": {
@@ -523,7 +523,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/all_tags.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/all_tags.dag",
         "bytes": 144,
         "sha256": "61abb7688a852943f2261fdf59dc9f218191decdba34633a3c79d8b06edfa1ee"
       },
@@ -531,12 +531,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/all_tags.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/all_tags.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -553,18 +553,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008811110001261113
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0009225000003425521
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/all_tags.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/all_tags.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -581,8 +581,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008260199992946582
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0012428939999153954
         }
       ],
       "observed": {
@@ -604,7 +604,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/expected_sort.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/expected_sort.dag",
         "bytes": 144,
         "sha256": "8c6a84f45075fedd1f1771c8db6cf21a382748d4ad4d63a53f21bd570d84c456"
       },
@@ -612,12 +612,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/expected_sort.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/expected_sort.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -634,18 +634,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008975459986686474
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.000839684999846213
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/expected_sort.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/expected_sort.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -662,8 +662,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0007943930013425415
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0009812389998842264
         }
       ],
       "observed": {
@@ -685,7 +685,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/expected_function.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/expected_function.dag",
         "bytes": 144,
         "sha256": "c611ed41671c5dcf026f75991763d2bdcebd060826b2a24e874cc372d7f7bb4f"
       },
@@ -693,12 +693,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/expected_function.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/expected_function.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -715,18 +715,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0009421809991181362
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0009094609995372593
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/expected_function.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/expected_function.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -743,8 +743,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008383379990846151
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0008631310001874226
         }
       ],
       "observed": {
@@ -767,7 +767,7 @@
         "check_exit": 2
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/scope_halts.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/scope_halts.dag",
         "bytes": 128,
         "sha256": "454de7469d79bb2715ec1b05cf69db3ac66d6c2f7ff45d75157795edf410a04b"
       },
@@ -775,12 +775,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/scope_halts.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/scope_halts.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -797,18 +797,18 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Invalid_scope\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0009087010002986062
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0009415489994353266
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/scope_halts.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/scope_halts.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -825,8 +825,8 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Invalid_scope\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.000778059000367648
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0008471769997413503
         }
       ],
       "observed": {
@@ -848,7 +848,7 @@
         "check_exit": 2
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/derived_height_halts.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/derived_height_halts.dag",
         "bytes": 1851,
         "sha256": "054285bc500bab7252d8a6af8e67d4eda1fdce814b8bf4f38b05090e9d953244"
       },
@@ -856,12 +856,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/derived_height_halts.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/derived_height_halts.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -878,18 +878,18 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Height_limit\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0010318340009689564
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0009662259999458911
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/derived_height_halts.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/derived_height_halts.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -906,8 +906,8 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Height_limit\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008383580006920965
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0009540379996906267
         }
       ],
       "observed": {
@@ -930,7 +930,7 @@
         "check_exit": 2
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/fuel_halts.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/fuel_halts.dag",
         "bytes": 1054,
         "sha256": "ae3fba54cb494d43fbbc9c7217b75154c7e9c54f1b2c7459f18ff9ac99a52846"
       },
@@ -938,12 +938,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/fuel_halts.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/fuel_halts.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -960,18 +960,18 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Limit_exceeded\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.02618720800091978
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.023878218999925593
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/fuel_halts.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/fuel_halts.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -988,8 +988,8 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Limit_exceeded\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.02494492400001036
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.024448748999930103
         }
       ],
       "observed": {
@@ -1009,7 +1009,7 @@
         "check_exit": 2
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/import_height_failure.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/import_height_failure.dag",
         "bytes": 1635,
         "sha256": "a601c67a6e49138a93a332b30f68f04c67128213c13efd33df0e9717aa8b5e2a"
       },
@@ -1017,12 +1017,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/import_height_failure.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/import_height_failure.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1039,18 +1039,18 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Height_limit\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0009509449992037844
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0009862269998848205
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/import_height_failure.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/import_height_failure.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1067,8 +1067,8 @@
             "encoding": "utf-8",
             "text": "goose bounded checker: Height_limit\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0010155899999517715
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0010272489998897072
         }
       ]
     },
@@ -1082,7 +1082,7 @@
         "check_exit": 3
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/parser_failure.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/parser_failure.dag",
         "bytes": 50,
         "sha256": "2c679b9389b2cffa8f30358ee469dff64f87c43d0bc628d3da9dd03e526d6dfe"
       },
@@ -1090,12 +1090,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/parser_failure.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/parser_failure.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1112,18 +1112,18 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: missing final LF\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0009423619994777255
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0008700119997229194
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/parser_failure.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/parser_failure.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1140,8 +1140,8 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: missing final LF\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008768349998717895
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0007999159997780225
         }
       ]
     },
@@ -1155,7 +1155,7 @@
         "check_exit": 3
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/invalid_name_parser_failure.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/invalid_name_parser_failure.dag",
         "bytes": 69,
         "sha256": "a21ad68717cb4e435fb8a1a900e980abda48b420be4d5aad43a06b5e90c998bd"
       },
@@ -1163,12 +1163,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/invalid_name_parser_failure.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/invalid_name_parser_failure.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1185,18 +1185,18 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: invalid constant name\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.000804256998890196
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0009183040001516929
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/invalid_name_parser_failure.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/invalid_name_parser_failure.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1213,8 +1213,8 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: invalid constant name\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008795289995759958
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0008868069999152794
         }
       ]
     },
@@ -1228,7 +1228,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/input_nodes_limit.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/input_nodes_limit.dag",
         "bytes": 43999,
         "sha256": "827793b6176fec64f7eb80415eec70180eb43b68d3ef0c3eb064d52620fb97f6"
       },
@@ -1236,12 +1236,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/input_nodes_limit.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/input_nodes_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1258,18 +1258,18 @@
             "encoding": "utf-8",
             "text": "goose binding trace: input nodes exceed trace bound\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0012631850004254375
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.003297559999737132
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/input_nodes_limit.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/input_nodes_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1286,8 +1286,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.002726926999457646
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0033231690003958647
         }
       ]
     },
@@ -1301,7 +1301,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/definition_limit.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/definition_limit.dag",
         "bytes": 759,
         "sha256": "0a05fc2de01adc8de710bafe0b08f3cc04ffec375173fbd330a831528749aa84"
       },
@@ -1309,12 +1309,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/definition_limit.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/definition_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1331,18 +1331,18 @@
             "encoding": "utf-8",
             "text": "goose binding trace: definitions exceed trace bound\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0008469410004181555
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0017043890002241824
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/definition_limit.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/definition_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1359,8 +1359,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0010857430006581126
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0012172229999123374
         }
       ]
     },
@@ -1374,7 +1374,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/derived_nodes_limit.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/derived_nodes_limit.dag",
         "bytes": 43988,
         "sha256": "5578aa1d33c960add5675828ad27cf1742a48977ed4613dba7e0b70e74d87545"
       },
@@ -1382,12 +1382,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/derived_nodes_limit.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/derived_nodes_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1404,18 +1404,18 @@
             "encoding": "utf-8",
             "text": "goose binding trace: derived nodes exceed trace bound\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:48+00:00",
-          "elapsed_seconds": 0.0014777420001337305
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0025093399999605026
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/derived_nodes_limit.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/derived_nodes_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:48+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1432,8 +1432,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.0013435939999908442
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.003175632999955269
         }
       ]
     },
@@ -1447,7 +1447,7 @@
         "check_exit": 3
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/input_byte_limit.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/input_byte_limit.dag",
         "bytes": 4194305,
         "sha256": "8d3d3c04baadfd31cbebf771836900097b5f36cc142b74e40747c7b372beab8b"
       },
@@ -1455,12 +1455,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/input_byte_limit.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/input_byte_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1477,18 +1477,18 @@
             "encoding": "utf-8",
             "text": "goose binding trace: input bytes exceed trace bound\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.004668101999413921
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.006222822999916389
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/input_byte_limit.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/input_byte_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1505,8 +1505,8 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: missing final LF\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.01042045699978189
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.008328175000315241
         }
       ]
     },
@@ -1520,7 +1520,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/output_limit.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/output_limit.dag",
         "bytes": 43836,
         "sha256": "0df2a32407b20d271348210c563ae4f08f2e3920e7ae538f27f4a351b7064951"
       },
@@ -1528,12 +1528,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/output_limit.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/output_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -1550,18 +1550,18 @@
             "encoding": "utf-8",
             "text": "goose binding trace: serialized output exceeds trace bound\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.010554394000791945
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.007796093000251858
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/output_limit.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/output_limit.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1578,8 +1578,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.0013745889991696458
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0012549310004033032
         }
       ]
     },
@@ -1596,7 +1596,7 @@
         "final_node_count": 4096
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/node_boundary.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/node_boundary.dag",
         "bytes": 43966,
         "sha256": "1baf8199f626d2b918f5b3c3eded27c169d2f2874b1e2f68d162aa8d597320c6"
       },
@@ -1604,12 +1604,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/node_boundary.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/node_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1628,18 +1628,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.002763271000731038
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0023295390001294436
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/node_boundary.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/node_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1656,8 +1656,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.0013197789994592313
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.002204300000812509
         }
       ],
       "observed": {
@@ -1742,7 +1742,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/definition_boundary.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/definition_boundary.dag",
         "bytes": 748,
         "sha256": "82b81d8ac27da1b4e9262afd30786e186cb2b6e57608decb44f6e5a0e3525176"
       },
@@ -1750,12 +1750,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/definition_boundary.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/definition_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1772,18 +1772,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.001025483999910648
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0010456850004629814
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/definition_boundary.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/definition_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1800,8 +1800,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.0009074600002350053
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0008819489994493779
         }
       ],
       "observed": {
@@ -1821,7 +1821,7 @@
         "check_exit": 3
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/input_byte_boundary.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/input_byte_boundary.dag",
         "bytes": 4194304,
         "sha256": "baa7a6d36ffa957552df230235c2d51d735f28d49c58a5f3438a3a973a25a37d"
       },
@@ -1829,12 +1829,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/input_byte_boundary.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/input_byte_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1851,18 +1851,18 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: missing final LF\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.0026350809985160595
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.04708650800057512
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/input_byte_boundary.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/input_byte_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 3,
           "capture_complete": true,
           "stdout": {
@@ -1879,8 +1879,8 @@
             "encoding": "utf-8",
             "text": "goose benchmark parser: missing final LF\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.002627769999890006
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.030905481000445434
         }
       ]
     },
@@ -1897,7 +1897,7 @@
         "trace_stdout_bytes": 4194304
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/output_byte_boundary.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/output_byte_boundary.dag",
         "bytes": 3145334,
         "sha256": "0901c16ee6ce9869615edf3a7f5d66a7c8527abce27de9de44b73a19d078e7fc"
       },
@@ -1905,12 +1905,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/output_byte_boundary.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/output_byte_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1929,18 +1929,18 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.03297911800109432
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.03586810599972523
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/output_byte_boundary.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/output_byte_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -1959,8 +1959,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.014452270999754546
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.012294278999434027
         }
       ],
       "observed": {
@@ -1980,7 +1980,7 @@
         "check_exit": 0
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/output_byte_over_boundary.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/output_byte_over_boundary.dag",
         "bytes": 3145335,
         "sha256": "c56a9e2ea222a99af0df686adff2f3b068febfb63ef4100c5295e150b77a32b3"
       },
@@ -1988,12 +1988,12 @@
         {
           "mode": "--trace",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--trace",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/output_byte_over_boundary.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/output_byte_over_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 2,
           "capture_complete": true,
           "stdout": {
@@ -2010,18 +2010,18 @@
             "encoding": "utf-8",
             "text": "goose binding trace: serialized output exceeds trace bound\n"
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.01218093600073189
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.008814877999611781
         },
         {
           "mode": "--check",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
             "--check",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/output_byte_over_boundary.dag"
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/output_byte_over_boundary.dag"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
@@ -2040,8 +2040,8 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.011596583000937244
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.018289568999534822
         }
       ]
     },
@@ -2054,7 +2054,7 @@
         "iterations": 2
       },
       "fixture": {
-        "path": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/benchmark_mode.dag",
+        "path": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/benchmark_mode.dag",
         "bytes": 116,
         "sha256": "1c4cc572fd70490561f8210e1bf40ce6d2d12018a67df76f799bdf8a43ec6747"
       },
@@ -2062,21 +2062,21 @@
         {
           "mode": "benchmark",
           "command": [
-            "/tmp/lean-goose-formal-qm9qoqr3/checker",
-            "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls/benchmark_mode.dag",
+            "/tmp/lean-goose-formal-xo_w6tmo/checker",
+            "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls/benchmark_mode.dag",
             "1",
             "2"
           ],
-          "cwd": "/tmp/lean-goose-formal-qm9qoqr3/stored-native-controls",
-          "started_at_utc": "2026-11-22T22:17:49+00:00",
+          "cwd": "/tmp/lean-goose-formal-xo_w6tmo/stored-native-controls",
+          "started_at_utc": "2026-11-23T11:16:18+00:00",
           "exit_code": 0,
           "capture_complete": true,
           "stdout": {
             "bytes": 241,
-            "sha256": "2aebcbaeabe20f3e43fadaffda353617be74d1be86f2134a0639896885d6ef23",
+            "sha256": "b5540503abbe720a84843dd81c328b266e8a78a35ee40478534a6fe4c2a197a5",
             "retention": "complete",
             "encoding": "utf-8",
-            "text": "{\"schema\":\"lean-goose.benchmark-observation.v1\",\"engine\":\"goose-aot\",\"status\":\"passed\",\"workers\":1,\"iterations\":2,\"definitions\":2,\"elapsed_ns\":390,\"per_batch_ns\":195.0,\"validated_batches\":2,\"refusal_controls\":1,\"acceptance_authority\":false}\n"
+            "text": "{\"schema\":\"lean-goose.benchmark-observation.v1\",\"engine\":\"goose-aot\",\"status\":\"passed\",\"workers\":1,\"iterations\":2,\"definitions\":2,\"elapsed_ns\":401,\"per_batch_ns\":200.5,\"validated_batches\":2,\"refusal_controls\":1,\"acceptance_authority\":false}\n"
           },
           "stderr": {
             "bytes": 0,
@@ -2085,12 +2085,12 @@
             "encoding": "utf-8",
             "text": ""
           },
-          "finished_at_utc": "2026-11-22T22:17:49+00:00",
-          "elapsed_seconds": 0.0010289290003129281
+          "finished_at_utc": "2026-11-23T11:16:18+00:00",
+          "elapsed_seconds": 0.0010067260000141687
         }
       ]
     }
   ],
-  "finished_at_utc": "2026-11-22T22:17:49+00:00",
-  "elapsed_seconds": 0.3882342500000959
+  "finished_at_utc": "2026-11-23T11:16:18+00:00",
+  "elapsed_seconds": 0.5376856699995187
 }

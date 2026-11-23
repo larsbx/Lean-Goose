@@ -1,0 +1,9 @@
+lean-ocaml-benchmark-dag-v1
+n	0	s	1
+n	1	c	late
+n	2	s	0
+n	3	c	early
+d	early	0	1
+d	late	0	2
+d	early	0	1
+d	use	0	3

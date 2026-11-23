@@ -1,0 +1,342 @@
+An example execution:
+
+[State 0]
+{
+  hasStep: false,
+  last: { fuel: 128, name: [85], ty: [0, 2], value: [0, 1] },
+  previous:
+    {
+      certificates:
+        [
+          {
+            declaredNormal: { code: 0, value: [0, 2] },
+            declaredSort: { code: 0, value: [0, 3] },
+            fuel: 128,
+            inferredNormal: { code: 0, value: [0, 2] },
+            normalizedType: { code: 0, value: [0, 2] },
+            predecessor: [],
+            stored: { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] },
+            valueType: { code: 0, value: [0, 2] }
+          },
+          {
+            declaredNormal: { code: 0, value: [5, 0, 1, 0, 1] },
+            declaredSort: { code: 0, value: [0, 2] },
+            fuel: 128,
+            inferredNormal: { code: 0, value: [5, 0, 1, 0, 1] },
+            normalizedType: { code: 0, value: [5, 0, 1, 0, 1] },
+            predecessor:
+              [{ inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] }],
+            stored:
+              {
+                inferred: [5, 0, 1, 0, 1],
+                name: [105, 100],
+                ty: [5, 2, 1, 85, 2, 1, 85],
+                value: [4, 2, 1, 85, 1, 0]
+              },
+            valueType: { code: 0, value: [5, 2, 1, 85, 2, 1, 85] }
+          }
+        ],
+      checked:
+        {
+          acceptance_authority: false,
+          environment:
+            [
+              { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] },
+              {
+                inferred: [5, 0, 1, 0, 1],
+                name: [105, 100],
+                ty: [5, 2, 1, 85, 2, 1, 85],
+                value: [4, 2, 1, 85, 1, 0]
+              }
+            ],
+          halted: false,
+          snapshots:
+            [
+              {
+                bindings:
+                  [{ inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] }],
+                code: 0,
+                name: [85]
+              },
+              {
+                bindings:
+                  [
+                    { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] },
+                    {
+                      inferred: [5, 0, 1, 0, 1],
+                      name: [105, 100],
+                      ty: [5, 2, 1, 85, 2, 1, 85],
+                      value: [4, 2, 1, 85, 1, 0]
+                    }
+                  ],
+                code: 0,
+                name: [105, 100]
+              }
+            ]
+        }
+    },
+  s:
+    {
+      certificates:
+        [
+          {
+            declaredNormal: { code: 0, value: [0, 2] },
+            declaredSort: { code: 0, value: [0, 3] },
+            fuel: 128,
+            inferredNormal: { code: 0, value: [0, 2] },
+            normalizedType: { code: 0, value: [0, 2] },
+            predecessor: [],
+            stored: { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] },
+            valueType: { code: 0, value: [0, 2] }
+          },
+          {
+            declaredNormal: { code: 0, value: [5, 0, 1, 0, 1] },
+            declaredSort: { code: 0, value: [0, 2] },
+            fuel: 128,
+            inferredNormal: { code: 0, value: [5, 0, 1, 0, 1] },
+            normalizedType: { code: 0, value: [5, 0, 1, 0, 1] },
+            predecessor:
+              [{ inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] }],
+            stored:
+              {
+                inferred: [5, 0, 1, 0, 1],
+                name: [105, 100],
+                ty: [5, 2, 1, 85, 2, 1, 85],
+                value: [4, 2, 1, 85, 1, 0]
+              },
+            valueType: { code: 0, value: [5, 2, 1, 85, 2, 1, 85] }
+          }
+        ],
+      checked:
+        {
+          acceptance_authority: false,
+          environment:
+            [
+              { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] },
+              {
+                inferred: [5, 0, 1, 0, 1],
+                name: [105, 100],
+                ty: [5, 2, 1, 85, 2, 1, 85],
+                value: [4, 2, 1, 85, 1, 0]
+              }
+            ],
+          halted: false,
+          snapshots:
+            [
+              {
+                bindings:
+                  [{ inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] }],
+                code: 0,
+                name: [85]
+              },
+              {
+                bindings:
+                  [
+                    { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] },
+                    {
+                      inferred: [5, 0, 1, 0, 1],
+                      name: [105, 100],
+                      ty: [5, 2, 1, 85, 2, 1, 85],
+                      value: [4, 2, 1, 85, 1, 0]
+                    }
+                  ],
+                code: 0,
+                name: [105, 100]
+              }
+            ]
+        }
+    }
+}
+
+[State 1]
+{
+  hasStep: true,
+  last: { fuel: 128, name: [86], ty: [0, 2], value: [2, 1, 85] },
+  previous:
+    {
+      certificates:
+        [
+          {
+            declaredNormal: { code: 0, value: [0, 2] },
+            declaredSort: { code: 0, value: [0, 3] },
+            fuel: 128,
+            inferredNormal: { code: 0, value: [0, 2] },
+            normalizedType: { code: 0, value: [0, 2] },
+            predecessor: [],
+            stored: { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] },
+            valueType: { code: 0, value: [0, 2] }
+          },
+          {
+            declaredNormal: { code: 0, value: [5, 0, 1, 0, 1] },
+            declaredSort: { code: 0, value: [0, 2] },
+            fuel: 128,
+            inferredNormal: { code: 0, value: [5, 0, 1, 0, 1] },
+            normalizedType: { code: 0, value: [5, 0, 1, 0, 1] },
+            predecessor:
+              [{ inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] }],
+            stored:
+              {
+                inferred: [5, 0, 1, 0, 1],
+                name: [105, 100],
+                ty: [5, 2, 1, 85, 2, 1, 85],
+                value: [4, 2, 1, 85, 1, 0]
+              },
+            valueType: { code: 0, value: [5, 2, 1, 85, 2, 1, 85] }
+          }
+        ],
+      checked:
+        {
+          acceptance_authority: false,
+          environment:
+            [
+              { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] },
+              {
+                inferred: [5, 0, 1, 0, 1],
+                name: [105, 100],
+                ty: [5, 2, 1, 85, 2, 1, 85],
+                value: [4, 2, 1, 85, 1, 0]
+              }
+            ],
+          halted: false,
+          snapshots:
+            [
+              {
+                bindings:
+                  [{ inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] }],
+                code: 0,
+                name: [85]
+              },
+              {
+                bindings:
+                  [
+                    { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] },
+                    {
+                      inferred: [5, 0, 1, 0, 1],
+                      name: [105, 100],
+                      ty: [5, 2, 1, 85, 2, 1, 85],
+                      value: [4, 2, 1, 85, 1, 0]
+                    }
+                  ],
+                code: 0,
+                name: [105, 100]
+              }
+            ]
+        }
+    },
+  s:
+    {
+      certificates:
+        [
+          {
+            declaredNormal: { code: 0, value: [0, 2] },
+            declaredSort: { code: 0, value: [0, 3] },
+            fuel: 128,
+            inferredNormal: { code: 0, value: [0, 2] },
+            normalizedType: { code: 0, value: [0, 2] },
+            predecessor: [],
+            stored: { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] },
+            valueType: { code: 0, value: [0, 2] }
+          },
+          {
+            declaredNormal: { code: 0, value: [5, 0, 1, 0, 1] },
+            declaredSort: { code: 0, value: [0, 2] },
+            fuel: 128,
+            inferredNormal: { code: 0, value: [5, 0, 1, 0, 1] },
+            normalizedType: { code: 0, value: [5, 0, 1, 0, 1] },
+            predecessor:
+              [{ inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] }],
+            stored:
+              {
+                inferred: [5, 0, 1, 0, 1],
+                name: [105, 100],
+                ty: [5, 2, 1, 85, 2, 1, 85],
+                value: [4, 2, 1, 85, 1, 0]
+              },
+            valueType: { code: 0, value: [5, 2, 1, 85, 2, 1, 85] }
+          },
+          {
+            declaredNormal: { code: 0, value: [0, 2] },
+            declaredSort: { code: 0, value: [0, 3] },
+            fuel: 128,
+            inferredNormal: { code: 0, value: [0, 2] },
+            normalizedType: { code: 0, value: [0, 2] },
+            predecessor:
+              [
+                { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] },
+                {
+                  inferred: [5, 0, 1, 0, 1],
+                  name: [105, 100],
+                  ty: [5, 2, 1, 85, 2, 1, 85],
+                  value: [4, 2, 1, 85, 1, 0]
+                }
+              ],
+            stored:
+              { inferred: [0, 2], name: [86], ty: [0, 2], value: [2, 1, 85] },
+            valueType: { code: 0, value: [0, 2] }
+          }
+        ],
+      checked:
+        {
+          acceptance_authority: false,
+          environment:
+            [
+              { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 0] },
+              {
+                inferred: [5, 0, 1, 0, 1],
+                name: [105, 100],
+                ty: [5, 2, 1, 85, 2, 1, 85],
+                value: [4, 2, 1, 85, 1, 0]
+              },
+              { inferred: [0, 2], name: [86], ty: [0, 2], value: [2, 1, 85] }
+            ],
+          halted: false,
+          snapshots:
+            [
+              {
+                bindings:
+                  [{ inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] }],
+                code: 0,
+                name: [85]
+              },
+              {
+                bindings:
+                  [
+                    { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 1] },
+                    {
+                      inferred: [5, 0, 1, 0, 1],
+                      name: [105, 100],
+                      ty: [5, 2, 1, 85, 2, 1, 85],
+                      value: [4, 2, 1, 85, 1, 0]
+                    }
+                  ],
+                code: 0,
+                name: [105, 100]
+              },
+              {
+                bindings:
+                  [
+                    { inferred: [0, 2], name: [85], ty: [0, 2], value: [0, 0] },
+                    {
+                      inferred: [5, 0, 1, 0, 1],
+                      name: [105, 100],
+                      ty: [5, 2, 1, 85, 2, 1, 85],
+                      value: [4, 2, 1, 85, 1, 0]
+                    },
+                    {
+                      inferred: [0, 2],
+                      name: [86],
+                      ty: [0, 2],
+                      value: [2, 1, 85]
+                    }
+                  ],
+                code: 0,
+                name: [86]
+              }
+            ]
+        }
+    }
+}
+
+[violation] Found an issue (72ms at 14 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated

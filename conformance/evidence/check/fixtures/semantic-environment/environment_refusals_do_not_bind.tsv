@@ -1,0 +1,20 @@
+lean-ocaml-benchmark-dag-v1
+n	0	s	1
+n	1	p	0	0
+n	2	v	0
+n	3	l	0	2
+n	4	c	blocked
+n	5	c	id
+n	6	s	0
+n	7	a	6	6
+n	8	a	4	6
+n	9	c	notfn
+n	10	s	2
+d	id	1	3
+d	blocked	0	0
+d	missing	0	4
+d	blocked	1	5
+d	notfn	0	7
+d	notfn	0	8
+d	use	0	9
+d	id	10	0
