@@ -12,7 +12,7 @@ inventory describes the implementation rather than assigning authority.
 | --- | --- |
 | `policy/` | Governance, evidence, and publication policy |
 | `reference/` | Locally owned, bounded Goose checking observations |
-| `formal/` | Lean transaction, full-record binding, DAG/scope, substitution, and typing/conversion proofs with independent Quint checks |
+| `formal/` | Lean transaction, full-record binding, DAG/scope, substitution, typing/conversion, and semantic-environment proofs with independent Quint checks |
 | `oracles/` | Contract for pinned external Lean and OCaml comparisons |
 | `schemas/` | Versioned input and observation contracts |
 | `conformance/` | Source identities, dependency pins, and generated observations |
@@ -126,8 +126,24 @@ produce 59 ordered outcomes per external engine in the conformance gate.
 Those external drivers observe success/refusal, while the native diagnostic
 interface exposes full stored fields. See [typing/conversion](docs/typing-conversion.md).
 This proves successful model evaluation satisfies its rules and supplies finite
-implementation evidence. General environment invariants, typed reduction
-preservation, totality, completeness and native refinement remain open.
+implementation evidence. Typed reduction preservation, sufficient-budget
+completeness and native refinement remain open.
+
+The sixth lane proves semantic-environment preservation for the existing typing
+model. Independent predecessor certificates contain closed/available original
+syntax and `HasSort`, `Infers`, `Normalizes`, and `Converts` derivations.
+Lookup-preserving extension weakens these judgments into the current environment;
+all processed snapshots and the final environment preserve certification.
+A projection retains complete encoded records and reuses the earlier
+stored-binding preservation theorem. Lookup correspondence explicitly assumes
+an injective name coding; the older four-action checker is not simulated.
+
+The gate requires 37 new Lean theorems, 24 Quint tests, bounded exploration,
+an exact old-value corruption witness, and 12 additional native/model histories.
+Ten common-reference histories add 52 outcomes per engine. The native interface
+does not expose semantic certificates. Inferred-field closedness/availability,
+well-formed binder contexts and typed substitution remain next obligations.
+See [semantic environments](docs/semantic-environment.md).
 
 ### Observable diagnostic interface
 

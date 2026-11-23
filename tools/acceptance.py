@@ -118,7 +118,7 @@ def main() -> int:
                                  "--output", "conformance/evidence/smoke"]),
         ]
         for name, command in commands:
-            # Five required formal scopes include replay of every observed
+            # Six required formal scopes include replay of every observed
             # native arena. Keep individual model/native command limits intact;
             # allow the expanded sequential orchestration forty minutes.
             record = run(name, command, timeout=2400 if name == "formal" else 600)

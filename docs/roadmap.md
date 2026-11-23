@@ -1,64 +1,105 @@
 # Next concrete obligations
 
-The required formal scope includes ordered-name transactions, complete
-stored-binding preservation, structural expression DAGs with binder scope,
-capture-avoiding lifting/substitution, and numeric-sort typing with beta/zeta/delta conversion.
-The original 1,110-case and 2,954-case lanes remain. The
-[DAG lane](expression-dag-scope.md) connects all seven raw node kinds to
-structural expressions, proves recursive scope laws, and adds native probes at
-four binder depths plus malformed topology and context controls.
-The [substitution lane](substitution.md) adds scope and index laws, arbitrary
-nested-lambda noncapture, and direct comparisons with actual Goose `lift` and
-`substitute`, including capture, malformed-scope, and resource controls.
-The [typing/conversion lane](typing-conversion.md) connects successful model
-evaluation to independent typing/reduction judgments, compares compound stored
-fields and refusals against native Goose, and adds common-fragment outcome
-comparisons with pinned Lean and OCaml. General implementation refinement is
-still separate from this model soundness and finite evidence.
-The proof scope and required execution inventories are in
-[formalization.md](formalization.md). A particular revision is verified only when
-its matching execution receipt records the required gates as passed.
+## Accepted starting point
 
-1. **Typing metatheory and semantic environments:** define well-formed bindings
-   and contexts, prove their preservation across successful traces, and connect
-   this semantic environment to the earlier full-record model. Then establish
-   sufficient-budget completeness, deterministic normal forms and typed
-   beta/zeta preservation for a precisely stated admissible fragment.
-   Successful model inference already derives the independent rules; general
-   completeness and native correspondence are not consequences of that result.
-   Eta, proof irrelevance and unsupported Lean features retain their boundaries.
-2. **Implementation refinement:** prove the relation between model transitions,
-   concrete binding lookup, DAG decoding, and the native checker. The present
-   Lean statements preserve arbitrary model records and define structural DAG
-   decoding, scope, lifting, substitution, and typing/reduction soundness;
-   native comparison remains finite. Refine concrete inference, validation,
-   conversion and error behavior as well as transformations.
-   Prove refinement of the actual transformation functions and their metadata
-   optimizations. Add evidence for the diagnostic
-   serializer and its snapshot timing without treating diagnostic output alone
-   as a proof of the implementation.
-3. **Resource and cache behavior:** model work, height, intermediate-node, and
-   context limits, including failure priority around duplicate and semantic
-   checks. Specify which caches remain valid across insertion or refusal.
-   Diagnostic trace bounds and checker resource limits are separate contracts;
-   existing cache state, contexts, and fuel are outside the stored-binding model.
-4. **Fresh unshared syntax:** profile arena import, metadata construction, and
-   inference on `unshared_trees`. Preserve all five formal scopes, full positive and
-   refusal conformance, and trace compatibility when optimizing representations
-   or caches. Re-run the full performance experiment on the new source revision
-   before making a new speed claim.
-5. **Module separation:** split checking semantics from observation, diagnostic,
-   and timing adapters under source-bound replay. Preserve both the original
-   checking/parser source relationship and the explicit formal implementation
-   mappings, or document and verify any intended semantic change.
-6. **Accepting-boundary proposal:** before introducing an authoritative entrypoint,
-   name its exact contract and implementation files, trusted base, supported
-   semantics, rejection evidence, and formal obligations. Review the manifest
-   authority change explicitly. Implementation languages remain unrestricted;
-   proofs, comparisons, diagnostics, and performance measurements do not grant
-   declaration, theorem, operational, or deployment admission authority.
+[PR #6](https://github.com/larsbx/Lean-Goose/pull/6) merged the numeric-sort
+typing and beta/zeta/delta conversion increment into `main` through
+`c79bafddb6372decf1a373c14c4c8eb7ec4eea3e`. Its published source revision
+`f45bb43d5c5ce15dd335a5f7ae2915fb581cc3ca` has the exact Git tree of locally
+tested source `3718d12fbe977ed322faa10fe81143b3ddbcb0f3`. The
+[hosted main run](https://github.com/larsbx/Lean-Goose/actions/runs/45079151056)
+completed successfully on the merge revision. The original local receipts
+retain their own source identity.
 
-General universes, inductives, recursors, quotients, `.olean` ingestion, and full
-Lean theorem admission remain outside the reference. The retained 964-outcome
-comparison, structural/resource controls, and benchmark smoke continue to serve
-their stated finite validation roles alongside the formal work.
+The five retained scopes establish ordered-name transactions, complete
+stored-record preservation, expression-DAG representation and binder scope,
+capture-avoiding lifting/substitution, and successful typing/conversion model
+soundness. Their finite native observations remain distinct from general
+implementation refinement or full Lean kernel compatibility.
+
+## Begun here: semantic environments and the record bridge
+
+The [semantic-environment increment](semantic-environment.md) adds independent
+certificates for the original declared type/value and normalized inferred
+field in each binding's exact predecessor environment. It proves that fresh
+insertion and refusal preserve certification across arbitrary finite traces.
+Lookup-preserving environment weakening transports the relational typing and
+reduction judgments into the final environment, so old certificates remain
+valid after later insertions.
+
+The projection to `GooseStoredBindings.Binding` retains every encoded payload
+and directly reuses the earlier indexed-record preservation theorem. Lookup
+correspondence has an explicit injective name-coding premise; this does not
+equate the earlier four-action checker with compound-expression typing.
+
+The required increment is 37 Lean obligations, 24 Quint tests, bounded invariant
+exploration and an exact old-record corruption witness. Twelve additional
+native/model histories cover 62 definitions and 61 processed snapshots; ten
+common-reference histories add 52 ordered outcomes per engine. These are gate
+requirements. Their executed status belongs to the matching new source-bound
+receipt, not to the earlier PR #6 result.
+
+## Ordered next proof work
+
+1. **Inferred-field scope and well-formed contexts.** Define binder-context
+   validity using the existing de Bruijn orientation: each entry must have a
+   sort in its preceding outer context. Prove that certified environments and
+   valid contexts preserve scope and constant availability through inference
+   and normalization. The first named target is a successful-check theorem
+   `checked_success_inferred_closed_available`: from `Certified E` and
+   `checked fuel E d = .ok A`, derive `Closed A ∧ Available E A`.
+   The present certificate proves these properties for the original
+   type/value, and gives derivations for the inferred field; it does not yet
+   independently prove its scope/availability. Add dependent-context and
+   rejected-context controls while retaining all six scopes.
+2. **Typed substitution and reduction preservation.** Build the context
+   weakening and substitution lemmas over the existing capture-avoiding
+   operations. State the type relation explicitly, including conversion where
+   required, before proving beta and zeta subject reduction for the admitted
+   fragment. Do not replace this obligation with structural substitution laws.
+3. **Determinacy, conversion and sufficient budgets.** Prove deterministic
+   normal forms and the required conversion laws, then connect derivations to
+   executable inference/normalization with a sufficient budget. State the
+   admissible environment/context/term hypotheses. Termination of a function
+   for a supplied budget is already provided by Lean; normalization of all
+   well-typed inputs and existence of enough successful fuel remain open.
+4. **Concrete record and name representation.** Discharge injectivity for the
+   chosen concrete name encoding over its declared ASCII domain and connect
+   structural encoded records to native DAG IDs and lookup. Keep exact record
+   preservation separate from a simulation of the older abstract action model.
+5. **Native semantic refinement.** Relate the proved model transitions to the
+   actual Goose inference, validation, conversion, binding lookup, lifting and
+   substitution implementations. Prove the concrete DAG/metadata relation and
+   diagnostic serializer/snapshot timing. Present finite replay remains
+   evidence about its selected inputs; it is not that refinement theorem.
+6. **Resources, caches and failure priority.** Model native work, height,
+   intermediate-node and context limits, and specify cache validity across
+   insertion/refusal. Distinguish model recursion fuel, Quint's evaluator cap,
+   native limits and diagnostic envelopes. Prove which error priorities hold
+   under which resource assumptions.
+
+## Later engineering and authority decisions
+
+- **Fresh unshared syntax:** profile arena import, metadata construction and
+  inference on `unshared_trees`. Preserve all six formal scopes, positive and
+  refusal conformance, and trace compatibility when optimizing. Rerun the full
+  performance experiment on its exact source before making a new speed claim.
+- **Module separation:** split checking semantics from observation, diagnostic
+  and timing adapters under source-bound replay. Preserve the checking/parser
+  provenance and explicit formal implementation mapping, or document and
+  verify an intended semantic change.
+- **Accepting-boundary proposal:** before introducing an authoritative
+  entrypoint, name its contract, implementation, trusted base, supported
+  semantics and rejection evidence; review the manifest authority change
+  explicitly. Implementation languages remain unrestricted. Proofs, diagnostic
+  observations and performance measurements grant no admission authority.
+
+The required inventories are in [formalization.md](formalization.md). The
+original 1,110-case and 2,954-case lanes, all DAG/scope and 2,546 substitution
+comparisons, previous typing cases, 964 ordered outcomes, existing
+eta/proof-irrelevance differences, resource controls and benchmark smoke remain
+required. Local and hosted results must each identify the exact source tested.
+
+General universes, eta, proof irrelevance, inductives, recursors, quotients,
+`.olean` ingestion, and full Lean theorem admission remain outside the reference.
+The repository continues to have `acceptance_authority = false`.

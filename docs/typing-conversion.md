@@ -1,4 +1,4 @@
-# Typing and conversion: proposed semantic increment
+# Typing and conversion: semantic scope
 
 This fifth required scope connects successful execution of the Lean **model**
 to independent typing and beta/zeta/delta reduction judgments. It compares both
@@ -7,12 +7,14 @@ Goose checker. A separate comparison uses the pinned native Lean and OCaml
 engines. These are distinct forms of evidence: the model soundness theorems do
 not establish arbitrary native implementation refinement.
 
-The proposal builds on `main` at
+The original increment built on `main` at
 `632ab16805830aaf8ee94a4647dc948901e09423`, whose PR #5 source was
 `de66c4198cdc01371d5593684bfdf07b7e1bef8c`. The owned checker, its derivation,
 external pins, and four preceding model scopes retain their existing sources.
-Publication requires the user's review and approval. Execution results belong
-to the matching source-bound receipt, not to this scope declaration.
+It was merged through [PR #6](https://github.com/larsbx/Lean-Goose/pull/6).
+Execution results belong to the matching source-bound receipt, not to this scope
+declaration. [Semantic environments](semantic-environment.md) now adds the
+predecessor-certificate and record-preservation bridge as a sixth scope.
 
 ## Smallest useful fragment
 
@@ -203,7 +205,7 @@ Use the existing pinned setup from [validation.md](validation.md), then run:
 make acceptance
 ```
 
-`tools/check_formal.py` executes all five scopes and writes formal evidence v5.
+`tools/check_formal.py` executes all six scopes and writes formal evidence v6.
 `tools/run.py check` retains the existing **964 ordered outcomes per engine**,
 16 fixtures and six parser/resource controls, and records the new 44-fixture
 comparison separately as `typing_conversion`. Benchmark smoke retains its
@@ -219,9 +221,10 @@ to remain unchanged during execution. Hosted CI remains separate evidence.
 
 ## Remaining semantic obligations
 
-1. Define well-formed environments and contexts, and prove that successful
-   traces preserve their semantic invariants. Connect the new semantic records
-   explicitly to the earlier generic stored-binding preservation development.
+1. The [semantic-environment scope](semantic-environment.md) now proves
+   predecessor certification, its preservation across traces, environment
+   weakening of the judgments and the complete-record bridge. Next prove
+   inferred-field closedness/availability and valid binder-context invariants.
 2. Prove suitable completeness with sufficient model budget, deterministic
    normal forms, typed beta/zeta preservation, and normalization/termination for
    a precisely stated admissible fragment. Successful-execution soundness is

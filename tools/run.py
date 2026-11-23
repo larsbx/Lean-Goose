@@ -158,12 +158,14 @@ def check_all(binaries: dict[str, Path], modules: dict[str, Any],
         raise RuntimeError("external structural-control inventory differs from local contract")
     import check_typing_conversion
     typing = check_typing_conversion.check_reference_engines(binaries, output)
+    import check_semantic_environment
+    semantic = check_semantic_environment.check_reference_engines(binaries, output)
     result = {"schema": "lean-goose.conformance-observations.v1", "status": "passed",
               "evidence_only": True, "acceptance_authority": False, "fixtures": len(cases),
               "ordered_outcomes_per_engine": sum(len(graph.definitions) for _, graph, _, _ in cases),
               "registered_disagreements": BOUNDARIES,
               "structural_and_resource_controls": invalid, "observations": observations,
-              "typing_conversion": typing}
+              "typing_conversion": typing, "semantic_environment": semantic}
     save(output / "results.json", result)
     return result
 
