@@ -1,6 +1,6 @@
 import Lean.Elab.Command
 import Lean.Util.CollectAxioms
-import SemanticEnvironment
+import EnvironmentScope
 
 open Lean Elab Command
 
@@ -46,7 +46,34 @@ elab "audit_goose_semantic_environment" : command => do
     ``GooseSemanticEnvironment.project_refusal_preserves_records,
     ``GooseSemanticEnvironment.projected_lookup_corresponds,
     ``GooseSemanticEnvironment.projected_trace_preserves_old_record,
-    ``GooseSemanticEnvironment.projected_trace_preserves_lookup]
+    ``GooseSemanticEnvironment.projected_trace_preserves_lookup,
+    ``GooseEnvironmentScope.lookup_values_closed_of_certified,
+    ``GooseEnvironmentScope.head_preserves_scope,
+    ``GooseEnvironmentScope.normalization_preserves_scope,
+    ``GooseEnvironmentScope.normalization_yields_normal_form,
+    ``GooseEnvironmentScope.normalization_fixes_normal_form,
+    ``GooseEnvironmentScope.normal_form_available,
+    ``GooseEnvironmentScope.converted_normal_form_preserves_scope,
+    ``GooseEnvironmentScope.binding_valid_inferred_closed_available,
+    ``GooseEnvironmentScope.checked_success_inferred_scope_of_closed_values,
+    ``GooseEnvironmentScope.checked_success_inferred_closed_available,
+    ``GooseEnvironmentScope.ContextValid.scoped,
+    ``GooseEnvironmentScope.lift_preserves_available,
+    ``GooseEnvironmentScope.substitution_preserves_available,
+    ``GooseEnvironmentScope.head_preserves_available,
+    ``GooseEnvironmentScope.scoped_context_lifts_lookup,
+    ``GooseEnvironmentScope.inference_preserves_scope_available,
+    ``GooseEnvironmentScope.valid_context_inference_scope,
+    ``GooseEnvironmentScope.certified_lookup_all_fields,
+    ``GooseEnvironmentScope.certified_record_lookup,
+    ``GooseEnvironmentScope.run_snapshots_all_fields,
+    ``GooseEnvironmentScope.run_final_environment_all_fields,
+    ``GooseEnvironmentScope.malformed_delta_value_escapes,
+    ``GooseEnvironmentScope.closed_delta_values_allow_scope_of_normalized_field,
+    ``GooseEnvironmentScope.dependent_context_valid_and_lifts,
+    ``GooseEnvironmentScope.self_scoped_context_refused,
+    ``GooseEnvironmentScope.scoped_context_can_lack_sort,
+    ``GooseEnvironmentScope.conversion_refusal_does_not_insert]
   for name in required do
     match env.find? name with
     | none => throwError "missing semantic_environment obligation: {name}"
@@ -61,7 +88,8 @@ elab "audit_goose_semantic_environment" : command => do
   let mut declarations : Nat := 0
   let mut theorems : Nat := 0
   for (name, info) in env.constants.toList do
-    if (`GooseSemanticEnvironment).isPrefixOf name then
+    let userName := (privateToUserName? name).getD name
+    if (`GooseSemanticEnvironment).isPrefixOf userName || (`GooseEnvironmentScope).isPrefixOf userName then
       declarations := declarations + 1
       if info.isTheorem then theorems := theorems + 1
       let axioms ← collectAxioms name

@@ -16,7 +16,7 @@ payloads plus snapshots after each processed definition.
 | Expression DAG and scope | 30 | 21 | 2,163 topology-valid graphs of lengths 1–3 over seven leaves, each at four native binder depths; 45 additional model/control cases |
 | Lifting and substitution | 32 | 30 | 2,520 operations over 84 short graphs, 20 named compound/capture cases, six topology refusals; 30 additional native control commands |
 | Typing and conversion | 32 | 26 | 48 authored compound requests, 67 definitions and 66 processed snapshots; 44 common-fragment fixtures / 59 outcomes per external engine |
-| Semantic environments | 37 | 24 | 12 authored histories, 62 definitions and 61 processed snapshots; 10 common-reference histories / 52 outcomes per external engine |
+| Semantic environments | 64 | 31 | 15 authored histories, 75 definitions and 73 processed snapshots. 12 common-reference histories / 62 outcomes per external engine |
 
 The [expression-DAG specification](expression-dag-scope.md) gives the third
 scope's representation relation, binder laws, exact finite profile, observed
@@ -29,9 +29,9 @@ The [typing/conversion specification](typing-conversion.md) gives the fifth scop
 independent judgments, successful-evaluation soundness, compound stored-field
 comparisons and [replay contract](../schemas/typing-conversion-replay-v1.md).
 The [semantic-environment specification](semantic-environment.md) gives the sixth
-scope's independent certificates, relational weakening, record projection,
-bounded certificate checks, and additional history comparisons.
-The complete required inventory is **181 Lean theorems and 129 Quint tests**,
+scope's independent certificates, relational weakening, scope of stored fields,
+binder-context validity, record projection, and additional history comparisons.
+The complete required inventory is **208 Lean theorems and 136 Quint tests**,
 plus one invariant and one designated negative control per Quint model.
 
 The inventories describe what the gate must execute. They are not a claim that
@@ -543,10 +543,11 @@ structural lifting, substitution, scope, and noncapture laws and adds finite
 actual-function correspondence. The fifth scope proves successful model typing
 and conversion executions derive independent operational judgments, and compares
 compound stored fields on its authored native profile. The sixth scope proves
-semantic-environment certification, lookup-preserving relational weakening and
-complete-record projection. Inferred-field scope/availability, well-formed
-binder contexts, typed reduction metatheory, sufficient-budget completeness and
-refinement of arbitrary concrete checker transitions remain open.
+semantic-environment certification, lookup-preserving relational weakening,
+scope and availability of all stored fields, and complete-record projection.
+It defines well-formed binder contexts and proves structural preservation of
+inferred types. Typed weakening and reduction metatheory, sufficient-budget
+completeness, and refinement of concrete checker transitions remain open.
 Runtime/tool authenticity,
 faithful diagnostic serialization, filesystem consistency, and source-hash
 assumptions remain in the execution boundary. Concrete work is listed in

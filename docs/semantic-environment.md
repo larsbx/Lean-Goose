@@ -1,19 +1,17 @@
 # Semantic environment preservation
 
-This sixth formal scope begins the metatheory obligation recorded after
+This sixth formal scope builds on the typing soundness established in
 [PR #6](https://github.com/larsbx/Lean-Goose/pull/6). It proves that the existing
 typing model builds environments whose stored bindings have independent
 semantic derivations, and that later successful or refused checks preserve
-those derivations. It also connects the resulting records to the earlier
-full-record preservation model.
+those derivations and the scope of all three stored fields. It connects the
+resulting records to the earlier full-record preservation model.
 
-The starting revision is PR #6's merge
-`c79bafddb6372decf1a373c14c4c8eb7ec4eea3e`. Its
-[hosted main workflow](https://github.com/larsbx/Lean-Goose/actions/runs/45079151056)
-completed successfully on that exact revision. That historical result does not
-verify this increment. The matching new source-bound acceptance receipt supplies
-its execution status. The owned checker, dependency pins, and all five preceding
-Lean and Quint models retain their sources.
+[PR #7](https://github.com/larsbx/Lean-Goose/pull/7) introduced predecessor
+certification at merge revision `8ded5c39faa52ad58743d7c5fdfe09049398ed62`.
+The current gate extends that proof with inferred-field and local context
+scope. Its source-bound acceptance receipt records execution on the extended
+source.
 
 ## Independent semantic predicate
 
@@ -64,11 +62,65 @@ need this premise are formulated without it. Fatal scope or model budget
 exhaustion stops the suffix according to the unchanged typing model. No native
 resource accounting is inferred from the model budget.
 
-The required inventory is **37 named Lean theorems**, audited for empty
-transitive axiom closures. The complete new namespace is also audited. Its
-permitted generated-support allowlist is `propext`, recorded separately from
-the required theorem closures. See
+The required inventory is **64 named Lean theorems**, including 27 about
+inferred-field scope and its prerequisites and controls. Required theorem
+closures are empty. The gate also audits supporting declarations in both
+namespaces, including private lemmas. See
 [`SemanticEnvironmentAudit.lean`](../formal/lean/SemanticEnvironmentAudit.lean).
+
+## Inferred fields and local contexts
+
+[`EnvironmentScope.lean`](../formal/lean/EnvironmentScope.lean) proves the
+following statement for any model fuel and successful check.
+
+```lean
+theorem checked_success_inferred_scope_of_closed_values
+    (fuel : Nat) (environment : Environment) (definition : Definition)
+    (stored : Expr) (values : LookupValuesClosed environment)
+    (success : checked fuel environment definition = .ok stored) :
+    Closed stored ∧ Available environment stored
+```
+
+`LookupValuesClosed` asks only that every binding selected by `find` have a
+closed **original value**. Delta reduction reads that field. Closedness of the
+new original declaration comes directly from `checked`. The existing
+certificate gives a normalization of the actual inferred type to the stored
+field and conversion of that field to the original declaration.
+`normalization_yields_normal_form` proves that the stored field has no
+constants, typed lets, or beta redexes. Every normalization of such a form
+returns it unchanged. The common conversion result is therefore the stored
+field and inherits scope from normalization of the closed declared type.
+Availability follows from the shape of full normal forms in this fragment.
+The proof uses neither a sort witness for every old binding nor any invariant
+on old cached inferred fields.
+
+Dropping the lookup-value premise fails to give a uniform guarantee over
+arbitrary supplied environments. In the Lean and Quint controls, a forged
+environment contains a single `A` with declared type `Sort 1`, original value
+`#0`, and inferred field `Sort 1`. Checking the closed declaration
+`id : (Π (_ : A), A) := fun x : A => x` succeeds with
+`Π (_ : #0), #0` stored. The domain's `#0` is loose. A second control uses a
+forged original type with a loose index in an erased zeta argument. Its raw
+inferred type is open, while the normalized stored field is closed. These
+environments are supplied directly to the models.
+
+`checked_success_inferred_closed_available` specializes the theorem to
+`Certified`. Certification and existing prefix preservation then give all
+three field properties for every record in every processed snapshot and the
+final environment, including refusal and fatal stopping. The original
+type and value still require constant availability in the exact predecessor.
+
+`ContextValid` stores innermost binders first and requires each entry to be
+scoped, available, and assigned a sort in its preceding outer tail.
+`inference_preserves_scope_available` only needs `ContextScoped`, the
+structural part of that invariant, along with a scoped and available input.
+Old selected declared types and old delta values must be closed and
+available. Variable lookup lifts an entry by its index plus one, including its
+own binder. The dependent context `[#0, Sort 1]` admits that lift.
+`[#0]` is structurally invalid and raw inference in it returns an out-of-scope
+`#1`. A closed lambda serves as a separate control for an in-scope entry that
+lacks a sort. `valid_context_inference_scope` is the certified, sorted-context
+specialization.
 
 ## Bridge to complete stored records
 
@@ -100,8 +152,8 @@ unchanged typing and stored-binding models. Each insertion freezes its complete
 predecessor, stored binding, and separate observations of declared-sort checking,
 value inference, normalization into the inferred field, and the two normal
 forms witnessing conversion. Certificate validity checks these component
-equations, original closedness and constant availability. It is not equality
-with the overall `check` or `advance` function.
+equations, closedness and constant availability of all three fields, and that
+re-normalizing the stored inferred field returns that field.
 
 The state invariant checks ordered certificate/record correspondence, exact
 predecessor prefixes, distinct names, old records and lookups, refusal atomicity,
@@ -110,7 +162,7 @@ It also checks payload and lookup projection into `StoredBindings`. Sampled
 name coding uses radix 257 with a nonzero leading sentinel; finite checks do
 not discharge the generic Lean injectivity premise.
 
-The gate requires **24 deterministic tests** and **1,000 sampled traces of at
+The gate requires **31 deterministic tests** and **1,000 sampled traces of at
 most eight transitions**, seed `20261123`, on the TypeScript backend. Simulation
 uses three destination names and nine input forms, processes at most four
 snapshots, and stutters thereafter. These finite checks are not an unbounded
@@ -125,20 +177,22 @@ An unrelated failure or different mutation cannot satisfy the control.
 
 ## Finite implementation observations
 
-The authored profile adds **12 histories, 62 input definitions, and 61 processed
+The authored profile covers **15 histories, 75 input definitions, and 73 processed
 snapshots**. It includes compound aliases, aliases in declared types, dependent
 applications, beta/zeta declarations, forward and self references, refusal/retry
-sequences, duplicate replacement attempts, and fatal stopping.
+sequences, duplicate replacement attempts, and fatal stopping. Three histories
+exercise specialization under three binders, conversion refusal followed by retry,
+and a dependent binder annotation outside its outer context.
 
 The unchanged actual Lean and Quint typing replay helpers evaluate these
 histories through the existing
 [typing replay contract](../schemas/typing-conversion-replay-v1.md). Native Goose
-executes `--trace` and `--check` for each: **24 native commands**. Comparison
+executes `--trace` and `--check` for each, for **30 native commands**. Comparison
 requires all stored fields, original type/value IDs, immutable binding and
 raw-node prefixes, ordered outcomes, and exact fatal process status. The native
 interface exposes stored records, not semantic proof certificates.
 
-Ten common-reference histories additionally produce **52 ordered outcomes per
+Twelve common-reference histories additionally produce **62 ordered outcomes per
 engine** for actual Goose, pinned Lean, and pinned OCaml. Fatal scope and
 duplicate-before-invalid-scope histories remain native/model-only controls.
 No new semantic disagreement is allowed. This profile is recorded separately
@@ -146,13 +200,12 @@ from the prior 964 outcomes and the fifth scope's 59 outcomes per engine.
 
 ## Remaining obligations
 
-This closes semantic-environment certification, relational weakening along
-lookup-preserving extension, and the stated record projection for the model.
-It does not establish independent closedness or constant availability of the
-**stored inferred type**, well-formed binder contexts, typed substitution,
-subject reduction, sufficient-budget completeness, or normalization of every
-well-typed term. The fuelled Lean functions already terminate for their supplied
-budget; existence of a sufficient successful budget is a different claim.
+Typed context weakening and substitution, subject reduction, arbitrary
+reduction determinacy, conversion laws, sufficient-budget completeness, and
+normalization of every well-typed term remain open. Context validity currently
+supplies structural preservation of inferred types. A sort witness for each
+inferred type and preservation of typing across substitutions require further
+metatheory.
 
 General native inference/reduction/lookup refinement, serializer correctness,
 cache/resource semantics, parser/compiler trust, and full Lean kernel
