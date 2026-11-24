@@ -16,7 +16,7 @@ payloads plus snapshots after each processed definition.
 | Expression DAG and scope | 30 | 21 | 2,163 topology-valid graphs of lengths 1–3 over seven leaves, each at four native binder depths; 45 additional model/control cases |
 | Lifting and substitution | 32 | 30 | 2,520 operations over 84 short graphs, 20 named compound/capture cases, six topology refusals; 30 additional native control commands |
 | Typing and conversion | 32 | 26 | 48 authored compound requests, 67 definitions and 66 processed snapshots; 44 common-fragment fixtures / 59 outcomes per external engine |
-| Semantic environments | 64 | 31 | 15 authored histories, 75 definitions and 73 processed snapshots. 12 common-reference histories / 62 outcomes per external engine |
+| Semantic environments and context weakening | 88 | 31 | 18 authored histories, 82 definitions and 80 processed snapshots. 15 common-reference histories / 69 outcomes per external engine |
 
 The [expression-DAG specification](expression-dag-scope.md) gives the third
 scope's representation relation, binder laws, exact finite profile, observed
@@ -31,7 +31,9 @@ comparisons and [replay contract](../schemas/typing-conversion-replay-v1.md).
 The [semantic-environment specification](semantic-environment.md) gives the sixth
 scope's independent certificates, relational weakening, scope of stored fields,
 binder-context validity, record projection, and additional history comparisons.
-The complete required inventory is **208 Lean theorems and 136 Quint tests**,
+The [context weakening proof](context-weakening.md) transports inference, sort
+derivations, and context validity through arbitrary single-binder insertion.
+The complete required inventory is **232 Lean theorems and 136 Quint tests**,
 plus one invariant and one designated negative control per Quint model.
 
 The inventories describe what the gate must execute. They are not a claim that

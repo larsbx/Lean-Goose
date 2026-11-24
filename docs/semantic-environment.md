@@ -62,10 +62,10 @@ need this premise are formulated without it. Fatal scope or model budget
 exhaustion stops the suffix according to the unchanged typing model. No native
 resource accounting is inferred from the model budget.
 
-The required inventory is **64 named Lean theorems**, including 27 about
-inferred-field scope and its prerequisites and controls. Required theorem
-closures are empty. The gate also audits supporting declarations in both
-namespaces, including private lemmas. See
+The required inventory is **88 named Lean theorems**, including 27 on
+inferred-field scope and 24 on [typed context weakening](context-weakening.md)
+and its controls. Required theorem closures are empty. The gate audits all
+three namespaces, including private lemmas. See
 [`SemanticEnvironmentAudit.lean`](../formal/lean/SemanticEnvironmentAudit.lean).
 
 ## Inferred fields and local contexts
@@ -177,22 +177,24 @@ An unrelated failure or different mutation cannot satisfy the control.
 
 ## Finite implementation observations
 
-The authored profile covers **15 histories, 75 input definitions, and 73 processed
+The authored profile covers **18 histories, 82 input definitions, and 80 processed
 snapshots**. It includes compound aliases, aliases in declared types, dependent
 applications, beta/zeta declarations, forward and self references, refusal/retry
 sequences, duplicate replacement attempts, and fatal stopping. Three histories
 exercise specialization under three binders, conversion refusal followed by retry,
 and a dependent binder annotation outside its outer context.
+The weakening cases compare dependent terms before and after insertion, retry
+a stale annotation, and exercise a convertible beta/zeta annotation.
 
 The unchanged actual Lean and Quint typing replay helpers evaluate these
 histories through the existing
 [typing replay contract](../schemas/typing-conversion-replay-v1.md). Native Goose
-executes `--trace` and `--check` for each, for **30 native commands**. Comparison
+executes `--trace` and `--check` for each, for **36 native commands**. Comparison
 requires all stored fields, original type/value IDs, immutable binding and
 raw-node prefixes, ordered outcomes, and exact fatal process status. The native
 interface exposes stored records, not semantic proof certificates.
 
-Twelve common-reference histories additionally produce **62 ordered outcomes per
+Fifteen common-reference histories additionally produce **69 ordered outcomes per
 engine** for actual Goose, pinned Lean, and pinned OCaml. Fatal scope and
 duplicate-before-invalid-scope histories remain native/model-only controls.
 No new semantic disagreement is allowed. This profile is recorded separately
@@ -200,12 +202,12 @@ from the prior 964 outcomes and the fifth scope's 59 outcomes per engine.
 
 ## Remaining obligations
 
-Typed context weakening and substitution, subject reduction, arbitrary
+General typed substitution, subject reduction up to conversion, arbitrary
 reduction determinacy, conversion laws, sufficient-budget completeness, and
-normalization of every well-typed term remain open. Context validity currently
-supplies structural preservation of inferred types. A sort witness for each
-inferred type and preservation of typing across substitutions require further
-metatheory.
+normalization of every well-typed term remain open. The
+[context weakening increment](context-weakening.md) proves the substitution
+case for the selected variable and exact immediate zeta preservation. An
+inferred-type sort witness remains an open obligation.
 
 General native inference/reduction/lookup refinement, serializer correctness,
 cache/resource semantics, parser/compiler trust, and full Lean kernel

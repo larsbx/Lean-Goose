@@ -8,11 +8,11 @@ from __future__ import annotations
 
 from typing_conversion_profile import Case, case
 
-CASE_COUNT = 15
-INPUT_DEFINITIONS = 75
-PROCESSED_SNAPSHOTS = 73
-REFERENCE_CASE_COUNT = 12
-REFERENCE_OUTCOMES = 62
+CASE_COUNT = 18
+INPUT_DEFINITIONS = 82
+PROCESSED_SNAPSHOTS = 80
+REFERENCE_CASE_COUNT = 15
+REFERENCE_OUTCOMES = 69
 
 
 def cases() -> list[Case]:
@@ -123,6 +123,20 @@ def cases() -> list[Case]:
             ("unprocessed", "s1", "s0", 0, "s1"),
         ], "An inner domain cannot borrow its own binder; fatal scope retains the dependent binding and stops insertion.",
             references=False),
+        case("environment_context_weakening_dependent", [
+            ("before", "p s1 p v0 v1", "l s1 l v0 a a l s1 l v0 v0 v1 v0", 0, "p s1 p v0 v1"),
+            ("after", "p s1 p v0 p v1 v2", "l s1 l v0 l v1 a a l s1 l v0 v0 v2 v0", 0, "p s1 p v0 p v1 v2"),
+            ("deep", "p s1 p s1 p v1 p v2 s1", "l s1 l s1 l v1 l v2 t v3 v0 p v4 v5", 0,
+             "p s1 p s1 p v1 p v2 s1"),
+        ], "Dependent application before and after middle insertion, plus transport through two annotations and a let."),
+        case("environment_context_weakening_stale_annotation", [
+            ("retry", "p s1 p v0 p v1 v2", "l s1 l v0 l v0 v0", 4, "typeExpected"),
+            ("retry", "p s1 p v0 p v1 v2", "l s1 l v0 l v1 v0", 0, "p s1 p v0 p v1 v2"),
+        ], "A scoped but stale annotation points to the new term as a type; a corrected retry succeeds."),
+        case("environment_beta_zeta_converted_annotation", [
+            ("beta", "t s1 s0 s1", "a l t s1 s0 s1 v0 s0", 0, "s1"),
+            ("zeta", "s1", "t t s1 s0 s1 s0 v0", 0, "s1"),
+        ], "A convertible reducible annotation survives in the original definition while the inferred field is normalized."),
     ]
     common = [item for item in inventory if item.lean_outcomes is not None]
     if len(inventory) != CASE_COUNT or len({item.name for item in inventory}) != CASE_COUNT \

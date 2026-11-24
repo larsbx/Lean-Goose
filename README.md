@@ -107,14 +107,16 @@ The 44 common-fragment fixtures also compare 59 ordered outcomes per engine
 against the pinned native Lean and OCaml references. Model soundness and finite
 implementation correspondence remain separate claims.
 
-The [semantic-environment lane](docs/semantic-environment.md) requires 64 Lean
+The [semantic-environment lane](docs/semantic-environment.md) requires 88 Lean
 theorems. Each binding has independent typing/conversion derivations in its
 predecessor environment, and every processed snapshot preserves scope and
 availability for all stored fields. Binder-context validity uses the outer
-tail of each entry. An explicit projection connects stored payloads and lookup
-to the earlier full-record model. The lane runs 31 Quint tests, an exact
-old-value corruption control, and 15 native/model histories. Twelve
-common-reference histories add 62 ordered outcomes per engine.
+tail of each entry. [Typed context weakening](docs/context-weakening.md)
+transports inference and sorts under binder insertion. A projection connects
+stored payloads and lookup to the earlier full-record model. The lane runs
+31 Quint tests, an exact
+old-value corruption control, and 18 native/model histories. Fifteen
+common-reference histories add 69 ordered outcomes per engine.
 
 All six Quint models run seeded, bounded invariant simulations and designated
 negative controls. The DAG simulation has an eight-node arena cap; substitution

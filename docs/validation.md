@@ -223,17 +223,18 @@ execution scopes retain their different meanings.
 
 ### Semantic-environment preservation
 
-The [sixth lane](semantic-environment.md) requires 64 Lean obligations and
+The [sixth lane](semantic-environment.md) requires 88 Lean obligations and
 31 Quint tests, 1,000 samples of at most eight transitions with a four-snapshot
 cap, and the exact old-value corruption witness. In Lean, certified snapshots
-preserve scope and availability of all stored fields. Quint checks all fields,
+preserve scope and availability of all stored fields. Typed context weakening
+transports exact lifted inference and sort levels. Quint checks all fields,
 component evaluation equations, and frozen predecessor histories.
 
-Fifteen histories run through the actual Lean and Quint typing replay helpers
-and 30 native commands over both Goose modes. These histories cover 75
-definitions and 73 processed snapshots. Twelve common-reference histories add
-62 ordered outcomes per engine alongside the earlier 964 and 59. The native
-diagnostic interface exposes full stored records. Typed context weakening,
+Eighteen histories run through the actual Lean and Quint typing replay helpers
+and 36 native commands over both Goose modes. These histories cover 82
+definitions and 80 processed snapshots. Fifteen common-reference histories add
+69 ordered outcomes per engine alongside the earlier 964 and 59. The native
+diagnostic interface exposes full stored records. General typed substitution,
 reduction preservation, and universal native refinement remain open.
 
 ### Timing smoke

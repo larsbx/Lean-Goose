@@ -1,6 +1,6 @@
 import Lean.Elab.Command
 import Lean.Util.CollectAxioms
-import EnvironmentScope
+import ContextWeakeningControls
 
 open Lean Elab Command
 
@@ -73,7 +73,31 @@ elab "audit_goose_semantic_environment" : command => do
     ``GooseEnvironmentScope.dependent_context_valid_and_lifts,
     ``GooseEnvironmentScope.self_scoped_context_refused,
     ``GooseEnvironmentScope.scoped_context_can_lack_sort,
-    ``GooseEnvironmentScope.conversion_refusal_does_not_insert]
+    ``GooseEnvironmentScope.conversion_refusal_does_not_insert,
+    ``GooseContextWeakening.lift_after_lift,
+    ``GooseContextWeakening.lift_after_substitute,
+    ``GooseContextWeakening.head_reduction_lift,
+    ``GooseContextWeakening.normalization_lift,
+    ``GooseContextWeakening.conversion_lift,
+    ``GooseContextWeakening.ContextInsertion.cutoff_length,
+    ``GooseContextWeakening.ContextInsertion.lookup_lift,
+    ``GooseContextWeakening.inference_lift,
+    ``GooseContextWeakening.sort_lift,
+    ``GooseContextWeakening.ContextInsertion.preserves_valid,
+    ``GooseContextWeakening.substitution_hit,
+    ``GooseContextWeakening.literal_beta_premises,
+    ``GooseContextWeakening.zeta_inference,
+    ``GooseContextWeakening.zeta_sort,
+    ``GooseContextWeakening.middle_insertion_transports_dependent_lookup,
+    ``GooseContextWeakening.middle_insertion_transports_dependent_application,
+    ``GooseContextWeakening.deep_insertion_transports_let_sort,
+    ``GooseContextWeakening.stale_annotation_scoped_but_invalid,
+    ``GooseContextWeakening.self_referential_insertion_refused,
+    ``GooseContextWeakening.unsorted_insertion_refused,
+    ``GooseContextWeakening.open_constant_type_breaks_weakening,
+    ``GooseContextWeakening.open_delta_value_breaks_reduction_lift,
+    ``GooseContextWeakening.literal_beta_requires_conversion,
+    ``GooseContextWeakening.substitution_can_unblock_neutral_head]
   for name in required do
     match env.find? name with
     | none => throwError "missing semantic_environment obligation: {name}"
@@ -89,7 +113,8 @@ elab "audit_goose_semantic_environment" : command => do
   let mut theorems : Nat := 0
   for (name, info) in env.constants.toList do
     let userName := (privateToUserName? name).getD name
-    if (`GooseSemanticEnvironment).isPrefixOf userName || (`GooseEnvironmentScope).isPrefixOf userName then
+    if (`GooseSemanticEnvironment).isPrefixOf userName || (`GooseEnvironmentScope).isPrefixOf userName ||
+        (`GooseContextWeakening).isPrefixOf userName then
       declarations := declarations + 1
       if info.isTheorem then theorems := theorems + 1
       let axioms ← collectAxioms name

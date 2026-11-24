@@ -1,4 +1,4 @@
-"""Sixth formal scope: semantic environments, structural scope, and record projection."""
+"""Sixth formal scope: semantic environments, typed context weakening, and record projection."""
 from __future__ import annotations
 
 import json
@@ -14,11 +14,12 @@ from check_expression_dag import compressed_input
 from semantic_environment_negative import counterexample
 
 LEAN_SOURCES = {"formal/lean/EnvironmentScope.lean", "formal/lean/SemanticEnvironment.lean",
+                "formal/lean/ContextWeakening.lean", "formal/lean/ContextWeakeningControls.lean",
                 "formal/lean/SemanticEnvironmentAudit.lean"}
 QUINT_SOURCES = {"formal/quint/SemanticEnvironment.qnt"}
 IMPLEMENTATIONS = {"tools/check_semantic_environment.py", "tools/semantic_environment_profile.py",
                    "tools/semantic_environment_negative.py"}
-DOCUMENTS = {"docs/semantic-environment.md"}
+DOCUMENTS = {"docs/semantic-environment.md", "docs/context-weakening.md"}
 LEAN_OBLIGATIONS = {"GooseSemanticEnvironment." + name for name in (
     "validate_implies_available", "available_monotone", "lookup_extends_reflexive",
     "lookup_extends_transitive", "find_snoc", "fresh_append_extends", "find_latest",
@@ -60,6 +61,16 @@ LEAN_OBLIGATIONS = {"GooseSemanticEnvironment." + name for name in (
     "self_scoped_context_refused",
     "scoped_context_can_lack_sort",
     "conversion_refusal_does_not_insert",
+)} | {"GooseContextWeakening." + name for name in (
+    "lift_after_lift", "lift_after_substitute", "head_reduction_lift", "normalization_lift",
+    "conversion_lift", "ContextInsertion.cutoff_length", "ContextInsertion.lookup_lift",
+    "inference_lift", "sort_lift", "ContextInsertion.preserves_valid", "substitution_hit",
+    "literal_beta_premises", "zeta_inference", "zeta_sort",
+    "middle_insertion_transports_dependent_lookup", "middle_insertion_transports_dependent_application",
+    "deep_insertion_transports_let_sort", "stale_annotation_scoped_but_invalid",
+    "self_referential_insertion_refused", "unsorted_insertion_refused",
+    "open_constant_type_breaks_weakening", "open_delta_value_breaks_reduction_lift",
+    "literal_beta_requires_conversion", "substitution_can_unblock_neutral_head",
 )}
 QUINT_TESTS = {
     "emptySemanticHistoryTest", "firstPredecessorIsEmptyTest", "compoundCertificateTest",
@@ -89,7 +100,7 @@ SEED = "20261123"
 def execute(*, output: Path, receipt: dict, build: Path, lean_build: Path, lean: Path,
             lean_flags: list[str], quint: Path, binary: Path, env: dict, run: Callable) -> None:
     lane: dict = {"status": "running", "implementation_refinement": False,
-                  "scope": "certified environments, inferred-field and context scope, lookup weakening, and complete records"}
+                  "scope": "certified environments, structural scope, typed context weakening, and complete records"}
     receipt["semantic_environment"] = lane
     model = lean_build / "SemanticEnvironment.olean"
     run([str(lean), *lean_flags, "-o", str(model), "SemanticEnvironment.lean"], lean_build,
@@ -97,6 +108,12 @@ def execute(*, output: Path, receipt: dict, build: Path, lean_build: Path, lean:
     scope_model = lean_build / "EnvironmentScope.olean"
     run([str(lean), *lean_flags, "-o", str(scope_model), "EnvironmentScope.lean"], lean_build,
         output, receipt, "environment-scope-lean-build", env=env)
+    weakening_model = lean_build / "ContextWeakening.olean"
+    run([str(lean), *lean_flags, "-o", str(weakening_model), "ContextWeakening.lean"], lean_build,
+        output, receipt, "context-weakening-lean-build", env=env)
+    weakening_controls = lean_build / "ContextWeakeningControls.olean"
+    run([str(lean), *lean_flags, "-o", str(weakening_controls), "ContextWeakeningControls.lean"], lean_build,
+        output, receipt, "context-weakening-controls-lean-build", env=env)
     audit = run([str(lean), *lean_flags, "SemanticEnvironmentAudit.lean"], lean_build,
                 output, receipt, "environment-lean-axiom-audit", env=env)
     if f"Semantic environment axiom audit passed: {len(LEAN_OBLIGATIONS)} required theorems without axioms;" not in audit:
@@ -105,6 +122,8 @@ def execute(*, output: Path, receipt: dict, build: Path, lean_build: Path, lean:
                     "required_theorem_axioms": [], "namespace_support_axiom_allowlist": ["propext"],
                     "compiled_model_sha256": runtime.sha256(model),
                     "compiled_scope_model_sha256": runtime.sha256(scope_model),
+                    "compiled_context_weakening_sha256": runtime.sha256(weakening_model),
+                    "compiled_context_weakening_controls_sha256": runtime.sha256(weakening_controls),
                     "inferred_field_scope_premise": "closed original values of bindings selected by lookup",
                     "semantic_predicate": "independent HasSort/Infers/Normalizes/Converts judgments and closed, available original syntax",
                     "record_bridge": "exact encoded payloads; lookup correspondence assumes injective name coding",
