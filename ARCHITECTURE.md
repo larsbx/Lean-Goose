@@ -138,12 +138,13 @@ A projection retains complete encoded records and reuses the earlier
 stored-binding preservation theorem. Lookup correspondence explicitly assumes
 an injective name coding; the older four-action checker is not simulated.
 
-The gate requires 64 Lean theorems, 31 Quint tests, bounded exploration, an
-exact old-value corruption witness, and 15 native/model histories. Twelve
-common-reference histories add 62 outcomes per engine. Scope and availability
+The gate requires 88 Lean theorems, 31 Quint tests, bounded exploration, an
+exact old-value corruption witness, and 18 native/model histories. Fifteen
+common-reference histories add 69 outcomes per engine. Scope and availability
 hold for all stored fields in certified snapshots. The model defines valid
-binder contexts and proves structural preservation of inferred types. Typed
-context weakening and substitution are the next obligations.
+binder contexts and proves structural preservation of inferred types.
+Binder insertion preserves exact lifted inference and sort levels. General
+typed substitution and subject reduction remain open.
 See [semantic environments](docs/semantic-environment.md).
 
 ### Observable diagnostic interface

@@ -40,14 +40,19 @@ Every processed snapshot and the final environment preserve scope and constant
 availability for all three fields. Binder-context validity uses each entry's
 outer tail. The structural portion suffices for scoped inference.
 
+The [typed context weakening increment](context-weakening.md) transports exact
+`Infers` outputs and `HasSort` levels under arbitrary single-binder insertion.
+It also preserves context validity, handles the selected-variable substitution
+case up to conversion, and proves immediate zeta preservation.
+
 ## Ordered next proof work
 
-1. **Typed context weakening, substitution, and reduction preservation.**
-   First prove that inserting a well-formed binder into a context transports
-   the relevant `Infers` and `HasSort` judgments with the existing cutoff
-   lift. Use that result to prove typed substitution, a sort witness for
-   inferred types, and beta/zeta subject reduction. State where the transported
-   type needs conversion. Then relate delta preservation to the original stored
+1. **Typed substitution and reduction preservation.**
+   Transport newer annotations across substitution in their outer tails.
+   Establish the head/normalization and conversion laws needed by the Pi,
+   application and sort cases. Prove relational substitution up to conversion,
+   an inferred-type sort witness, and preservation for beta and subsequent
+   reductions after zeta. Relate delta preservation to the original stored
    type and value.
 2. **Determinacy, conversion and sufficient budgets.** Prove deterministic
    normal forms and the required conversion laws, then connect derivations to
